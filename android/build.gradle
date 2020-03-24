@@ -57,5 +57,6 @@ dependencies {
     compileOnly rootProject.findProject(":amap_core_fluttify")
     compileOnly rootProject.findProject(":url_launcher")
     // sdk dependency
-    api 'com.amap.api:3dmap:6.9.2'
+    // https://mvnrepository.com/artifact/com.amap.api/navi-3dmap
+    implementation group: 'com.amap.api', name: 'navi-3dmap', version: '6.9.0_3dmap6.9.2'
 }
