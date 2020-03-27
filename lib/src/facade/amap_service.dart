@@ -2,6 +2,7 @@ import 'package:amap_map_fluttify/amap_map_fluttify.dart';
 import 'package:amap_map_fluttify/src/android/android.export.g.dart';
 import 'package:amap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'list.x.dart';
@@ -234,29 +235,65 @@ class AmapService {
   ///
   /// [target]目的地, [appName]当前应用名称, [dev]是否偏移(0:lat和lon是已经加密后的,不需要国测加密;1:需要国测加密)
   /// !注意: iOS端需要在Info.plist配置白名单, 可以参考example工程的配置(LSApplicationQueriesSchemes), 具体文档详见 https://lbs.amap.com/api/amap-mobile/guide/ios/ios-uri-information
+  @Deprecated('使用navigate方法代替')
   static Future<void> navigateDrive(
     LatLng target, {
     String appName = 'appname',
     int dev = 1,
+    bool inApp = false,
   }) async {
     return platform(
       android: (_) async {
-        final urlScheme =
-            'androidamap://navi?sourceApplication=$appName&lat=${target.latitude}&lon=${target.longitude}&dev=$dev&style=2';
-        if (await canLaunch(urlScheme)) {
-          return launch(urlScheme);
+        if (inApp) {
         } else {
-          return Future.error('无法调起高德地图');
+          final urlScheme =
+              'androidamap://navi?sourceApplication=$appName&lat=${target.latitude}&lon=${target.longitude}&dev=$dev&style=2';
+          if (await canLaunch(urlScheme)) {
+            return launch(urlScheme);
+          } else {
+            return Future.error('无法调起高德地图');
+          }
         }
       },
       ios: (_) async {
-        final urlScheme =
-            'iosamap://navi?sourceApplication=$appName&lat=${target.latitude}&lon=${target.longitude}&dev=$dev&style=2';
-        if (await canLaunch(urlScheme)) {
-          return launch(urlScheme);
+        if (inApp) {
         } else {
-          return Future.error('无法调起高德地图');
+          final urlScheme =
+              'iosamap://navi?sourceApplication=$appName&lat=${target.latitude}&lon=${target.longitude}&dev=$dev&style=2';
+          if (await canLaunch(urlScheme)) {
+            return launch(urlScheme);
+          } else {
+            return Future.error('无法调起高德地图');
+          }
         }
+      },
+    );
+  }
+
+  /// 应用内导航
+  static Future<void> navigate({
+    NaviType naviType = NaviType.Drive,
+    LatLng from,
+    LatLng to,
+  }) async {
+    final args = {
+      'fromLat': from?.latitude ?? 0,
+      'fromLng': from?.longitude ?? 0,
+      'toLat': to?.latitude ?? 0,
+      'toLng': to?.longitude ?? 0,
+      'naviType': naviType.index,
+    };
+    final channel = MethodChannel('me.yohom/amap_map_fluttify');
+    return platform(
+      android: (_) async {
+        final activity = await android_app_Activity.get();
+        channel.invokeMethod('navigate', {
+          'context': activity.refId,
+          ...args,
+        });
+      },
+      ios: (_) async {
+        channel.invokeMethod('navigate', args);
       },
     );
   }

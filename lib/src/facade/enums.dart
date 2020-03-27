@@ -85,3 +85,15 @@ enum MyLocationType {
   /// 方向跟随
   Rotate,
 }
+
+/// 导航模式
+enum NaviType {
+  /// 驾驶
+  Drive,
+
+  /// 步行
+  Walk,
+
+  /// 骑行
+  Ride,
+}

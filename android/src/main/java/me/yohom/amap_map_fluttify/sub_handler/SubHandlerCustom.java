@@ -4,23 +4,21 @@
 
 package me.yohom.amap_map_fluttify.sub_handler;
 
-import android.os.Bundle;
+import android.content.Context;
 import android.util.Log;
 
+import com.amap.api.maps.model.LatLng;
+import com.amap.api.maps.model.Poi;
+import com.amap.api.navi.AmapNaviPage;
+import com.amap.api.navi.AmapNaviParams;
+import com.amap.api.navi.AmapNaviType;
+
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import androidx.annotation.NonNull;
-import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.BinaryMessenger;
-import io.flutter.plugin.common.MethodCall;
-import io.flutter.plugin.common.MethodChannel;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
-import io.flutter.plugin.platform.PlatformViewRegistry;
-
 import me.yohom.amap_map_fluttify.AmapMapFluttifyPlugin.Handler;
 
 import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getEnableLog;
@@ -30,14 +28,31 @@ import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getHEAP;
 public class SubHandlerCustom {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
-            put("", (args, methodResult) -> {
+            put("navigate", (args, methodResult) -> {
                 // args
-
-                // ref
+                int contextRefId = (int) ((Map<String, Object>) args).get("context");
+                double fromLat = (double) ((Map<String, Object>) args).get("fromLat");
+                double fromLng = (double) ((Map<String, Object>) args).get("fromLng");
+                double toLat = (double) ((Map<String, Object>) args).get("toLat");
+                double toLng = (double) ((Map<String, Object>) args).get("toLng");
+                int naviType = (int) ((Map<String, Object>) args).get("naviType");
 
                 // invoke native method
                 try {
+                    Context context = (Context) getHEAP().get(contextRefId);
+                    Poi start = null;
+                    List<Poi> passbyList = new ArrayList<>();
+                    Poi end = null;
+                    if (fromLat != 0 && toLat != 0) {
+                        start = new Poi("", new LatLng(fromLat, fromLat), "");
+                    }
+                    if (toLat != 0 && toLng != 0) {
+                        end = new Poi("", new LatLng(toLat, toLng), "");
+                    }
 
+                    AmapNaviParams params = new AmapNaviParams(start, passbyList, end, AmapNaviType.values()[naviType]);
+
+                    AmapNaviPage.getInstance().showRouteActivity(context, params, null);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
