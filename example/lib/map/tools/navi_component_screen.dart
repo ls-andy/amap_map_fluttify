@@ -15,7 +15,8 @@ class _NaviComponentScreenState extends State<NaviComponentScreen> {
         child: RaisedButton(
           onPressed: () {
             AmapService.navigate(
-//              from: LatLng(36.647901, 104.258354),
+              naviType: NaviType.Ride,
+              from: LatLng(36.647901, 104.258354),
               to: LatLng(36.547901, 104.258354),
             );
           },

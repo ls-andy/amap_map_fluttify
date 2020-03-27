@@ -29,28 +29,26 @@ AMapNaviCompositeManager* manager;
             NSNumber* naviType = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"naviType"];
         
             if (![naviType isEqual:@(0)]) {
-                methodResult([FlutterError errorWithCode:@"UNAVAILABLE"
-                                                 message:@"iOS只支持驾车模式"
-                                                 details:nil]);
-            } else {
-                if (!manager) {
-                    manager = [[AMapNaviCompositeManager alloc] init];
-                }
-                
-                AMapNaviCompositeUserConfig *config = [[AMapNaviCompositeUserConfig alloc] init];
-                [config setRoutePlanPOIType:AMapNaviRoutePlanPOITypeStart
-                                   location:[AMapNaviPoint locationWithLatitude:[fromLat floatValue] longitude:[fromLng floatValue]]
-                                       name:@""
-                                      POIId:nil];
-                [config setRoutePlanPOIType:AMapNaviRoutePlanPOITypeEnd
-                                   location:[AMapNaviPoint locationWithLatitude:[toLat floatValue] longitude:[toLng floatValue]]
-                                       name:@""
-                                      POIId:nil];
-                
-                [manager presentRoutePlanViewControllerWithOptions:config];
-                
-                methodResult(@"success");
+                NSLog(@"iOS端导航组件只支持驾车/货车模式, 非这两种模式都将以驾车模式进行导航!");
             }
+            
+            if (!manager) {
+                manager = [[AMapNaviCompositeManager alloc] init];
+            }
+            
+            AMapNaviCompositeUserConfig *config = [[AMapNaviCompositeUserConfig alloc] init];
+            [config setRoutePlanPOIType:AMapNaviRoutePlanPOITypeStart
+                               location:[AMapNaviPoint locationWithLatitude:[fromLat floatValue] longitude:[fromLng floatValue]]
+                                   name:@""
+                                  POIId:nil];
+            [config setRoutePlanPOIType:AMapNaviRoutePlanPOITypeEnd
+                               location:[AMapNaviPoint locationWithLatitude:[toLat floatValue] longitude:[toLng floatValue]]
+                                   name:@""
+                                  POIId:nil];
+            
+            [manager presentRoutePlanViewControllerWithOptions:config];
+            
+            methodResult(@"success");
         }
     };
 }
