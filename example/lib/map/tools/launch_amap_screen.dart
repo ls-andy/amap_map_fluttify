@@ -14,7 +14,10 @@ class _LaunchAmapScreenState extends State<LaunchAmapScreen> {
       body: Center(
         child: RaisedButton(
           onPressed: () {
-            AmapService.navigateDrive(LatLng(36.547901, 104.258354));
+            AmapService.navigateDrive(
+              to: LatLng(36.547901, 104.258354),
+              inApp: true,
+            );
           },
           child: Text('高德地图导航'),
         ),

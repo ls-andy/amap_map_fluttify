@@ -13,9 +13,7 @@ import com.amap.api.navi.AmapNaviPage;
 import com.amap.api.navi.AmapNaviParams;
 import com.amap.api.navi.AmapNaviType;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import io.flutter.plugin.common.BinaryMessenger;
@@ -35,13 +33,11 @@ public class SubHandlerCustom {
                 double fromLng = (double) ((Map<String, Object>) args).get("fromLng");
                 double toLat = (double) ((Map<String, Object>) args).get("toLat");
                 double toLng = (double) ((Map<String, Object>) args).get("toLng");
-                int naviType = (int) ((Map<String, Object>) args).get("naviType");
 
                 // invoke native method
                 try {
                     Context context = (Context) getHEAP().get(contextRefId);
                     Poi start = null;
-                    List<Poi> passbyList = new ArrayList<>();
                     Poi end = null;
                     if (fromLat != 0 && fromLng != 0) {
                         start = new Poi("", new LatLng(fromLat, fromLng), "");
@@ -50,7 +46,7 @@ public class SubHandlerCustom {
                         end = new Poi("", new LatLng(toLat, toLng), "");
                     }
 
-                    AmapNaviParams params = new AmapNaviParams(start, passbyList, end, AmapNaviType.values()[naviType]);
+                    AmapNaviParams params = new AmapNaviParams(start, null, end, AmapNaviType.DRIVER);
 
                     AmapNaviPage.getInstance().showRouteActivity(context, params, null);
                 } catch (Throwable throwable) {

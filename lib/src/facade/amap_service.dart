@@ -233,67 +233,51 @@ class AmapService {
 
   /// 调用高德地图导航
   ///
-  /// [target]目的地, [appName]当前应用名称, [dev]是否偏移(0:lat和lon是已经加密后的,不需要国测加密;1:需要国测加密)
+  /// [to]目的地, [appName]当前应用名称, [dev]是否偏移(0:lat和lon是已经加密后的,不需要国测加密;1:需要国测加密)
   /// !注意: iOS端需要在Info.plist配置白名单, 可以参考example工程的配置(LSApplicationQueriesSchemes), 具体文档详见 https://lbs.amap.com/api/amap-mobile/guide/ios/ios-uri-information
-  @Deprecated('使用navigate方法代替')
-  static Future<void> navigateDrive(
-    LatLng target, {
-    String appName = 'appname',
-    int dev = 1,
-    bool inApp = false,
-  }) async {
-    return platform(
-      android: (_) async {
-        if (inApp) {
-        } else {
-          final urlScheme =
-              'androidamap://navi?sourceApplication=$appName&lat=${target.latitude}&lon=${target.longitude}&dev=$dev&style=2';
-          if (await canLaunch(urlScheme)) {
-            return launch(urlScheme);
-          } else {
-            return Future.error('无法调起高德地图');
-          }
-        }
-      },
-      ios: (_) async {
-        if (inApp) {
-        } else {
-          final urlScheme =
-              'iosamap://navi?sourceApplication=$appName&lat=${target.latitude}&lon=${target.longitude}&dev=$dev&style=2';
-          if (await canLaunch(urlScheme)) {
-            return launch(urlScheme);
-          } else {
-            return Future.error('无法调起高德地图');
-          }
-        }
-      },
-    );
-  }
-
-  /// 应用内导航
-  static Future<void> navigate({
-    NaviType naviType = NaviType.Drive,
+  static Future<void> navigateDrive({
     LatLng from,
-    LatLng to,
+    @required LatLng to,
+    String appName = 'appname',
+    bool inApp = true,
   }) async {
     final args = {
       'fromLat': from?.latitude ?? 0,
       'fromLng': from?.longitude ?? 0,
       'toLat': to?.latitude ?? 0,
       'toLng': to?.longitude ?? 0,
-      'naviType': naviType.index,
     };
     final channel = MethodChannel('me.yohom/amap_map_fluttify');
     return platform(
       android: (_) async {
-        final activity = await android_app_Activity.get();
-        channel.invokeMethod('navigate', {
-          'context': activity.refId,
-          ...args,
-        });
+        if (inApp) {
+          final activity = await android_app_Activity.get();
+          channel.invokeMethod('navigate', {
+            'context': activity.refId,
+            ...args,
+          });
+        } else {
+          final urlScheme =
+              'androidamap://navi?sourceApplication=$appName&lat=${to.latitude}&lon=${to.longitude}&dev=1&style=2';
+          if (await canLaunch(urlScheme)) {
+            return launch(urlScheme);
+          } else {
+            return Future.error('无法调起高德地图');
+          }
+        }
       },
       ios: (_) async {
-        channel.invokeMethod('navigate', args);
+        if (inApp) {
+          channel.invokeMethod('navigate', args);
+        } else {
+          final urlScheme =
+              'iosamap://navi?sourceApplication=$appName&lat=${to.latitude}&lon=${to.longitude}&dev=1&style=2';
+          if (await canLaunch(urlScheme)) {
+            return launch(urlScheme);
+          } else {
+            return Future.error('无法调起高德地图');
+          }
+        }
       },
     );
   }

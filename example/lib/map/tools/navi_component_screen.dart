@@ -14,10 +14,9 @@ class _NaviComponentScreenState extends State<NaviComponentScreen> {
       body: Center(
         child: RaisedButton(
           onPressed: () {
-            AmapService.navigate(
-              naviType: NaviType.Ride,
-              from: LatLng(36.647901, 104.258354),
-              to: LatLng(36.547901, 104.258354),
+            AmapService.navigateDrive(
+              from: LatLng(39.90741, 116.374016),
+              to: LatLng(39.908068, 116.411696),
             );
           },
           child: Text('打开导航组件'),

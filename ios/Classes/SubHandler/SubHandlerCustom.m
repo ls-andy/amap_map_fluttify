@@ -26,21 +26,18 @@ AMapNaviCompositeManager* manager;
             NSNumber* fromLng = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"fromLng"];
             NSNumber* toLat = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"toLat"];
             NSNumber* toLng = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"toLng"];
-            NSNumber* naviType = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"naviType"];
         
-            if (![naviType isEqual:@(0)]) {
-                NSLog(@"iOS端导航组件只支持驾车/货车模式, 非这两种模式都将以驾车模式进行导航!");
-            }
-            
             if (!manager) {
                 manager = [[AMapNaviCompositeManager alloc] init];
             }
             
             AMapNaviCompositeUserConfig *config = [[AMapNaviCompositeUserConfig alloc] init];
-            [config setRoutePlanPOIType:AMapNaviRoutePlanPOITypeStart
-                               location:[AMapNaviPoint locationWithLatitude:[fromLat floatValue] longitude:[fromLng floatValue]]
-                                   name:@""
-                                  POIId:nil];
+            if ([fromLat doubleValue] != 0 && [fromLng doubleValue] != 0) {
+                [config setRoutePlanPOIType:AMapNaviRoutePlanPOITypeStart
+                location:[AMapNaviPoint locationWithLatitude:[fromLat floatValue] longitude:[fromLng floatValue]]
+                    name:@""
+                   POIId:nil];
+            }
             [config setRoutePlanPOIType:AMapNaviRoutePlanPOITypeEnd
                                location:[AMapNaviPoint locationWithLatitude:[toLat floatValue] longitude:[toLng floatValue]]
                                    name:@""
