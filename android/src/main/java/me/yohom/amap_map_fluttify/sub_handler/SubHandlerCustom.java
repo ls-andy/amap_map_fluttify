@@ -43,8 +43,8 @@ public class SubHandlerCustom {
                     Poi start = null;
                     List<Poi> passbyList = new ArrayList<>();
                     Poi end = null;
-                    if (fromLat != 0 && toLat != 0) {
-                        start = new Poi("", new LatLng(fromLat, fromLat), "");
+                    if (fromLat != 0 && fromLng != 0) {
+                        start = new Poi("", new LatLng(fromLat, fromLng), "");
                     }
                     if (toLat != 0 && toLng != 0) {
                         end = new Poi("", new LatLng(toLat, toLng), "");
