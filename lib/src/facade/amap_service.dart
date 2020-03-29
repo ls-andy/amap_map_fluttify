@@ -252,7 +252,7 @@ class AmapService {
       android: (_) async {
         if (inApp) {
           final activity = await android_app_Activity.get();
-          channel.invokeMethod('navigate', {
+          channel.invokeMethod('navigateComponent', {
             'context': activity.refId,
             ...args,
           });
@@ -268,7 +268,7 @@ class AmapService {
       },
       ios: (_) async {
         if (inApp) {
-          channel.invokeMethod('navigate', args);
+          channel.invokeMethod('navigateComponent', args);
         } else {
           final urlScheme =
               'iosamap://navi?sourceApplication=$appName&lat=${to.latitude}&lon=${to.longitude}&dev=1&style=2';

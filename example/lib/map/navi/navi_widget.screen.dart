@@ -19,7 +19,16 @@ class _NaviWidgetScreenState extends State<NaviWidgetScreen> {
         children: <Widget>[
           Flexible(
             flex: 1,
-            child: AmapNaviView(),
+            child: AmapNaviView(
+              onNaviViewCreated: (controller) async {
+                Future.delayed(Duration(seconds: 1), () => 1).then((e) {
+                  controller.navigate(
+                    from: LatLng(30.088845, 119.649506),
+                    to: LatLng(29.088845, 119.649506),
+                  );
+                });
+              },
+            ),
           ),
           Flexible(
             child: DecoratedColumn(

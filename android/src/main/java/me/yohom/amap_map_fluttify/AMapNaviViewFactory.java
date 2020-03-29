@@ -6,7 +6,7 @@ package me.yohom.amap_map_fluttify;
 
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
+import android.os.Bundle;
 import android.view.View;
 
 import com.amap.api.navi.AMapNaviView;
@@ -20,7 +20,6 @@ import io.flutter.plugin.common.StandardMessageCodec;
 import io.flutter.plugin.platform.PlatformView;
 import io.flutter.plugin.platform.PlatformViewFactory;
 
-import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getEnableLog;
 import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getHEAP;
 
 @SuppressWarnings("ALL")
@@ -52,49 +51,16 @@ class AMapNaviViewFactory extends PlatformViewFactory {
     private Activity activity;
 
     private final Map<String, AmapMapFluttifyPlugin.Handler> handlerMap = new HashMap<String, AmapMapFluttifyPlugin.Handler>() {{
-        // method
-        put("com.amap.api.maps.offlinemap.DownloadProgressView::setProgress", (args, methodResult) -> {
-            // args
-            // jsonable arg
-            int var1 = (int) ((Map<String, Object>) args).get("var1");
-        
-            // ref
-            int refId = (int) ((Map<String, Object>) args).get("refId");
-            com.amap.api.maps.offlinemap.DownloadProgressView ref = (com.amap.api.maps.offlinemap.DownloadProgressView) getHEAP().get(refId);
-        
-            // print log
-            if (getEnableLog()) {
-                Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.offlinemap.DownloadProgressView@" + refId + "::setProgress(" + var1 + ")");
-            }
-        
-            // invoke native method
-            try {
-                ref.setProgress(var1);
-            } catch (Throwable throwable) {
-                throwable.printStackTrace();
-                if (getEnableLog()) {
-                    Log.d("Current HEAP: ", getHEAP().toString());
-                }
-                methodResult.error(throwable.getMessage(), null, null);
-                return;
-            }
-        
-            // convert result to jsonable result
-            String jsonableResult = "success";
-        
-            methodResult.success(jsonableResult);
-        });
     }};
 
     @Override
     public PlatformView create(Context __, int id, Object params) {
         Map<String, Object> args = (Map<String, Object>) params;
 
-
         AMapNaviView view = new AMapNaviView(activity);
-        view.onCreate(null);
+        view.onCreate(new Bundle());
         view.onResume();
-        
+
         getHEAP().put(Integer.MAX_VALUE - id, view);
         return new PlatformView() {
 

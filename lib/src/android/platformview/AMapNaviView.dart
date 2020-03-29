@@ -14,7 +14,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 
-typedef void MapViewCreatedCallback(com_amap_api_maps_MapView controller);
+typedef void NaviViewCreatedCallback(int naviViewId);
 typedef Future<void> _OnAndroidViewDispose();
 
 class AMapNaviView_Android extends StatefulWidget {
@@ -24,7 +24,7 @@ class AMapNaviView_Android extends StatefulWidget {
     this.onDispose,
   }) : super(key: key);
 
-  final MapViewCreatedCallback onViewCreated;
+  final NaviViewCreatedCallback onViewCreated;
   final _OnAndroidViewDispose onDispose;
 
   @override
@@ -47,7 +47,11 @@ class _AMapNaviView_AndroidState extends State<AMapNaviView_Android> {
     );
   }
 
-  void _onViewCreated(int id) {}
+  void _onViewCreated(int naviViewId) {
+    if (widget.onViewCreated != null) {
+      widget.onViewCreated(naviViewId);
+    }
+  }
 
   @override
   void dispose() {
