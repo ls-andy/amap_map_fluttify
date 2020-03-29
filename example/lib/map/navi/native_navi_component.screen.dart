@@ -2,12 +2,13 @@ import 'package:amap_map_fluttify/amap_map_fluttify.dart';
 import 'package:decorated_flutter/decorated_flutter.dart';
 import 'package:flutter/material.dart';
 
-class NaviComponentScreen extends StatefulWidget {
+class NativeNaviComponentScreen extends StatefulWidget {
   @override
-  _NaviComponentScreenState createState() => _NaviComponentScreenState();
+  _NativeNaviComponentScreenState createState() =>
+      _NativeNaviComponentScreenState();
 }
 
-class _NaviComponentScreenState extends State<NaviComponentScreen> {
+class _NativeNaviComponentScreenState extends State<NativeNaviComponentScreen> {
   final from = LatLng(39.90741, 116.374016);
   final to = LatLng(39.908068, 116.411696);
 

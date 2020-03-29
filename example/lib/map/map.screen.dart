@@ -1,6 +1,6 @@
-import 'package:amap_map_fluttify_example/widgets/dimens.dart';
 import 'package:amap_map_fluttify_example/widgets/function_group.widget.dart';
 import 'package:amap_map_fluttify_example/widgets/function_item.widget.dart';
+import 'package:decorated_flutter/decorated_flutter.dart';
 import 'package:flutter/material.dart';
 
 import 'create_map/create_map.screen.dart';
@@ -13,10 +13,11 @@ import 'interact_with_map/code_interaction.screen.dart';
 import 'interact_with_map/control_interaction.screen.dart';
 import 'interact_with_map/gesture_interaction.screen.dart';
 import 'interact_with_map/screen_shot_screen.dart';
+import 'navi/launch_amap.screen.dart';
+import 'navi/native_navi_component.screen.dart';
+import 'navi/navi_widget.screen.dart';
 import 'tools/calcute_distance_screen.dart';
 import 'tools/coordinate_transformation_screen.dart';
-import 'tools/launch_amap_screen.dart';
-import 'tools/navi_component_screen.dart';
 import 'tools/offline_manager_screen.dart';
 import 'tools/processed_trace.screen.dart';
 
@@ -94,6 +95,27 @@ class MapDemo extends StatelessWidget {
         ),
         SPACE_BIG,
         FunctionGroup(
+          headLabel: '导航',
+          children: <Widget>[
+            FunctionItem(
+              label: "使用导航组件",
+              sublabel: "NaviComponentScreen",
+              target: NativeNaviComponentScreen(),
+            ),
+            FunctionItem(
+              label: "调用高德地图",
+              sublabel: "LaunchAmapScreen",
+              target: LaunchAmapScreen(),
+            ),
+            FunctionItem(
+              label: '导航Widget',
+              sublabel: 'NaviWidgetScreen',
+              target: NaviWidgetScreen(),
+            ),
+          ],
+        ),
+        SPACE_BIG,
+        FunctionGroup(
           headLabel: "工具",
           children: <Widget>[
             FunctionItem(
@@ -107,11 +129,6 @@ class MapDemo extends StatelessWidget {
               target: CalculateDistanceScreen(),
             ),
             FunctionItem(
-              label: "调用高德地图",
-              sublabel: "LaunchAmapScreen",
-              target: LaunchAmapScreen(),
-            ),
-            FunctionItem(
               label: "轨迹纠偏",
               sublabel: "ProcessedTraceScreen",
               target: ProcessedTraceScreen(),
@@ -120,11 +137,6 @@ class MapDemo extends StatelessWidget {
               label: "离线地图",
               sublabel: "OfflineManagerScreen",
               target: OfflineManagerScreen(),
-            ),
-            FunctionItem(
-              label: "导航组件",
-              sublabel: "NaviComponentScreen",
-              target: NaviComponentScreen(),
             ),
           ],
         ),
