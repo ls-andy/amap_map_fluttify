@@ -1,8 +1,8 @@
 import 'package:amap_map_fluttify/amap_map_fluttify.dart';
 import 'package:amap_map_fluttify_example/utils/misc.dart';
 import 'package:amap_map_fluttify_example/utils/next_latlng.dart';
-import 'package:amap_map_fluttify_example/widgets/setting.widget.dart';
 import 'package:decorated_flutter/decorated_flutter.dart';
+import 'package:demo_widgets/demo_widgets.dart';
 import 'package:flutter/material.dart';
 
 final _networkIcon = Uri.parse(
@@ -33,6 +33,13 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
             flex: 1,
             child: AmapView(
               zoomLevel: 6,
+              markers: [
+                MarkerOption(
+                  latLng: getNextLatLng(),
+//                  iconUri: _assetsIcon1,
+//                  imageConfig: createLocalImageConfiguration(context),
+                ),
+              ],
               onMapCreated: (controller) async {
                 _controller = controller;
                 if (await requestPermission()) {
@@ -137,7 +144,7 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                 ContinuousSetting(
                   head: '添加旋转角度的Marker',
                   onChanged: (value) async {
-                    await _controller?.clearMarkers();
+                    await _controller?.clearMarkers(_markers);
                     final marker = await _controller?.addMarker(
                       MarkerOption(
                         latLng: LatLng(39.90960, 116.397228),
@@ -162,8 +169,8 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                         for (int i = 0; i < 100; i++)
                           MarkerOption(
                             latLng: getNextLatLng(),
-                            title: '北京',
-                            snippet: '描述',
+                            title: '北京$i',
+                            snippet: '描述$i',
                             iconUri: i % 2 == 0 ? _assetsIcon1 : _assetsIcon2,
                             imageConfig: createLocalImageConfiguration(context),
                             width: 40,
@@ -187,7 +194,7 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                 ListTile(
                   title: Center(child: Text('清除所有Marker')),
                   onTap: () async {
-                    await _controller.clearMarkers();
+                    await _controller.clearMarkers(_markers);
                   },
                 ),
                 ListTile(

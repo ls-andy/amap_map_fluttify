@@ -159,7 +159,7 @@ class _AmapViewState extends State<AmapView> {
                     if (widget.onMapCreated != null) {
                       await widget.onMapCreated(_controller);
                     }
-                    await bundle.release();
+                    await bundle.release__();
                   },
                 );
               } else {
@@ -216,7 +216,7 @@ class _AmapViewState extends State<AmapView> {
 
   @override
   void dispose() {
-    final isCurrentPlugin = (it) => it.tag == 'amap_map_fluttify';
+    final isCurrentPlugin = (Ref it) => it.tag__ == 'amap_map_fluttify';
     kNativeObjectPool
         .where(isCurrentPlugin)
         .release_batch()
@@ -315,8 +315,7 @@ class _AmapViewState extends State<AmapView> {
     }
     if (widget.centerCoordinate != null) {
       await _controller?.setCenterCoordinate(
-        widget.centerCoordinate.latitude,
-        widget.centerCoordinate.longitude,
+        widget.centerCoordinate,
         animated: false,
       );
     }

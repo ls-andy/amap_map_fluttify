@@ -57,6 +57,7 @@ extern BOOL enableLog;
                            channel:channel];
 
   // 注册View
+  [registrar registerViewFactory: [[MAPinAnnotationViewFactory alloc] initWithRegistrar:registrar] withId: @"me.yohom/MAPinAnnotationView"];
   [registrar registerViewFactory: [[MAAnnotationViewFactory alloc] initWithRegistrar:registrar] withId: @"me.yohom/MAAnnotationView"];
   [registrar registerViewFactory: [[MACustomCalloutViewFactory alloc] initWithRegistrar:registrar] withId: @"me.yohom/MACustomCalloutView"];
   [registrar registerViewFactory: [[MAMapViewFactory alloc] initWithRegistrar:registrar] withId: @"me.yohom/MAMapView"];

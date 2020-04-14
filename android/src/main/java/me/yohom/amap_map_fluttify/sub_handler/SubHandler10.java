@@ -31,6 +31,38 @@ public class SubHandler10 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // method
+            put("com.amap.api.maps.offlinemap.OfflineMapManager::downloadByProvinceName", (args, methodResult) -> {
+                // args
+                // jsonable arg
+                String var1 = (String) ((Map<String, Object>) args).get("var1");
+            
+                // ref
+                int refId = (int) ((Map<String, Object>) args).get("refId");
+                com.amap.api.maps.offlinemap.OfflineMapManager ref = (com.amap.api.maps.offlinemap.OfflineMapManager) getHEAP().get(refId);
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.offlinemap.OfflineMapManager@" + refId + "::downloadByProvinceName(" + var1 + ")");
+                }
+            
+                // invoke native method
+                try {
+                    ref.downloadByProvinceName(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    methodResult.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                String jsonableResult = "success";
+            
+                methodResult.success(jsonableResult);
+            });
+            // method
             put("com.amap.api.maps.offlinemap.OfflineMapManager::remove", (args, methodResult) -> {
                 // args
                 // jsonable arg
@@ -77,7 +109,7 @@ public class SubHandler10 {
                 }
             
                 // invoke native method
-                List<com.amap.api.maps.offlinemap.OfflineMapProvince> result;
+                java.util.ArrayList<com.amap.api.maps.offlinemap.OfflineMapProvince> result;
                 try {
                     result = ref.getOfflineMapProvinceList();
                 } catch (Throwable throwable) {
@@ -227,7 +259,7 @@ public class SubHandler10 {
                 }
             
                 // invoke native method
-                List<com.amap.api.maps.offlinemap.OfflineMapCity> result;
+                java.util.ArrayList<com.amap.api.maps.offlinemap.OfflineMapCity> result;
                 try {
                     result = ref.getOfflineMapCityList();
                 } catch (Throwable throwable) {
@@ -266,7 +298,7 @@ public class SubHandler10 {
                 }
             
                 // invoke native method
-                List<com.amap.api.maps.offlinemap.OfflineMapCity> result;
+                java.util.ArrayList<com.amap.api.maps.offlinemap.OfflineMapCity> result;
                 try {
                     result = ref.getDownloadingCityList();
                 } catch (Throwable throwable) {
@@ -305,7 +337,7 @@ public class SubHandler10 {
                 }
             
                 // invoke native method
-                List<com.amap.api.maps.offlinemap.OfflineMapProvince> result;
+                java.util.ArrayList<com.amap.api.maps.offlinemap.OfflineMapProvince> result;
                 try {
                     result = ref.getDownloadingProvinceList();
                 } catch (Throwable throwable) {
@@ -344,7 +376,7 @@ public class SubHandler10 {
                 }
             
                 // invoke native method
-                List<com.amap.api.maps.offlinemap.OfflineMapCity> result;
+                java.util.ArrayList<com.amap.api.maps.offlinemap.OfflineMapCity> result;
                 try {
                     result = ref.getDownloadOfflineMapCityList();
                 } catch (Throwable throwable) {
@@ -383,7 +415,7 @@ public class SubHandler10 {
                 }
             
                 // invoke native method
-                List<com.amap.api.maps.offlinemap.OfflineMapProvince> result;
+                java.util.ArrayList<com.amap.api.maps.offlinemap.OfflineMapProvince> result;
                 try {
                     result = ref.getDownloadOfflineMapProvinceList();
                 } catch (Throwable throwable) {
@@ -630,7 +662,8 @@ public class SubHandler10 {
             // method
             put("com.amap.api.maps.offlinemap.OfflineMapManager::setOnOfflineLoadedListener", (args, methodResult) -> {
                 // args
-            
+                // ref arg
+                com.amap.api.maps.offlinemap.OfflineMapManager.OfflineLoadedListener var1 = (com.amap.api.maps.offlinemap.OfflineMapManager.OfflineLoadedListener) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                 // ref
                 int refId = (int) ((Map<String, Object>) args).get("refId");
@@ -638,39 +671,12 @@ public class SubHandler10 {
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.offlinemap.OfflineMapManager@" + refId + "::setOnOfflineLoadedListener(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.offlinemap.OfflineMapManager@" + refId + "::setOnOfflineLoadedListener(" + var1 + ")");
                 }
             
                 // invoke native method
                 try {
-                    ref.setOnOfflineLoadedListener(new com.amap.api.maps.offlinemap.OfflineMapManager.OfflineLoadedListener() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.amap.api.maps.offlinemap.OfflineMapManager::setOnOfflineLoadedListener::Callback");
-            
-                    // call dart method
-                    @Override
-                    public void onVerifyComplete() {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onVerifyComplete(" + "" + ")");
-                        }
-            
-                        // convert to jsonable data
-            
-            
-                        // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.amap.api.maps.offlinemap.OfflineMapManager.OfflineLoadedListener::onVerifyComplete",
-                                new HashMap<String, Object>() {{
-                
-                                }}
-                        );
-            
-                        // method result
-            
-                    }
-            
-                });
+                    ref.setOnOfflineLoadedListener(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -1483,70 +1489,6 @@ public class SubHandler10 {
                 methodResult.success(jsonableResult);
             });
             // method
-            put("com.amap.api.maps.AMap.OnIndoorBuildingActiveListener::OnIndoorBuilding", (args, methodResult) -> {
-                // args
-                // ref arg
-                com.amap.api.maps.model.IndoorBuildingInfo var1 = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) args).get("refId");
-                com.amap.api.maps.AMap.OnIndoorBuildingActiveListener ref = (com.amap.api.maps.AMap.OnIndoorBuildingActiveListener) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMap.OnIndoorBuildingActiveListener@" + refId + "::OnIndoorBuilding(" + var1 + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.OnIndoorBuilding(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    methodResult.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                methodResult.success(jsonableResult);
-            });
-            // method
-            put("com.amap.api.maps.AMap.OnMapTouchListener::onTouch", (args, methodResult) -> {
-                // args
-                // ref arg
-                android.view.MotionEvent var1 = (android.view.MotionEvent) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) args).get("refId");
-                com.amap.api.maps.AMap.OnMapTouchListener ref = (com.amap.api.maps.AMap.OnMapTouchListener) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMap.OnMapTouchListener@" + refId + "::onTouch(" + var1 + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.onTouch(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    methodResult.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                methodResult.success(jsonableResult);
-            });
-            // method
             put("com.amap.api.maps.Projection::fromScreenLocation", (args, methodResult) -> {
                 // args
                 // ref arg
@@ -2021,9 +1963,9 @@ public class SubHandler10 {
                 // args
                 // list arg
                 List<Integer> var1RefIdList = (List<Integer>) ((Map<String, Object>) args).get("var1");
-                List<com.amap.api.maps.model.LatLng> var1 = new ArrayList<>();
+                java.util.List<com.amap.api.maps.model.LatLng> var1 = new ArrayList<>();
                 for (int refId : var1RefIdList) {
-                    var1.add((com.amap.api.maps.model.LatLng) getHEAP().get(refId));
+                    ((ArrayList<com.amap.api.maps.model.LatLng>) var1).add((com.amap.api.maps.model.LatLng) getHEAP().get(refId));
                 }
             
                 // ref
@@ -2037,7 +1979,7 @@ public class SubHandler10 {
             
                 // invoke native method
                 try {
-                    ref.setPoints(new ArrayList(var1));
+                    ref.setPoints((ArrayList) var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2067,7 +2009,7 @@ public class SubHandler10 {
                 }
             
                 // invoke native method
-                List<com.amap.api.maps.model.LatLng> result;
+                java.util.List<com.amap.api.maps.model.LatLng> result;
                 try {
                     result = ref.getPoints();
                 } catch (Throwable throwable) {
@@ -2096,9 +2038,9 @@ public class SubHandler10 {
                 // args
                 // list arg
                 List<Integer> var1RefIdList = (List<Integer>) ((Map<String, Object>) args).get("var1");
-                List<com.amap.api.maps.model.BaseHoleOptions> var1 = new ArrayList<>();
+                java.util.List<com.amap.api.maps.model.BaseHoleOptions> var1 = new ArrayList<>();
                 for (int refId : var1RefIdList) {
-                    var1.add((com.amap.api.maps.model.BaseHoleOptions) getHEAP().get(refId));
+                    ((ArrayList<com.amap.api.maps.model.BaseHoleOptions>) var1).add((com.amap.api.maps.model.BaseHoleOptions) getHEAP().get(refId));
                 }
             
                 // ref
@@ -2112,7 +2054,7 @@ public class SubHandler10 {
             
                 // invoke native method
                 try {
-                    ref.setHoleOptions(new ArrayList(var1));
+                    ref.setHoleOptions((ArrayList) var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2142,7 +2084,7 @@ public class SubHandler10 {
                 }
             
                 // invoke native method
-                List<com.amap.api.maps.model.BaseHoleOptions> result;
+                java.util.List<com.amap.api.maps.model.BaseHoleOptions> result;
                 try {
                     result = ref.getHoleOptions();
                 } catch (Throwable throwable) {
@@ -2692,9 +2634,9 @@ public class SubHandler10 {
                 // args
                 // list arg
                 List<Integer> var1RefIdList = (List<Integer>) ((Map<String, Object>) args).get("var1");
-                List<com.amap.api.maps.model.LatLng> var1 = new ArrayList<>();
+                java.lang.Iterable<com.amap.api.maps.model.LatLng> var1 = new ArrayList<>();
                 for (int refId : var1RefIdList) {
-                    var1.add((com.amap.api.maps.model.LatLng) getHEAP().get(refId));
+                    ((ArrayList<com.amap.api.maps.model.LatLng>) var1).add((com.amap.api.maps.model.LatLng) getHEAP().get(refId));
                 }
             
                 // ref
@@ -2709,7 +2651,7 @@ public class SubHandler10 {
                 // invoke native method
                 com.amap.api.maps.model.PolygonHoleOptions result;
                 try {
-                    result = ref.addAll(new ArrayList(var1));
+                    result = ref.addAll((ArrayList) var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2743,7 +2685,7 @@ public class SubHandler10 {
                 }
             
                 // invoke native method
-                List<com.amap.api.maps.model.LatLng> result;
+                java.util.List<com.amap.api.maps.model.LatLng> result;
                 try {
                     result = ref.getPoints();
                 } catch (Throwable throwable) {
@@ -4548,9 +4490,9 @@ public class SubHandler10 {
                 // args
                 // list arg
                 List<Integer> var1RefIdList = (List<Integer>) ((Map<String, Object>) args).get("var1");
-                List<com.amap.api.maps.model.LatLng> var1 = new ArrayList<>();
+                java.lang.Iterable<com.amap.api.maps.model.LatLng> var1 = new ArrayList<>();
                 for (int refId : var1RefIdList) {
-                    var1.add((com.amap.api.maps.model.LatLng) getHEAP().get(refId));
+                    ((ArrayList<com.amap.api.maps.model.LatLng>) var1).add((com.amap.api.maps.model.LatLng) getHEAP().get(refId));
                 }
             
                 // ref
@@ -4565,7 +4507,7 @@ public class SubHandler10 {
                 // invoke native method
                 com.amap.api.maps.model.NavigateArrowOptions result;
                 try {
-                    result = ref.addAll(new ArrayList(var1));
+                    result = ref.addAll((ArrayList) var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4821,7 +4763,7 @@ public class SubHandler10 {
                 }
             
                 // invoke native method
-                List<com.amap.api.maps.model.LatLng> result;
+                java.util.List<com.amap.api.maps.model.LatLng> result;
                 try {
                     result = ref.getPoints();
                 } catch (Throwable throwable) {
@@ -5042,9 +4984,9 @@ public class SubHandler10 {
                 // args
                 // list arg
                 List<Integer> var1RefIdList = (List<Integer>) ((Map<String, Object>) args).get("var1");
-                List<com.amap.api.maps.model.LatLng> var1 = new ArrayList<>();
+                java.util.List<com.amap.api.maps.model.LatLng> var1 = new ArrayList<>();
                 for (int refId : var1RefIdList) {
-                    var1.add((com.amap.api.maps.model.LatLng) getHEAP().get(refId));
+                    ((ArrayList<com.amap.api.maps.model.LatLng>) var1).add((com.amap.api.maps.model.LatLng) getHEAP().get(refId));
                 }
             
                 // ref
@@ -5058,7 +5000,7 @@ public class SubHandler10 {
             
                 // invoke native method
                 try {
-                    ref.setPoints(new ArrayList(var1));
+                    ref.setPoints((ArrayList) var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5396,40 +5338,6 @@ public class SubHandler10 {
                 methodResult.success(jsonableResult);
             });
             // method
-            put("com.amap.api.maps.model.CrossOverlay.GenerateCrossImageListener::onGenerateComplete", (args, methodResult) -> {
-                // args
-                // ref arg
-                android.graphics.Bitmap var1 = (android.graphics.Bitmap) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
-                // jsonable arg
-                int var2 = (int) ((Map<String, Object>) args).get("var2");
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) args).get("refId");
-                com.amap.api.maps.model.CrossOverlay.GenerateCrossImageListener ref = (com.amap.api.maps.model.CrossOverlay.GenerateCrossImageListener) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.CrossOverlay.GenerateCrossImageListener@" + refId + "::onGenerateComplete(" + var1 + var2 + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.onGenerateComplete(var1, var2);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    methodResult.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                methodResult.success(jsonableResult);
-            });
-            // method
             put("com.amap.api.maps.model.MultiPointOverlayOptions::anchor", (args, methodResult) -> {
                 // args
                 // jsonable arg
@@ -5720,9 +5628,9 @@ public class SubHandler10 {
                 // args
                 // list arg
                 List<Integer> var1RefIdList = (List<Integer>) ((Map<String, Object>) args).get("var1");
-                List<com.amap.api.maps.model.BitmapDescriptor> var1 = new ArrayList<>();
+                java.util.List<com.amap.api.maps.model.BitmapDescriptor> var1 = new ArrayList<>();
                 for (int refId : var1RefIdList) {
-                    var1.add((com.amap.api.maps.model.BitmapDescriptor) getHEAP().get(refId));
+                    ((ArrayList<com.amap.api.maps.model.BitmapDescriptor>) var1).add((com.amap.api.maps.model.BitmapDescriptor) getHEAP().get(refId));
                 }
             
                 // ref
@@ -5737,7 +5645,7 @@ public class SubHandler10 {
                 // invoke native method
                 com.amap.api.maps.model.PolylineOptions result;
                 try {
-                    result = ref.setCustomTextureList(new ArrayList(var1));
+                    result = ref.setCustomTextureList((ArrayList) var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5771,7 +5679,7 @@ public class SubHandler10 {
                 }
             
                 // invoke native method
-                List<com.amap.api.maps.model.BitmapDescriptor> result;
+                java.util.List<com.amap.api.maps.model.BitmapDescriptor> result;
                 try {
                     result = ref.getCustomTextureList();
                 } catch (Throwable throwable) {
@@ -5799,7 +5707,7 @@ public class SubHandler10 {
             put("com.amap.api.maps.model.PolylineOptions::setCustomTextureIndex", (args, methodResult) -> {
                 // args
                 // jsonable arg
-                List<Integer> var1 = (List<Integer>) ((Map<String, Object>) args).get("var1");
+                java.util.List<Integer> var1 = (java.util.List<Integer>) ((Map<String, Object>) args).get("var1");
             
                 // ref
                 int refId = (int) ((Map<String, Object>) args).get("refId");
@@ -5813,7 +5721,7 @@ public class SubHandler10 {
                 // invoke native method
                 com.amap.api.maps.model.PolylineOptions result;
                 try {
-                    result = ref.setCustomTextureIndex(new ArrayList(var1));
+                    result = ref.setCustomTextureIndex((ArrayList) var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5847,7 +5755,7 @@ public class SubHandler10 {
                 }
             
                 // invoke native method
-                List<Integer> result;
+                java.util.List<Integer> result;
                 try {
                     result = ref.getCustomTextureIndex();
                 } catch (Throwable throwable) {
@@ -5860,7 +5768,7 @@ public class SubHandler10 {
                 }
             
                 // convert result to jsonable result
-                List<Integer> jsonableResult = result;
+                java.util.List<Integer> jsonableResult = result;
             
                 methodResult.success(jsonableResult);
             });
@@ -5868,7 +5776,7 @@ public class SubHandler10 {
             put("com.amap.api.maps.model.PolylineOptions::colorValues", (args, methodResult) -> {
                 // args
                 // jsonable arg
-                List<Integer> var1 = (List<Integer>) ((Map<String, Object>) args).get("var1");
+                java.util.List<Integer> var1 = (java.util.List<Integer>) ((Map<String, Object>) args).get("var1");
             
                 // ref
                 int refId = (int) ((Map<String, Object>) args).get("refId");
@@ -5882,7 +5790,7 @@ public class SubHandler10 {
                 // invoke native method
                 com.amap.api.maps.model.PolylineOptions result;
                 try {
-                    result = ref.colorValues(new ArrayList(var1));
+                    result = ref.colorValues((ArrayList) var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5916,7 +5824,7 @@ public class SubHandler10 {
                 }
             
                 // invoke native method
-                List<Integer> result;
+                java.util.List<Integer> result;
                 try {
                     result = ref.getColorValues();
                 } catch (Throwable throwable) {
@@ -5929,7 +5837,7 @@ public class SubHandler10 {
                 }
             
                 // convert result to jsonable result
-                List<Integer> jsonableResult = result;
+                java.util.List<Integer> jsonableResult = result;
             
                 methodResult.success(jsonableResult);
             });
@@ -6108,9 +6016,9 @@ public class SubHandler10 {
                 // args
                 // list arg
                 List<Integer> var1RefIdList = (List<Integer>) ((Map<String, Object>) args).get("var1");
-                List<com.amap.api.maps.model.LatLng> var1 = new ArrayList<>();
+                java.lang.Iterable<com.amap.api.maps.model.LatLng> var1 = new ArrayList<>();
                 for (int refId : var1RefIdList) {
-                    var1.add((com.amap.api.maps.model.LatLng) getHEAP().get(refId));
+                    ((ArrayList<com.amap.api.maps.model.LatLng>) var1).add((com.amap.api.maps.model.LatLng) getHEAP().get(refId));
                 }
             
                 // ref
@@ -6125,7 +6033,7 @@ public class SubHandler10 {
                 // invoke native method
                 com.amap.api.maps.model.PolylineOptions result;
                 try {
-                    result = ref.addAll(new ArrayList(var1));
+                    result = ref.addAll((ArrayList) var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6628,7 +6536,7 @@ public class SubHandler10 {
                 }
             
                 // invoke native method
-                List<com.amap.api.maps.model.LatLng> result;
+                java.util.List<com.amap.api.maps.model.LatLng> result;
                 try {
                     result = ref.getPoints();
                 } catch (Throwable throwable) {
@@ -6915,6 +6823,74 @@ public class SubHandler10 {
             
                 // convert result to jsonable result
                 boolean jsonableResult = result;
+            
+                methodResult.success(jsonableResult);
+            });
+            // method
+            put("com.amap.api.maps.model.PolylineOptions::setPoints", (args, methodResult) -> {
+                // args
+                // list arg
+                List<Integer> var1RefIdList = (List<Integer>) ((Map<String, Object>) args).get("var1");
+                java.util.List<com.amap.api.maps.model.LatLng> var1 = new ArrayList<>();
+                for (int refId : var1RefIdList) {
+                    ((ArrayList<com.amap.api.maps.model.LatLng>) var1).add((com.amap.api.maps.model.LatLng) getHEAP().get(refId));
+                }
+            
+                // ref
+                int refId = (int) ((Map<String, Object>) args).get("refId");
+                com.amap.api.maps.model.PolylineOptions ref = (com.amap.api.maps.model.PolylineOptions) getHEAP().get(refId);
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.PolylineOptions@" + refId + "::setPoints(" + var1 + ")");
+                }
+            
+                // invoke native method
+                try {
+                    ref.setPoints((ArrayList) var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    methodResult.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                String jsonableResult = "success";
+            
+                methodResult.success(jsonableResult);
+            });
+            // method
+            put("com.amap.api.maps.model.PolylineOptions::getShownRatio", (args, methodResult) -> {
+                // args
+            
+            
+                // ref
+                int refId = (int) ((Map<String, Object>) args).get("refId");
+                com.amap.api.maps.model.PolylineOptions ref = (com.amap.api.maps.model.PolylineOptions) getHEAP().get(refId);
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.model.PolylineOptions@" + refId + "::getShownRatio(" + "" + ")");
+                }
+            
+                // invoke native method
+                float result;
+                try {
+                    result = ref.getShownRatio();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    methodResult.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                float jsonableResult = result;
             
                 methodResult.success(jsonableResult);
             });

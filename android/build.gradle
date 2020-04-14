@@ -3,10 +3,11 @@ version '1.0-SNAPSHOT'
 
 buildscript {
     repositories {
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         google()
         jcenter()
         maven { url 'http://download.flutter.io' }
+        maven { url "https://oss.sonatype.org/content/groups/public" }
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
     }
 
     dependencies {
@@ -16,9 +17,11 @@ buildscript {
 
 rootProject.allprojects {
     repositories {
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         google()
         jcenter()
+        maven { url 'http://download.flutter.io' }
+        maven { url "https://oss.sonatype.org/content/groups/public" }
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
     }
 }
 
@@ -50,7 +53,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
     implementation 'androidx.annotation:annotation:1.1.0'
     compileOnly rootProject.findProject(":foundation_fluttify")
     // flutter plugin dependency

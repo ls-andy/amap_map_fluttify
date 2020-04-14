@@ -124,6 +124,7 @@ class AmapController with WidgetsBindingObserver, _Private {
             final imageData = await _uri2ImageData(
               option.imageConfiguration,
               option.iconUri,
+              package: option.package,
             );
             final bitmap = await android_graphics_Bitmap.create(imageData);
             final bitmapDescriptor =
@@ -173,10 +174,19 @@ class AmapController with WidgetsBindingObserver, _Private {
                 true,
               );
               break;
+            // ios端没有只定位一次的选项, 所以这里要模拟一下这个效果
+            // 1. 先设置不跟踪位置, 防止定位marker来回跳
+            // 2. 获取当前用户位置
+            // 3. 把当前地图中心点设置为用户位置
             case MyLocationType.Locate:
               await iosController.setUserTrackingMode_animated(
-                MAUserTrackingMode.MAUserTrackingModeFollow,
+                MAUserTrackingMode.MAUserTrackingModeNone,
                 true,
+              );
+              final myLocation = await iosController.get_userLocation();
+              await iosController.setCenterCoordinate_animated(
+                await myLocation.get_coordinate(),
+                false,
               );
               break;
             case MyLocationType.Follow:
@@ -197,8 +207,11 @@ class AmapController with WidgetsBindingObserver, _Private {
 
           // 定位图标
           if (option.iconUri != null) {
-            final imageData =
-                await _uri2ImageData(option.imageConfiguration, option.iconUri);
+            final imageData = await _uri2ImageData(
+              option.imageConfiguration,
+              option.iconUri,
+              package: option.package,
+            );
             final bitmap = await UIImage.create(imageData);
             await style.set_image(bitmap);
           }
@@ -330,10 +343,12 @@ class AmapController with WidgetsBindingObserver, _Private {
       ios: (pool) async {
         switch (language) {
           case Language.Chinese:
-            await iosController.performSelectorWithObject('setMapLanguage:', 0);
+            await iosController.performSelectorWithObject__(
+                'setMapLanguage:', 0);
             break;
           case Language.English:
-            await iosController.performSelectorWithObject('setMapLanguage:', 1);
+            await iosController.performSelectorWithObject__(
+                'setMapLanguage:', 1);
             break;
         }
       },
@@ -607,8 +622,7 @@ class AmapController with WidgetsBindingObserver, _Private {
   ///
   /// [lat]纬度, [lng]经度, [zoomLevel]缩放等级, [bearing]地图选择角度, [tilt]倾斜角
   Future<void> setCenterCoordinate(
-    double lat,
-    double lng, {
+    LatLng coordinate, {
     double zoomLevel,
     double bearing,
     double tilt,
@@ -618,6 +632,8 @@ class AmapController with WidgetsBindingObserver, _Private {
       zoomLevel == null || (zoomLevel >= 3 && zoomLevel <= 19),
       '缩放范围为3-19',
     );
+    final lat = coordinate.latitude;
+    final lng = coordinate.longitude;
     await platform(
       android: (pool) async {
         final map = await androidController.getMap();
@@ -804,7 +820,7 @@ class AmapController with WidgetsBindingObserver, _Private {
           final icon = await UIImage.create(iconData);
 
           // 由于ios端的icon参数在回调中设置, 需要添加属性来实现
-          await annotation.addProperty(1, icon);
+          await annotation.addProperty__(1, icon);
 
           pool..add(icon);
         }
@@ -815,38 +831,38 @@ class AmapController with WidgetsBindingObserver, _Private {
           final icon = await UIImage.create(iconData);
 
           // 由于ios端的icon参数在回调中设置, 需要添加属性来实现
-          await annotation.addProperty(1, icon);
+          await annotation.addProperty__(1, icon);
 
           pool..add(icon);
         }
         // 是否可拖拽
         if (option.draggable != null) {
-          await annotation.addJsonableProperty(2, option.draggable);
+          await annotation.addJsonableProperty__(2, option.draggable);
         }
         // 旋转角度
         if (option.rotateAngle != null) {
-          await annotation.addJsonableProperty(3, option.rotateAngle);
+          await annotation.addJsonableProperty__(3, option.rotateAngle);
         }
         // 是否允许弹窗
         if (option.infoWindowEnabled != null) {
-          annotation.addJsonableProperty(4, option.infoWindowEnabled);
+          annotation.addJsonableProperty__(4, option.infoWindowEnabled);
         }
         // 锚点
         if (option.anchorU != null || option.anchorV != null) {
-          await annotation.addJsonableProperty(5, option.anchorU);
-          await annotation.addJsonableProperty(6, option.anchorV);
+          await annotation.addJsonableProperty__(5, option.anchorU);
+          await annotation.addJsonableProperty__(6, option.anchorV);
         }
         // 自定义数据
         if (option.object != null) {
-          await annotation.addJsonableProperty(7, option.object);
+          await annotation.addJsonableProperty__(7, option.object);
         }
         // 宽高
         if (option.width != null && option.height != null) {
-          await annotation.addJsonableProperty(8, option.width);
-          await annotation.addJsonableProperty(9, option.height);
+          await annotation.addJsonableProperty__(8, option.width);
+          await annotation.addJsonableProperty__(9, option.height);
         }
         // 是否可见
-        await annotation.addJsonableProperty(10, option.visible);
+        await annotation.addJsonableProperty__(10, option.visible);
 
         // 添加marker
         await iosController.addAnnotation(annotation);
@@ -866,102 +882,80 @@ class AmapController with WidgetsBindingObserver, _Private {
   /// 批量添加marker
   ///
   /// 根据[options]批量创建Marker
-  Future<List<Marker>> addMarkers(List<MarkerOption> options) {
+  Future<List<Marker>> addMarkers(List<MarkerOption> options) async {
     assert(options != null);
 
     if (options.isEmpty) return Future.value([]);
+
+    final latBatch = options.map((it) => it.latLng.latitude).toList();
+    final lngBatch = options.map((it) => it.latLng.longitude).toList();
+    final titleBatch = options.map((it) => it.title).toList();
+    final snippetBatch = options.map((it) => it.snippet).toList();
+    final draggableBatch = options.map((it) => it.draggable).toList();
+    final rotateAngleBatch = options.map((it) => it.rotateAngle).toList();
+    final anchorUBatch = options.map((it) => it.anchorU).toList();
+    final anchorVBatch = options.map((it) => it.anchorV).toList();
+    final visibleBatch = options.map((it) => it.visible).toList();
+    final infoWindowEnabledBatch =
+        options.map((it) => it.infoWindowEnabled).toList();
+    final objectBatch = options.map((it) => it.object).toList();
+    final iconDataBatch = <Uint8List>[
+      for (final option in options)
+        if (option.iconUri != null && option.imageConfig != null)
+          await _uri2ImageData(option.imageConfig, option.iconUri)
+        else if (option.widget != null)
+          await _state.widgetToImageData(option.widget)
+    ];
+    final widthBatch = options.map((it) => it.width).toList();
+    final heightBatch = options.map((it) => it.height).toList();
+
     return platform(
       android: (pool) async {
         // 获取地图
         final map = await androidController.getMap();
-
-        final androidOptions = <com_amap_api_maps_model_MarkerOptions>[];
-        for (final option in options) {
-          final lat = option.latLng.latitude;
-          final lng = option.latLng.longitude;
-
-          // marker经纬度
-          final latLng = await com_amap_api_maps_model_LatLng
-              .create__double__double(lat, lng);
-
-          // marker配置
-          final markerOption =
-              await com_amap_api_maps_model_MarkerOptions.create__();
-
-          // 设置marker经纬度
-          await markerOption.position(latLng);
-          // 设置marker标题
-          if (option.title != null) {
-            await markerOption.title(option.title);
-          }
-          // 设置marker副标题
-          if (option.snippet != null) {
-            await markerOption.snippet(option.snippet);
-          }
-          // 设置marker图标
-          // 普通图片
-          if (option.iconUri != null && option.imageConfig != null) {
-            Uint8List iconData =
-                await _uri2ImageData(option.imageConfig, option.iconUri);
-
-            final bitmap = await android_graphics_Bitmap.create(iconData);
-            final icon = await com_amap_api_maps_model_BitmapDescriptorFactory
-                .fromBitmap(bitmap);
-            await markerOption.icon(icon);
-
-            pool..add(bitmap)..add(icon);
-          }
-          // widget as marker
-          else if (option.widget != null) {
-            Uint8List iconData = await _state.widgetToImageData(option.widget);
-
-            final bitmap = await android_graphics_Bitmap.create(iconData);
-            final icon = await com_amap_api_maps_model_BitmapDescriptorFactory
-                .fromBitmap(bitmap);
-            await markerOption.icon(icon);
-
-            pool..add(bitmap)..add(icon);
-          }
-
-          // 是否可拖拽
-          if (option.draggable != null) {
-            await markerOption.draggable(option.draggable);
-          }
-          // 旋转角度
-          if (option.rotateAngle != null) {
-            await markerOption.rotateAngle(option.rotateAngle);
-          }
-          // 锚点 默认在中间底部是最合理的
-          await markerOption.anchor(option.anchorU ?? 0.5, option.anchorV ?? 0);
-          // 是否可见
-          await markerOption.visible(option.visible);
-
-          androidOptions.add(markerOption);
-
-          pool.add(latLng);
+        final latLngBatch = await com_amap_api_maps_model_LatLng
+            .create_batch__double__double(latBatch, lngBatch);
+        // marker配置
+        final markerOptionBatch = await com_amap_api_maps_model_MarkerOptions
+            .create_batch__(options.length);
+        // 添加经纬度
+        await markerOptionBatch.position_batch(latLngBatch);
+        // 添加标题
+        await markerOptionBatch.title_batch(titleBatch);
+        // 添加副标题
+        await markerOptionBatch.snippet_batch(snippetBatch);
+        // 是否可拖动
+        await markerOptionBatch.draggable_batch(draggableBatch);
+        // 旋转角度
+        await markerOptionBatch.rotateAngle_batch(rotateAngleBatch);
+        // 锚点
+        await markerOptionBatch.anchor_batch(anchorUBatch, anchorVBatch);
+        // 是否可见
+        await markerOptionBatch.visible_batch(visibleBatch);
+        // 图片
+        if (iconDataBatch.isNotEmpty) {
+          final bitmapBatch =
+              await android_graphics_Bitmap.create_batch(iconDataBatch);
+          final iconBatch =
+              await com_amap_api_maps_model_BitmapDescriptorFactory_Batch
+                  .fromBitmap_batch(bitmapBatch);
+          await markerOptionBatch.icon_batch(iconBatch);
+          pool..addAll(bitmapBatch)..addAll(iconBatch);
         }
 
-        final markers = await map.addMarkers(androidOptions, false);
+        // 添加marker
+        final markers = await map.addMarkers(markerOptionBatch, false);
 
-        for (int i = 0; i < options.length; i++) {
-          final option = options[i];
-          final marker = markers[i];
-
-          // 是否允许弹窗
-          if (option.infoWindowEnabled != null) {
-            await marker.setInfoWindowEnable(option.infoWindowEnabled);
-          }
-
-          // 自定义数据
-          if (option.object != null) {
-            await marker.setObject(option.object);
-          }
-        }
+        // 弹窗使能
+        await markers.setInfoWindowEnable_batch(infoWindowEnabledBatch);
+        // 自定义数据
+        await markers.setObject_batch(objectBatch);
 
         // marker不释放, 还有用
         pool
           ..add(map)
-          ..addAll(androidOptions);
+          ..addAll(latLngBatch)
+          ..addAll(markerOptionBatch);
         return markers.map((it) => Marker.android(it)).toList();
       },
       ios: (pool) async {
@@ -969,88 +963,45 @@ class AmapController with WidgetsBindingObserver, _Private {
           _iosMapDelegate.._iosController = iosController,
         );
 
-        final iosOptions = <NSObject>[];
-        for (final option in options) {
-          final lat = option.latLng.latitude;
-          final lng = option.latLng.longitude;
-
-          // 创建marker
-          final annotation = await MAPointAnnotation.create__();
-
-          final coordinate = await CLLocationCoordinate2D.create(lat, lng);
-
-          // 设置经纬度
-          await annotation.set_coordinate(coordinate);
-
-          // 设置标题
-          if (option.title != null) {
-            await annotation.set_title(option.title);
-          }
-          // 设置副标题
-          if (option.snippet != null) {
-            await annotation.set_subtitle(option.snippet);
-          }
-          // 设置图片
-          // 普通图片
-          if (option.iconUri != null && option.imageConfig != null) {
-            Uint8List iconData =
-                await _uri2ImageData(option.imageConfig, option.iconUri);
-
-            final icon = await UIImage.create(iconData);
-
-            // 由于ios端的icon参数在回调中设置, 需要添加属性来实现
-            await annotation.addProperty(1, icon);
-
-            pool..add(icon);
-          }
-          // widget as marker
-          else if (option.widget != null) {
-            Uint8List iconData = await _state.widgetToImageData(option.widget);
-
-            final icon = await UIImage.create(iconData);
-
-            // 由于ios端的icon参数在回调中设置, 需要添加属性来实现
-            await annotation.addProperty(1, icon);
-
-            pool..add(icon);
-          }
-          // 是否可拖拽
-          if (option.draggable != null) {
-            await annotation.addJsonableProperty(2, option.draggable);
-          }
-          // 旋转角度
-          if (option.rotateAngle != null) {
-            await annotation.addJsonableProperty(3, option.rotateAngle);
-          }
-          // 是否允许弹窗
-          if (option.infoWindowEnabled != null) {
-            annotation.addJsonableProperty(4, option.infoWindowEnabled);
-          }
-          // 锚点
-          if (option.anchorU != null || option.anchorV != null) {
-            await annotation.addJsonableProperty(5, option.anchorU);
-            await annotation.addJsonableProperty(6, option.anchorV);
-          }
-          // 自定义数据
-          if (option.object != null) {
-            await annotation.addJsonableProperty(7, option.object);
-          }
-          // 宽高
-          if (option.width != null && option.height != null) {
-            await annotation.addJsonableProperty(8, option.width);
-            await annotation.addJsonableProperty(9, option.height);
-          }
-          // 是否可见
-          await annotation.addJsonableProperty(10, option.visible);
-
-          iosOptions.add(annotation);
-
-          // pointAnnotation不释放, 还有用
-          pool..add(coordinate);
+        // 创建marker
+        final annotationBatch =
+            await MAPointAnnotation.create_batch__(options.length);
+        // 经纬度列表
+        final coordinateBatch =
+            await CLLocationCoordinate2D.create_batch(latBatch, lngBatch);
+        // 设置经纬度
+        await annotationBatch.set_coordinate_batch(coordinateBatch);
+        // 设置标题
+        await annotationBatch.set_title_batch(titleBatch);
+        // 设置副标题
+        await annotationBatch.set_subtitle_batch(snippetBatch);
+        // 设置图片
+        if (iconDataBatch.isNotEmpty) {
+          final iconBatch = await UIImage.create_batch(iconDataBatch);
+          await annotationBatch.addProperty_batch(1, iconBatch);
+          pool.addAll(iconBatch);
         }
+        // 是否可拖拽
+        await annotationBatch.addJsonableProperty_batch(2, draggableBatch);
+        // 旋转角度
+        await annotationBatch.addJsonableProperty_batch(3, rotateAngleBatch);
+        // 是否允许弹窗
+        await annotationBatch.addJsonableProperty_batch(
+            4, infoWindowEnabledBatch);
+        // 锚点
+        await annotationBatch.addJsonableProperty_batch(5, anchorUBatch);
+        await annotationBatch.addJsonableProperty_batch(6, anchorVBatch);
+        // 自定义数据
+        await annotationBatch.addJsonableProperty_batch(7, objectBatch);
+        // 宽
+        await annotationBatch.addJsonableProperty_batch(8, widthBatch);
+        // 高
+        await annotationBatch.addJsonableProperty_batch(9, heightBatch);
+        // 是否可见
+        await annotationBatch.addJsonableProperty_batch(10, visibleBatch);
 
         // 添加marker
-        await iosController.addAnnotations(iosOptions);
+        await iosController.addAnnotations(annotationBatch);
 
 //        // 等待添加完成 获取对应的view
 //        // 由于只有可见marker才会返回, 防止返回的marker数量和option数量不一致, 这里强制给一个options数量的列表来装返回的marker
@@ -1059,9 +1010,13 @@ class AmapController with WidgetsBindingObserver, _Private {
 //            await _iosMapDelegate._annotationViewStream.stream.first;
 //        annotationViewList.fillRange(0, visibleMarkers.length, visibleMarkers);
 
+        pool..addAll(annotationBatch)..addAll(coordinateBatch);
         return [
-          for (int i = 0; i < iosOptions.length; i++)
-            Marker.ios(iosOptions[i] /*, annotationViewList[i]*/, iosController)
+          for (int i = 0; i < options.length; i++)
+            Marker.ios(
+              annotationBatch[i] /*, annotationViewList[i]*/,
+              iosController,
+            )
         ];
       },
     );
@@ -1132,7 +1087,7 @@ class AmapController with WidgetsBindingObserver, _Private {
           final icon = await UIImage.create(iconData);
 
           // 由于ios端的icon参数在回调中设置, 需要添加属性来实现
-          await annotation.addProperty(1, icon);
+          await annotation.addProperty__(1, icon);
 
           pool..add(icon);
         }
@@ -1158,34 +1113,28 @@ class AmapController with WidgetsBindingObserver, _Private {
     );
   }
 
-  /// 清除所有marker
-  Future<void> clearMarkers() async {
+  /// 把marker列表从地图上移除
+  Future<void> clearMarkers(List<Marker> markers) async {
     await platform(
       android: (pool) async {
-        final map = await androidController.getMap();
-        final markers = await map.getMapScreenMarkers();
-
-        await markers.remove_batch();
-
-        pool
-          ..add(map)
-          ..addAll(markers);
+        final markerBatch = markers.map((it) => it.androidModel).toList();
+        await markerBatch.remove_batch();
       },
       ios: (pool) async {
-        final markers = await iosController.get_annotations();
-        await iosController.removeAnnotations(markers);
-
-        pool..addAll(markers as List<Ref>);
+        final markerBatch = markers.map((it) => it.iosModel).toList();
+        await iosController.removeAnnotations(markerBatch);
       },
     );
   }
 
   /// 清除地图上所有覆盖物
-  Future<void> clear() async {
+  ///
+  /// 根据[keepMyLocation]区分是否保留我的位置的marker
+  Future<void> clear({bool keepMyLocation = true}) async {
     await platform(
       android: (pool) async {
         final map = await androidController.getMap();
-        await map.clear();
+        await map.clear__bool(keepMyLocation);
 
         pool.add(map);
       },
@@ -1355,7 +1304,8 @@ class AmapController with WidgetsBindingObserver, _Private {
 
         // 宽度和颜色需要设置到STACK里去
         if (option.width != null) {
-          await pushStackJsonable('width', option.width);
+          final pixelRatio = MediaQuery.of(_state.context).devicePixelRatio;
+          await pushStackJsonable('width', option.width / pixelRatio);
         }
         // 颜色
         if (option.strokeColor != null) {
@@ -1467,12 +1417,16 @@ class AmapController with WidgetsBindingObserver, _Private {
             latLngList, latLngList.length);
 
         // 宽度和颜色需要设置到STACK里去
-        if (option.width != null)
-          await pushStackJsonable('width', option.width);
-        if (option.strokeColor != null)
+        if (option.width != null) {
+          final pixelRatio = MediaQuery.of(_state.context).devicePixelRatio;
+          await pushStackJsonable('width', option.width / pixelRatio);
+        }
+        if (option.strokeColor != null) {
           await pushStackJsonable('strokeColor', option.strokeColor.value);
-        if (option.fillColor != null)
+        }
+        if (option.fillColor != null) {
           await pushStackJsonable('fillColor', option.fillColor.value);
+        }
 
         // 设置参数
         await iosController.addOverlay(polygon);
@@ -2436,8 +2390,9 @@ mixin _Private {
 
   Future<Uint8List> _uri2ImageData(
     ImageConfiguration config,
-    Uri iconUri,
-  ) async {
+    Uri iconUri, {
+    String package,
+  }) async {
     final imageData = Completer<Uint8List>();
     if (_cache.containsKey(iconUri.toString())) {
       debugPrint('命中缓存');
@@ -2465,7 +2420,9 @@ mixin _Private {
           break;
         // asset图片
         default:
-          AssetImage(iconUri.path)
+          (package == null
+                  ? AssetImage(iconUri.path)
+                  : AssetImage(iconUri.path, package: package))
               .resolve(config)
               .addListener(ImageStreamListener((imageInfo, sync) async {
             final byteData =

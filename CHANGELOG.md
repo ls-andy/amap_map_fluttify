@@ -1,3 +1,24 @@
+## 0.20.1
+- enhance: _uri2ImageData增加package参数
+
+## 0.20.0
+- enhance: 提升底层依赖
+- roll engine #cced4adc
+- docs: 优化README
+- enhance: [breaking change] 优化clearMarkers方法, 增加List<Marker>参数, 统一android和ios两端的行为
+- enhance: 批量添加marker使用批处理提升速度
+- enhance: 优化ios端MyLocationType.Locate的逻辑
+
+## 0.19.2
+- fix: ios端多实例delegate的处理
+- roll engine #37387b7e
+
+## 0.19.1
+- fix: tag -> tag__
+
+## 0.19.0
+- enhance: 提升底层依赖
+
 ## 0.18.3
 - feat: 增加打开离线地图管理器
 
