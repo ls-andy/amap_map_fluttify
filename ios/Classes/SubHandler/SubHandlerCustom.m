@@ -19,14 +19,13 @@ AMapNaviCompositeManager* manager;
 @implementation AmapMapFluttifyPlugin (SubHandlerCustom)
 - (NSDictionary<NSString*, Handler>*) getSubHandlerCustom {
     return @{
-        @"navigate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // args
+        @"navigateComponent": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             NSNumber* fromLat = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"fromLat"];
             NSNumber* fromLng = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"fromLng"];
             NSNumber* toLat = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"toLat"];
             NSNumber* toLng = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"toLng"];
-        
+            
             if (!manager) {
                 manager = [[AMapNaviCompositeManager alloc] init];
             }
@@ -34,12 +33,14 @@ AMapNaviCompositeManager* manager;
             AMapNaviCompositeUserConfig *config = [[AMapNaviCompositeUserConfig alloc] init];
             if ([fromLat doubleValue] != 0 && [fromLng doubleValue] != 0) {
                 [config setRoutePlanPOIType:AMapNaviRoutePlanPOITypeStart
-                location:[AMapNaviPoint locationWithLatitude:[fromLat floatValue] longitude:[fromLng floatValue]]
-                    name:@""
-                   POIId:nil];
+                                   location:[AMapNaviPoint locationWithLatitude:[fromLat floatValue]
+                                                                      longitude:[fromLng floatValue]]
+                                       name:@""
+                                      POIId:nil];
             }
             [config setRoutePlanPOIType:AMapNaviRoutePlanPOITypeEnd
-                               location:[AMapNaviPoint locationWithLatitude:[toLat floatValue] longitude:[toLng floatValue]]
+                               location:[AMapNaviPoint locationWithLatitude:[toLat floatValue]
+                                                                  longitude:[toLng floatValue]]
                                    name:@""
                                   POIId:nil];
             
