@@ -24,3 +24,12 @@
 -keep class com.amap.api.maps.**{*;}
 -keep class com.autonavi.**{*;}
 -keep class com.amap.api.trace.**{*;}
+
+# 导航
+-keep class com.amap.api.navi.**{*;}
+-keep class com.autonavi.**{*;}
+
+# 内置语音 V5.6.0之后
+-keep class com.alibaba.idst.nls.** {*;}
+-keep class com.google.**{*;}
+-keep class com.nlspeech.nlscodec.** {*;}
