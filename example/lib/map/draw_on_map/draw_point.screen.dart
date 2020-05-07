@@ -31,21 +31,29 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
         children: <Widget>[
           Flexible(
             flex: 1,
-            child: AmapView(
-              zoomLevel: 6,
-              markers: [
-                MarkerOption(
-                  latLng: getNextLatLng(),
+            child: Stack(
+              children: <Widget>[
+                AmapView(
+                  zoomLevel: 6,
+                  markers: [
+                    MarkerOption(
+                      latLng: getNextLatLng(),
 //                  iconUri: _assetsIcon1,
 //                  imageConfig: createLocalImageConfiguration(context),
+                    ),
+                  ],
+                  onMapCreated: (controller) async {
+                    _controller = controller;
+                    if (await requestPermission()) {
+                      await controller.setZoomLevel(6);
+                    }
+                  },
+                ),
+                Container(
+                  height: 100,
+                  color: Colors.black26,
                 ),
               ],
-              onMapCreated: (controller) async {
-                _controller = controller;
-                if (await requestPermission()) {
-                  await controller.setZoomLevel(6);
-                }
-              },
             ),
           ),
           Flexible(
@@ -174,7 +182,7 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                             iconUri: i % 2 == 0 ? _assetsIcon1 : _assetsIcon2,
                             imageConfig: createLocalImageConfiguration(context),
                             width: 40,
-                            rotateAngle: 90,
+//                            rotateAngle: 90,
                             height: 40,
                             object: 'Marker_$i',
                           ),
@@ -203,6 +211,7 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                     _controller?.setMarkerClickedListener((marker) async {
                       toast(
                           '${await marker.title}, ${await marker.snippet}, ${await marker.location}, ${await marker.object}');
+                      return false;
                     });
                   },
                 ),
@@ -224,7 +233,15 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                     Stream.fromIterable(_markers)
                         .asyncMap((marker) => marker.location)
                         .toList()
-                        .then(_controller?.zoomToSpan);
+                        .then((boundary) {
+                      debugPrint('boundary: $boundary');
+                      return _controller?.zoomToSpan(
+                        boundary,
+                        padding: EdgeInsets.only(
+                          top: 100,
+                        ),
+                      );
+                    });
                   },
                 ),
                 ListTile(
@@ -232,9 +249,8 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                   onTap: () async {
                     await _controller
                         ?.setInfoWindowClickListener((marker) async {
-                      toast(
-                        '${await marker.title}, ${await marker.location}',
-                      );
+                      toast('${await marker.title}, ${await marker.location}');
+                      return false;
                     });
                   },
                 ),
@@ -269,6 +285,36 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (_) => DrawPointScreen()),
+                    );
+                  },
+                ),
+                ListTile(
+                  title: Center(child: Text('添加海量点')),
+                  onTap: () async {
+                    await _controller?.addMultiPointOverlay(
+                      MultiPointOption(
+                        pointList: [
+                          for (int i = 0; i < 10000; i++)
+                            PointOption(
+                              latLng: getNextLatLng(),
+                              id: i.toString(),
+                              title: 'Point$i',
+                              snippet: 'Snippet$i',
+                              object: 'Object$i',
+                            )
+                        ],
+                        iconUri: _assetsIcon1,
+                        imageConfiguration:
+                            createLocalImageConfiguration(context),
+                        size: Size(48, 48),
+                      ),
+                    );
+                    await _controller?.setMultiPointClickedListener(
+                      (id, title, snippet, object) async {
+                        toast(
+                          'id: $id, title: $title, snippet: $snippet, object: $object',
+                        );
+                      },
                     );
                   },
                 ),

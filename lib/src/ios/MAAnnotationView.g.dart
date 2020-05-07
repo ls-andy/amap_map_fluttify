@@ -11,6 +11,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import 'package:foundation_fluttify/foundation_fluttify.dart';
+import 'package:core_location_fluttify/core_location_fluttify.dart';
 
 class MAAnnotationView extends UIView  {
   //region constants
@@ -222,6 +223,7 @@ class MAAnnotationView extends UIView  {
   //endregion
 
   //region methods
+  
   Future<void> setSelected_animated(bool selected, bool animated, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
@@ -239,12 +241,14 @@ class MAAnnotationView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
-  Future<NSObject> initWithAnnotation_reuseIdentifier(MAAnnotation annotation, String reuseIdentifier, {bool viewChannel = true}) async {
+  
+  Future<dynamic> initWithAnnotation_reuseIdentifier(MAAnnotation annotation, String reuseIdentifier, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
       print('fluttify-dart: MAAnnotationView@$refId::initWithAnnotation([\'reuseIdentifier\':$reuseIdentifier])');
@@ -261,10 +265,12 @@ class MAAnnotationView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(NSObject()..refId = __result__..tag__ = 'amap_map_fluttify');
-      return NSObject()..refId = __result__..tag__ = 'amap_map_fluttify';
+      final __return__ = Ref()..refId = __result__..tag__ = 'amap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
+  
   
   Future<void> prepareForReuse({bool viewChannel = true}) async {
     // print log
@@ -283,10 +289,12 @@ class MAAnnotationView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
+  
   
   Future<void> setDragState_animated(MAAnnotationViewDragState newDragState, bool animated, {bool viewChannel = true}) async {
     // print log
@@ -305,8 +313,9 @@ class MAAnnotationView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -510,7 +519,8 @@ extension MAAnnotationView_Batch on List<MAAnnotationView> {
   //endregion
 
   //region methods
-  Future<void> setSelected_animated_batch(List<bool> selected, List<bool> animated, {bool viewChannel = true}) async {
+  
+  Future<List<void>> setSelected_animated_batch(List<bool> selected, List<bool> animated, {bool viewChannel = true}) async {
     if (selected.length != animated.length) {
       return Future.error('all args must have same length!');
     }
@@ -529,7 +539,8 @@ extension MAAnnotationView_Batch on List<MAAnnotationView> {
     }
   }
   
-  Future<List<NSObject>> initWithAnnotation_reuseIdentifier_batch(List<MAAnnotation> annotation, List<String> reuseIdentifier, {bool viewChannel = true}) async {
+  
+  Future<List<dynamic>> initWithAnnotation_reuseIdentifier_batch(List<MAAnnotation> annotation, List<String> reuseIdentifier, {bool viewChannel = true}) async {
     if (annotation.length != reuseIdentifier.length) {
       return Future.error('all args must have same length!');
     }
@@ -542,13 +553,14 @@ extension MAAnnotationView_Batch on List<MAAnnotationView> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => NSObject()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => Ref()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
       kNativeObjectPool.addAll(typedResult);
       return typedResult;
     }
   }
   
-  Future<void> prepareForReuse_batch({bool viewChannel = true}) async {
+  
+  Future<List<void>> prepareForReuse_batch({bool viewChannel = true}) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
@@ -567,7 +579,8 @@ extension MAAnnotationView_Batch on List<MAAnnotationView> {
     }
   }
   
-  Future<void> setDragState_animated_batch(List<MAAnnotationViewDragState> newDragState, List<bool> animated, {bool viewChannel = true}) async {
+  
+  Future<List<void>> setDragState_animated_batch(List<MAAnnotationViewDragState> newDragState, List<bool> animated, {bool viewChannel = true}) async {
     if (newDragState.length != animated.length) {
       return Future.error('all args must have same length!');
     }

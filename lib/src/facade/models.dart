@@ -1,4 +1,5 @@
 import 'package:amap_core_fluttify/amap_core_fluttify.dart';
+import 'package:core_location_fluttify/core_location_fluttify.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -212,7 +213,7 @@ class PolylineOption {
 
   PolylineOption({
     @required this.latLngList,
-    this.width = 10,
+    this.width = 5,
     this.strokeColor = Colors.green,
     this.customTexture,
     this.imageConfig,
@@ -248,7 +249,7 @@ class PolygonOption {
 
   PolygonOption({
     @required this.latLngList,
-    this.width = 10,
+    this.width = 5,
     this.strokeColor = Colors.green,
     this.fillColor = Colors.transparent,
   });
@@ -280,7 +281,7 @@ class CircleOption {
   CircleOption({
     @required this.center,
     @required this.radius,
-    this.width = 10,
+    this.width = 5,
     this.strokeColor = Colors.green,
     this.fillColor = Colors.transparent,
   })  : assert(center != null),
@@ -305,6 +306,66 @@ class HeatmapTileOption {
   @override
   String toString() {
     return 'HeatmapTileOption{latLngList: $latLngList}';
+  }
+}
+
+/// 海量点创建参数
+@immutable
+class MultiPointOption {
+  /// 点列表
+  final List<PointOption> pointList;
+
+  /// 图片uri
+  final Uri iconUri;
+
+  /// 图片配置
+  final ImageConfiguration imageConfiguration;
+
+  /// 图片大小 仅限ios
+  final Size size;
+
+  MultiPointOption({
+    @required this.pointList,
+    this.iconUri,
+    this.imageConfiguration,
+    this.size,
+  });
+
+  @override
+  String toString() {
+    return 'MultiPointOption{pointList: $pointList, iconUri: $iconUri, imageConfiguration: $imageConfiguration, size: $size}';
+  }
+}
+
+/// 海量点中单个点的创建参数
+@immutable
+class PointOption {
+  /// 经纬度
+  final LatLng latLng;
+
+  /// 点的id列表, 用来区分点
+  final String id;
+
+  /// 标题列表
+  final String title;
+
+  /// 副标题列表
+  final String snippet;
+
+  /// 自定义数据
+  final String object;
+
+  PointOption({
+    @required this.latLng,
+    this.id,
+    this.title,
+    this.snippet,
+    this.object,
+  });
+
+  @override
+  String toString() {
+    return 'PointOption{latLng: $latLng, id: $id, title: $title, snippet: $snippet, object: $object}';
   }
 }
 

@@ -31,6 +31,191 @@ public class SubHandler25 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // factory
+            put("ObjectFactory::createcom_autonavi_amap_mapcore_message_HoverGestureMapMessage__int__float", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_autonavi_amap_mapcore_message_HoverGestureMapMessage__int__float");
+                }
+            
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) args).get("var1");
+                // jsonable arg
+                Double var2 = (Double) ((Map<String, Object>) args).get("var2");
+            
+                // create target object
+                com.autonavi.amap.mapcore.message.HoverGestureMapMessage __obj__ = new com.autonavi.amap.mapcore.message.HoverGestureMapMessage(var1, new Double(var2).floatValue());
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_autonavi_amap_mapcore_message_MoveGestureMapMessage__int__float__float", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_autonavi_amap_mapcore_message_MoveGestureMapMessage__int__float__float");
+                }
+            
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) args).get("var1");
+                // jsonable arg
+                Double var2 = (Double) ((Map<String, Object>) args).get("var2");
+                // jsonable arg
+                Double var3 = (Double) ((Map<String, Object>) args).get("var3");
+            
+                // create target object
+                com.autonavi.amap.mapcore.message.MoveGestureMapMessage __obj__ = new com.autonavi.amap.mapcore.message.MoveGestureMapMessage(var1, new Double(var2).floatValue(), new Double(var3).floatValue());
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_autonavi_amap_mapcore_message_ScaleGestureMapMessage__int__float__int__int", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_autonavi_amap_mapcore_message_ScaleGestureMapMessage__int__float__int__int");
+                }
+            
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) args).get("var1");
+                // jsonable arg
+                Double var2 = (Double) ((Map<String, Object>) args).get("var2");
+                // jsonable arg
+                int var3 = (int) ((Map<String, Object>) args).get("var3");
+                // jsonable arg
+                int var4 = (int) ((Map<String, Object>) args).get("var4");
+            
+                // create target object
+                com.autonavi.amap.mapcore.message.ScaleGestureMapMessage __obj__ = new com.autonavi.amap.mapcore.message.ScaleGestureMapMessage(var1, new Double(var2).floatValue(), var3, var4);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_autonavi_amap_mapcore_message_RotateGestureMapMessage__int__float__int__int", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_autonavi_amap_mapcore_message_RotateGestureMapMessage__int__float__int__int");
+                }
+            
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) args).get("var1");
+                // jsonable arg
+                Double var2 = (Double) ((Map<String, Object>) args).get("var2");
+                // jsonable arg
+                int var3 = (int) ((Map<String, Object>) args).get("var3");
+                // jsonable arg
+                int var4 = (int) ((Map<String, Object>) args).get("var4");
+            
+                // create target object
+                com.autonavi.amap.mapcore.message.RotateGestureMapMessage __obj__ = new com.autonavi.amap.mapcore.message.RotateGestureMapMessage(var1, new Double(var2).floatValue(), var3, var4);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_autonavi_amap_mapcore_FPointBounds__com_autonavi_amap_mapcore_FPoint__com_autonavi_amap_mapcore_FPoint", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_autonavi_amap_mapcore_FPointBounds__com_autonavi_amap_mapcore_FPoint__com_autonavi_amap_mapcore_FPoint");
+                }
+            
+                // args
+                // ref arg
+                com.autonavi.amap.mapcore.FPoint var1 = (com.autonavi.amap.mapcore.FPoint) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                // ref arg
+                com.autonavi.amap.mapcore.FPoint var2 = (com.autonavi.amap.mapcore.FPoint) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
+            
+                // create target object
+                com.autonavi.amap.mapcore.FPointBounds __obj__ = new com.autonavi.amap.mapcore.FPointBounds(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_autonavi_amap_mapcore_CoordUtil__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_autonavi_amap_mapcore_CoordUtil__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.autonavi.amap.mapcore.CoordUtil __obj__ = new com.autonavi.amap.mapcore.CoordUtil();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_autonavi_amap_mapcore_AeUtil__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_autonavi_amap_mapcore_AeUtil__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.autonavi.amap.mapcore.AeUtil __obj__ = new com.autonavi.amap.mapcore.AeUtil();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_autonavi_amap_mapcore_VirtualEarthProjection__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_autonavi_amap_mapcore_VirtualEarthProjection__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.autonavi.amap.mapcore.VirtualEarthProjection __obj__ = new com.autonavi.amap.mapcore.VirtualEarthProjection();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
             put("ObjectFactory::createcom_autonavi_amap_mapcore_Rectangle__", (args, methodResult) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_autonavi_amap_mapcore_Rectangle__");
@@ -40,15 +225,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.autonavi.amap.mapcore.Rectangle obj = new com.autonavi.amap.mapcore.Rectangle();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.autonavi.amap.mapcore.Rectangle __obj__ = new com.autonavi.amap.mapcore.Rectangle();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_autonavi_amap_mapcore_Rectangle__float__float__float__float", (args, methodResult) -> {
@@ -67,15 +252,15 @@ public class SubHandler25 {
                 Double var4 = (Double) ((Map<String, Object>) args).get("var4");
             
                 // create target object
-                com.autonavi.amap.mapcore.Rectangle obj = new com.autonavi.amap.mapcore.Rectangle(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue());
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.autonavi.amap.mapcore.Rectangle __obj__ = new com.autonavi.amap.mapcore.Rectangle(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue());
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_autonavi_amap_mapcore_Inner_3dMap_location__String", (args, methodResult) -> {
@@ -88,15 +273,15 @@ public class SubHandler25 {
                 String var1 = (String) ((Map<String, Object>) args).get("var1");
             
                 // create target object
-                com.autonavi.amap.mapcore.Inner_3dMap_location obj = new com.autonavi.amap.mapcore.Inner_3dMap_location(var1);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.autonavi.amap.mapcore.Inner_3dMap_location __obj__ = new com.autonavi.amap.mapcore.Inner_3dMap_location(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_autonavi_amap_mapcore_Inner_3dMap_location__android_location_Location", (args, methodResult) -> {
@@ -109,15 +294,15 @@ public class SubHandler25 {
                 android.location.Location var1 = (android.location.Location) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                 // create target object
-                com.autonavi.amap.mapcore.Inner_3dMap_location obj = new com.autonavi.amap.mapcore.Inner_3dMap_location(var1);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.autonavi.amap.mapcore.Inner_3dMap_location __obj__ = new com.autonavi.amap.mapcore.Inner_3dMap_location(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_autonavi_amap_mapcore_AMapEngineUtils__", (args, methodResult) -> {
@@ -129,15 +314,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.autonavi.amap.mapcore.AMapEngineUtils obj = new com.autonavi.amap.mapcore.AMapEngineUtils();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.autonavi.amap.mapcore.AMapEngineUtils __obj__ = new com.autonavi.amap.mapcore.AMapEngineUtils();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_autonavi_amap_mapcore_FPoint3__", (args, methodResult) -> {
@@ -149,15 +334,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.autonavi.amap.mapcore.FPoint3 obj = new com.autonavi.amap.mapcore.FPoint3();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.autonavi.amap.mapcore.FPoint3 __obj__ = new com.autonavi.amap.mapcore.FPoint3();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_autonavi_amap_mapcore_FPoint3__float__float__int", (args, methodResult) -> {
@@ -174,15 +359,15 @@ public class SubHandler25 {
                 int var3 = (int) ((Map<String, Object>) args).get("var3");
             
                 // create target object
-                com.autonavi.amap.mapcore.FPoint3 obj = new com.autonavi.amap.mapcore.FPoint3(new Double(var1).floatValue(), new Double(var2).floatValue(), var3);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.autonavi.amap.mapcore.FPoint3 __obj__ = new com.autonavi.amap.mapcore.FPoint3(new Double(var1).floatValue(), new Double(var2).floatValue(), var3);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_autonavi_amap_mapcore_AMapEtaDecoder__", (args, methodResult) -> {
@@ -194,15 +379,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.autonavi.amap.mapcore.AMapEtaDecoder obj = new com.autonavi.amap.mapcore.AMapEtaDecoder();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.autonavi.amap.mapcore.AMapEtaDecoder __obj__ = new com.autonavi.amap.mapcore.AMapEtaDecoder();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_autonavi_amap_mapcore_FPointBounds_Builder__", (args, methodResult) -> {
@@ -214,15 +399,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.autonavi.amap.mapcore.FPointBounds.Builder obj = new com.autonavi.amap.mapcore.FPointBounds.Builder();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.autonavi.amap.mapcore.FPointBounds.Builder __obj__ = new com.autonavi.amap.mapcore.FPointBounds.Builder();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_autonavi_amap_mapcore_Inner_3dMap_locationOption__", (args, methodResult) -> {
@@ -234,15 +419,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.autonavi.amap.mapcore.Inner_3dMap_locationOption obj = new com.autonavi.amap.mapcore.Inner_3dMap_locationOption();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.autonavi.amap.mapcore.Inner_3dMap_locationOption __obj__ = new com.autonavi.amap.mapcore.Inner_3dMap_locationOption();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_autonavi_amap_mapcore_FPoint__", (args, methodResult) -> {
@@ -254,15 +439,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.autonavi.amap.mapcore.FPoint obj = new com.autonavi.amap.mapcore.FPoint();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.autonavi.amap.mapcore.FPoint __obj__ = new com.autonavi.amap.mapcore.FPoint();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_autonavi_amap_mapcore_FPoint__float__float", (args, methodResult) -> {
@@ -277,15 +462,15 @@ public class SubHandler25 {
                 Double var2 = (Double) ((Map<String, Object>) args).get("var2");
             
                 // create target object
-                com.autonavi.amap.mapcore.FPoint obj = new com.autonavi.amap.mapcore.FPoint(new Double(var1).floatValue(), new Double(var2).floatValue());
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.autonavi.amap.mapcore.FPoint __obj__ = new com.autonavi.amap.mapcore.FPoint(new Double(var1).floatValue(), new Double(var2).floatValue());
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_autonavi_amap_mapcore_AMapNativeParticleSystem__", (args, methodResult) -> {
@@ -297,15 +482,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.autonavi.amap.mapcore.AMapNativeParticleSystem obj = new com.autonavi.amap.mapcore.AMapNativeParticleSystem();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.autonavi.amap.mapcore.AMapNativeParticleSystem __obj__ = new com.autonavi.amap.mapcore.AMapNativeParticleSystem();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_autonavi_amap_mapcore_AMapNativeBuildingRenderer__", (args, methodResult) -> {
@@ -317,15 +502,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.autonavi.amap.mapcore.AMapNativeBuildingRenderer obj = new com.autonavi.amap.mapcore.AMapNativeBuildingRenderer();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.autonavi.amap.mapcore.AMapNativeBuildingRenderer __obj__ = new com.autonavi.amap.mapcore.AMapNativeBuildingRenderer();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_autonavi_amap_mapcore_Convert__", (args, methodResult) -> {
@@ -337,15 +522,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.autonavi.amap.mapcore.Convert obj = new com.autonavi.amap.mapcore.Convert();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.autonavi.amap.mapcore.Convert __obj__ = new com.autonavi.amap.mapcore.Convert();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_offlineservice_AMapPermissionActivity__", (args, methodResult) -> {
@@ -357,15 +542,40 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.offlineservice.AMapPermissionActivity obj = new com.amap.api.offlineservice.AMapPermissionActivity();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.offlineservice.AMapPermissionActivity __obj__ = new com.amap.api.offlineservice.AMapPermissionActivity();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_amap_api_maps_SwipeDismissTouchListener__android_view_View__Object__com_amap_api_maps_SwipeDismissTouchListener_DismissCallbacks", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_amap_api_maps_SwipeDismissTouchListener__android_view_View__Object__com_amap_api_maps_SwipeDismissTouchListener_DismissCallbacks");
+                }
+            
+                // args
+                // ref arg
+                android.view.View var1 = (android.view.View) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                // jsonable arg
+                Object var2 = (Object) ((Map<String, Object>) args).get("var2");
+                // ref arg
+                com.amap.api.maps.SwipeDismissTouchListener.DismissCallbacks var3 = (com.amap.api.maps.SwipeDismissTouchListener.DismissCallbacks) getHEAP().get((int) ((Map<String, Object>) args).get("var3"));
+            
+                // create target object
+                com.amap.api.maps.SwipeDismissTouchListener __obj__ = new com.amap.api.maps.SwipeDismissTouchListener(var1, var2, var3);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_InfoWindowParams__", (args, methodResult) -> {
@@ -377,15 +587,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.InfoWindowParams obj = new com.amap.api.maps.InfoWindowParams();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.InfoWindowParams __obj__ = new com.amap.api.maps.InfoWindowParams();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_CameraUpdateFactory__", (args, methodResult) -> {
@@ -397,15 +607,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.CameraUpdateFactory obj = new com.amap.api.maps.CameraUpdateFactory();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.CameraUpdateFactory __obj__ = new com.amap.api.maps.CameraUpdateFactory();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_AMapException__String", (args, methodResult) -> {
@@ -418,15 +628,15 @@ public class SubHandler25 {
                 String var1 = (String) ((Map<String, Object>) args).get("var1");
             
                 // create target object
-                com.amap.api.maps.AMapException obj = new com.amap.api.maps.AMapException(var1);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.AMapException __obj__ = new com.amap.api.maps.AMapException(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_AMapException__", (args, methodResult) -> {
@@ -438,15 +648,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.AMapException obj = new com.amap.api.maps.AMapException();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.AMapException __obj__ = new com.amap.api.maps.AMapException();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_AMapOptions__", (args, methodResult) -> {
@@ -458,15 +668,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.AMapOptions obj = new com.amap.api.maps.AMapOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.AMapOptions __obj__ = new com.amap.api.maps.AMapOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_AMapOptionsCreator__", (args, methodResult) -> {
@@ -478,15 +688,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.AMapOptionsCreator obj = new com.amap.api.maps.AMapOptionsCreator();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.AMapOptionsCreator __obj__ = new com.amap.api.maps.AMapOptionsCreator();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_CoordinateConverter__android_content_Context", (args, methodResult) -> {
@@ -499,15 +709,15 @@ public class SubHandler25 {
                 android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                 // create target object
-                com.amap.api.maps.CoordinateConverter obj = new com.amap.api.maps.CoordinateConverter(var1);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.CoordinateConverter __obj__ = new com.amap.api.maps.CoordinateConverter(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_utils_SpatialRelationUtil__", (args, methodResult) -> {
@@ -519,15 +729,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.utils.SpatialRelationUtil obj = new com.amap.api.maps.utils.SpatialRelationUtil();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.utils.SpatialRelationUtil __obj__ = new com.amap.api.maps.utils.SpatialRelationUtil();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_utils_overlay_MovingPointOverlay__com_amap_api_maps_AMap__com_amap_api_maps_model_BasePointOverlay", (args, methodResult) -> {
@@ -542,15 +752,15 @@ public class SubHandler25 {
                 com.amap.api.maps.model.BasePointOverlay var2 = (com.amap.api.maps.model.BasePointOverlay) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
             
                 // create target object
-                com.amap.api.maps.utils.overlay.MovingPointOverlay obj = new com.amap.api.maps.utils.overlay.MovingPointOverlay(var1, var2);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.utils.overlay.MovingPointOverlay __obj__ = new com.amap.api.maps.utils.overlay.MovingPointOverlay(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_utils_overlay_SmoothMoveMarker__com_amap_api_maps_AMap", (args, methodResult) -> {
@@ -563,15 +773,15 @@ public class SubHandler25 {
                 com.amap.api.maps.AMap var1 = (com.amap.api.maps.AMap) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                 // create target object
-                com.amap.api.maps.utils.overlay.SmoothMoveMarker obj = new com.amap.api.maps.utils.overlay.SmoothMoveMarker(var1);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.utils.overlay.SmoothMoveMarker __obj__ = new com.amap.api.maps.utils.overlay.SmoothMoveMarker(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_SwipeDismissCallBack__com_amap_api_maps_SwipeDismissView", (args, methodResult) -> {
@@ -584,15 +794,15 @@ public class SubHandler25 {
                 com.amap.api.maps.SwipeDismissView var1 = (com.amap.api.maps.SwipeDismissView) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                 // create target object
-                com.amap.api.maps.SwipeDismissCallBack obj = new com.amap.api.maps.SwipeDismissCallBack(var1);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.SwipeDismissCallBack __obj__ = new com.amap.api.maps.SwipeDismissCallBack(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_SwipeDismissView__android_content_Context__android_view_View", (args, methodResult) -> {
@@ -607,15 +817,15 @@ public class SubHandler25 {
                 android.view.View var2 = (android.view.View) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
             
                 // create target object
-                com.amap.api.maps.SwipeDismissView obj = new com.amap.api.maps.SwipeDismissView(var1, var2);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.SwipeDismissView __obj__ = new com.amap.api.maps.SwipeDismissView(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_MapsInitializer__", (args, methodResult) -> {
@@ -627,15 +837,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.MapsInitializer obj = new com.amap.api.maps.MapsInitializer();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.MapsInitializer __obj__ = new com.amap.api.maps.MapsInitializer();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_offlinemap_OfflineMapStatus__", (args, methodResult) -> {
@@ -647,15 +857,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.offlinemap.OfflineMapStatus obj = new com.amap.api.maps.offlinemap.OfflineMapStatus();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.offlinemap.OfflineMapStatus __obj__ = new com.amap.api.maps.offlinemap.OfflineMapStatus();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_offlinemap_OfflineMapProvince__", (args, methodResult) -> {
@@ -667,15 +877,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.offlinemap.OfflineMapProvince obj = new com.amap.api.maps.offlinemap.OfflineMapProvince();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.offlinemap.OfflineMapProvince __obj__ = new com.amap.api.maps.offlinemap.OfflineMapProvince();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_offlinemap_DownloadProgressView__android_content_Context", (args, methodResult) -> {
@@ -688,15 +898,15 @@ public class SubHandler25 {
                 android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                 // create target object
-                com.amap.api.maps.offlinemap.DownloadProgressView obj = new com.amap.api.maps.offlinemap.DownloadProgressView(var1);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.offlinemap.DownloadProgressView __obj__ = new com.amap.api.maps.offlinemap.DownloadProgressView(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_offlinemap_Province__", (args, methodResult) -> {
@@ -708,15 +918,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.offlinemap.Province obj = new com.amap.api.maps.offlinemap.Province();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.offlinemap.Province __obj__ = new com.amap.api.maps.offlinemap.Province();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_offlinemap_OfflineMapCity__", (args, methodResult) -> {
@@ -728,15 +938,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.offlinemap.OfflineMapCity obj = new com.amap.api.maps.offlinemap.OfflineMapCity();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.offlinemap.OfflineMapCity __obj__ = new com.amap.api.maps.offlinemap.OfflineMapCity();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_offlinemap_OfflineMapActivity__", (args, methodResult) -> {
@@ -748,15 +958,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.offlinemap.OfflineMapActivity obj = new com.amap.api.maps.offlinemap.OfflineMapActivity();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.offlinemap.OfflineMapActivity __obj__ = new com.amap.api.maps.offlinemap.OfflineMapActivity();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_offlinemap_City__", (args, methodResult) -> {
@@ -768,15 +978,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.offlinemap.City obj = new com.amap.api.maps.offlinemap.City();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.offlinemap.City __obj__ = new com.amap.api.maps.offlinemap.City();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_PolygonHoleOptions__", (args, methodResult) -> {
@@ -788,15 +998,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.PolygonHoleOptions obj = new com.amap.api.maps.model.PolygonHoleOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.PolygonHoleOptions __obj__ = new com.amap.api.maps.model.PolygonHoleOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_TileOverlayOptionsCreator__", (args, methodResult) -> {
@@ -808,15 +1018,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.TileOverlayOptionsCreator obj = new com.amap.api.maps.model.TileOverlayOptionsCreator();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.TileOverlayOptionsCreator __obj__ = new com.amap.api.maps.model.TileOverlayOptionsCreator();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_Poi__String__com_amap_api_maps_model_LatLng__String", (args, methodResult) -> {
@@ -833,15 +1043,15 @@ public class SubHandler25 {
                 String var3 = (String) ((Map<String, Object>) args).get("var3");
             
                 // create target object
-                com.amap.api.maps.model.Poi obj = new com.amap.api.maps.model.Poi(var1, var2, var3);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.Poi __obj__ = new com.amap.api.maps.model.Poi(var1, var2, var3);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_MyLocationStyle__", (args, methodResult) -> {
@@ -853,15 +1063,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.MyLocationStyle obj = new com.amap.api.maps.model.MyLocationStyle();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.MyLocationStyle __obj__ = new com.amap.api.maps.model.MyLocationStyle();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_VisibleRegion__com_amap_api_maps_model_LatLng__com_amap_api_maps_model_LatLng__com_amap_api_maps_model_LatLng__com_amap_api_maps_model_LatLng__com_amap_api_maps_model_LatLngBounds", (args, methodResult) -> {
@@ -882,15 +1092,15 @@ public class SubHandler25 {
                 com.amap.api.maps.model.LatLngBounds var5 = (com.amap.api.maps.model.LatLngBounds) getHEAP().get((int) ((Map<String, Object>) args).get("var5"));
             
                 // create target object
-                com.amap.api.maps.model.VisibleRegion obj = new com.amap.api.maps.model.VisibleRegion(var1, var2, var3, var4, var5);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.VisibleRegion __obj__ = new com.amap.api.maps.model.VisibleRegion(var1, var2, var3, var4, var5);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_LatLngCreator__", (args, methodResult) -> {
@@ -902,15 +1112,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.LatLngCreator obj = new com.amap.api.maps.model.LatLngCreator();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.LatLngCreator __obj__ = new com.amap.api.maps.model.LatLngCreator();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_CircleHoleOptions__", (args, methodResult) -> {
@@ -922,15 +1132,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.CircleHoleOptions obj = new com.amap.api.maps.model.CircleHoleOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.CircleHoleOptions __obj__ = new com.amap.api.maps.model.CircleHoleOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_LatLngBounds_Builder__", (args, methodResult) -> {
@@ -942,15 +1152,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.LatLngBounds.Builder obj = new com.amap.api.maps.model.LatLngBounds.Builder();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.LatLngBounds.Builder __obj__ = new com.amap.api.maps.model.LatLngBounds.Builder();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_NavigateArrowOptions__", (args, methodResult) -> {
@@ -962,15 +1172,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.NavigateArrowOptions obj = new com.amap.api.maps.model.NavigateArrowOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.NavigateArrowOptions __obj__ = new com.amap.api.maps.model.NavigateArrowOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_BitmapDescriptorFactory__", (args, methodResult) -> {
@@ -982,15 +1192,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.BitmapDescriptorFactory obj = new com.amap.api.maps.model.BitmapDescriptorFactory();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.BitmapDescriptorFactory __obj__ = new com.amap.api.maps.model.BitmapDescriptorFactory();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_MultiPointOverlayOptions__", (args, methodResult) -> {
@@ -1002,15 +1212,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.MultiPointOverlayOptions obj = new com.amap.api.maps.model.MultiPointOverlayOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.MultiPointOverlayOptions __obj__ = new com.amap.api.maps.model.MultiPointOverlayOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_PoiCreator__", (args, methodResult) -> {
@@ -1022,15 +1232,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.PoiCreator obj = new com.amap.api.maps.model.PoiCreator();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.PoiCreator __obj__ = new com.amap.api.maps.model.PoiCreator();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_PolylineOptions__", (args, methodResult) -> {
@@ -1042,15 +1252,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.PolylineOptions obj = new com.amap.api.maps.model.PolylineOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.PolylineOptions __obj__ = new com.amap.api.maps.model.PolylineOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_Tile__int__int__byteArray", (args, methodResult) -> {
@@ -1067,15 +1277,15 @@ public class SubHandler25 {
                 byte[] var3 = (byte[]) ((Map<String, Object>) args).get("var3");
             
                 // create target object
-                com.amap.api.maps.model.Tile obj = new com.amap.api.maps.model.Tile(var1, var2, var3);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.Tile __obj__ = new com.amap.api.maps.model.Tile(var1, var2, var3);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_Gradient__intArray__floatArray", (args, methodResult) -> {
@@ -1090,15 +1300,15 @@ public class SubHandler25 {
                 float[] var2 = (float[]) ((Map<String, Object>) args).get("var2");
             
                 // create target object
-                com.amap.api.maps.model.Gradient obj = new com.amap.api.maps.model.Gradient(var1, var2);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.Gradient __obj__ = new com.amap.api.maps.model.Gradient(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_NaviPara__", (args, methodResult) -> {
@@ -1110,15 +1320,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.NaviPara obj = new com.amap.api.maps.model.NaviPara();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.NaviPara __obj__ = new com.amap.api.maps.model.NaviPara();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_GroundOverlayOptions__", (args, methodResult) -> {
@@ -1130,15 +1340,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.GroundOverlayOptions obj = new com.amap.api.maps.model.GroundOverlayOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.GroundOverlayOptions __obj__ = new com.amap.api.maps.model.GroundOverlayOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_GL3DModelOptions__", (args, methodResult) -> {
@@ -1150,15 +1360,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.GL3DModelOptions obj = new com.amap.api.maps.model.GL3DModelOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.GL3DModelOptions __obj__ = new com.amap.api.maps.model.GL3DModelOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_MyTrafficStyle__", (args, methodResult) -> {
@@ -1170,15 +1380,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.MyTrafficStyle obj = new com.amap.api.maps.model.MyTrafficStyle();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.MyTrafficStyle __obj__ = new com.amap.api.maps.model.MyTrafficStyle();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_CameraPosition__com_amap_api_maps_model_LatLng__float__float__float", (args, methodResult) -> {
@@ -1197,15 +1407,15 @@ public class SubHandler25 {
                 Double var4 = (Double) ((Map<String, Object>) args).get("var4");
             
                 // create target object
-                com.amap.api.maps.model.CameraPosition obj = new com.amap.api.maps.model.CameraPosition(var1, new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue());
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.CameraPosition __obj__ = new com.amap.api.maps.model.CameraPosition(var1, new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue());
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_TextOptionsCreator__", (args, methodResult) -> {
@@ -1217,15 +1427,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.TextOptionsCreator obj = new com.amap.api.maps.model.TextOptionsCreator();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.TextOptionsCreator __obj__ = new com.amap.api.maps.model.TextOptionsCreator();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_PoiPara__", (args, methodResult) -> {
@@ -1237,15 +1447,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.PoiPara obj = new com.amap.api.maps.model.PoiPara();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.PoiPara __obj__ = new com.amap.api.maps.model.PoiPara();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_MarkerOptions__", (args, methodResult) -> {
@@ -1257,15 +1467,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.MarkerOptions obj = new com.amap.api.maps.model.MarkerOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.MarkerOptions __obj__ = new com.amap.api.maps.model.MarkerOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_animation_AnimationSet__boolean", (args, methodResult) -> {
@@ -1278,15 +1488,15 @@ public class SubHandler25 {
                 boolean var1 = (boolean) ((Map<String, Object>) args).get("var1");
             
                 // create target object
-                com.amap.api.maps.model.animation.AnimationSet obj = new com.amap.api.maps.model.animation.AnimationSet(var1);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.animation.AnimationSet __obj__ = new com.amap.api.maps.model.animation.AnimationSet(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_animation_RotateAnimation__float__float__float__float__float", (args, methodResult) -> {
@@ -1307,15 +1517,15 @@ public class SubHandler25 {
                 Double var5 = (Double) ((Map<String, Object>) args).get("var5");
             
                 // create target object
-                com.amap.api.maps.model.animation.RotateAnimation obj = new com.amap.api.maps.model.animation.RotateAnimation(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue(), new Double(var5).floatValue());
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.animation.RotateAnimation __obj__ = new com.amap.api.maps.model.animation.RotateAnimation(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue(), new Double(var5).floatValue());
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_animation_RotateAnimation__float__float", (args, methodResult) -> {
@@ -1330,15 +1540,15 @@ public class SubHandler25 {
                 Double var2 = (Double) ((Map<String, Object>) args).get("var2");
             
                 // create target object
-                com.amap.api.maps.model.animation.RotateAnimation obj = new com.amap.api.maps.model.animation.RotateAnimation(new Double(var1).floatValue(), new Double(var2).floatValue());
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.animation.RotateAnimation __obj__ = new com.amap.api.maps.model.animation.RotateAnimation(new Double(var1).floatValue(), new Double(var2).floatValue());
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_animation_TranslateAnimation__com_amap_api_maps_model_LatLng", (args, methodResult) -> {
@@ -1351,15 +1561,15 @@ public class SubHandler25 {
                 com.amap.api.maps.model.LatLng var1 = (com.amap.api.maps.model.LatLng) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                 // create target object
-                com.amap.api.maps.model.animation.TranslateAnimation obj = new com.amap.api.maps.model.animation.TranslateAnimation(var1);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.animation.TranslateAnimation __obj__ = new com.amap.api.maps.model.animation.TranslateAnimation(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_animation_EmergeAnimation__com_amap_api_maps_model_LatLng", (args, methodResult) -> {
@@ -1372,15 +1582,15 @@ public class SubHandler25 {
                 com.amap.api.maps.model.LatLng var1 = (com.amap.api.maps.model.LatLng) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                 // create target object
-                com.amap.api.maps.model.animation.EmergeAnimation obj = new com.amap.api.maps.model.animation.EmergeAnimation(var1);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.animation.EmergeAnimation __obj__ = new com.amap.api.maps.model.animation.EmergeAnimation(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_animation_AlphaAnimation__float__float", (args, methodResult) -> {
@@ -1395,15 +1605,15 @@ public class SubHandler25 {
                 Double var2 = (Double) ((Map<String, Object>) args).get("var2");
             
                 // create target object
-                com.amap.api.maps.model.animation.AlphaAnimation obj = new com.amap.api.maps.model.animation.AlphaAnimation(new Double(var1).floatValue(), new Double(var2).floatValue());
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.animation.AlphaAnimation __obj__ = new com.amap.api.maps.model.animation.AlphaAnimation(new Double(var1).floatValue(), new Double(var2).floatValue());
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_animation_ScaleAnimation__float__float__float__float", (args, methodResult) -> {
@@ -1422,15 +1632,15 @@ public class SubHandler25 {
                 Double var4 = (Double) ((Map<String, Object>) args).get("var4");
             
                 // create target object
-                com.amap.api.maps.model.animation.ScaleAnimation obj = new com.amap.api.maps.model.animation.ScaleAnimation(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue());
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.animation.ScaleAnimation __obj__ = new com.amap.api.maps.model.animation.ScaleAnimation(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue());
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_LatLngBounds__com_amap_api_maps_model_LatLng__com_amap_api_maps_model_LatLng", (args, methodResult) -> {
@@ -1445,15 +1655,15 @@ public class SubHandler25 {
                 com.amap.api.maps.model.LatLng var2 = (com.amap.api.maps.model.LatLng) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
             
                 // create target object
-                com.amap.api.maps.model.LatLngBounds obj = new com.amap.api.maps.model.LatLngBounds(var1, var2);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.LatLngBounds __obj__ = new com.amap.api.maps.model.LatLngBounds(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_CustomMapStyleOptions__", (args, methodResult) -> {
@@ -1465,15 +1675,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.CustomMapStyleOptions obj = new com.amap.api.maps.model.CustomMapStyleOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.CustomMapStyleOptions __obj__ = new com.amap.api.maps.model.CustomMapStyleOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_BuildingOverlayOptions__", (args, methodResult) -> {
@@ -1485,15 +1695,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.BuildingOverlayOptions obj = new com.amap.api.maps.model.BuildingOverlayOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.BuildingOverlayOptions __obj__ = new com.amap.api.maps.model.BuildingOverlayOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_CrossOverlayOptions__", (args, methodResult) -> {
@@ -1505,15 +1715,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.CrossOverlayOptions obj = new com.amap.api.maps.model.CrossOverlayOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.CrossOverlayOptions __obj__ = new com.amap.api.maps.model.CrossOverlayOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_VisibleRegionCreator__", (args, methodResult) -> {
@@ -1525,15 +1735,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.VisibleRegionCreator obj = new com.amap.api.maps.model.VisibleRegionCreator();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.VisibleRegionCreator __obj__ = new com.amap.api.maps.model.VisibleRegionCreator();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_LatLng__double__double", (args, methodResult) -> {
@@ -1548,15 +1758,15 @@ public class SubHandler25 {
                 double var3 = (double) ((Map<String, Object>) args).get("var3");
             
                 // create target object
-                com.amap.api.maps.model.LatLng obj = new com.amap.api.maps.model.LatLng(var1, var3);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.LatLng __obj__ = new com.amap.api.maps.model.LatLng(var1, var3);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_LatLng__double__double__boolean", (args, methodResult) -> {
@@ -1573,15 +1783,15 @@ public class SubHandler25 {
                 boolean var5 = (boolean) ((Map<String, Object>) args).get("var5");
             
                 // create target object
-                com.amap.api.maps.model.LatLng obj = new com.amap.api.maps.model.LatLng(var1, var3, var5);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.LatLng __obj__ = new com.amap.api.maps.model.LatLng(var1, var3, var5);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_TileProjection__int__int__int__int__int__int", (args, methodResult) -> {
@@ -1604,15 +1814,15 @@ public class SubHandler25 {
                 int var6 = (int) ((Map<String, Object>) args).get("var6");
             
                 // create target object
-                com.amap.api.maps.model.TileProjection obj = new com.amap.api.maps.model.TileProjection(var1, var2, var3, var4, var5, var6);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.TileProjection __obj__ = new com.amap.api.maps.model.TileProjection(var1, var2, var3, var4, var5, var6);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_AMapPara__", (args, methodResult) -> {
@@ -1624,15 +1834,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.AMapPara obj = new com.amap.api.maps.model.AMapPara();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.AMapPara __obj__ = new com.amap.api.maps.model.AMapPara();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_CircleOptionsCreator__", (args, methodResult) -> {
@@ -1644,15 +1854,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.CircleOptionsCreator obj = new com.amap.api.maps.model.CircleOptionsCreator();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.CircleOptionsCreator __obj__ = new com.amap.api.maps.model.CircleOptionsCreator();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_AMapCameraInfo__float__float__float__float__float__float", (args, methodResult) -> {
@@ -1675,15 +1885,15 @@ public class SubHandler25 {
                 Double var6 = (Double) ((Map<String, Object>) args).get("var6");
             
                 // create target object
-                com.amap.api.maps.model.AMapCameraInfo obj = new com.amap.api.maps.model.AMapCameraInfo(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue(), new Double(var5).floatValue(), new Double(var6).floatValue());
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.AMapCameraInfo __obj__ = new com.amap.api.maps.model.AMapCameraInfo(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue(), new Double(var5).floatValue(), new Double(var6).floatValue());
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_PolygonOptions__", (args, methodResult) -> {
@@ -1695,15 +1905,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.PolygonOptions obj = new com.amap.api.maps.model.PolygonOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.PolygonOptions __obj__ = new com.amap.api.maps.model.PolygonOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_WeightedLatLng__com_amap_api_maps_model_LatLng__double", (args, methodResult) -> {
@@ -1718,15 +1928,15 @@ public class SubHandler25 {
                 double var2 = (double) ((Map<String, Object>) args).get("var2");
             
                 // create target object
-                com.amap.api.maps.model.WeightedLatLng obj = new com.amap.api.maps.model.WeightedLatLng(var1, var2);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.WeightedLatLng __obj__ = new com.amap.api.maps.model.WeightedLatLng(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_WeightedLatLng__com_amap_api_maps_model_LatLng", (args, methodResult) -> {
@@ -1739,15 +1949,15 @@ public class SubHandler25 {
                 com.amap.api.maps.model.LatLng var1 = (com.amap.api.maps.model.LatLng) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                 // create target object
-                com.amap.api.maps.model.WeightedLatLng obj = new com.amap.api.maps.model.WeightedLatLng(var1);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.WeightedLatLng __obj__ = new com.amap.api.maps.model.WeightedLatLng(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_MyLocationStyleCreator__", (args, methodResult) -> {
@@ -1759,15 +1969,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.MyLocationStyleCreator obj = new com.amap.api.maps.model.MyLocationStyleCreator();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.MyLocationStyleCreator __obj__ = new com.amap.api.maps.model.MyLocationStyleCreator();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_MarkerOptionsCreator__", (args, methodResult) -> {
@@ -1779,15 +1989,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.MarkerOptionsCreator obj = new com.amap.api.maps.model.MarkerOptionsCreator();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.MarkerOptionsCreator __obj__ = new com.amap.api.maps.model.MarkerOptionsCreator();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_MultiPointItem__com_amap_api_maps_model_LatLng", (args, methodResult) -> {
@@ -1800,15 +2010,15 @@ public class SubHandler25 {
                 com.amap.api.maps.model.LatLng var1 = (com.amap.api.maps.model.LatLng) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                 // create target object
-                com.amap.api.maps.model.MultiPointItem obj = new com.amap.api.maps.model.MultiPointItem(var1);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.MultiPointItem __obj__ = new com.amap.api.maps.model.MultiPointItem(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_LatLngBoundsCreator__", (args, methodResult) -> {
@@ -1820,15 +2030,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.LatLngBoundsCreator obj = new com.amap.api.maps.model.LatLngBoundsCreator();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.LatLngBoundsCreator __obj__ = new com.amap.api.maps.model.LatLngBoundsCreator();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_ArcOptions__", (args, methodResult) -> {
@@ -1840,15 +2050,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.ArcOptions obj = new com.amap.api.maps.model.ArcOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.ArcOptions __obj__ = new com.amap.api.maps.model.ArcOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_BitmapDescriptorCreator__", (args, methodResult) -> {
@@ -1860,15 +2070,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.BitmapDescriptorCreator obj = new com.amap.api.maps.model.BitmapDescriptorCreator();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.BitmapDescriptorCreator __obj__ = new com.amap.api.maps.model.BitmapDescriptorCreator();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_CircleOptions__", (args, methodResult) -> {
@@ -1880,15 +2090,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.CircleOptions obj = new com.amap.api.maps.model.CircleOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.CircleOptions __obj__ = new com.amap.api.maps.model.CircleOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_NavigateArrowOptionsCreator__", (args, methodResult) -> {
@@ -1900,15 +2110,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.NavigateArrowOptionsCreator obj = new com.amap.api.maps.model.NavigateArrowOptionsCreator();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.NavigateArrowOptionsCreator __obj__ = new com.amap.api.maps.model.NavigateArrowOptionsCreator();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_RuntimeRemoteException__String", (args, methodResult) -> {
@@ -1921,15 +2131,15 @@ public class SubHandler25 {
                 String var1 = (String) ((Map<String, Object>) args).get("var1");
             
                 // create target object
-                com.amap.api.maps.model.RuntimeRemoteException obj = new com.amap.api.maps.model.RuntimeRemoteException(var1);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.RuntimeRemoteException __obj__ = new com.amap.api.maps.model.RuntimeRemoteException(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_HeatmapTileProvider_Builder__", (args, methodResult) -> {
@@ -1941,15 +2151,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.HeatmapTileProvider.Builder obj = new com.amap.api.maps.model.HeatmapTileProvider.Builder();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.HeatmapTileProvider.Builder __obj__ = new com.amap.api.maps.model.HeatmapTileProvider.Builder();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_BaseOptions__", (args, methodResult) -> {
@@ -1961,15 +2171,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.BaseOptions obj = new com.amap.api.maps.model.BaseOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.BaseOptions __obj__ = new com.amap.api.maps.model.BaseOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_PolylineOptionsCreator__", (args, methodResult) -> {
@@ -1981,15 +2191,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.PolylineOptionsCreator obj = new com.amap.api.maps.model.PolylineOptionsCreator();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.PolylineOptionsCreator __obj__ = new com.amap.api.maps.model.PolylineOptionsCreator();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_BaseOverlay__", (args, methodResult) -> {
@@ -2001,15 +2211,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.BaseOverlay obj = new com.amap.api.maps.model.BaseOverlay();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.BaseOverlay __obj__ = new com.amap.api.maps.model.BaseOverlay();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_TileOverlayOptions__", (args, methodResult) -> {
@@ -2021,15 +2231,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.TileOverlayOptions obj = new com.amap.api.maps.model.TileOverlayOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.TileOverlayOptions __obj__ = new com.amap.api.maps.model.TileOverlayOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_RoutePara__", (args, methodResult) -> {
@@ -2041,15 +2251,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.RoutePara obj = new com.amap.api.maps.model.RoutePara();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.RoutePara __obj__ = new com.amap.api.maps.model.RoutePara();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_ArcOptionsCreator__", (args, methodResult) -> {
@@ -2061,15 +2271,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.ArcOptionsCreator obj = new com.amap.api.maps.model.ArcOptionsCreator();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.ArcOptionsCreator __obj__ = new com.amap.api.maps.model.ArcOptionsCreator();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_CameraPositionCreator__", (args, methodResult) -> {
@@ -2081,15 +2291,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.CameraPositionCreator obj = new com.amap.api.maps.model.CameraPositionCreator();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.CameraPositionCreator __obj__ = new com.amap.api.maps.model.CameraPositionCreator();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_particle_ParticleOverLifeModule__", (args, methodResult) -> {
@@ -2101,15 +2311,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.particle.ParticleOverLifeModule obj = new com.amap.api.maps.model.particle.ParticleOverLifeModule();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.particle.ParticleOverLifeModule __obj__ = new com.amap.api.maps.model.particle.ParticleOverLifeModule();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_particle_ConstantRotationOverLife__float", (args, methodResult) -> {
@@ -2122,15 +2332,15 @@ public class SubHandler25 {
                 Double var1 = (Double) ((Map<String, Object>) args).get("var1");
             
                 // create target object
-                com.amap.api.maps.model.particle.ConstantRotationOverLife obj = new com.amap.api.maps.model.particle.ConstantRotationOverLife(new Double(var1).floatValue());
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.particle.ConstantRotationOverLife __obj__ = new com.amap.api.maps.model.particle.ConstantRotationOverLife(new Double(var1).floatValue());
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_particle_SinglePointParticleShape__float__float__float__boolean", (args, methodResult) -> {
@@ -2149,15 +2359,15 @@ public class SubHandler25 {
                 boolean var4 = (boolean) ((Map<String, Object>) args).get("var4");
             
                 // create target object
-                com.amap.api.maps.model.particle.SinglePointParticleShape obj = new com.amap.api.maps.model.particle.SinglePointParticleShape(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), var4);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.particle.SinglePointParticleShape __obj__ = new com.amap.api.maps.model.particle.SinglePointParticleShape(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), var4);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_particle_SinglePointParticleShape__float__float__float", (args, methodResult) -> {
@@ -2174,15 +2384,15 @@ public class SubHandler25 {
                 Double var3 = (Double) ((Map<String, Object>) args).get("var3");
             
                 // create target object
-                com.amap.api.maps.model.particle.SinglePointParticleShape obj = new com.amap.api.maps.model.particle.SinglePointParticleShape(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue());
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.particle.SinglePointParticleShape __obj__ = new com.amap.api.maps.model.particle.SinglePointParticleShape(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue());
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_particle_RandomVelocityBetweenTwoConstants__float__float__float__float__float__float", (args, methodResult) -> {
@@ -2205,15 +2415,15 @@ public class SubHandler25 {
                 Double var6 = (Double) ((Map<String, Object>) args).get("var6");
             
                 // create target object
-                com.amap.api.maps.model.particle.RandomVelocityBetweenTwoConstants obj = new com.amap.api.maps.model.particle.RandomVelocityBetweenTwoConstants(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue(), new Double(var5).floatValue(), new Double(var6).floatValue());
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.particle.RandomVelocityBetweenTwoConstants __obj__ = new com.amap.api.maps.model.particle.RandomVelocityBetweenTwoConstants(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue(), new Double(var5).floatValue(), new Double(var6).floatValue());
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_particle_CurveSizeOverLife__float__float__float", (args, methodResult) -> {
@@ -2230,15 +2440,15 @@ public class SubHandler25 {
                 Double var3 = (Double) ((Map<String, Object>) args).get("var3");
             
                 // create target object
-                com.amap.api.maps.model.particle.CurveSizeOverLife obj = new com.amap.api.maps.model.particle.CurveSizeOverLife(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue());
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.particle.CurveSizeOverLife __obj__ = new com.amap.api.maps.model.particle.CurveSizeOverLife(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue());
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_particle_ParticleEmissionModule__int__int", (args, methodResult) -> {
@@ -2253,15 +2463,15 @@ public class SubHandler25 {
                 int var2 = (int) ((Map<String, Object>) args).get("var2");
             
                 // create target object
-                com.amap.api.maps.model.particle.ParticleEmissionModule obj = new com.amap.api.maps.model.particle.ParticleEmissionModule(var1, var2);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.particle.ParticleEmissionModule __obj__ = new com.amap.api.maps.model.particle.ParticleEmissionModule(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_particle_RectParticleShape__float__float__float__float__boolean", (args, methodResult) -> {
@@ -2282,15 +2492,15 @@ public class SubHandler25 {
                 boolean var5 = (boolean) ((Map<String, Object>) args).get("var5");
             
                 // create target object
-                com.amap.api.maps.model.particle.RectParticleShape obj = new com.amap.api.maps.model.particle.RectParticleShape(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue(), var5);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.particle.RectParticleShape __obj__ = new com.amap.api.maps.model.particle.RectParticleShape(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue(), var5);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_particle_RandomColorBetWeenTwoConstants__float__float__float__float__float__float__float__float", (args, methodResult) -> {
@@ -2317,15 +2527,15 @@ public class SubHandler25 {
                 Double var8 = (Double) ((Map<String, Object>) args).get("var8");
             
                 // create target object
-                com.amap.api.maps.model.particle.RandomColorBetWeenTwoConstants obj = new com.amap.api.maps.model.particle.RandomColorBetWeenTwoConstants(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue(), new Double(var5).floatValue(), new Double(var6).floatValue(), new Double(var7).floatValue(), new Double(var8).floatValue());
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.particle.RandomColorBetWeenTwoConstants __obj__ = new com.amap.api.maps.model.particle.RandomColorBetWeenTwoConstants(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue(), new Double(var5).floatValue(), new Double(var6).floatValue(), new Double(var7).floatValue(), new Double(var8).floatValue());
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_particle_ParticleOverlayOptionsFactory__", (args, methodResult) -> {
@@ -2337,15 +2547,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.particle.ParticleOverlayOptionsFactory obj = new com.amap.api.maps.model.particle.ParticleOverlayOptionsFactory();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.particle.ParticleOverlayOptionsFactory __obj__ = new com.amap.api.maps.model.particle.ParticleOverlayOptionsFactory();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_particle_ParticleOverlayOptions__", (args, methodResult) -> {
@@ -2357,15 +2567,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.particle.ParticleOverlayOptions obj = new com.amap.api.maps.model.particle.ParticleOverlayOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.particle.ParticleOverlayOptions __obj__ = new com.amap.api.maps.model.particle.ParticleOverlayOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_TextOptions__", (args, methodResult) -> {
@@ -2377,15 +2587,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.TextOptions obj = new com.amap.api.maps.model.TextOptions();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.TextOptions __obj__ = new com.amap.api.maps.model.TextOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_PolygonOptionsCreator__", (args, methodResult) -> {
@@ -2397,15 +2607,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.PolygonOptionsCreator obj = new com.amap.api.maps.model.PolygonOptionsCreator();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.PolygonOptionsCreator __obj__ = new com.amap.api.maps.model.PolygonOptionsCreator();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_TileProjectionCreator__", (args, methodResult) -> {
@@ -2417,15 +2627,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.TileProjectionCreator obj = new com.amap.api.maps.model.TileProjectionCreator();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.TileProjectionCreator __obj__ = new com.amap.api.maps.model.TileProjectionCreator();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_GroundOverlayOptionsCreator__", (args, methodResult) -> {
@@ -2437,15 +2647,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.GroundOverlayOptionsCreator obj = new com.amap.api.maps.model.GroundOverlayOptionsCreator();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.GroundOverlayOptionsCreator __obj__ = new com.amap.api.maps.model.GroundOverlayOptionsCreator();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_model_IndoorBuildingInfo__", (args, methodResult) -> {
@@ -2457,15 +2667,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.model.IndoorBuildingInfo obj = new com.amap.api.maps.model.IndoorBuildingInfo();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.model.IndoorBuildingInfo __obj__ = new com.amap.api.maps.model.IndoorBuildingInfo();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_TextureMapView__android_content_Context", (args, methodResult) -> {
@@ -2478,15 +2688,15 @@ public class SubHandler25 {
                 android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                 // create target object
-                com.amap.api.maps.TextureMapView obj = new com.amap.api.maps.TextureMapView(var1);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.TextureMapView __obj__ = new com.amap.api.maps.TextureMapView(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_TextureMapView__android_content_Context__com_amap_api_maps_AMapOptions", (args, methodResult) -> {
@@ -2501,15 +2711,15 @@ public class SubHandler25 {
                 com.amap.api.maps.AMapOptions var2 = (com.amap.api.maps.AMapOptions) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
             
                 // create target object
-                com.amap.api.maps.TextureMapView obj = new com.amap.api.maps.TextureMapView(var1, var2);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.TextureMapView __obj__ = new com.amap.api.maps.TextureMapView(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_AMapUtils__", (args, methodResult) -> {
@@ -2521,15 +2731,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.maps.AMapUtils obj = new com.amap.api.maps.AMapUtils();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.AMapUtils __obj__ = new com.amap.api.maps.AMapUtils();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_WearMapView__android_content_Context", (args, methodResult) -> {
@@ -2542,15 +2752,15 @@ public class SubHandler25 {
                 android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                 // create target object
-                com.amap.api.maps.WearMapView obj = new com.amap.api.maps.WearMapView(var1);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.WearMapView __obj__ = new com.amap.api.maps.WearMapView(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_WearMapView__android_content_Context__com_amap_api_maps_AMapOptions", (args, methodResult) -> {
@@ -2565,15 +2775,15 @@ public class SubHandler25 {
                 com.amap.api.maps.AMapOptions var2 = (com.amap.api.maps.AMapOptions) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
             
                 // create target object
-                com.amap.api.maps.WearMapView obj = new com.amap.api.maps.WearMapView(var1, var2);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.WearMapView __obj__ = new com.amap.api.maps.WearMapView(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_MapView__android_content_Context", (args, methodResult) -> {
@@ -2586,15 +2796,15 @@ public class SubHandler25 {
                 android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                 // create target object
-                com.amap.api.maps.MapView obj = new com.amap.api.maps.MapView(var1);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.MapView __obj__ = new com.amap.api.maps.MapView(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_maps_MapView__android_content_Context__com_amap_api_maps_AMapOptions", (args, methodResult) -> {
@@ -2609,15 +2819,15 @@ public class SubHandler25 {
                 com.amap.api.maps.AMapOptions var2 = (com.amap.api.maps.AMapOptions) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
             
                 // create target object
-                com.amap.api.maps.MapView obj = new com.amap.api.maps.MapView(var1, var2);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.maps.MapView __obj__ = new com.amap.api.maps.MapView(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_trace_TraceLocation__double__double__float__float__long", (args, methodResult) -> {
@@ -2638,15 +2848,15 @@ public class SubHandler25 {
                 long var7 = (long) (int) ((Map<String, Object>) args).get("var7");
             
                 // create target object
-                com.amap.api.trace.TraceLocation obj = new com.amap.api.trace.TraceLocation(var1, var3, new Double(var5).floatValue(), new Double(var6).floatValue(), var7);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.trace.TraceLocation __obj__ = new com.amap.api.trace.TraceLocation(var1, var3, new Double(var5).floatValue(), new Double(var6).floatValue(), var7);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_trace_TraceLocation__", (args, methodResult) -> {
@@ -2658,15 +2868,15 @@ public class SubHandler25 {
             
             
                 // create target object
-                com.amap.api.trace.TraceLocation obj = new com.amap.api.trace.TraceLocation();
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.trace.TraceLocation __obj__ = new com.amap.api.trace.TraceLocation();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_trace_LBSTraceClient__android_content_Context", (args, methodResult) -> {
@@ -2679,15 +2889,15 @@ public class SubHandler25 {
                 android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                 // create target object
-                com.amap.api.trace.LBSTraceClient obj = new com.amap.api.trace.LBSTraceClient(var1);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.trace.LBSTraceClient __obj__ = new com.amap.api.trace.LBSTraceClient(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_trace_TraceOverlay__com_amap_api_maps_AMap__java_util_List_com_amap_api_maps_model_LatLng_", (args, methodResult) -> {
@@ -2706,15 +2916,15 @@ public class SubHandler25 {
                 }
             
                 // create target object
-                com.amap.api.trace.TraceOverlay obj = new com.amap.api.trace.TraceOverlay(var1, (ArrayList) var2);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.trace.TraceOverlay __obj__ = new com.amap.api.trace.TraceOverlay(var1, (ArrayList) var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::createcom_amap_api_trace_TraceOverlay__com_amap_api_maps_AMap", (args, methodResult) -> {
@@ -2727,32 +2937,32 @@ public class SubHandler25 {
                 com.amap.api.maps.AMap var1 = (com.amap.api.maps.AMap) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                 // create target object
-                com.amap.api.trace.TraceOverlay obj = new com.amap.api.trace.TraceOverlay(var1);
-                getHEAP().put(System.identityHashCode(obj), obj);
+                com.amap.api.trace.TraceOverlay __obj__ = new com.amap.api.trace.TraceOverlay(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(obj));
+                methodResult.success(System.identityHashCode(__obj__));
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_maploader_ProcessingTile__String", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -2764,35 +2974,35 @@ public class SubHandler25 {
                     String var1 = (String) ((Map<String, Object>) args).get("var1");
             
                     // create target object
-                    com.autonavi.ae.gmap.maploader.ProcessingTile obj = new com.autonavi.ae.gmap.maploader.ProcessingTile(var1);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.maploader.ProcessingTile __obj__ = new com.autonavi.ae.gmap.maploader.ProcessingTile(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_glinterface_MapLabelItem__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -2803,35 +3013,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.ae.gmap.glinterface.MapLabelItem obj = new com.autonavi.ae.gmap.glinterface.MapLabelItem();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.glinterface.MapLabelItem __obj__ = new com.autonavi.ae.gmap.glinterface.MapLabelItem();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_glanimation_AdglMapAnimationMgr__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -2842,35 +3052,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.ae.gmap.glanimation.AdglMapAnimationMgr obj = new com.autonavi.ae.gmap.glanimation.AdglMapAnimationMgr();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.glanimation.AdglMapAnimationMgr __obj__ = new com.autonavi.ae.gmap.glanimation.AdglMapAnimationMgr();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_glanimation_AdglAnimation2V__int", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -2882,35 +3092,35 @@ public class SubHandler25 {
                     int var1 = (int) ((Map<String, Object>) args).get("var1");
             
                     // create target object
-                    com.autonavi.ae.gmap.glanimation.AdglAnimation2V obj = new com.autonavi.ae.gmap.glanimation.AdglAnimation2V(var1);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.glanimation.AdglAnimation2V __obj__ = new com.autonavi.ae.gmap.glanimation.AdglAnimation2V(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_glanimation_AdglAnimationContantValues__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -2921,35 +3131,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.ae.gmap.glanimation.AdglAnimationContantValues obj = new com.autonavi.ae.gmap.glanimation.AdglAnimationContantValues();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.glanimation.AdglAnimationContantValues __obj__ = new com.autonavi.ae.gmap.glanimation.AdglAnimationContantValues();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_glanimation_AdglMapAnimFling__int__int__int", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -2965,35 +3175,35 @@ public class SubHandler25 {
                     int var3 = (int) ((Map<String, Object>) args).get("var3");
             
                     // create target object
-                    com.autonavi.ae.gmap.glanimation.AdglMapAnimFling obj = new com.autonavi.ae.gmap.glanimation.AdglMapAnimFling(var1, var2, var3);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.glanimation.AdglMapAnimFling __obj__ = new com.autonavi.ae.gmap.glanimation.AdglMapAnimFling(var1, var2, var3);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_glanimation_AdglAnimation1V__int", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3005,35 +3215,35 @@ public class SubHandler25 {
                     int var1 = (int) ((Map<String, Object>) args).get("var1");
             
                     // create target object
-                    com.autonavi.ae.gmap.glanimation.AdglAnimation1V obj = new com.autonavi.ae.gmap.glanimation.AdglAnimation1V(var1);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.glanimation.AdglAnimation1V __obj__ = new com.autonavi.ae.gmap.glanimation.AdglAnimation1V(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_glanimation_AdglMapAnimPivotZoom__int", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3045,35 +3255,35 @@ public class SubHandler25 {
                     int var1 = (int) ((Map<String, Object>) args).get("var1");
             
                     // create target object
-                    com.autonavi.ae.gmap.glanimation.AdglMapAnimPivotZoom obj = new com.autonavi.ae.gmap.glanimation.AdglMapAnimPivotZoom(var1);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.glanimation.AdglMapAnimPivotZoom __obj__ = new com.autonavi.ae.gmap.glanimation.AdglMapAnimPivotZoom(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_glanimation_AbstractAdglAnimationParam1V__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3084,35 +3294,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam1V obj = new com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam1V();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam1V __obj__ = new com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam1V();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_glanimation_AdglMapAnimGroup__int", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3124,35 +3334,35 @@ public class SubHandler25 {
                     int var1 = (int) ((Map<String, Object>) args).get("var1");
             
                     // create target object
-                    com.autonavi.ae.gmap.glanimation.AdglMapAnimGroup obj = new com.autonavi.ae.gmap.glanimation.AdglMapAnimGroup(var1);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.glanimation.AdglMapAnimGroup __obj__ = new com.autonavi.ae.gmap.glanimation.AdglMapAnimGroup(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_glanimation_AbstractAdglAnimationParam2V__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3163,35 +3373,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam2V obj = new com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam2V();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam2V __obj__ = new com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam2V();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_style_StyleItem__int", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3203,35 +3413,35 @@ public class SubHandler25 {
                     int var1 = (int) ((Map<String, Object>) args).get("var1");
             
                     // create target object
-                    com.autonavi.ae.gmap.style.StyleItem obj = new com.autonavi.ae.gmap.style.StyleItem(var1);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.style.StyleItem __obj__ = new com.autonavi.ae.gmap.style.StyleItem(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_style_StyleElement__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3242,35 +3452,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.ae.gmap.style.StyleElement obj = new com.autonavi.ae.gmap.style.StyleElement();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.style.StyleElement __obj__ = new com.autonavi.ae.gmap.style.StyleElement();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_GLMapEngine_MapViewInitParam__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3281,35 +3491,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam obj = new com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam __obj__ = new com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_gesture_EAMapPlatformGestureInfo__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3320,35 +3530,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo obj = new com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo __obj__ = new com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_GLMapState__int__long", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3362,35 +3572,35 @@ public class SubHandler25 {
                     long var2 = (long) (int) ((Map<String, Object>) args).get("var2");
             
                     // create target object
-                    com.autonavi.ae.gmap.GLMapState obj = new com.autonavi.ae.gmap.GLMapState(var1, var2);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.GLMapState __obj__ = new com.autonavi.ae.gmap.GLMapState(var1, var2);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_GLMapState__long__long", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3404,35 +3614,35 @@ public class SubHandler25 {
                     long var3 = (long) (int) ((Map<String, Object>) args).get("var3");
             
                     // create target object
-                    com.autonavi.ae.gmap.GLMapState obj = new com.autonavi.ae.gmap.GLMapState(var1, var3);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.GLMapState __obj__ = new com.autonavi.ae.gmap.GLMapState(var1, var3);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_gloverlay_GLTextureProperty__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3443,35 +3653,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.ae.gmap.gloverlay.GLTextureProperty obj = new com.autonavi.ae.gmap.gloverlay.GLTextureProperty();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.gloverlay.GLTextureProperty __obj__ = new com.autonavi.ae.gmap.gloverlay.GLTextureProperty();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_gloverlay_GLOverlayBundle_GLAmapFocusHits__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3482,35 +3692,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.ae.gmap.gloverlay.GLOverlayBundle.GLAmapFocusHits obj = new com.autonavi.ae.gmap.gloverlay.GLOverlayBundle.GLAmapFocusHits();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.gloverlay.GLOverlayBundle.GLAmapFocusHits __obj__ = new com.autonavi.ae.gmap.gloverlay.GLOverlayBundle.GLAmapFocusHits();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_gloverlay_GLCrossVector_AVectorCrossAttr__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3521,35 +3731,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr obj = new com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr __obj__ = new com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_gloverlay_GLRouteProperty__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3560,35 +3770,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.ae.gmap.gloverlay.GLRouteProperty obj = new com.autonavi.ae.gmap.gloverlay.GLRouteProperty();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.gloverlay.GLRouteProperty __obj__ = new com.autonavi.ae.gmap.gloverlay.GLRouteProperty();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_gloverlay_GLOverlayTexture__int__int__int__int", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3606,35 +3816,35 @@ public class SubHandler25 {
                     int var4 = (int) ((Map<String, Object>) args).get("var4");
             
                     // create target object
-                    com.autonavi.ae.gmap.gloverlay.GLOverlayTexture obj = new com.autonavi.ae.gmap.gloverlay.GLOverlayTexture(var1, var2, var3, var4);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.gloverlay.GLOverlayTexture __obj__ = new com.autonavi.ae.gmap.gloverlay.GLOverlayTexture(var1, var2, var3, var4);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_gloverlay_GLOverlayTexture__int__int__float__float__int__int", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3656,35 +3866,35 @@ public class SubHandler25 {
                     int var6 = (int) ((Map<String, Object>) args).get("var6");
             
                     // create target object
-                    com.autonavi.ae.gmap.gloverlay.GLOverlayTexture obj = new com.autonavi.ae.gmap.gloverlay.GLOverlayTexture(var1, var2, new Double(var3).floatValue(), new Double(var4).floatValue(), var5, var6);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.gloverlay.GLOverlayTexture __obj__ = new com.autonavi.ae.gmap.gloverlay.GLOverlayTexture(var1, var2, new Double(var3).floatValue(), new Double(var4).floatValue(), var5, var6);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_ae_gmap_GLMapEngine_InitParam__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3695,35 +3905,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.ae.gmap.GLMapEngine.InitParam obj = new com.autonavi.ae.gmap.GLMapEngine.InitParam();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.ae.gmap.GLMapEngine.InitParam __obj__ = new com.autonavi.ae.gmap.GLMapEngine.InitParam();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_maploader_AMapLoader_ADataRequestParam__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3734,35 +3944,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam obj = new com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam __obj__ = new com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_maploader_NetworkState__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3773,35 +3983,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.maploader.NetworkState obj = new com.autonavi.amap.mapcore.maploader.NetworkState();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.maploader.NetworkState __obj__ = new com.autonavi.amap.mapcore.maploader.NetworkState();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_maploader_AMapLoader_AMapGridDownloadRequest__android_content_Context__String__String", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3817,35 +4027,35 @@ public class SubHandler25 {
                     String var3 = (String) ((Map<String, Object>) args).get("var3");
             
                     // create target object
-                    com.autonavi.amap.mapcore.maploader.AMapLoader.AMapGridDownloadRequest obj = new com.autonavi.amap.mapcore.maploader.AMapLoader.AMapGridDownloadRequest(var1, var2, var3);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.maploader.AMapLoader.AMapGridDownloadRequest __obj__ = new com.autonavi.amap.mapcore.maploader.AMapLoader.AMapGridDownloadRequest(var1, var2, var3);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_maploader_AMapLoader__int__com_autonavi_ae_gmap_GLMapEngine__com_autonavi_amap_mapcore_maploader_AMapLoader_ADataRequestParam", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3861,35 +4071,35 @@ public class SubHandler25 {
                     com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam var3 = (com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam) getHEAP().get((int) ((Map<String, Object>) args).get("var3"));
             
                     // create target object
-                    com.autonavi.amap.mapcore.maploader.AMapLoader obj = new com.autonavi.amap.mapcore.maploader.AMapLoader(var1, var2, var3);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.maploader.AMapLoader __obj__ = new com.autonavi.amap.mapcore.maploader.AMapLoader(var1, var2, var3);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_MapProjection__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3900,35 +4110,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.MapProjection obj = new com.autonavi.amap.mapcore.MapProjection();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.MapProjection __obj__ = new com.autonavi.amap.mapcore.MapProjection();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_tools_TextTextureGenerator__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3939,35 +4149,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.tools.TextTextureGenerator obj = new com.autonavi.amap.mapcore.tools.TextTextureGenerator();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.tools.TextTextureGenerator __obj__ = new com.autonavi.amap.mapcore.tools.TextTextureGenerator();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_tools_GLFileUtil__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -3978,35 +4188,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.tools.GLFileUtil obj = new com.autonavi.amap.mapcore.tools.GLFileUtil();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.tools.GLFileUtil __obj__ = new com.autonavi.amap.mapcore.tools.GLFileUtil();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_tools_GlMapUtil__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4017,35 +4227,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.tools.GlMapUtil obj = new com.autonavi.amap.mapcore.tools.GlMapUtil();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.tools.GlMapUtil __obj__ = new com.autonavi.amap.mapcore.tools.GlMapUtil();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_tools_GLMapStaticValue__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4056,35 +4266,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.tools.GLMapStaticValue obj = new com.autonavi.amap.mapcore.tools.GLMapStaticValue();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.tools.GLMapStaticValue __obj__ = new com.autonavi.amap.mapcore.tools.GLMapStaticValue();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_tools_GLConvertUtil__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4095,35 +4305,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.tools.GLConvertUtil obj = new com.autonavi.amap.mapcore.tools.GLConvertUtil();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.tools.GLConvertUtil __obj__ = new com.autonavi.amap.mapcore.tools.GLConvertUtil();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_MsgProcessor__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4134,35 +4344,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.MsgProcessor obj = new com.autonavi.amap.mapcore.MsgProcessor();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.MsgProcessor __obj__ = new com.autonavi.amap.mapcore.MsgProcessor();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_AeUtil_UnZipFileBrake__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4173,35 +4383,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.AeUtil.UnZipFileBrake obj = new com.autonavi.amap.mapcore.AeUtil.UnZipFileBrake();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.AeUtil.UnZipFileBrake __obj__ = new com.autonavi.amap.mapcore.AeUtil.UnZipFileBrake();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_AbstractNativeInstance__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4212,35 +4422,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.AbstractNativeInstance obj = new com.autonavi.amap.mapcore.AbstractNativeInstance();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.AbstractNativeInstance __obj__ = new com.autonavi.amap.mapcore.AbstractNativeInstance();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_LinkInfo__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4251,35 +4461,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.LinkInfo obj = new com.autonavi.amap.mapcore.LinkInfo();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.LinkInfo __obj__ = new com.autonavi.amap.mapcore.LinkInfo();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_AMapNativePolyline__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4290,35 +4500,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.AMapNativePolyline obj = new com.autonavi.amap.mapcore.AMapNativePolyline();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.AMapNativePolyline __obj__ = new com.autonavi.amap.mapcore.AMapNativePolyline();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_IPoint__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4329,35 +4539,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.IPoint obj = new com.autonavi.amap.mapcore.IPoint();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.IPoint __obj__ = new com.autonavi.amap.mapcore.IPoint();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_IPoint__int__int", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4371,35 +4581,35 @@ public class SubHandler25 {
                     int var2 = (int) ((Map<String, Object>) args).get("var2");
             
                     // create target object
-                    com.autonavi.amap.mapcore.IPoint obj = new com.autonavi.amap.mapcore.IPoint(var1, var2);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.IPoint __obj__ = new com.autonavi.amap.mapcore.IPoint(var1, var2);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_gles_AMapNativeGLShaderManager__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4410,35 +4620,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.gles.AMapNativeGLShaderManager obj = new com.autonavi.amap.mapcore.gles.AMapNativeGLShaderManager();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.gles.AMapNativeGLShaderManager __obj__ = new com.autonavi.amap.mapcore.gles.AMapNativeGLShaderManager();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_DPoint__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4449,35 +4659,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.DPoint obj = new com.autonavi.amap.mapcore.DPoint();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.DPoint __obj__ = new com.autonavi.amap.mapcore.DPoint();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_DPoint__double__double", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4491,35 +4701,35 @@ public class SubHandler25 {
                     double var3 = (double) ((Map<String, Object>) args).get("var3");
             
                     // create target object
-                    com.autonavi.amap.mapcore.DPoint obj = new com.autonavi.amap.mapcore.DPoint(var1, var3);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.DPoint __obj__ = new com.autonavi.amap.mapcore.DPoint(var1, var3);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_AMapNativeRenderer__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4530,35 +4740,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.AMapNativeRenderer obj = new com.autonavi.amap.mapcore.AMapNativeRenderer();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.AMapNativeRenderer __obj__ = new com.autonavi.amap.mapcore.AMapNativeRenderer();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_FileUtil__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4569,35 +4779,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.FileUtil obj = new com.autonavi.amap.mapcore.FileUtil();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.FileUtil __obj__ = new com.autonavi.amap.mapcore.FileUtil();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_animation_GLTranslateAnimation__com_amap_api_maps_model_LatLng", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4609,35 +4819,35 @@ public class SubHandler25 {
                     com.amap.api.maps.model.LatLng var1 = (com.amap.api.maps.model.LatLng) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                     // create target object
-                    com.autonavi.amap.mapcore.animation.GLTranslateAnimation obj = new com.autonavi.amap.mapcore.animation.GLTranslateAnimation(var1);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.animation.GLTranslateAnimation __obj__ = new com.autonavi.amap.mapcore.animation.GLTranslateAnimation(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_animation_GLRotateAnimation__float__float__float__float__float", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4657,35 +4867,35 @@ public class SubHandler25 {
                     Double var5 = (Double) ((Map<String, Object>) args).get("var5");
             
                     // create target object
-                    com.autonavi.amap.mapcore.animation.GLRotateAnimation obj = new com.autonavi.amap.mapcore.animation.GLRotateAnimation(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue(), new Double(var5).floatValue());
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.animation.GLRotateAnimation __obj__ = new com.autonavi.amap.mapcore.animation.GLRotateAnimation(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue(), new Double(var5).floatValue());
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_animation_GLAlphaAnimation__float__float", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4699,35 +4909,35 @@ public class SubHandler25 {
                     Double var2 = (Double) ((Map<String, Object>) args).get("var2");
             
                     // create target object
-                    com.autonavi.amap.mapcore.animation.GLAlphaAnimation obj = new com.autonavi.amap.mapcore.animation.GLAlphaAnimation(new Double(var1).floatValue(), new Double(var2).floatValue());
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.animation.GLAlphaAnimation __obj__ = new com.autonavi.amap.mapcore.animation.GLAlphaAnimation(new Double(var1).floatValue(), new Double(var2).floatValue());
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_animation_GLScaleAnimation__float__float__float__float", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4745,35 +4955,35 @@ public class SubHandler25 {
                     Double var4 = (Double) ((Map<String, Object>) args).get("var4");
             
                     // create target object
-                    com.autonavi.amap.mapcore.animation.GLScaleAnimation obj = new com.autonavi.amap.mapcore.animation.GLScaleAnimation(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue());
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.animation.GLScaleAnimation __obj__ = new com.autonavi.amap.mapcore.animation.GLScaleAnimation(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue());
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_animation_GLTransformation__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4784,35 +4994,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.animation.GLTransformation obj = new com.autonavi.amap.mapcore.animation.GLTransformation();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.animation.GLTransformation __obj__ = new com.autonavi.amap.mapcore.animation.GLTransformation();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_animation_GLAnimationSet__boolean", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4824,35 +5034,35 @@ public class SubHandler25 {
                     boolean var1 = (boolean) ((Map<String, Object>) args).get("var1");
             
                     // create target object
-                    com.autonavi.amap.mapcore.animation.GLAnimationSet obj = new com.autonavi.amap.mapcore.animation.GLAnimationSet(var1);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.animation.GLAnimationSet __obj__ = new com.autonavi.amap.mapcore.animation.GLAnimationSet(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_animation_GLEmergeAnimation__com_amap_api_maps_model_LatLng", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4864,35 +5074,35 @@ public class SubHandler25 {
                     com.amap.api.maps.model.LatLng var1 = (com.amap.api.maps.model.LatLng) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                     // create target object
-                    com.autonavi.amap.mapcore.animation.GLEmergeAnimation obj = new com.autonavi.amap.mapcore.animation.GLEmergeAnimation(var1);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.animation.GLEmergeAnimation __obj__ = new com.autonavi.amap.mapcore.animation.GLEmergeAnimation(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_animation_GLAnimation__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4903,35 +5113,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.animation.GLAnimation obj = new com.autonavi.amap.mapcore.animation.GLAnimation();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.animation.GLAnimation __obj__ = new com.autonavi.amap.mapcore.animation.GLAnimation();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_MapConfig__boolean", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4943,35 +5153,35 @@ public class SubHandler25 {
                     boolean var1 = (boolean) ((Map<String, Object>) args).get("var1");
             
                     // create target object
-                    com.autonavi.amap.mapcore.MapConfig obj = new com.autonavi.amap.mapcore.MapConfig(var1);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.MapConfig __obj__ = new com.autonavi.amap.mapcore.MapConfig(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_message_HoverGestureMapMessage__int__float", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -4985,35 +5195,35 @@ public class SubHandler25 {
                     Double var2 = (Double) ((Map<String, Object>) args).get("var2");
             
                     // create target object
-                    com.autonavi.amap.mapcore.message.HoverGestureMapMessage obj = new com.autonavi.amap.mapcore.message.HoverGestureMapMessage(var1, new Double(var2).floatValue());
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.message.HoverGestureMapMessage __obj__ = new com.autonavi.amap.mapcore.message.HoverGestureMapMessage(var1, new Double(var2).floatValue());
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_message_MoveGestureMapMessage__int__float__float", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -5029,35 +5239,35 @@ public class SubHandler25 {
                     Double var3 = (Double) ((Map<String, Object>) args).get("var3");
             
                     // create target object
-                    com.autonavi.amap.mapcore.message.MoveGestureMapMessage obj = new com.autonavi.amap.mapcore.message.MoveGestureMapMessage(var1, new Double(var2).floatValue(), new Double(var3).floatValue());
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.message.MoveGestureMapMessage __obj__ = new com.autonavi.amap.mapcore.message.MoveGestureMapMessage(var1, new Double(var2).floatValue(), new Double(var3).floatValue());
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_message_ScaleGestureMapMessage__int__float__int__int", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -5075,35 +5285,35 @@ public class SubHandler25 {
                     int var4 = (int) ((Map<String, Object>) args).get("var4");
             
                     // create target object
-                    com.autonavi.amap.mapcore.message.ScaleGestureMapMessage obj = new com.autonavi.amap.mapcore.message.ScaleGestureMapMessage(var1, new Double(var2).floatValue(), var3, var4);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.message.ScaleGestureMapMessage __obj__ = new com.autonavi.amap.mapcore.message.ScaleGestureMapMessage(var1, new Double(var2).floatValue(), var3, var4);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_message_RotateGestureMapMessage__int__float__int__int", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -5121,35 +5331,35 @@ public class SubHandler25 {
                     int var4 = (int) ((Map<String, Object>) args).get("var4");
             
                     // create target object
-                    com.autonavi.amap.mapcore.message.RotateGestureMapMessage obj = new com.autonavi.amap.mapcore.message.RotateGestureMapMessage(var1, new Double(var2).floatValue(), var3, var4);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.message.RotateGestureMapMessage __obj__ = new com.autonavi.amap.mapcore.message.RotateGestureMapMessage(var1, new Double(var2).floatValue(), var3, var4);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_FPointBounds__com_autonavi_amap_mapcore_FPoint__com_autonavi_amap_mapcore_FPoint", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -5163,35 +5373,35 @@ public class SubHandler25 {
                     com.autonavi.amap.mapcore.FPoint var2 = (com.autonavi.amap.mapcore.FPoint) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
             
                     // create target object
-                    com.autonavi.amap.mapcore.FPointBounds obj = new com.autonavi.amap.mapcore.FPointBounds(var1, var2);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.FPointBounds __obj__ = new com.autonavi.amap.mapcore.FPointBounds(var1, var2);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_CoordUtil__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -5202,35 +5412,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.CoordUtil obj = new com.autonavi.amap.mapcore.CoordUtil();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.CoordUtil __obj__ = new com.autonavi.amap.mapcore.CoordUtil();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_AeUtil__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -5241,35 +5451,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.AeUtil obj = new com.autonavi.amap.mapcore.AeUtil();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.AeUtil __obj__ = new com.autonavi.amap.mapcore.AeUtil();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_VirtualEarthProjection__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -5280,35 +5490,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.VirtualEarthProjection obj = new com.autonavi.amap.mapcore.VirtualEarthProjection();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.VirtualEarthProjection __obj__ = new com.autonavi.amap.mapcore.VirtualEarthProjection();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_Rectangle__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -5319,35 +5529,35 @@ public class SubHandler25 {
             
             
                     // create target object
-                    com.autonavi.amap.mapcore.Rectangle obj = new com.autonavi.amap.mapcore.Rectangle();
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.Rectangle __obj__ = new com.autonavi.amap.mapcore.Rectangle();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_Rectangle__float__float__float__float", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -5365,35 +5575,35 @@ public class SubHandler25 {
                     Double var4 = (Double) ((Map<String, Object>) args).get("var4");
             
                     // create target object
-                    com.autonavi.amap.mapcore.Rectangle obj = new com.autonavi.amap.mapcore.Rectangle(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue());
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.Rectangle __obj__ = new com.autonavi.amap.mapcore.Rectangle(new Double(var1).floatValue(), new Double(var2).floatValue(), new Double(var3).floatValue(), new Double(var4).floatValue());
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_Inner_3dMap_location__String", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int __i__ = 0; __i__ < length; __i__++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
@@ -5405,378 +5615,18 @@ public class SubHandler25 {
                     String var1 = (String) ((Map<String, Object>) args).get("var1");
             
                     // create target object
-                    com.autonavi.amap.mapcore.Inner_3dMap_location obj = new com.autonavi.amap.mapcore.Inner_3dMap_location(var1);
-                    getHEAP().put(System.identityHashCode(obj), obj);
+                    com.autonavi.amap.mapcore.Inner_3dMap_location __obj__ = new com.autonavi.amap.mapcore.Inner_3dMap_location(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(System.identityHashCode(obj));
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
-            });
-            // factory
-            put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_Inner_3dMap_location__android_location_Location", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
-            
-                int length = 0;
-                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
-                // of this batch
-                if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
-                }
-                // or directly put the arg batch
-                else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
-                }
-            
-                for (int __i__ = 0; __i__ < length; __i__++) {
-                    Map<String, Object> args = new HashMap<>();
-                    // only when arg batch is not empty, java side needs to parse args;
-                    if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
-                    }
-            
-                    // args
-                    // ref arg
-                    android.location.Location var1 = (android.location.Location) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
-            
-                    // create target object
-                    com.autonavi.amap.mapcore.Inner_3dMap_location obj = new com.autonavi.amap.mapcore.Inner_3dMap_location(var1);
-                    getHEAP().put(System.identityHashCode(obj), obj);
-            
-                    // print current HEAP
-                    if (getEnableLog()) {
-                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                    }
-            
-                    resultList.add(System.identityHashCode(obj));
-                }
-            
-                methodResult.success(resultList);
-            });
-            // factory
-            put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_AMapEngineUtils__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
-            
-                int length = 0;
-                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
-                // of this batch
-                if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
-                }
-                // or directly put the arg batch
-                else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
-                }
-            
-                for (int __i__ = 0; __i__ < length; __i__++) {
-                    Map<String, Object> args = new HashMap<>();
-                    // only when arg batch is not empty, java side needs to parse args;
-                    if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
-                    }
-            
-                    // args
-            
-            
-                    // create target object
-                    com.autonavi.amap.mapcore.AMapEngineUtils obj = new com.autonavi.amap.mapcore.AMapEngineUtils();
-                    getHEAP().put(System.identityHashCode(obj), obj);
-            
-                    // print current HEAP
-                    if (getEnableLog()) {
-                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                    }
-            
-                    resultList.add(System.identityHashCode(obj));
-                }
-            
-                methodResult.success(resultList);
-            });
-            // factory
-            put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_FPoint3__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
-            
-                int length = 0;
-                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
-                // of this batch
-                if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
-                }
-                // or directly put the arg batch
-                else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
-                }
-            
-                for (int __i__ = 0; __i__ < length; __i__++) {
-                    Map<String, Object> args = new HashMap<>();
-                    // only when arg batch is not empty, java side needs to parse args;
-                    if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
-                    }
-            
-                    // args
-            
-            
-                    // create target object
-                    com.autonavi.amap.mapcore.FPoint3 obj = new com.autonavi.amap.mapcore.FPoint3();
-                    getHEAP().put(System.identityHashCode(obj), obj);
-            
-                    // print current HEAP
-                    if (getEnableLog()) {
-                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                    }
-            
-                    resultList.add(System.identityHashCode(obj));
-                }
-            
-                methodResult.success(resultList);
-            });
-            // factory
-            put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_FPoint3__float__float__int", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
-            
-                int length = 0;
-                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
-                // of this batch
-                if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
-                }
-                // or directly put the arg batch
-                else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
-                }
-            
-                for (int __i__ = 0; __i__ < length; __i__++) {
-                    Map<String, Object> args = new HashMap<>();
-                    // only when arg batch is not empty, java side needs to parse args;
-                    if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
-                    }
-            
-                    // args
-                    // jsonable arg
-                    Double var1 = (Double) ((Map<String, Object>) args).get("var1");
-                    // jsonable arg
-                    Double var2 = (Double) ((Map<String, Object>) args).get("var2");
-                    // jsonable arg
-                    int var3 = (int) ((Map<String, Object>) args).get("var3");
-            
-                    // create target object
-                    com.autonavi.amap.mapcore.FPoint3 obj = new com.autonavi.amap.mapcore.FPoint3(new Double(var1).floatValue(), new Double(var2).floatValue(), var3);
-                    getHEAP().put(System.identityHashCode(obj), obj);
-            
-                    // print current HEAP
-                    if (getEnableLog()) {
-                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                    }
-            
-                    resultList.add(System.identityHashCode(obj));
-                }
-            
-                methodResult.success(resultList);
-            });
-            // factory
-            put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_AMapEtaDecoder__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
-            
-                int length = 0;
-                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
-                // of this batch
-                if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
-                }
-                // or directly put the arg batch
-                else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
-                }
-            
-                for (int __i__ = 0; __i__ < length; __i__++) {
-                    Map<String, Object> args = new HashMap<>();
-                    // only when arg batch is not empty, java side needs to parse args;
-                    if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
-                    }
-            
-                    // args
-            
-            
-                    // create target object
-                    com.autonavi.amap.mapcore.AMapEtaDecoder obj = new com.autonavi.amap.mapcore.AMapEtaDecoder();
-                    getHEAP().put(System.identityHashCode(obj), obj);
-            
-                    // print current HEAP
-                    if (getEnableLog()) {
-                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                    }
-            
-                    resultList.add(System.identityHashCode(obj));
-                }
-            
-                methodResult.success(resultList);
-            });
-            // factory
-            put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_FPointBounds_Builder__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
-            
-                int length = 0;
-                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
-                // of this batch
-                if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
-                }
-                // or directly put the arg batch
-                else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
-                }
-            
-                for (int __i__ = 0; __i__ < length; __i__++) {
-                    Map<String, Object> args = new HashMap<>();
-                    // only when arg batch is not empty, java side needs to parse args;
-                    if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
-                    }
-            
-                    // args
-            
-            
-                    // create target object
-                    com.autonavi.amap.mapcore.FPointBounds.Builder obj = new com.autonavi.amap.mapcore.FPointBounds.Builder();
-                    getHEAP().put(System.identityHashCode(obj), obj);
-            
-                    // print current HEAP
-                    if (getEnableLog()) {
-                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                    }
-            
-                    resultList.add(System.identityHashCode(obj));
-                }
-            
-                methodResult.success(resultList);
-            });
-            // factory
-            put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_Inner_3dMap_locationOption__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
-            
-                int length = 0;
-                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
-                // of this batch
-                if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
-                }
-                // or directly put the arg batch
-                else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
-                }
-            
-                for (int __i__ = 0; __i__ < length; __i__++) {
-                    Map<String, Object> args = new HashMap<>();
-                    // only when arg batch is not empty, java side needs to parse args;
-                    if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
-                    }
-            
-                    // args
-            
-            
-                    // create target object
-                    com.autonavi.amap.mapcore.Inner_3dMap_locationOption obj = new com.autonavi.amap.mapcore.Inner_3dMap_locationOption();
-                    getHEAP().put(System.identityHashCode(obj), obj);
-            
-                    // print current HEAP
-                    if (getEnableLog()) {
-                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                    }
-            
-                    resultList.add(System.identityHashCode(obj));
-                }
-            
-                methodResult.success(resultList);
-            });
-            // factory
-            put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_FPoint__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
-            
-                int length = 0;
-                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
-                // of this batch
-                if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
-                }
-                // or directly put the arg batch
-                else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
-                }
-            
-                for (int __i__ = 0; __i__ < length; __i__++) {
-                    Map<String, Object> args = new HashMap<>();
-                    // only when arg batch is not empty, java side needs to parse args;
-                    if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
-                    }
-            
-                    // args
-            
-            
-                    // create target object
-                    com.autonavi.amap.mapcore.FPoint obj = new com.autonavi.amap.mapcore.FPoint();
-                    getHEAP().put(System.identityHashCode(obj), obj);
-            
-                    // print current HEAP
-                    if (getEnableLog()) {
-                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                    }
-            
-                    resultList.add(System.identityHashCode(obj));
-                }
-            
-                methodResult.success(resultList);
-            });
-            // factory
-            put("ObjectFactory::create_batchcom_autonavi_amap_mapcore_FPoint__float__float", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
-            
-                int length = 0;
-                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
-                // of this batch
-                if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
-                }
-                // or directly put the arg batch
-                else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
-                }
-            
-                for (int __i__ = 0; __i__ < length; __i__++) {
-                    Map<String, Object> args = new HashMap<>();
-                    // only when arg batch is not empty, java side needs to parse args;
-                    if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
-                    }
-            
-                    // args
-                    // jsonable arg
-                    Double var1 = (Double) ((Map<String, Object>) args).get("var1");
-                    // jsonable arg
-                    Double var2 = (Double) ((Map<String, Object>) args).get("var2");
-            
-                    // create target object
-                    com.autonavi.amap.mapcore.FPoint obj = new com.autonavi.amap.mapcore.FPoint(new Double(var1).floatValue(), new Double(var2).floatValue());
-                    getHEAP().put(System.identityHashCode(obj), obj);
-            
-                    // print current HEAP
-                    if (getEnableLog()) {
-                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                    }
-            
-                    resultList.add(System.identityHashCode(obj));
-                }
-            
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
         }};
     }

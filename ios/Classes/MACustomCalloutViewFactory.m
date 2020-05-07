@@ -26,28 +26,30 @@ extern BOOL enableLog;
 }
 
 - (NSObject <FlutterPlatformView> *)createWithFrame:(CGRect)frame viewIdentifier:(int64_t)viewId arguments:(id _Nullable)args {
-  return [[MACustomCalloutViewPlatformView alloc] initWithViewId:viewId registrar:_registrar];
+  return [[MACustomCalloutViewPlatformView alloc] initWithViewId:viewId frame: frame registrar:_registrar];
 }
 
 @end
 
 @implementation MACustomCalloutViewPlatformView {
-  NSInteger _viewId;
+  int64_t _viewId;
+  CGRect _frame;
   NSDictionary<NSString *, Handler> *_handlerMap;
 }
 
-- (instancetype)initWithViewId:(NSInteger)viewId registrar:(NSObject <FlutterPluginRegistrar> *)registrar {
+- (instancetype)initWithViewId:(int64_t)viewId frame:(CGRect)frame registrar:(NSObject <FlutterPluginRegistrar> *)registrar {
   self = [super init];
   if (self) {
     _viewId = viewId;
     _registrar = registrar;
+    _frame = frame;
   }
 
   return self;
 }
 
 - (UIView *)view {
-  MACustomCalloutView *view = [[MACustomCalloutView alloc] init];
+  MACustomCalloutView *view = [[MACustomCalloutView alloc] initWithFrame:_frame];
   // 这里用一个magic number调整一下id
   HEAP[@(2147483647 - _viewId)] = view;
 
@@ -121,8 +123,19 @@ extern BOOL enableLog;
           }
       
           // args
-          // ref arg
-          id userData = (id) HEAP[@([args[@"userData"] integerValue])];
+          // id arg
+          id userData;
+          // jsonable
+          if ([args[@"userData"] isKindOfClass:[NSNumber class]]
+                  || [args[@"userData"] isKindOfClass:[NSString class]]
+                  || [args[@"userData"] isKindOfClass:[NSArray class]]
+                  || [args[@"userData"] isKindOfClass:[NSDictionary class]]) {
+              userData = args[@"userData"];
+          }
+          // non jsonable
+          else {
+              userData = HEAP[@([args[@"userData"] integerValue])];
+          }
       
           // ref
           MACustomCalloutView* ref = (MACustomCalloutView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];

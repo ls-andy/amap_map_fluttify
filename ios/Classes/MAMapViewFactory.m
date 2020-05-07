@@ -26,28 +26,30 @@ extern BOOL enableLog;
 }
 
 - (NSObject <FlutterPlatformView> *)createWithFrame:(CGRect)frame viewIdentifier:(int64_t)viewId arguments:(id _Nullable)args {
-  return [[MAMapViewPlatformView alloc] initWithViewId:viewId registrar:_registrar];
+  return [[MAMapViewPlatformView alloc] initWithViewId:viewId frame: frame registrar:_registrar];
 }
 
 @end
 
 @implementation MAMapViewPlatformView {
-  NSInteger _viewId;
+  int64_t _viewId;
+  CGRect _frame;
   NSDictionary<NSString *, Handler> *_handlerMap;
 }
 
-- (instancetype)initWithViewId:(NSInteger)viewId registrar:(NSObject <FlutterPluginRegistrar> *)registrar {
+- (instancetype)initWithViewId:(int64_t)viewId frame:(CGRect)frame registrar:(NSObject <FlutterPluginRegistrar> *)registrar {
   self = [super init];
   if (self) {
     _viewId = viewId;
     _registrar = registrar;
+    _frame = frame;
   }
 
   return self;
 }
 
 - (UIView *)view {
-  MAMapView *view = [[MAMapView alloc] init];
+  MAMapView *view = [[MAMapView alloc] initWithFrame:_frame];
   // 这里用一个magic number调整一下id
   HEAP[@(2147483647 - _viewId)] = view;
 
@@ -438,6 +440,31 @@ extern BOOL enableLog;
           // result
           // 无返回值
           NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"MAMapView::takeSnapshotInRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // struct arg
+          NSValue* rectValue = (NSValue*) HEAP[@([args[@"rect"] integerValue])];
+          CGRect rect;
+          [rectValue getValue:&rect];
+      
+          // ref
+          MAMapView* ref = (MAMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: MAMapView@%@::takeSnapshotInRect(%@)", args[@"refId"], args[@"rect"]);
+          }
+      
+          // invoke native method
+          UIImage* result = [ref takeSnapshotInRect: rect];
+      
+          // result
+          // return a ref
+          HEAP[@((result).hash)] = result;
+          NSNumber* jsonableResult = @((result).hash);
       
           methodResult(jsonableResult);
       },
@@ -1540,6 +1567,94 @@ extern BOOL enableLog;
       
           // invoke native method
           [ref clearIndoorMapCache ];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"MAMapView::setCustomMapStyle": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // ref arg
+          NSData* customJson = (NSData*) HEAP[@([args[@"customJson"] integerValue])];
+      
+          // ref
+          MAMapView* ref = (MAMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: MAMapView@%@::setCustomMapStyle(%@)", args[@"refId"], args[@"customJson"]);
+          }
+      
+          // invoke native method
+          [ref setCustomMapStyle : customJson];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"MAMapView::setCustomMapStyleWithWebData": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // ref arg
+          NSData* data = (NSData*) HEAP[@([args[@"data"] integerValue])];
+      
+          // ref
+          MAMapView* ref = (MAMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: MAMapView@%@::setCustomMapStyleWithWebData(%@)", args[@"refId"], args[@"data"]);
+          }
+      
+          // invoke native method
+          [ref setCustomMapStyleWithWebData : data];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"MAMapView::setCustomTextureResourcePath": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // jsonable arg
+          NSString* customTextureResourcePath = (NSString*) args[@"customTextureResourcePath"];
+      
+          // ref
+          MAMapView* ref = (MAMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: MAMapView@%@::setCustomTextureResourcePath(%@)", args[@"refId"], args[@"customTextureResourcePath"]);
+          }
+      
+          // invoke native method
+          [ref setCustomTextureResourcePath : customTextureResourcePath];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"MAMapView::setCustomMapStyleID": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // jsonable arg
+          NSString* customMapStyleID = (NSString*) args[@"customMapStyleID"];
+      
+          // ref
+          MAMapView* ref = (MAMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: MAMapView@%@::setCustomMapStyleID(%@)", args[@"refId"], args[@"customMapStyleID"]);
+          }
+      
+          // invoke native method
+          [ref setCustomMapStyleID : customMapStyleID];
       
           // result
           // 无返回值
@@ -4086,18 +4201,16 @@ extern BOOL enableLog;
   NSLog(@"暂不支持有返回值的回调方法");
   
   ////////////////////////////如果需要手写代码, 请写在这里/////////////////////////////
-    // TODO 使用addProperty代替
-  NSNumber* width = (NSNumber*) STACK[@"width"];
-  NSNumber* strokeColor = (NSNumber*) STACK[@"strokeColor"];
-  NSNumber* fillColor = (NSNumber*) STACK[@"fillColor"];
-  UIImage* texture = (UIImage*) STACK[@"texture"];
-  NSNumber* lineCapType = (NSNumber*) STACK[@"lineCapType"];
-  NSNumber* lineJoinType = (NSNumber*) STACK[@"lineJoinType"];
-  NSNumber* dashType = (NSNumber*) STACK[@"dashType"];
-
   // 线
   if ([overlay isKindOfClass:[MAPolyline class]])
   {
+      NSNumber* width = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 1);
+      NSNumber* strokeColor = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 2);
+      UIImage* texture = (UIImage *) objc_getAssociatedObject(overlay, (const void *) 3);
+      NSNumber* lineCapType = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 4);
+      NSNumber* lineJoinType = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 5);
+      NSNumber* dashType = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 6);
+      
       MAPolylineRenderer *polylineRenderer = [[MAPolylineRenderer alloc] initWithPolyline:overlay];
 
       polylineRenderer.lineWidth = [width doubleValue];
@@ -4122,6 +4235,10 @@ extern BOOL enableLog;
   // 多边形
   if ([overlay isKindOfClass:[MAPolygon class]])
   {
+      NSNumber* width = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 1);
+      NSNumber* strokeColor = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 2);
+      NSNumber* fillColor = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 3);
+      
       MAPolygonRenderer *polygonRenderer = [[MAPolygonRenderer alloc] initWithPolygon:overlay];
 
       if (width != nil) polygonRenderer.lineWidth = [width doubleValue];
@@ -4150,6 +4267,10 @@ extern BOOL enableLog;
   // 圆
   if ([overlay isKindOfClass:[MACircle class]])
   {
+      NSNumber* width = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 1);
+      NSNumber* strokeColor = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 2);
+      NSNumber* fillColor = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 3);
+      
       MACircleRenderer *circleRenderer = [[MACircleRenderer alloc] initWithCircle:overlay];
 
       // 宽度
@@ -4182,6 +4303,23 @@ extern BOOL enableLog;
   {
       MATileOverlayRenderer *tileOverlayRenderer = [[MATileOverlayRenderer alloc] initWithTileOverlay:overlay];
       return tileOverlayRenderer;
+  }
+
+  // 海量点
+  if ([overlay isKindOfClass:[MAMultiPointOverlay class]])
+  {
+      UIImage* icon = (UIImage *) objc_getAssociatedObject(overlay, (const void *) 1);
+      NSNumber* width = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 2);
+      NSNumber* height = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 3);
+
+      MAMultiPointOverlayRenderer *multiPointOverlayRenderer = [[MAMultiPointOverlayRenderer alloc] initWithMultiPointOverlay: overlay];
+      if (icon != nil) {
+          multiPointOverlayRenderer.icon = icon;
+      }
+      if (width != nil && height != nil) {
+          multiPointOverlayRenderer.pointSize = CGSizeMake([width doubleValue], [height doubleValue]);
+      }
+      return multiPointOverlayRenderer;
   }
   ////////////////////////////////////////////////////////////////////////////////
   

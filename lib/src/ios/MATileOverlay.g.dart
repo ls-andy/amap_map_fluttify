@@ -11,6 +11,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import 'package:foundation_fluttify/foundation_fluttify.dart';
+import 'package:core_location_fluttify/core_location_fluttify.dart';
 
 class MATileOverlay extends NSObject with MAAnnotation, MAOverlay {
   //region constants
@@ -126,7 +127,8 @@ class MATileOverlay extends NSObject with MAAnnotation, MAOverlay {
   //endregion
 
   //region methods
-  Future<NSObject> initWithURLTemplate(String URLTemplate) async {
+  
+  Future<dynamic> initWithURLTemplate(String URLTemplate) async {
     // print log
     if (fluttifyLogEnabled) {
       print('fluttify-dart: MATileOverlay@$refId::initWithURLTemplate([\'URLTemplate\':$URLTemplate])');
@@ -143,10 +145,12 @@ class MATileOverlay extends NSObject with MAAnnotation, MAOverlay {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(NSObject()..refId = __result__..tag__ = 'amap_map_fluttify');
-      return NSObject()..refId = __result__..tag__ = 'amap_map_fluttify';
+      final __return__ = Ref()..refId = __result__..tag__ = 'amap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
+  
   
   Future<void> loadTileAtPath_result(MATileOverlayPath path, void result(NSData tileData, NSError error)) async {
     // print log
@@ -173,7 +177,7 @@ class MATileOverlay extends NSObject with MAAnnotation, MAOverlay {
               }
         
               // handle the native call
-              result(NSData()..refId = (args['tileData'])..tag__ = 'amap_map_fluttify', NSError()..refId = (args['error'])..tag__ = 'amap_map_fluttify');
+              result((NSData()..refId = (args['tileData'])..tag__ = 'amap_map_fluttify'), (NSError()..refId = (args['error'])..tag__ = 'amap_map_fluttify'));
               break;
             default:
               break;
@@ -184,10 +188,12 @@ class MATileOverlay extends NSObject with MAAnnotation, MAOverlay {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
+  
   
   Future<void> cancelLoadOfTileAtPath(MATileOverlayPath path) async {
     // print log
@@ -206,8 +212,9 @@ class MATileOverlay extends NSObject with MAAnnotation, MAOverlay {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -307,7 +314,8 @@ extension MATileOverlay_Batch on List<MATileOverlay> {
   //endregion
 
   //region methods
-  Future<List<NSObject>> initWithURLTemplate_batch(List<String> URLTemplate) async {
+  
+  Future<List<dynamic>> initWithURLTemplate_batch(List<String> URLTemplate) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
@@ -320,13 +328,14 @@ extension MATileOverlay_Batch on List<MATileOverlay> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => NSObject()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => Ref()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
       kNativeObjectPool.addAll(typedResult);
       return typedResult;
     }
   }
   
-  Future<void> cancelLoadOfTileAtPath_batch(List<MATileOverlayPath> path) async {
+  
+  Future<List<void>> cancelLoadOfTileAtPath_batch(List<MATileOverlayPath> path) async {
     if (false) {
       return Future.error('all args must have same length!');
     }

@@ -1,13 +1,34 @@
 // ignore_for_file: non_constant_identifier_names
 part of 'amap_view.widget.dart';
 
-typedef Future<void> OnMarkerClicked(Marker marker);
+/// marker点击事件回调签名 输入[Marker]对象, 返回`是否已消耗事件`, 如果true则不再弹窗, 如果false则继续弹窗
+typedef Future<bool> OnMarkerClicked(Marker marker);
+
+/// 地图点击事件回调签名
 typedef Future<void> OnMapClicked(LatLng latLng);
+
+/// 地图移动事件回调签名
 typedef Future<void> OnMapMove(MapMove move);
+
+/// 位置移动事件回调签名
 typedef Future<void> OnLocationChange(MapLocation move);
+
+/// Marker拖动回调签名
 typedef Future<void> OnMarkerDrag(Marker marker);
+
+/// ios请求权限回调签名
 typedef Future<void> _OnRequireAlwaysAuth(CLLocationManager manager);
+
+/// 地图截屏回调签名
 typedef Future<void> OnScreenShot(Uint8List imageData);
+
+/// 海量点点击回调签名
+typedef Future<void> OnMultiPointClicked(
+  String id,
+  String title,
+  String snippet,
+  String obejct,
+);
 
 /// 地图控制类
 class AmapController with WidgetsBindingObserver, _Private {
@@ -1010,7 +1031,7 @@ class AmapController with WidgetsBindingObserver, _Private {
 //            await _iosMapDelegate._annotationViewStream.stream.first;
 //        annotationViewList.fillRange(0, visibleMarkers.length, visibleMarkers);
 
-        pool..addAll(annotationBatch)..addAll(coordinateBatch);
+        pool.addAll(coordinateBatch);
         return [
           for (int i = 0; i < options.length; i++)
             Marker.ios(
@@ -1305,11 +1326,11 @@ class AmapController with WidgetsBindingObserver, _Private {
         // 宽度和颜色需要设置到STACK里去
         if (option.width != null) {
           final pixelRatio = MediaQuery.of(_state.context).devicePixelRatio;
-          await pushStackJsonable('width', option.width / pixelRatio);
+          polyline.addJsonableProperty__(1, option.width / pixelRatio);
         }
         // 颜色
         if (option.strokeColor != null) {
-          await pushStackJsonable('strokeColor', option.strokeColor.value);
+          polyline.addJsonableProperty__(2, option.strokeColor.value);
         }
         // 设置图片
         if (option.customTexture != null && option.imageConfig != null) {
@@ -1318,29 +1339,21 @@ class AmapController with WidgetsBindingObserver, _Private {
 
           final texture = await UIImage.create(textureData);
 
-          await pushStack('texture', texture);
+          polyline.addProperty__(3, texture);
 
           pool..add(texture);
         }
         // 线段始末端样式, 由于两端的枚举顺序是一样的, 所以这里直接从索引获取枚举
         if (option.lineCapType != null) {
-          await pushStackJsonable(
-            'lineCapType',
-            option.lineCapType.index,
-          );
+          polyline.addJsonableProperty__(4, option.lineCapType.index);
         }
         // 线段连接处样式, 由于两端的枚举顺序是一样的, 所以这里直接从索引获取枚举
         if (option.lineJoinType != null) {
-          await pushStackJsonable(
-            'lineJoinType',
-            option.lineJoinType.index,
-          );
+          polyline.addJsonableProperty__(5, option.lineJoinType.index);
         }
         // 是否虚线
         if (option.dashType != null) {
-          // android端没有None类型, 而ios端还有None类型, 并且索引为0, 这里+1统一一下两端
-          // 的值, ios端用起来方便一点, 直接强转成枚举即可.
-          await pushStackJsonable('dashType', option.dashType.index + 1);
+          polyline.addJsonableProperty__(6, option.dashType.index + 1);
         }
 
         // 设置参数
@@ -1416,16 +1429,15 @@ class AmapController with WidgetsBindingObserver, _Private {
         final polygon = await MAPolygon.polygonWithCoordinates_count(
             latLngList, latLngList.length);
 
-        // 宽度和颜色需要设置到STACK里去
         if (option.width != null) {
           final pixelRatio = MediaQuery.of(_state.context).devicePixelRatio;
-          await pushStackJsonable('width', option.width / pixelRatio);
+          polygon.addJsonableProperty__(1, option.width / pixelRatio);
         }
         if (option.strokeColor != null) {
-          await pushStackJsonable('strokeColor', option.strokeColor.value);
+          polygon.addJsonableProperty__(2, option.strokeColor.value);
         }
         if (option.fillColor != null) {
-          await pushStackJsonable('fillColor', option.fillColor.value);
+          polygon.addJsonableProperty__(3, option.fillColor.value);
         }
 
         // 设置参数
@@ -1497,18 +1509,108 @@ class AmapController with WidgetsBindingObserver, _Private {
           option.radius,
         );
 
-        // 宽度和颜色需要设置到STACK里去
-        if (option.width != null)
-          await pushStackJsonable('width', option.width);
-        if (option.strokeColor != null)
-          await pushStackJsonable('strokeColor', option.strokeColor.value);
-        if (option.fillColor != null)
-          await pushStackJsonable('fillColor', option.fillColor.value);
+        if (option.width != null) {
+          final pixelRatio = MediaQuery.of(_state.context).devicePixelRatio;
+          circle.addJsonableProperty__(1, option.width / pixelRatio);
+        }
+        if (option.strokeColor != null) {
+          circle.addJsonableProperty__(2, option.strokeColor.value);
+        }
+        if (option.fillColor != null) {
+          circle.addJsonableProperty__(3, option.fillColor.value);
+        }
 
         // 设置参数
         await iosController.addOverlay(circle);
 
         return Circle.ios(circle, iosController);
+      },
+    );
+  }
+
+  /// 添加海量点
+  Future<void> addMultiPointOverlay(MultiPointOption option) async {
+    assert(option != null && option.pointList.isNotEmpty);
+
+    final latitudeBatch =
+        option.pointList.map((it) => it.latLng.latitude).toList();
+    final longitudeBatch =
+        option.pointList.map((it) => it.latLng.longitude).toList();
+    final idBatch = option.pointList.map((it) => it.id).toList();
+    final titleBatch = option.pointList.map((it) => it.title).toList();
+    final snippetBatch = option.pointList.map((it) => it.snippet).toList();
+    final objectBatch = option.pointList.map((it) => it.object).toList();
+    Uint8List iconData;
+    if (option.iconUri != null && option.imageConfiguration != null) {
+      iconData =
+          await _uri2ImageData(option.imageConfiguration, option.iconUri);
+    }
+
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        final overlayOptions =
+            await com_amap_api_maps_model_MultiPointOverlayOptions.create__();
+
+        final latLngBatch = await com_amap_api_maps_model_LatLng
+            .create_batch__double__double(latitudeBatch, longitudeBatch);
+
+        // 设置marker图标
+        // 普通图片
+        if (iconData != null) {
+          final bitmap = await android_graphics_Bitmap.create(iconData);
+          final icon = await com_amap_api_maps_model_BitmapDescriptorFactory
+              .fromBitmap(bitmap);
+          await overlayOptions.icon(icon);
+
+          pool..add(bitmap)..add(icon);
+        }
+
+        final multiPointOverlay =
+            await map.addMultiPointOverlay(overlayOptions);
+
+        final multiPointList = await com_amap_api_maps_model_MultiPointItem
+            .create_batch__com_amap_api_maps_model_LatLng(latLngBatch);
+        await multiPointList.setCustomerId_batch(idBatch);
+        await multiPointList.setTitle_batch(titleBatch);
+        await multiPointList.setSnippet_batch(snippetBatch);
+        await multiPointList.setObject_batch(objectBatch);
+
+        await multiPointOverlay.setItems(multiPointList);
+      },
+      ios: (pool) async {
+        await iosController.set_delegate(_iosMapDelegate);
+
+        final overlay = await MAMultiPointOverlay.create__();
+
+        final length = option.pointList.length;
+        final pointItemList = await MAMultiPointItem.create_batch__(length);
+
+        final latLngBatch = await CLLocationCoordinate2D.create_batch(
+            latitudeBatch, longitudeBatch);
+
+        // 设置marker图标
+        // 普通图片
+        if (iconData != null) {
+          final bitmap = await UIImage.create(iconData);
+          await overlay.addProperty__(1, bitmap);
+          pool.add(bitmap);
+        }
+        // 设置图片大小
+        if (option.size != null) {
+          await overlay.addJsonableProperty__(2, option.size.width);
+          await overlay.addJsonableProperty__(3, option.size.height);
+        }
+        await pointItemList.set_coordinate_batch(latLngBatch);
+        await pointItemList.set_customID_batch(idBatch);
+        await pointItemList.set_title_batch(titleBatch);
+        await pointItemList.set_subtitle_batch(snippetBatch);
+        await pointItemList.addJsonableProperty_batch(1, objectBatch);
+
+        await overlay.initWithMultiPointItems(pointItemList);
+
+        iosController.addOverlay(overlay);
       },
     );
   }
@@ -1527,6 +1629,27 @@ class AmapController with WidgetsBindingObserver, _Private {
       ios: (pool) async {
         await iosController
             .set_delegate(_iosMapDelegate.._onMarkerClicked = onMarkerClicked);
+      },
+    );
+  }
+
+  /// 设置海量点点击监听事件
+  Future<void> setMultiPointClickedListener(
+    OnMultiPointClicked onMultiPointClicked,
+  ) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        await map.setOnMultiPointClickListener(
+            _androidMapDelegate.._onMultiPointClicked = onMultiPointClicked);
+
+        pool..add(map);
+      },
+      ios: (pool) async {
+        await iosController.set_delegate(
+          _iosMapDelegate.._onMultiPointClicked = onMultiPointClicked,
+        );
       },
     );
   }
@@ -1747,12 +1870,9 @@ class AmapController with WidgetsBindingObserver, _Private {
   /// 将指定的经纬度列表(包括但不限于marker, polyline, polygon等)调整至同一屏幕中显示
   ///
   /// [bounds]边界点形成的边界, [padding]地图内边距
-  /// !目前发现[padding]在android端和ios端的有不同的行为, 相同的值边距明显不一致, 但是为了
-  /// 不引进多余的参数只能先忽略这个问题, 建议插件使用者在调用方法时自行区分平台并传入在对应平台
-  /// 上合适的值.
   Future<void> zoomToSpan(
     List<LatLng> bounds, {
-    int padding = 50,
+    EdgeInsets padding = const EdgeInsets.all(50),
     bool animated = true,
   }) async {
     final double minLat = await Stream.fromIterable(bounds)
@@ -1767,6 +1887,7 @@ class AmapController with WidgetsBindingObserver, _Private {
     final double maxLng = await Stream.fromIterable(bounds)
         .reduce((pre, cur) => pre.longitude > cur.longitude ? pre : cur)
         .then((right) => right.longitude);
+    final devicePixelRatio = MediaQuery.of(_state.context).devicePixelRatio;
 
     await platform(
       android: (pool) async {
@@ -1784,10 +1905,15 @@ class AmapController with WidgetsBindingObserver, _Private {
             .create__com_amap_api_maps_model_LatLng__com_amap_api_maps_model_LatLng(
                 southWest, northEast);
 
-        // 更新对象
-        final cameraUpdate = await com_amap_api_maps_CameraUpdateFactory
-            .newLatLngBounds__com_amap_api_maps_model_LatLngBounds__int(
-                rect, padding);
+        // 更新对象 android端由于单位是像素, 所以这里要乘以当前设备的像素密度
+        final cameraUpdate =
+            await com_amap_api_maps_CameraUpdateFactory.newLatLngBoundsRect(
+          rect,
+          (padding.left * devicePixelRatio).toInt(),
+          (padding.right.toInt() * devicePixelRatio).toInt(),
+          (padding.top.toInt() * devicePixelRatio).toInt(),
+          (padding.bottom.toInt() * devicePixelRatio).toInt(),
+        );
 
         if (animated) {
           await map.animateCamera__com_amap_api_maps_CameraUpdate(cameraUpdate);
@@ -1828,10 +1954,14 @@ class AmapController with WidgetsBindingObserver, _Private {
         // 矩形
         final rect = await MAMapRectMake(x, y, width, height);
 
-        final dPadding = padding.toDouble();
-        iosController.setVisibleMapRect_edgePadding_animated(
+        await iosController.setVisibleMapRect_edgePadding_animated(
           rect,
-          await UIEdgeInsets.create(dPadding, dPadding, dPadding, dPadding),
+          await UIEdgeInsets.create(
+            padding.top,
+            padding.left,
+            padding.bottom,
+            padding.right,
+          ),
           animated,
         );
 
@@ -2008,7 +2138,8 @@ class AmapController with WidgetsBindingObserver, _Private {
   }
 }
 
-class _IOSMapDelegate extends NSObject with MAMapViewDelegate {
+class _IOSMapDelegate extends NSObject
+    with MAMapViewDelegate, MAMultiPointOverlayRendererDelegate {
   OnMarkerClicked _onMarkerClicked;
   OnMarkerDrag _onMarkerDragStart;
   OnMarkerDrag _onMarkerDragging;
@@ -2019,6 +2150,7 @@ class _IOSMapDelegate extends NSObject with MAMapViewDelegate {
   _OnRequireAlwaysAuth _onRequireAlwaysAuth;
   OnLocationChange _onLocationChange;
   OnMarkerClicked _onInfoWindowClicked;
+  OnMultiPointClicked _onMultiPointClicked;
 
   MAMapView _iosController;
   final _annotationViewStream =
@@ -2235,6 +2367,35 @@ class _IOSMapDelegate extends NSObject with MAMapViewDelegate {
       );
     }
   }
+
+  @override
+  Future<void> mapView_didAddOverlayRenderers(
+    MAMapView mapView,
+    List<NSObject> overlayRenderers,
+  ) async {
+    super.mapView_didAddOverlayRenderers(mapView, overlayRenderers);
+    if (overlayRenderers.length == 1 &&
+        await overlayRenderers[0].isMAMultiPointOverlayRenderer()) {
+      final multiPointRenderer =
+          await overlayRenderers[0].asMAMultiPointOverlayRenderer();
+      multiPointRenderer.set_delegate(this);
+    }
+  }
+
+  @override
+  Future<void> multiPointOverlayRenderer_didItemTapped(
+    MAMultiPointOverlayRenderer renderer,
+    MAMultiPointItem item,
+  ) async {
+    super.multiPointOverlayRenderer_didItemTapped(renderer, item);
+    if (_onMultiPointClicked != null) {
+      final id = await item.get_customID();
+      final title = await item.get_title();
+      final snippet = await item.get_subtitle();
+      final object = await item.getJsonableProperty__(1);
+      _onMultiPointClicked(id, title, snippet, object);
+    }
+  }
 }
 
 class _AndroidMapDelegate extends java_lang_Object
@@ -2246,7 +2407,8 @@ class _AndroidMapDelegate extends java_lang_Object
         com_amap_api_maps_AMap_OnMapScreenShotListener,
         com_amap_api_maps_AMap_OnMyLocationChangeListener,
         com_amap_api_maps_AMap_OnInfoWindowClickListener,
-        com_amap_api_maps_AMap_OnMapLoadedListener {
+        com_amap_api_maps_AMap_OnMapLoadedListener,
+        com_amap_api_maps_AMap_OnMultiPointClickListener {
   OnMarkerClicked _onMarkerClicked;
   OnMarkerDrag _onMarkerDragStart;
   OnMarkerDrag _onMarkerDragging;
@@ -2258,6 +2420,7 @@ class _AndroidMapDelegate extends java_lang_Object
   OnLocationChange _onLocationChange;
   OnMarkerClicked _onInfoWindowClicked;
   VoidCallback _onMapLoaded;
+  OnMultiPointClicked _onMultiPointClicked;
 
   // 为了和ios端行为保持一致, 需要屏蔽掉移动过程中的回调
   bool _moveStarted = false;
@@ -2266,8 +2429,9 @@ class _AndroidMapDelegate extends java_lang_Object
   Future<bool> onMarkerClick(com_amap_api_maps_model_Marker var1) async {
     super.onMarkerClick(var1);
     if (_onMarkerClicked != null) {
-      await var1.showInfoWindow();
-      await _onMarkerClicked(Marker.android(var1));
+      if (!await _onMarkerClicked(Marker.android(var1))) {
+        await var1.showInfoWindow();
+      }
     }
     return true;
   }
@@ -2382,6 +2546,19 @@ class _AndroidMapDelegate extends java_lang_Object
     if (_onMapLoaded != null) {
       _onMapLoaded();
     }
+  }
+
+  @override
+  Future<bool> onPointClick(com_amap_api_maps_model_MultiPointItem var1) async {
+    super.onPointClick(var1);
+    if (_onMultiPointClicked != null) {
+      final id = await var1.getCustomerId();
+      final title = await var1.getTitle();
+      final snippet = await var1.getSnippet();
+      final object = await var1.getObject();
+      _onMultiPointClicked(id, title, snippet, object);
+    }
+    return true;
   }
 }
 

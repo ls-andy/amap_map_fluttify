@@ -1,4 +1,5 @@
 export 'type_op.g.dart';
+export 'constants.g.dart';
 export 'platformview/TextureMapView.g.dart';
 export 'platformview/DownloadProgressView.g.dart';
 export 'platformview/WearMapView.g.dart';
@@ -150,6 +151,7 @@ export 'com/amap/api/maps/offlinemap/OfflineMapCity.g.dart';
 export 'com/amap/api/maps/offlinemap/OfflineMapManager/OfflineMapDownloadListener.g.dart';
 export 'com/amap/api/maps/offlinemap/OfflineMapManager/OfflineLoadedListener.g.dart';
 export 'com/amap/api/maps/CoordinateConverter/CoordType.g.dart';
+export 'com/amap/api/maps/SwipeDismissTouchListener.g.dart';
 export 'com/amap/api/maps/model/BasePointOverlay.g.dart';
 export 'com/amap/api/maps/model/BitmapDescriptor.g.dart';
 export 'com/amap/api/maps/model/Poi.g.dart';
