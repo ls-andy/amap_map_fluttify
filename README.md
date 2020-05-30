@@ -12,6 +12,7 @@ Dart接口基于[Fluttify](https://github.com/yohom/fluttify-core-example)编译
 - 请参考 [technical-support-plan](https://github.com/fluttify-project/technical-support-plan) 进行操作, 技术支持工单将以最高优先级处理.
 - 目前提供的标准服务:
   - 配置高德appkey: 如果你自己配置的高德appkey一直不成功, 本方案可以提供支持.
+  - iOS端NO-IDFA版本: 如果你的APP中并没有使用到IDFA相关服务, 本方案提供非IDFA版本的插件.
   - 应用内导航: 如果你需要使用应用内导航, 本方案提供**集成高德导航SDK版本**的地图插件. 目前支持**跳转驾车导航组件**. <img src="https://github.com/fluttify-project/fluttify-core-example/blob/develop/other/navi_ios.gif" height="300"> <img src="https://github.com/fluttify-project/fluttify-core-example/blob/develop/other/navi_android.gif" height="300">
   - 位置选择器: <img src="https://github.com/fluttify-project/fluttify-core-example/blob/develop/other/location_picker_ios.gif" height="300"> <img src="https://github.com/fluttify-project/fluttify-core-example/blob/develop/other/location_picker_android.gif" height="300"> 
   - 其他个性化技术支持, 请前往 [technical-support-plan](https://github.com/fluttify-project/technical-support-plan) 新开工单.
@@ -57,7 +58,9 @@ import 'package:amap_map_fluttify/amap_map_fluttify.dart';
 /// !!使用真机调试!!
 /// !注意: 只要是返回Future的方法, 一律使用`await`修饰, 确保当前方法执行完成后再执行下一行, 在不能使用`await`修饰的环境下, 在`then`方法中执行下一步.
 /// 
-/// 初始化(0.17.0开始可以不用配置AndroidManifest.xml):
+/// 初始化(0.17.0开始可以不用配置AndroidManifest.xml) 
+/// !!但是你如果你使用了amap_search_fluttify或amap_location_fluttify, 那么仍旧需要在AndroidManifest.xml中配置key!
+/// AndroidManifest.xml配置key参考 https://lbs.amap.com/api/android-sdk/gettingstarted
 await AmapService.init(iosKey: '7a***********************f4', androidKey: '7c***********************fa');
 /// 如果你觉得引擎的日志太多, 可以关闭Fluttify引擎的日志
 await enableFluttifyLog(false); // 关闭log
@@ -115,10 +118,9 @@ import 'package:decorated_flutter/decorated_flutter.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 Future<bool> requestPermission() async {
-  final permissions =
-      await PermissionHandler().requestPermissions([PermissionGroup.location]);
+  final status = await Permission.location.request();
 
-  if (permissions[PermissionGroup.location] == PermissionStatus.granted) {
+  if (status == PermissionStatus.granted) {
     return true;
   } else {
     toast('需要定位权限!');

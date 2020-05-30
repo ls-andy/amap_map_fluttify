@@ -57,8 +57,8 @@ class MAAnnotationView extends UIView  {
   
   Future<MAAnnotation> get_annotation({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod("MAAnnotationView::get_annotation", {'refId': refId});
-    kNativeObjectPool.add(MAShape()..refId = __result__..tag__ = 'amap_map_fluttify');
-    return MAShape()..refId = __result__..tag__ = 'amap_map_fluttify';
+    kNativeObjectPool.add(MAMultiPoint()..refId = __result__..tag__ = 'amap_map_fluttify');
+    return MAMultiPoint()..refId = __result__..tag__ = 'amap_map_fluttify';
   }
   
   Future<UIImage> get_image({bool viewChannel = true}) async {
@@ -111,14 +111,14 @@ class MAAnnotationView extends UIView  {
   
   Future<UIView> get_leftCalloutAccessoryView({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod("MAAnnotationView::get_leftCalloutAccessoryView", {'refId': refId});
-    kNativeObjectPool.add(MAAnnotationView()..refId = __result__..tag__ = 'amap_map_fluttify');
-    return MAAnnotationView()..refId = __result__..tag__ = 'amap_map_fluttify';
+    kNativeObjectPool.add(MAPinAnnotationView()..refId = __result__..tag__ = 'amap_map_fluttify');
+    return MAPinAnnotationView()..refId = __result__..tag__ = 'amap_map_fluttify';
   }
   
   Future<UIView> get_rightCalloutAccessoryView({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod("MAAnnotationView::get_rightCalloutAccessoryView", {'refId': refId});
-    kNativeObjectPool.add(MAAnnotationView()..refId = __result__..tag__ = 'amap_map_fluttify');
-    return MAAnnotationView()..refId = __result__..tag__ = 'amap_map_fluttify';
+    kNativeObjectPool.add(MAPinAnnotationView()..refId = __result__..tag__ = 'amap_map_fluttify');
+    return MAPinAnnotationView()..refId = __result__..tag__ = 'amap_map_fluttify';
   }
   
   Future<bool> get_draggable({bool viewChannel = true}) async {
@@ -227,7 +227,7 @@ class MAAnnotationView extends UIView  {
   Future<void> setSelected_animated(bool selected, bool animated, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: MAAnnotationView@$refId::setSelected([\'selected\':$selected, \'animated\':$animated])');
+      debugPrint('fluttify-dart: MAAnnotationView@$refId::setSelected([\'selected\':$selected, \'animated\':$animated])');
     }
   
     // invoke native method
@@ -251,7 +251,7 @@ class MAAnnotationView extends UIView  {
   Future<dynamic> initWithAnnotation_reuseIdentifier(MAAnnotation annotation, String reuseIdentifier, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: MAAnnotationView@$refId::initWithAnnotation([\'reuseIdentifier\':$reuseIdentifier])');
+      debugPrint('fluttify-dart: MAAnnotationView@$refId::initWithAnnotation([\'reuseIdentifier\':$reuseIdentifier])');
     }
   
     // invoke native method
@@ -275,7 +275,7 @@ class MAAnnotationView extends UIView  {
   Future<void> prepareForReuse({bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: MAAnnotationView@$refId::prepareForReuse([])');
+      debugPrint('fluttify-dart: MAAnnotationView@$refId::prepareForReuse([])');
     }
   
     // invoke native method
@@ -299,7 +299,7 @@ class MAAnnotationView extends UIView  {
   Future<void> setDragState_animated(MAAnnotationViewDragState newDragState, bool animated, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: MAAnnotationView@$refId::setDragState([\'animated\':$animated])');
+      debugPrint('fluttify-dart: MAAnnotationView@$refId::setDragState([\'animated\':$animated])');
     }
   
     // invoke native method
@@ -340,7 +340,7 @@ extension MAAnnotationView_Batch on List<MAAnnotationView> {
   
   Future<List<MAAnnotation>> get_annotation_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod("MAAnnotationView::get_annotation_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => MAShape()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => MAMultiPoint()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
     kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
@@ -403,14 +403,14 @@ extension MAAnnotationView_Batch on List<MAAnnotationView> {
   
   Future<List<UIView>> get_leftCalloutAccessoryView_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod("MAAnnotationView::get_leftCalloutAccessoryView_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => MAAnnotationView()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => MAPinAnnotationView()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
     kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
   Future<List<UIView>> get_rightCalloutAccessoryView_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod("MAAnnotationView::get_rightCalloutAccessoryView_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => MAAnnotationView()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => MAPinAnnotationView()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
     kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
