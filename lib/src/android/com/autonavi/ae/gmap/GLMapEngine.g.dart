@@ -37,7 +37,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> receiveNetData(int var1, int var2, Uint8List var4, int var5) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::receiveNetData([\'var1\':$var1, \'var2\':$var2, \'var4\':$var4, \'var5\':$var5])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::receiveNetData([\'var1\':$var1, \'var2\':$var2, \'var4\':$var4, \'var5\':$var5])');
     }
   
     // invoke native method
@@ -61,7 +61,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<bool> getMapDataTaskIsCancel(int var1, int var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getMapDataTaskIsCancel([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getMapDataTaskIsCancel([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -85,7 +85,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> finishDownLoad(int var1, int var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::finishDownLoad([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::finishDownLoad([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -109,7 +109,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> netError(int var1, int var2, int var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::netError([\'var1\':$var1, \'var2\':$var2, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::netError([\'var1\':$var1, \'var2\':$var2, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -133,7 +133,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setMapLoaderToTask(int var1, int var2, com_autonavi_amap_mapcore_maploader_AMapLoader var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setMapLoaderToTask([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setMapLoaderToTask([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -157,7 +157,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<android_content_Context> getContext() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getContext([])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getContext([])');
     }
   
     // invoke native method
@@ -181,7 +181,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<String> getUserAgent() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getUserAgent([])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getUserAgent([])');
     }
   
     // invoke native method
@@ -205,7 +205,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setParamater(int var1, int var2, int var3, int var4, int var5, int var6) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setParamater([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5, \'var6\':$var6])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setParamater([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5, \'var6\':$var6])');
     }
   
     // invoke native method
@@ -229,7 +229,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> onClearCache(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::onClearCache([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::onClearCache([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -253,7 +253,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<bool> isInMapAction(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::isInMapAction([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::isInMapAction([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -277,7 +277,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<int> getNativeInstance() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getNativeInstance([])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getNativeInstance([])');
     }
   
     // invoke native method
@@ -301,7 +301,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<bool> canStopMapRender(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::canStopMapRender([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::canStopMapRender([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -325,7 +325,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<int> getEngineIDWithType(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getEngineIDWithType([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getEngineIDWithType([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -349,7 +349,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<bool> isEngineCreated(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::isEngineCreated([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::isEngineCreated([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -373,7 +373,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<int> getMapStateInstance(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getMapStateInstance([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getMapStateInstance([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -397,7 +397,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<int> getEngineIDWithGestureInfo(com_autonavi_ae_gmap_gesture_EAMapPlatformGestureInfo var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getEngineIDWithGestureInfo([])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getEngineIDWithGestureInfo([])');
     }
   
     // invoke native method
@@ -421,7 +421,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setServiceViewRect(int var1, int var2, int var3, int var4, int var5, int var6, int var7) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setServiceViewRect([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5, \'var6\':$var6, \'var7\':$var7])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setServiceViewRect([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5, \'var6\':$var6, \'var7\':$var7])');
     }
   
     // invoke native method
@@ -445,7 +445,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setSrvViewStateBoolValue(int var1, int var2, bool var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setSrvViewStateBoolValue([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setSrvViewStateBoolValue([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -469,7 +469,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<bool> getSrvViewStateBoolValue(int var1, int var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getSrvViewStateBoolValue([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getSrvViewStateBoolValue([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -493,7 +493,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<bool> getIsProcessBuildingMark(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getIsProcessBuildingMark([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getIsProcessBuildingMark([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -517,7 +517,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setIndoorBuildingToBeActive(int var1, String var2, int var3, String var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setIndoorBuildingToBeActive([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setIndoorBuildingToBeActive([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -541,15 +541,70 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setMapListener(com_autonavi_amap_mapcore_interfaces_IAMapListener var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setMapListener([])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setMapListener([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('com.autonavi.ae.gmap.GLMapEngine::setMapListener', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('com.autonavi.ae.gmap.GLMapEngine::setMapListener', {"refId": refId});
   
   
     // handle native call
+    MethodChannel('com.autonavi.ae.gmap.GLMapEngine::setMapListener::Callback')
+        .setMethodCallHandler((methodCall) async {
+          final args = methodCall.arguments as Map;
+          // final refId = args['callerRefId'] as int;
+          // if (refId != this.refId) return;
   
+          switch (methodCall.method) {
+            case 'Callback::com.autonavi.amap.mapcore.interfaces.IAMapListener::afterDrawFrame':
+              // print log
+              if (fluttifyLogEnabled) {
+                debugPrint('fluttify-dart-callback: afterDrawFrame([\'var1\':${args['var1']}])');
+              }
+        
+              // handle the native call
+              var1?.afterDrawFrame(args['var1'], (com_autonavi_ae_gmap_GLMapState()..refId = (args['var2'])..tag__ = 'amap_map_fluttify'));
+              break;
+            case 'Callback::com.autonavi.amap.mapcore.interfaces.IAMapListener::afterDrawLabel':
+              // print log
+              if (fluttifyLogEnabled) {
+                debugPrint('fluttify-dart-callback: afterDrawLabel([\'var1\':${args['var1']}])');
+              }
+        
+              // handle the native call
+              var1?.afterDrawLabel(args['var1'], (com_autonavi_ae_gmap_GLMapState()..refId = (args['var2'])..tag__ = 'amap_map_fluttify'));
+              break;
+            case 'Callback::com.autonavi.amap.mapcore.interfaces.IAMapListener::beforeDrawLabel':
+              // print log
+              if (fluttifyLogEnabled) {
+                debugPrint('fluttify-dart-callback: beforeDrawLabel([\'var1\':${args['var1']}])');
+              }
+        
+              // handle the native call
+              var1?.beforeDrawLabel(args['var1'], (com_autonavi_ae_gmap_GLMapState()..refId = (args['var2'])..tag__ = 'amap_map_fluttify'));
+              break;
+            case 'Callback::com.autonavi.amap.mapcore.interfaces.IAMapListener::afterRendererOver':
+              // print log
+              if (fluttifyLogEnabled) {
+                debugPrint('fluttify-dart-callback: afterRendererOver([\'var1\':${args['var1']}])');
+              }
+        
+              // handle the native call
+              var1?.afterRendererOver(args['var1'], (com_autonavi_ae_gmap_GLMapState()..refId = (args['var2'])..tag__ = 'amap_map_fluttify'));
+              break;
+            case 'Callback::com.autonavi.amap.mapcore.interfaces.IAMapListener::afterAnimation':
+              // print log
+              if (fluttifyLogEnabled) {
+                debugPrint('fluttify-dart-callback: afterAnimation([])');
+              }
+        
+              // handle the native call
+              var1?.afterAnimation();
+              break;
+            default:
+              break;
+          }
+        });
   
     // convert native result to dart side object
     if (__result__ == null) {
@@ -565,7 +620,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setInternaltexture(int var1, Uint8List var2, int var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setInternaltexture([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setInternaltexture([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -589,7 +644,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<com_autonavi_ae_gmap_GLMapState> getMapState(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getMapState([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getMapState([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -613,7 +668,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<com_autonavi_ae_gmap_GLMapState> getNewMapState(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getNewMapState([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getNewMapState([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -637,7 +692,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<com_autonavi_ae_gmap_GLMapState> getCloneMapState() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getCloneMapState([])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getCloneMapState([])');
     }
   
     // invoke native method
@@ -661,7 +716,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setMapState__int__com_autonavi_ae_gmap_GLMapState(int var1, com_autonavi_ae_gmap_GLMapState var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setMapState([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setMapState([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -685,7 +740,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setMapState__int__com_autonavi_ae_gmap_GLMapState__bool(int var1, com_autonavi_ae_gmap_GLMapState var2, bool var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setMapState([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setMapState([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -709,7 +764,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> addGestureMessage(int var1, com_autonavi_amap_mapcore_message_AbstractGestureMapMessage var2, bool var3, int var4, int var5) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::addGestureMessage([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::addGestureMessage([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5])');
     }
   
     // invoke native method
@@ -733,7 +788,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> interruptAnimation() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::interruptAnimation([])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::interruptAnimation([])');
     }
   
     // invoke native method
@@ -757,7 +812,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> addGroupAnimation(int var1, int var2, double var3, int var4, int var5, int var6, int var7, com_amap_api_maps_AMap_CancelableCallback var8) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::addGroupAnimation([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5, \'var6\':$var6, \'var7\':$var7])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::addGroupAnimation([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5, \'var6\':$var6, \'var7\':$var7])');
     }
   
     // invoke native method
@@ -775,7 +830,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
             case 'Callback::com.amap.api.maps.AMap.CancelableCallback::onFinish':
               // print log
               if (fluttifyLogEnabled) {
-                print('fluttify-dart-callback: onFinish([])');
+                debugPrint('fluttify-dart-callback: onFinish([])');
               }
         
               // handle the native call
@@ -784,7 +839,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
             case 'Callback::com.amap.api.maps.AMap.CancelableCallback::onCancel':
               // print log
               if (fluttifyLogEnabled) {
-                print('fluttify-dart-callback: onCancel([])');
+                debugPrint('fluttify-dart-callback: onCancel([])');
               }
         
               // handle the native call
@@ -809,7 +864,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<bool> isInMapAnimation(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::isInMapAnimation([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::isInMapAnimation([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -833,7 +888,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<int> getAnimateionsCount() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getAnimateionsCount([])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getAnimateionsCount([])');
     }
   
     // invoke native method
@@ -857,7 +912,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> clearAllMessages(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::clearAllMessages([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::clearAllMessages([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -881,7 +936,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> clearAnimations__int__bool(int var1, bool var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::clearAnimations([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::clearAnimations([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -905,7 +960,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> clearAnimations__int__bool__int(int var1, bool var2, int var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::clearAnimations([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::clearAnimations([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -929,7 +984,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> startMapSlidAnim(int var1, android_graphics_Point var2, double var3, double var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::startMapSlidAnim([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::startMapSlidAnim([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -953,7 +1008,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> startPivotZoomRotateAnim(int var1, android_graphics_Point var2, double var3, int var4, int var5) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::startPivotZoomRotateAnim([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::startPivotZoomRotateAnim([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5])');
     }
   
     // invoke native method
@@ -977,7 +1032,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<int> getStateMessageCount() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getStateMessageCount([])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getStateMessageCount([])');
     }
   
     // invoke native method
@@ -1001,7 +1056,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> addMessage(com_autonavi_amap_mapcore_AbstractCameraUpdateMessage var1, bool var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::addMessage([\'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::addMessage([\'var2\':$var2])');
     }
   
     // invoke native method
@@ -1025,7 +1080,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setMapOpenLayer(String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setMapOpenLayer([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setMapOpenLayer([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -1049,7 +1104,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> pushRendererState() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::pushRendererState([])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::pushRendererState([])');
     }
   
     // invoke native method
@@ -1073,7 +1128,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> popRendererState() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::popRendererState([])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::popRendererState([])');
     }
   
     // invoke native method
@@ -1097,7 +1152,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<Int32List> getMapModeState(int var1, bool var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getMapModeState([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getMapModeState([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1121,7 +1176,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> putResourceData(int var1, Uint8List var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::putResourceData([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::putResourceData([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1145,7 +1200,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<Uint8List> getLabelBuffer(int var1, int var2, int var3, int var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getLabelBuffer([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getLabelBuffer([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -1169,7 +1224,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<int> createOverlay(int var1, int var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::createOverlay([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::createOverlay([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1193,7 +1248,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<String> addNativeOverlay(int var1, int var2, int var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::addNativeOverlay([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::addNativeOverlay([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -1217,7 +1272,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<int> getGlOverlayMgrPtr(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getGlOverlayMgrPtr([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getGlOverlayMgrPtr([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -1241,7 +1296,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> addOverlayTexture(int var1, com_autonavi_ae_gmap_gloverlay_GLTextureProperty var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::addOverlayTexture([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::addOverlayTexture([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -1265,7 +1320,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   static Future<void> destroyOverlay(int var0, int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine::destroyOverlay([\'var0\':$var0, \'var1\':$var1])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine::destroyOverlay([\'var0\':$var0, \'var1\':$var1])');
     }
   
     // invoke native method
@@ -1289,7 +1344,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setSimple3DEnable(int var1, bool var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setSimple3DEnable([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setSimple3DEnable([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1313,7 +1368,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setRoadArrowEnable(int var1, bool var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setRoadArrowEnable([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setRoadArrowEnable([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1337,7 +1392,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setSkyTexture(int var1, Uint8List var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setSkyTexture([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setSkyTexture([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1361,7 +1416,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setBackgroundTexture(int var1, Uint8List var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setBackgroundTexture([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setBackgroundTexture([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1385,7 +1440,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setCustomStyleTexture(int var1, Uint8List var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setCustomStyleTexture([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setCustomStyleTexture([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1409,7 +1464,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setCustomStyleData(int var1, Uint8List var2, Uint8List var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setCustomStyleData([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setCustomStyleData([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -1433,7 +1488,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setTrafficEnable(int var1, bool var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setTrafficEnable([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setTrafficEnable([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1457,7 +1512,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setBuildingEnable(int var1, bool var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setBuildingEnable([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setBuildingEnable([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1481,7 +1536,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setLabelEnable(int var1, bool var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setLabelEnable([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setLabelEnable([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1505,7 +1560,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setAllContentEnable(int var1, bool var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setAllContentEnable([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setAllContentEnable([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1529,7 +1584,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setProjectionCenter(int var1, int var2, int var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setProjectionCenter([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setProjectionCenter([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -1553,7 +1608,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setTrafficStyle__int__int__int__int__int__bool(int var1, int var2, int var3, int var4, int var5, bool var6) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setTrafficStyle([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5, \'var6\':$var6])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setTrafficStyle([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5, \'var6\':$var6])');
     }
   
     // invoke native method
@@ -1577,7 +1632,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setTrafficStyle__int__int__int__int__int(int var1, int var2, int var3, int var4, int var5) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setTrafficStyle([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setTrafficStyle([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5])');
     }
   
     // invoke native method
@@ -1601,7 +1656,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> startCheckEngineRenderComplete() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::startCheckEngineRenderComplete([])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::startCheckEngineRenderComplete([])');
     }
   
     // invoke native method
@@ -1625,7 +1680,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> getCurTileIDs(int var1, Int32List var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getCurTileIDs([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::getCurTileIDs([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1649,7 +1704,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setIndoorEnable(int var1, bool var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setIndoorEnable([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setIndoorEnable([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1673,7 +1728,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setOfflineDataEnable(int var1, bool var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setOfflineDataEnable([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setOfflineDataEnable([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1697,7 +1752,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setHighlightSubwayEnable(int var1, bool var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setHighlightSubwayEnable([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setHighlightSubwayEnable([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1721,7 +1776,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> setBuildingTextureEnable(int var1, bool var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setBuildingTextureEnable([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::setBuildingTextureEnable([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1745,7 +1800,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> initNativeTexture(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::initNativeTexture([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::initNativeTexture([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -1769,7 +1824,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> AddOverlayTexture(int var1, android_graphics_Bitmap var2, int var3, int var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::AddOverlayTexture([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::AddOverlayTexture([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -1793,7 +1848,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> updateNativeArrowOverlay(int var1, String var2, Int32List var3, Int32List var4, int var5, int var6, int var7, double var8, int var9, int var10, int var11, bool var12) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::updateNativeArrowOverlay([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5, \'var6\':$var6, \'var7\':$var7, \'var8\':$var8, \'var9\':$var9, \'var10\':$var10, \'var11\':$var11, \'var12\':$var12])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::updateNativeArrowOverlay([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5, \'var6\':$var6, \'var7\':$var7, \'var8\':$var8, \'var9\':$var9, \'var10\':$var10, \'var11\':$var11, \'var12\':$var12])');
     }
   
     // invoke native method
@@ -1817,7 +1872,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> removeNativeOverlay(int var1, String var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::removeNativeOverlay([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::removeNativeOverlay([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1841,7 +1896,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> removeNativeAllOverlay(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::removeNativeAllOverlay([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::removeNativeAllOverlay([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -1865,7 +1920,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> createAMapInstance(com_autonavi_ae_gmap_GLMapEngine_InitParam var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::createAMapInstance([])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::createAMapInstance([])');
     }
   
     // invoke native method
@@ -1889,7 +1944,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> createAMapEngineWithFrame(com_autonavi_ae_gmap_GLMapEngine_MapViewInitParam var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::createAMapEngineWithFrame([])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::createAMapEngineWithFrame([])');
     }
   
     // invoke native method
@@ -1913,7 +1968,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> changeSurface(int var1, int var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::changeSurface([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::changeSurface([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1937,7 +1992,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> renderAMap() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::renderAMap([])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::renderAMap([])');
     }
   
     // invoke native method
@@ -1961,7 +2016,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> releaseNetworkState() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::releaseNetworkState([])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::releaseNetworkState([])');
     }
   
     // invoke native method
@@ -1985,7 +2040,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> cancelAllAMapDownload() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::cancelAllAMapDownload([])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::cancelAllAMapDownload([])');
     }
   
     // invoke native method
@@ -2009,7 +2064,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   Future<void> destroyAMapEngine() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::destroyAMapEngine([])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine@$refId::destroyAMapEngine([])');
     }
   
     // invoke native method
@@ -2033,7 +2088,7 @@ class com_autonavi_ae_gmap_GLMapEngine extends java_lang_Object with com_autonav
   static Future<String> nativeGetMapEngineVersion(int var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine::nativeGetMapEngineVersion([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.autonavi.ae.gmap.GLMapEngine::nativeGetMapEngineVersion([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -2474,26 +2529,6 @@ extension com_autonavi_ae_gmap_GLMapEngine_Batch on List<com_autonavi_ae_gmap_GL
   
     // invoke native method
     final resultBatch = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('com.autonavi.ae.gmap.GLMapEngine::setIndoorBuildingToBeActive_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "refId": this[__i__].refId}]);
-  
-  
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
-  }
-  
-  
-  Future<List<void>> setMapListener_batch(List<com_autonavi_amap_mapcore_interfaces_IAMapListener> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-  
-    // invoke native method
-    final resultBatch = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('com.autonavi.ae.gmap.GLMapEngine::setMapListener_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object

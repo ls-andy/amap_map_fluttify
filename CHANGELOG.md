@@ -1,3 +1,18 @@
+## 0.23.0
+- roll engine #ee5b257c
+- docs: 配置key的说明
+- chore: 重新创建ios工程
+- docs: 调整权限申请示例
+- enhance: [breaking change] ios端的marker不再需要设置width和height
+- fix: addMarkers返回类型不匹配的问题
+- feat: 添加图片覆盖物
+
+## 0.22.2
+- enhance: Marker添加修改icon的方法
+
+## 0.22.1
+- roll engine #57fc8440 (适配Flutter 1.17)
+
 ## 0.22.0
 - enhance: 提升依赖
 

@@ -1,4 +1,5 @@
 import 'package:amap_core_fluttify/amap_core_fluttify.dart';
+import 'package:amap_map_fluttify/src/facade/utils.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -112,9 +113,11 @@ class MarkerOption {
   final String object;
 
   /// 图片宽度 iOS only
+  @Deprecated('从0.23.0开始会自适应大小, 不再需要设置width和height')
   final double width;
 
   /// 图片高度 iOS only
+  @Deprecated('从0.23.0开始会自适应大小, 不再需要设置width和height')
   final double height;
 
   MarkerOption({
@@ -141,7 +144,7 @@ class MarkerOption {
 
   @override
   String toString() {
-    return 'MarkerOption{latLng: $latLng, title: $title, snippet: $snippet, iconUri: $iconUri, imageConfig: $imageConfig, widget: $widget, draggable: $draggable, infoWindowEnabled: $infoWindowEnabled, visible: $visible, rotateAngle: $rotateAngle, anchorU: $anchorU, anchorV: $anchorV, object: $object, width: $width, height: $height}';
+    return 'MarkerOption{latLng: $latLng, title: $title, snippet: $snippet, iconUri: $iconUri, imageConfig: $imageConfig, widget: $widget, draggable: $draggable, infoWindowEnabled: $infoWindowEnabled, visible: $visible, rotateAngle: $rotateAngle, anchorU: $anchorU, anchorV: $anchorV, object: $object}';
   }
 }
 
@@ -306,6 +309,30 @@ class HeatmapTileOption {
   @override
   String toString() {
     return 'HeatmapTileOption{latLngList: $latLngList}';
+  }
+}
+
+/// 图片覆盖物创建参数
+@immutable
+class GroundOverlayOption {
+  final LatLng southWest;
+  final LatLng northEast;
+  final Uri imageUri;
+  final ImageConfiguration imageConfiguration;
+
+  GroundOverlayOption({
+    @required this.southWest,
+    @required this.northEast,
+    @required this.imageUri,
+    @required this.imageConfiguration,
+  }) : assert(
+          (imageUri != null && imageConfiguration != null) || imageUri == null,
+          'imageUri与imageConfiguration同时设置!',
+        );
+
+  @override
+  String toString() {
+    return 'GroundOverlayOption{southWest: $southWest, northEast: $northEast, imageUri: $imageUri, imageConfiguration: $imageConfiguration}';
   }
 }
 
@@ -481,12 +508,13 @@ class MapLocation {
 class Marker {
   Marker.android(this.androidModel);
 
-  Marker.ios(this.iosModel /*, this._annotationView*/, this.iosController);
+  Marker.ios(this.iosModel, this._annotationView, this.iosController);
 
   com_amap_api_maps_model_Marker androidModel;
 
   MAPointAnnotation iosModel;
-//  MAAnnotationView _annotationView;
+
+  MAAnnotationView _annotationView;
   MAMapView iosController;
 
   Future<String> get title {
@@ -549,17 +577,16 @@ class Marker {
         ),
       ),
       ios: (_) async {
-        debugPrint('ios端目前无法设置经纬度!');
-//        if (_annotationView != null) {
-//          final coordinate = await CLLocationCoordinate2D.create(
-//            coord.latitude,
-//            coord.longitude,
-//          );
-//          await _iosModel.set_coordinate(coordinate);
-//          await _annotationView.set_annotation(_iosModel, viewChannel: false);
-//        } else {
-//          debugPrint('当前_annotationView为null, 无法设置经纬度!');
-//        }
+        if (_annotationView != null) {
+          final coordinate = await CLLocationCoordinate2D.create(
+            coord.latitude,
+            coord.longitude,
+          );
+          await iosModel.set_coordinate(coordinate);
+          await _annotationView.set_annotation(iosModel, viewChannel: false);
+        } else {
+          debugPrint('当前_annotationView为null, 无法设置经纬度!');
+        }
       },
     );
   }
@@ -570,11 +597,11 @@ class Marker {
       android: (_) => androidModel.setVisible(visible),
       ios: (_) async {
         debugPrint('ios端目前无法设置可见性!');
-//        if (_annotationView != null) {
-//          await _annotationView.setHidden(!visible);
-//        } else {
-//          debugPrint('当前_annotationView为null, 无法设置可见性!');
-//        }
+        if (_annotationView != null) {
+          await _annotationView.setHidden(!visible);
+        } else {
+          debugPrint('当前_annotationView为null, 无法设置可见性!');
+        }
       },
     );
   }
@@ -590,6 +617,26 @@ class Marker {
     return platform(
       android: (_) => androidModel.hideInfoWindow(),
       ios: (_) => iosController?.deselectAnnotation_animated(iosModel, true),
+    );
+  }
+
+  Future<void> setIcon(Uri iconUri, ImageConfiguration configuration) async {
+    return platform(
+      android: (pool) async {
+        final iconData = await uri2ImageData(configuration, iconUri);
+
+        final bitmap = await android_graphics_Bitmap.create(iconData);
+        final icon = await com_amap_api_maps_model_BitmapDescriptorFactory
+            .fromBitmap(bitmap);
+        await androidModel.setIcon(icon);
+      },
+      ios: (pool) async {
+        final iconData = await uri2ImageData(configuration, iconUri);
+
+        final icon = await UIImage.create(iconData);
+
+        _annotationView.set_image(icon, viewChannel: false);
+      },
     );
   }
 }
@@ -689,6 +736,24 @@ class Heatmap {
 
   com_amap_api_maps_model_TileOverlay _androidModel;
   MAHeatMapTileOverlay _iosModel;
+  MAMapView _iosController;
+
+  Future<void> remove() {
+    return platform(
+      android: (_) => _androidModel.remove(),
+      ios: (_) => _iosController?.removeOverlay(_iosModel),
+    );
+  }
+}
+
+/// 图片覆盖物
+class GroundOverlay {
+  GroundOverlay.android(this._androidModel);
+
+  GroundOverlay.ios(this._iosModel, this._iosController);
+
+  com_amap_api_maps_model_GroundOverlay _androidModel;
+  MAGroundOverlay _iosModel;
   MAMapView _iosController;
 
   Future<void> remove() {

@@ -15,6 +15,7 @@ import 'package:flutter/services.dart';
 
 import 'enums.dart';
 import 'models.dart';
+import 'utils.dart';
 
 part 'amap_controller.dart';
 
@@ -147,7 +148,7 @@ class _AmapViewState extends State<AmapView> {
             future: _androidOptions(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                return com_amap_api_maps_MapView_Android(
+                return com_amap_api_maps_TextureMapView_Android(
                   var2: snapshot.data,
                   onDispose: _onPlatformViewDispose,
                   onViewCreated: (controller) async {
