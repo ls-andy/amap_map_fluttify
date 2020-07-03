@@ -1,3 +1,19 @@
+## 0.23.4
+- enhance: 优化批量widget marker速度
+- feat: 设置地图长按监听事件
+- feat: **自定义InfoWindow**
+
+## 0.23.3
+- enhance: 枚举优化
+- enhance: 简化图片逻辑
+- feat: 删除海量点
+
+## 0.23.2
+- roll engine #1aee42f3
+
+## 0.23.1
+- fix: 给snippet和title默认设置为空字符串, 防止ios端崩溃
+
 ## 0.23.0
 - roll engine #ee5b257c
 - docs: 配置key的说明

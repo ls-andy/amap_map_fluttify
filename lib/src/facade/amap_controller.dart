@@ -1,8 +1,8 @@
 // ignore_for_file: non_constant_identifier_names
 part of 'amap_view.widget.dart';
 
-/// marker点击事件回调签名 输入[Marker]对象, 返回`是否已消耗事件`, 如果true则不再弹窗, 如果false则继续弹窗
-typedef Future<bool> OnMarkerClicked(Marker marker);
+/// marker点击事件回调签名 输入[Marker]对象
+typedef Future<void> OnMarkerClicked(Marker marker);
 
 /// 地图点击事件回调签名
 typedef Future<void> OnMapClicked(LatLng latLng);
@@ -47,7 +47,9 @@ class AmapController with WidgetsBindingObserver {
 
   _AmapViewState _state;
 
+  // iOS端的回调处理类
   final _iosMapDelegate = _IOSMapDelegate();
+  // Android端的回调处理类
   final _androidMapDelegate = _AndroidMapDelegate();
 
   // 定位间隔订阅事件
@@ -103,6 +105,8 @@ class AmapController with WidgetsBindingObserver {
   }
 
   /// 显示我的位置
+  ///
+  /// 可配置的参数详见[MyLocationOption]
   Future<void> showMyLocation(MyLocationOption option) async {
     assert(option != null);
     await platform(
@@ -140,13 +144,23 @@ class AmapController with WidgetsBindingObserver {
           // 定位间隔
           await locationStyle.interval(option.interval.inMilliseconds);
 
-          // 定位图标
+          // 定位图标 兼容代码
           if (option.iconUri != null) {
             final imageData = await uri2ImageData(
               option.imageConfiguration,
               option.iconUri,
               package: option.package,
             );
+            final bitmap = await android_graphics_Bitmap.create(imageData);
+            final bitmapDescriptor =
+                await com_amap_api_maps_model_BitmapDescriptorFactory
+                    .fromBitmap(bitmap);
+            await locationStyle.myLocationIcon(bitmapDescriptor);
+          }
+          // 定位图标
+          if (option.iconProvider != null) {
+            final imageData = await option.iconProvider
+                .toImageData(createLocalImageConfiguration(_state.context));
             final bitmap = await android_graphics_Bitmap.create(imageData);
             final bitmapDescriptor =
                 await com_amap_api_maps_model_BitmapDescriptorFactory
@@ -226,13 +240,20 @@ class AmapController with WidgetsBindingObserver {
 
           final style = await MAUserLocationRepresentation.create__();
 
-          // 定位图标
+          // 定位图标 兼容代码
           if (option.iconUri != null) {
             final imageData = await uri2ImageData(
               option.imageConfiguration,
               option.iconUri,
               package: option.package,
             );
+            final bitmap = await UIImage.create(imageData);
+            await style.set_image(bitmap);
+          }
+          // 定位图标
+          if (option.iconProvider != null) {
+            final imageData = await option.iconProvider
+                .toImageData(createLocalImageConfiguration(_state.context));
             final bitmap = await UIImage.create(imageData);
             await style.set_image(bitmap);
           }
@@ -758,7 +779,7 @@ class AmapController with WidgetsBindingObserver {
           await markerOption.snippet(option.snippet);
         }
         // 设置marker图标
-        // 普通图片
+        // 普通图片 兼容代码
         if (option.iconUri != null && option.imageConfig != null) {
           Uint8List iconData =
               await uri2ImageData(option.imageConfig, option.iconUri);
@@ -770,11 +791,24 @@ class AmapController with WidgetsBindingObserver {
 
           pool..add(bitmap)..add(icon);
         }
-        // widget as marker
-        else if (option.widget != null) {
-          Uint8List iconData = await _state.widgetToImageData(option.widget);
+        // 普通图片
+        if (option.iconProvider != null) {
+          Uint8List iconData = await option.iconProvider
+              .toImageData(createLocalImageConfiguration(_state.context));
 
           final bitmap = await android_graphics_Bitmap.create(iconData);
+          final icon = await com_amap_api_maps_model_BitmapDescriptorFactory
+              .fromBitmap(bitmap);
+          await markerOption.icon(icon);
+
+          pool..add(bitmap)..add(icon);
+        }
+        // widget as marker
+        else if (option.widget != null) {
+          List<Uint8List> iconData =
+              await _state.widgetToImageData([option.widget]);
+
+          final bitmap = await android_graphics_Bitmap.create(iconData[0]);
           final icon = await com_amap_api_maps_model_BitmapDescriptorFactory
               .fromBitmap(bitmap);
           await markerOption.icon(icon);
@@ -795,7 +829,7 @@ class AmapController with WidgetsBindingObserver {
         await markerOption.visible(option.visible);
 
         final marker = await map.addMarker(markerOption);
-
+        print('当前marker的tag: amap_$hashCode');
         // 是否允许弹窗
         if (option.infoWindowEnabled != null) {
           await marker.setInfoWindowEnable(option.infoWindowEnabled);
@@ -835,7 +869,7 @@ class AmapController with WidgetsBindingObserver {
           await annotation.set_subtitle(option.snippet);
         }
         // 设置图片
-        // 普通图片
+        // 普通图片 兼容代码
         if (option.iconUri != null && option.imageConfig != null) {
           Uint8List iconData =
               await uri2ImageData(option.imageConfig, option.iconUri);
@@ -847,11 +881,24 @@ class AmapController with WidgetsBindingObserver {
 
           pool..add(icon);
         }
-        // widget as marker
-        else if (option.widget != null) {
-          Uint8List iconData = await _state.widgetToImageData(option.widget);
+        // 普通图片
+        if (option.iconProvider != null) {
+          Uint8List iconData = await option.iconProvider
+              .toImageData(createLocalImageConfiguration(_state.context));
 
           final icon = await UIImage.create(iconData);
+
+          // 由于ios端的icon参数在回调中设置, 需要添加属性来实现
+          await annotation.addProperty__(1, icon);
+
+          pool..add(icon);
+        }
+        // widget as marker
+        else if (option.widget != null) {
+          List<Uint8List> iconData =
+              await _state.widgetToImageData([option.widget]);
+
+          final icon = await UIImage.create(iconData[0]);
 
           // 由于ios端的icon参数在回调中设置, 需要添加属性来实现
           await annotation.addProperty__(1, icon);
@@ -888,7 +935,6 @@ class AmapController with WidgetsBindingObserver {
         // 等待添加完成 获取对应的view
         final annotationViewList =
             await _iosMapDelegate._annotationViewCompleter.future;
-        // pointAnnotation不释放, 还有用
         pool.add(coordinate);
 
         return Marker.ios(annotation, annotationViewList[0], iosController);
@@ -917,11 +963,18 @@ class AmapController with WidgetsBindingObserver {
         options.map((it) => it.infoWindowEnabled).toList();
     final objectBatch = options.map((it) => it.object).toList();
     final iconDataBatch = <Uint8List>[
-      for (final option in options)
-        if (option.iconUri != null && option.imageConfig != null)
-          await uri2ImageData(option.imageConfig, option.iconUri)
-        else if (option.widget != null)
-          await _state.widgetToImageData(option.widget)
+      ...await Future.wait([
+        for (final option in options)
+          if (option.iconProvider != null)
+            option.iconProvider
+                .toImageData(createLocalImageConfiguration(_state.context))
+          else if (option.iconUri != null && option.imageConfig != null)
+            uri2ImageData(option.imageConfig, option.iconUri),
+      ]),
+      ...await _state.widgetToImageData(options
+          .where((element) => element.widget != null)
+          .map((e) => e.widget)
+          .toList()),
     ];
 
     return platform(
@@ -983,6 +1036,7 @@ class AmapController with WidgetsBindingObserver {
         // 创建marker
         final annotationBatch =
             await MAPointAnnotation.create_batch__(options.length);
+
         // 经纬度列表
         final coordinateBatch =
             await CLLocationCoordinate2D.create_batch(latBatch, lngBatch);
@@ -1022,10 +1076,7 @@ class AmapController with WidgetsBindingObserver {
             await _iosMapDelegate._annotationViewCompleter.future;
         final annotationViewList = <MAAnnotationView>[
           for (int i = 0; i < options.length; i++)
-            if (visibleMarkers.length <= options.length)
-              visibleMarkers[i]
-            else
-              null
+            if (i < visibleMarkers.length) visibleMarkers[i] else null
         ];
 
         pool.addAll(coordinateBatch);
@@ -1044,10 +1095,13 @@ class AmapController with WidgetsBindingObserver {
   /// 批量添加marker
   ///
   /// 根据[options]批量创建Marker
-  Future<SmoothMoveMarker> addSmoothMoveMarker(SmoothMoveMarkerOption option) {
+  Future<SmoothMoveMarker> addSmoothMoveMarker(
+      SmoothMoveMarkerOption option) async {
     assert(option != null);
     final latitudeBatch = option.path.map((e) => e.latitude).toList();
     final longitudeBatch = option.path.map((e) => e.longitude).toList();
+    final iconData = await option.iconProvider
+        ?.toImageData(createLocalImageConfiguration(_state.context));
     return platform(
       android: (pool) async {
         // 获取地图
@@ -1058,8 +1112,7 @@ class AmapController with WidgetsBindingObserver {
             .create__com_amap_api_maps_AMap(map);
 
         // 创建marker的图标
-        final bitmap = await android_graphics_Bitmap
-            .create(await uri2ImageData(option.imageConfig, option.iconUri));
+        final bitmap = await android_graphics_Bitmap.create(iconData);
         final bitmapDescriptor =
             await com_amap_api_maps_model_BitmapDescriptorFactory
                 .fromBitmap(bitmap);
@@ -1099,17 +1152,9 @@ class AmapController with WidgetsBindingObserver {
 
         // 设置图片
         // 普通图片
-        if (option.iconUri != null && option.imageConfig != null) {
-          Uint8List iconData =
-              await uri2ImageData(option.imageConfig, option.iconUri);
-
-          final icon = await UIImage.create(iconData);
-
-          // 由于ios端的icon参数在回调中设置, 需要添加属性来实现
-          await annotation.addProperty__(1, icon);
-
-          pool..add(icon);
-        }
+        final icon = await UIImage.create(iconData);
+        // 由于ios端的icon参数在回调中设置, 需要添加属性来实现
+        await annotation.addProperty__(1, icon);
 
         // 设置起始点
         await annotation.set_coordinate(points[0]);
@@ -1123,10 +1168,12 @@ class AmapController with WidgetsBindingObserver {
           'name',
           (finished) {},
         );
+
         await iosController.addAnnotation(annotation);
 
-        pool..addAll(points);
-
+        pool
+          ..addAll(points)
+          ..add(icon);
         return SmoothMoveMarker.ios(animation);
       },
     );
@@ -1527,7 +1574,8 @@ class AmapController with WidgetsBindingObserver {
   }
 
   /// 添加海量点
-  Future<void> addMultiPointOverlay(MultiPointOption option) async {
+  Future<MultiPointOverlay> addMultiPointOverlay(
+      MultiPointOption option) async {
     assert(option != null && option.pointList.isNotEmpty);
 
     final latitudeBatch =
@@ -1541,9 +1589,12 @@ class AmapController with WidgetsBindingObserver {
     Uint8List iconData;
     if (option.iconUri != null && option.imageConfiguration != null) {
       iconData = await uri2ImageData(option.imageConfiguration, option.iconUri);
+    } else if (option.iconProvider != null) {
+      iconData = await option.iconProvider
+          .toImageData(createLocalImageConfiguration(_state.context));
     }
 
-    await platform(
+    return platform(
       android: (pool) async {
         final map = await androidController.getMap();
 
@@ -1575,6 +1626,11 @@ class AmapController with WidgetsBindingObserver {
         await multiPointList.setObject_batch(objectBatch);
 
         await multiPointOverlay.setItems(multiPointList);
+
+        pool
+          ..add(map)
+          ..addAll(latLngBatch);
+        return MultiPointOverlay.android(multiPointOverlay);
       },
       ios: (pool) async {
         await iosController.set_delegate(_iosMapDelegate);
@@ -1608,8 +1664,58 @@ class AmapController with WidgetsBindingObserver {
         await overlay.initWithMultiPointItems(pointItemList);
 
         iosController.addOverlay(overlay);
+
+        pool..addAll(pointItemList)..addAll(latLngBatch);
+        return MultiPointOverlay.ios(overlay, iosController);
       },
     );
+  }
+
+  /// 自定义弹窗
+  Future<void> showCustomInfoWindow(Marker marker, Widget widget) async {
+    final imageData = (await _state.widgetToImageData([widget]))[0];
+
+    // 准备弹窗需要的数据
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod(
+          'com.amap.api.maps.AMap::setInfoWindowAdapterX',
+          {'refId': map.refId},
+        );
+        final bitmap = await android_graphics_Bitmap.create(imageData);
+        await pushStack('infoWindow', bitmap);
+
+        pool..add(map)..add(bitmap);
+      },
+      ios: (pool) async {
+        // 创建弹窗view
+        final bitmap = await UIImage.create(imageData);
+        final imageView = await UIImageView.create(bitmap);
+
+        final frame = await imageView.frame;
+        final width = await frame.width;
+        final height = await frame.height;
+
+        // 由于默认偏移量是0, 这里根据弹窗view设置一下偏移量
+        await marker.annotationView.set_calloutOffset(
+            await CGPoint.create(-width / 2, -height),
+            viewChannel: false);
+
+        // 创建自定义弹窗
+        final calloutView = await MACustomCalloutView.create__();
+        await calloutView.initWithCustomView(imageView, viewChannel: false);
+
+        // 设置自定义弹窗
+        await marker.annotationView
+            .set_customCalloutView(calloutView, viewChannel: false);
+
+        pool..add(bitmap)..add(imageView)..add(calloutView);
+      },
+    );
+
+    // 显示弹窗
+    await marker.showInfoWindow();
   }
 
   /// 设置marker点击监听事件
@@ -1696,6 +1802,26 @@ class AmapController with WidgetsBindingObserver {
       ios: (pool) async {
         await iosController.set_delegate(
           _iosMapDelegate.._onMapClick = onMapClick,
+        );
+      },
+    );
+  }
+
+  /// 设置地图长按监听事件
+  Future<void> setMapLongPressedListener(OnMapClicked onMapLongPress) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        await map.setOnMapLongClickListener(
+          _androidMapDelegate.._onMapLongClick = onMapLongPress,
+        );
+
+        pool..add(map);
+      },
+      ios: (pool) async {
+        await iosController.set_delegate(
+          _iosMapDelegate.._onMapLongClick = onMapLongPress,
         );
       },
     );
@@ -2221,6 +2347,7 @@ class _IOSMapDelegate extends NSObject
   OnMarkerDrag _onMarkerDragging;
   OnMarkerDrag _onMarkerDragEnd;
   OnMapClicked _onMapClick;
+  OnMapClicked _onMapLongClick;
   OnMapMove _onMapMoveStart;
   OnMapMove _onMapMoveEnd;
   _OnRequireAlwaysAuth _onRequireAlwaysAuth;
@@ -2239,7 +2366,8 @@ class _IOSMapDelegate extends NSObject
     super.mapView_didAddAnnotationViews(mapView, views);
     if (_annotationViewCompleter?.isCompleted == false) {
       List<MAAnnotationView> result = [
-        for (final view in views) await view.asMAAnnotationView()
+        for (final view in views)
+          TypeOpAmapMapFluttifyIOS(view).as__<MAAnnotationView>()
       ];
       _annotationViewCompleter.complete(result);
     }
@@ -2325,6 +2453,20 @@ class _IOSMapDelegate extends NSObject
     super.mapView_didSingleTappedAtCoordinate(mapView, coordinate);
     if (_onMapClick != null) {
       await _onMapClick(LatLng(
+        await coordinate.latitude,
+        await coordinate.longitude,
+      ));
+    }
+  }
+
+  @override
+  Future<void> mapView_didLongPressedAtCoordinate(
+    MAMapView mapView,
+    CLLocationCoordinate2D coordinate,
+  ) async {
+    super.mapView_didLongPressedAtCoordinate(mapView, coordinate);
+    if (_onMapLongClick != null) {
+      await _onMapLongClick(LatLng(
         await coordinate.latitude,
         await coordinate.longitude,
       ));
@@ -2450,9 +2592,10 @@ class _IOSMapDelegate extends NSObject
   ) async {
     super.mapView_didAddOverlayRenderers(mapView, overlayRenderers);
     if (overlayRenderers.length == 1 &&
-        await overlayRenderers[0].isMAMultiPointOverlayRenderer()) {
-      final multiPointRenderer =
-          await overlayRenderers[0].asMAMultiPointOverlayRenderer();
+        await TypeOpAmapMapFluttifyIOS(overlayRenderers[0])
+            .is__<MAMultiPointOverlayRenderer>()) {
+      final multiPointRenderer = TypeOpAmapMapFluttifyIOS(overlayRenderers[0])
+          .as__<MAMultiPointOverlayRenderer>();
       multiPointRenderer.set_delegate(this);
     }
   }
@@ -2478,6 +2621,7 @@ class _AndroidMapDelegate extends java_lang_Object
         com_amap_api_maps_AMap_OnMarkerClickListener,
         com_amap_api_maps_AMap_OnMarkerDragListener,
         com_amap_api_maps_AMap_OnMapClickListener,
+        com_amap_api_maps_AMap_OnMapLongClickListener,
         com_amap_api_maps_AMap_OnCameraChangeListener,
         com_amap_api_maps_AMap_OnMapScreenShotListener,
         com_amap_api_maps_AMap_OnMyLocationChangeListener,
@@ -2491,6 +2635,7 @@ class _AndroidMapDelegate extends java_lang_Object
   OnMapMove _onMapMoveStart;
   OnMapMove _onMapMoveEnd;
   OnMapClicked _onMapClick;
+  OnMapClicked _onMapLongClick;
   OnScreenShot _onSnapshot;
   OnLocationChange _onLocationChange;
   OnMarkerClicked _onInfoWindowClicked;
@@ -2504,9 +2649,7 @@ class _AndroidMapDelegate extends java_lang_Object
   Future<bool> onMarkerClick(com_amap_api_maps_model_Marker var1) async {
     super.onMarkerClick(var1);
     if (_onMarkerClicked != null) {
-      if (!await _onMarkerClicked(Marker.android(var1))) {
-        await var1.showInfoWindow();
-      }
+      await _onMarkerClicked(Marker.android(var1));
     }
     return true;
   }
@@ -2634,5 +2777,16 @@ class _AndroidMapDelegate extends java_lang_Object
       _onMultiPointClicked(id, title, snippet, object);
     }
     return true;
+  }
+
+  @override
+  Future<void> onMapLongClick(com_amap_api_maps_model_LatLng var1) async {
+    super.onMapLongClick(var1);
+    if (_onMapLongClick != null) {
+      await _onMapLongClick(LatLng(
+        await var1.get_latitude(),
+        await var1.get_longitude(),
+      ));
+    }
   }
 }

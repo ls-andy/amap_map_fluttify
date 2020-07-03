@@ -4,9 +4,30 @@
 //////////////////////////////////////////////////////////
 
 enum MAAnnotationViewDragState {
-  MAAnnotationViewDragStateNone,
-  MAAnnotationViewDragStateStarting,
-  MAAnnotationViewDragStateDragging,
-  MAAnnotationViewDragStateCanceling,
-  MAAnnotationViewDragStateEnding
+  MAAnnotationViewDragStateNone /* 0 */,
+  MAAnnotationViewDragStateStarting /* null */,
+  MAAnnotationViewDragStateDragging /* null */,
+  MAAnnotationViewDragStateCanceling /* null */,
+  MAAnnotationViewDragStateEnding /* null */
+}
+
+extension MAAnnotationViewDragStateToX on MAAnnotationViewDragState {
+  int toValue() {
+    switch (this) {
+      case MAAnnotationViewDragState.MAAnnotationViewDragStateNone: return 0;
+      case MAAnnotationViewDragState.MAAnnotationViewDragStateStarting: return MAAnnotationViewDragState.MAAnnotationViewDragStateStarting.index + 0;
+      case MAAnnotationViewDragState.MAAnnotationViewDragStateDragging: return MAAnnotationViewDragState.MAAnnotationViewDragStateDragging.index + 0;
+      case MAAnnotationViewDragState.MAAnnotationViewDragStateCanceling: return MAAnnotationViewDragState.MAAnnotationViewDragStateCanceling.index + 0;
+      case MAAnnotationViewDragState.MAAnnotationViewDragStateEnding: return MAAnnotationViewDragState.MAAnnotationViewDragStateEnding.index + 0;
+    }
+  }
+}
+
+extension MAAnnotationViewDragStateFromX on int {
+  MAAnnotationViewDragState toMAAnnotationViewDragState() {
+    switch (this) {
+      case 0: return MAAnnotationViewDragState.MAAnnotationViewDragStateNone;
+      default: return MAAnnotationViewDragState.values[this + 0];
+    }
+  }
 }

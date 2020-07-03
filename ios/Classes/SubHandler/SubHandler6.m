@@ -13,14 +13,237 @@ extern BOOL enableLog;
 
 @implementation AmapMapFluttifyPlugin (SubHandler6)
 - (NSDictionary<NSString*, Handler>*) getSubHandler6 {
+    __weak __typeof(self)weakSelf = self;
     return @{
+        @"MATraceLocation::set_time_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                double time = [args[@"time"] doubleValue];
+        
+                // ref
+                MATraceLocation* ref = (MATraceLocation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.time = time;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"MAArc::set_startCoordinate_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // struct arg
+                NSValue* startCoordinateValue = (NSValue*) HEAP[args[@"startCoordinate"]];
+                CLLocationCoordinate2D startCoordinate;
+                [startCoordinateValue getValue:&startCoordinate];
+        
+                // ref
+                MAArc* ref = (MAArc*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.startCoordinate = startCoordinate;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"MAArc::set_passedCoordinate_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // struct arg
+                NSValue* passedCoordinateValue = (NSValue*) HEAP[args[@"passedCoordinate"]];
+                CLLocationCoordinate2D passedCoordinate;
+                [passedCoordinateValue getValue:&passedCoordinate];
+        
+                // ref
+                MAArc* ref = (MAArc*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.passedCoordinate = passedCoordinate;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"MAArc::set_endCoordinate_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // struct arg
+                NSValue* endCoordinateValue = (NSValue*) HEAP[args[@"endCoordinate"]];
+                CLLocationCoordinate2D endCoordinate;
+                [endCoordinateValue getValue:&endCoordinate];
+        
+                // ref
+                MAArc* ref = (MAArc*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.endCoordinate = endCoordinate;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"MAUserLocationRepresentation::set_showsAccuracyRing_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL showsAccuracyRing = [args[@"showsAccuracyRing"] boolValue];
+        
+                // ref
+                MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.showsAccuracyRing = showsAccuracyRing;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"MAUserLocationRepresentation::set_showsHeadingIndicator_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL showsHeadingIndicator = [args[@"showsHeadingIndicator"] boolValue];
+        
+                // ref
+                MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.showsHeadingIndicator = showsHeadingIndicator;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"MAUserLocationRepresentation::set_fillColor_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // ref arg
+                UIColor* fillColor = (UIColor*) HEAP[args[@"fillColor"]];
+        
+                // ref
+                MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.fillColor = fillColor;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"MAUserLocationRepresentation::set_strokeColor_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // ref arg
+                UIColor* strokeColor = (UIColor*) HEAP[args[@"strokeColor"]];
+        
+                // ref
+                MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.strokeColor = strokeColor;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"MAUserLocationRepresentation::set_lineWidth_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                CGFloat lineWidth = [args[@"lineWidth"] floatValue];
+        
+                // ref
+                MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.lineWidth = lineWidth;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"MAUserLocationRepresentation::set_locationDotBgColor_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // ref arg
+                UIColor* locationDotBgColor = (UIColor*) HEAP[args[@"locationDotBgColor"]];
+        
+                // ref
+                MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.locationDotBgColor = locationDotBgColor;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"MAUserLocationRepresentation::set_locationDotFillColor_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // ref arg
+                UIColor* locationDotFillColor = (UIColor*) HEAP[args[@"locationDotFillColor"]];
+        
+                // ref
+                MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.locationDotFillColor = locationDotFillColor;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"MAUserLocationRepresentation::set_enablePulseAnnimation_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL enablePulseAnnimation = [args[@"enablePulseAnnimation"] boolValue];
+        
+                // ref
+                MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.enablePulseAnnimation = enablePulseAnnimation;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
         @"MAUserLocationRepresentation::set_image_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
             for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
                 // ref arg
-                UIImage* image = (UIImage*) HEAP[@([args[@"image"] integerValue])];
+                UIImage* image = (UIImage*) HEAP[args[@"image"]];
         
                 // ref
                 MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -56,7 +279,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* centerCoordinateValue = (NSValue*) HEAP[@([args[@"centerCoordinate"] integerValue])];
+                NSValue* centerCoordinateValue = (NSValue*) HEAP[args[@"centerCoordinate"]];
                 CLLocationCoordinate2D centerCoordinate;
                 [centerCoordinateValue getValue:&centerCoordinate];
         
@@ -76,7 +299,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
+                NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
                 MACoordinateRegion region;
                 [regionValue getValue:&region];
         
@@ -96,7 +319,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* visibleMapRectValue = (NSValue*) HEAP[@([args[@"visibleMapRect"] integerValue])];
+                NSValue* visibleMapRectValue = (NSValue*) HEAP[args[@"visibleMapRect"]];
                 MAMapRect visibleMapRect;
                 [visibleMapRectValue getValue:&visibleMapRect];
         
@@ -116,7 +339,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* limitRegionValue = (NSValue*) HEAP[@([args[@"limitRegion"] integerValue])];
+                NSValue* limitRegionValue = (NSValue*) HEAP[args[@"limitRegion"]];
                 MACoordinateRegion limitRegion;
                 [limitRegionValue getValue:&limitRegion];
         
@@ -136,7 +359,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* limitMapRectValue = (NSValue*) HEAP[@([args[@"limitMapRect"] integerValue])];
+                NSValue* limitMapRectValue = (NSValue*) HEAP[args[@"limitMapRect"]];
                 MAMapRect limitMapRect;
                 [limitMapRectValue getValue:&limitMapRect];
         
@@ -462,7 +685,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* compassOriginValue = (NSValue*) HEAP[@([args[@"compassOrigin"] integerValue])];
+                NSValue* compassOriginValue = (NSValue*) HEAP[args[@"compassOrigin"]];
                 CGPoint compassOrigin;
                 [compassOriginValue getValue:&compassOrigin];
         
@@ -500,7 +723,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* scaleOriginValue = (NSValue*) HEAP[@([args[@"scaleOrigin"] integerValue])];
+                NSValue* scaleOriginValue = (NSValue*) HEAP[args[@"scaleOrigin"]];
                 CGPoint scaleOrigin;
                 [scaleOriginValue getValue:&scaleOrigin];
         
@@ -520,7 +743,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* logoCenterValue = (NSValue*) HEAP[@([args[@"logoCenter"] integerValue])];
+                NSValue* logoCenterValue = (NSValue*) HEAP[args[@"logoCenter"]];
                 CGPoint logoCenter;
                 [logoCenterValue getValue:&logoCenter];
         
@@ -594,7 +817,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* screenAnchorValue = (NSValue*) HEAP[@([args[@"screenAnchor"] integerValue])];
+                NSValue* screenAnchorValue = (NSValue*) HEAP[args[@"screenAnchor"]];
                 CGPoint screenAnchor;
                 [screenAnchorValue getValue:&screenAnchor];
         
@@ -889,7 +1112,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIColor* fillColor = (UIColor*) HEAP[@([args[@"fillColor"] integerValue])];
+                UIColor* fillColor = (UIColor*) HEAP[args[@"fillColor"]];
         
                 // ref
                 MAOverlayPathRenderer* ref = (MAOverlayPathRenderer*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -907,7 +1130,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIColor* strokeColor = (UIColor*) HEAP[@([args[@"strokeColor"] integerValue])];
+                UIColor* strokeColor = (UIColor*) HEAP[args[@"strokeColor"]];
         
                 // ref
                 MAOverlayPathRenderer* ref = (MAOverlayPathRenderer*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1405,6 +1628,15 @@ extern BOOL enableLog;
             methodResult(@(isTargetType));
         },
         
+        @"RefClass::isKindOfNSValue": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // 引用对象
+            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
+            id ref = HEAP[refId];
+        
+            BOOL isTargetType = [ref isKindOfClass:[NSValue class]];
+            methodResult(@(isTargetType));
+        },
+        
         @"RefClass::isKindOfMAParticleRandomVelocityGenerate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
             NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
@@ -1621,864 +1853,6 @@ extern BOOL enableLog;
             methodResult(@(isTargetType));
         },
         
-        @"RefClass::asMAOfflineCity": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAOfflineCity *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAOfflineItemNationWide": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAOfflineItemNationWide *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAMultiPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAMultiPoint *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAGroundOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAGroundOverlay *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAPolygonRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAPolygonRenderer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAPinAnnotationView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAPinAnnotationView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAHeatMapNode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAHeatMapNode *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAHeatMapGradient": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAHeatMapGradient *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAHeatMapTileOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAHeatMapTileOverlay *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAMapStatus": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAMapStatus *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAPointAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAPointAnnotation *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMACircle": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MACircle *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAArcRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAArcRenderer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAOfflineMapViewController": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAOfflineMapViewController *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAMapCustomStyleOptions": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAMapCustomStyleOptions *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAPolygon": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAPolygon *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAParticleOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAParticleOverlay *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAPolyline": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAPolyline *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAMultiColoredPolylineRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAMultiColoredPolylineRenderer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAAnimatedAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAAnimatedAnnotation *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAMultiTexturePolylineRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAMultiTexturePolylineRenderer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAOfflineProvince": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAOfflineProvince *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMATileOverlayRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MATileOverlayRenderer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAOfflineItem": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAOfflineItem *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAGeodesicPolyline": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAGeodesicPolyline *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMATouchPoi": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MATouchPoi *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAOfflineItemMunicipality": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAOfflineItemMunicipality *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAMultiPolyline": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAMultiPolyline *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMATraceManager": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MATraceManager *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAMultiPointOverlayRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAMultiPointOverlayRenderer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAIndoorFloorInfo": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAIndoorFloorInfo *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAIndoorInfo": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAIndoorInfo *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAPolylineRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAPolylineRenderer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAAnnotationMoveAnimation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAAnnotationMoveAnimation *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAShape": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAShape *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAAnnotationView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAAnnotationView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMATileOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MATileOverlay *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMACustomCalloutView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MACustomCalloutView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAOfflineItemCommonCity": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAOfflineItemCommonCity *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAOfflineMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAOfflineMap *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMACircleRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MACircleRenderer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAParticleOverlayRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAParticleOverlayRenderer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAParticleRandomVelocityGenerate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAParticleRandomVelocityGenerate *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAParticleRandomColorGenerate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAParticleRandomColorGenerate *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAParticleConstantRotationGenerate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAParticleConstantRotationGenerate *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAParticleCurveSizeGenerate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAParticleCurveSizeGenerate *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAParticleEmissionModule": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAParticleEmissionModule *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAParticleSinglePointShapeModule": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAParticleSinglePointShapeModule *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAParticleRectShapeModule": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAParticleRectShapeModule *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAParticleOverLifeModule": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAParticleOverLifeModule *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAParticleOverlayOptions": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAParticleOverlayOptions *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAParticleOverlayOptionsFactory": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAParticleOverlayOptionsFactory *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAOverlayRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAOverlayRenderer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAUserLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAUserLocation *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAMultiPointItem": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAMultiPointItem *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAMultiPointOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAMultiPointOverlay *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMACustomBuildingOverlayOption": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MACustomBuildingOverlayOption *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMACustomBuildingOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MACustomBuildingOverlay *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMATracePoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MATracePoint *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMATraceLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MATraceLocation *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAArc": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAArc *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAUserLocationRepresentation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAUserLocationRepresentation *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAMapView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAMapView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAOverlayPathRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAOverlayPathRenderer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMAGroundOverlayRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MAGroundOverlayRenderer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asMACustomBuildingOverlayRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (MACustomBuildingOverlayRenderer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
         @"ObjectFactory::createMAOfflineCity": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // print log
             if (enableLog) {
@@ -2486,9 +1860,9 @@ extern BOOL enableLog;
             }
         
             MAOfflineCity* ref = [[MAOfflineCity alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2500,9 +1874,9 @@ extern BOOL enableLog;
             }
         
             MAOfflineItemNationWide* ref = [[MAOfflineItemNationWide alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2514,9 +1888,9 @@ extern BOOL enableLog;
             }
         
             MAMultiPoint* ref = [[MAMultiPoint alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2528,9 +1902,9 @@ extern BOOL enableLog;
             }
         
             MAGroundOverlay* ref = [[MAGroundOverlay alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2542,9 +1916,9 @@ extern BOOL enableLog;
             }
         
             MAPolygonRenderer* ref = [[MAPolygonRenderer alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2556,9 +1930,9 @@ extern BOOL enableLog;
             }
         
             MAPinAnnotationView* ref = [[MAPinAnnotationView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2570,9 +1944,9 @@ extern BOOL enableLog;
             }
         
             MAHeatMapNode* ref = [[MAHeatMapNode alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2584,9 +1958,9 @@ extern BOOL enableLog;
             }
         
             MAHeatMapGradient* ref = [[MAHeatMapGradient alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2598,9 +1972,9 @@ extern BOOL enableLog;
             }
         
             MAHeatMapTileOverlay* ref = [[MAHeatMapTileOverlay alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2612,9 +1986,9 @@ extern BOOL enableLog;
             }
         
             MAMapStatus* ref = [[MAMapStatus alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2626,9 +2000,9 @@ extern BOOL enableLog;
             }
         
             MAPointAnnotation* ref = [[MAPointAnnotation alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2640,9 +2014,9 @@ extern BOOL enableLog;
             }
         
             MACircle* ref = [[MACircle alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2654,9 +2028,765 @@ extern BOOL enableLog;
             }
         
             MAArcRenderer* ref = [[MAArcRenderer alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAOfflineMapViewController": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAOfflineMapViewController");
+            }
+        
+            MAOfflineMapViewController* ref = [[MAOfflineMapViewController alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAMapCustomStyleOptions": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAMapCustomStyleOptions");
+            }
+        
+            MAMapCustomStyleOptions* ref = [[MAMapCustomStyleOptions alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAPolygon": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAPolygon");
+            }
+        
+            MAPolygon* ref = [[MAPolygon alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAParticleOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAParticleOverlay");
+            }
+        
+            MAParticleOverlay* ref = [[MAParticleOverlay alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAPolyline": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAPolyline");
+            }
+        
+            MAPolyline* ref = [[MAPolyline alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAMultiColoredPolylineRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAMultiColoredPolylineRenderer");
+            }
+        
+            MAMultiColoredPolylineRenderer* ref = [[MAMultiColoredPolylineRenderer alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAAnimatedAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAAnimatedAnnotation");
+            }
+        
+            MAAnimatedAnnotation* ref = [[MAAnimatedAnnotation alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAMultiTexturePolylineRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAMultiTexturePolylineRenderer");
+            }
+        
+            MAMultiTexturePolylineRenderer* ref = [[MAMultiTexturePolylineRenderer alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAOfflineProvince": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAOfflineProvince");
+            }
+        
+            MAOfflineProvince* ref = [[MAOfflineProvince alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMATileOverlayRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMATileOverlayRenderer");
+            }
+        
+            MATileOverlayRenderer* ref = [[MATileOverlayRenderer alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAOfflineItem": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAOfflineItem");
+            }
+        
+            MAOfflineItem* ref = [[MAOfflineItem alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAGeodesicPolyline": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAGeodesicPolyline");
+            }
+        
+            MAGeodesicPolyline* ref = [[MAGeodesicPolyline alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMATouchPoi": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMATouchPoi");
+            }
+        
+            MATouchPoi* ref = [[MATouchPoi alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAOfflineItemMunicipality": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAOfflineItemMunicipality");
+            }
+        
+            MAOfflineItemMunicipality* ref = [[MAOfflineItemMunicipality alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAMultiPolyline": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAMultiPolyline");
+            }
+        
+            MAMultiPolyline* ref = [[MAMultiPolyline alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMATraceManager": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMATraceManager");
+            }
+        
+            MATraceManager* ref = [[MATraceManager alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAMultiPointOverlayRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAMultiPointOverlayRenderer");
+            }
+        
+            MAMultiPointOverlayRenderer* ref = [[MAMultiPointOverlayRenderer alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAIndoorFloorInfo": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAIndoorFloorInfo");
+            }
+        
+            MAIndoorFloorInfo* ref = [[MAIndoorFloorInfo alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAIndoorInfo": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAIndoorInfo");
+            }
+        
+            MAIndoorInfo* ref = [[MAIndoorInfo alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAPolylineRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAPolylineRenderer");
+            }
+        
+            MAPolylineRenderer* ref = [[MAPolylineRenderer alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAAnnotationMoveAnimation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAAnnotationMoveAnimation");
+            }
+        
+            MAAnnotationMoveAnimation* ref = [[MAAnnotationMoveAnimation alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAShape": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAShape");
+            }
+        
+            MAShape* ref = [[MAShape alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAAnnotationView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAAnnotationView");
+            }
+        
+            MAAnnotationView* ref = [[MAAnnotationView alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMATileOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMATileOverlay");
+            }
+        
+            MATileOverlay* ref = [[MATileOverlay alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMATileOverlayPath": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMATileOverlayPath");
+            }
+        
+            MATileOverlayPath data;
+        
+            NSValue* dataValue = [NSValue value:&data withObjCType:@encode(MATileOverlayPath)];
+            HEAP[[NSNumber numberWithLong: dataValue.hash]] = dataValue;
+        
+            methodResult([NSNumber numberWithLong: dataValue.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMACustomCalloutView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMACustomCalloutView");
+            }
+        
+            MACustomCalloutView* ref = [[MACustomCalloutView alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAOfflineItemCommonCity": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAOfflineItemCommonCity");
+            }
+        
+            MAOfflineItemCommonCity* ref = [[MAOfflineItemCommonCity alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAOfflineMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAOfflineMap");
+            }
+        
+            MAOfflineMap* ref = [[MAOfflineMap alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMACircleRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMACircleRenderer");
+            }
+        
+            MACircleRenderer* ref = [[MACircleRenderer alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAParticleOverlayRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAParticleOverlayRenderer");
+            }
+        
+            MAParticleOverlayRenderer* ref = [[MAParticleOverlayRenderer alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMACoordinateBounds": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMACoordinateBounds");
+            }
+        
+            MACoordinateBounds data;
+        
+            NSValue* dataValue = [NSValue value:&data withObjCType:@encode(MACoordinateBounds)];
+            HEAP[[NSNumber numberWithLong: dataValue.hash]] = dataValue;
+        
+            methodResult([NSNumber numberWithLong: dataValue.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMACoordinateSpan": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMACoordinateSpan");
+            }
+        
+            MACoordinateSpan data;
+        
+            NSValue* dataValue = [NSValue value:&data withObjCType:@encode(MACoordinateSpan)];
+            HEAP[[NSNumber numberWithLong: dataValue.hash]] = dataValue;
+        
+            methodResult([NSNumber numberWithLong: dataValue.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMACoordinateRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMACoordinateRegion");
+            }
+        
+            MACoordinateRegion data;
+        
+            NSValue* dataValue = [NSValue value:&data withObjCType:@encode(MACoordinateRegion)];
+            HEAP[[NSNumber numberWithLong: dataValue.hash]] = dataValue;
+        
+            methodResult([NSNumber numberWithLong: dataValue.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAMapPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAMapPoint");
+            }
+        
+            MAMapPoint data;
+        
+            NSValue* dataValue = [NSValue value:&data withObjCType:@encode(MAMapPoint)];
+            HEAP[[NSNumber numberWithLong: dataValue.hash]] = dataValue;
+        
+            methodResult([NSNumber numberWithLong: dataValue.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAMapSize": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAMapSize");
+            }
+        
+            MAMapSize data;
+        
+            NSValue* dataValue = [NSValue value:&data withObjCType:@encode(MAMapSize)];
+            HEAP[[NSNumber numberWithLong: dataValue.hash]] = dataValue;
+        
+            methodResult([NSNumber numberWithLong: dataValue.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAMapRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAMapRect");
+            }
+        
+            MAMapRect data;
+        
+            NSValue* dataValue = [NSValue value:&data withObjCType:@encode(MAMapRect)];
+            HEAP[[NSNumber numberWithLong: dataValue.hash]] = dataValue;
+        
+            methodResult([NSNumber numberWithLong: dataValue.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createNSValue": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createNSValue");
+            }
+        
+            NSValue* ref = [[NSValue alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAParticleRandomVelocityGenerate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAParticleRandomVelocityGenerate");
+            }
+        
+            MAParticleRandomVelocityGenerate* ref = [[MAParticleRandomVelocityGenerate alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAParticleRandomColorGenerate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAParticleRandomColorGenerate");
+            }
+        
+            MAParticleRandomColorGenerate* ref = [[MAParticleRandomColorGenerate alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAParticleConstantRotationGenerate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAParticleConstantRotationGenerate");
+            }
+        
+            MAParticleConstantRotationGenerate* ref = [[MAParticleConstantRotationGenerate alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAParticleCurveSizeGenerate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAParticleCurveSizeGenerate");
+            }
+        
+            MAParticleCurveSizeGenerate* ref = [[MAParticleCurveSizeGenerate alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAParticleEmissionModule": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAParticleEmissionModule");
+            }
+        
+            MAParticleEmissionModule* ref = [[MAParticleEmissionModule alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAParticleSinglePointShapeModule": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAParticleSinglePointShapeModule");
+            }
+        
+            MAParticleSinglePointShapeModule* ref = [[MAParticleSinglePointShapeModule alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAParticleRectShapeModule": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAParticleRectShapeModule");
+            }
+        
+            MAParticleRectShapeModule* ref = [[MAParticleRectShapeModule alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAParticleOverLifeModule": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAParticleOverLifeModule");
+            }
+        
+            MAParticleOverLifeModule* ref = [[MAParticleOverLifeModule alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAParticleOverlayOptions": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAParticleOverlayOptions");
+            }
+        
+            MAParticleOverlayOptions* ref = [[MAParticleOverlayOptions alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAParticleOverlayOptionsFactory": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAParticleOverlayOptionsFactory");
+            }
+        
+            MAParticleOverlayOptionsFactory* ref = [[MAParticleOverlayOptionsFactory alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAOverlayRenderer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAOverlayRenderer");
+            }
+        
+            MAOverlayRenderer* ref = [[MAOverlayRenderer alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAUserLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAUserLocation");
+            }
+        
+            MAUserLocation* ref = [[MAUserLocation alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAMultiPointItem": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAMultiPointItem");
+            }
+        
+            MAMultiPointItem* ref = [[MAMultiPointItem alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMAMultiPointOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMAMultiPointOverlay");
+            }
+        
+            MAMultiPointOverlay* ref = [[MAMultiPointOverlay alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMACustomBuildingOverlayOption": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMACustomBuildingOverlayOption");
+            }
+        
+            MACustomBuildingOverlayOption* ref = [[MACustomBuildingOverlayOption alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createMACustomBuildingOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createMACustomBuildingOverlay");
+            }
+        
+            MACustomBuildingOverlay* ref = [[MACustomBuildingOverlay alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },

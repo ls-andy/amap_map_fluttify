@@ -4,12 +4,36 @@
 //////////////////////////////////////////////////////////
 
 enum MAOfflineMapDownloadStatus {
-  MAOfflineMapDownloadStatusWaiting,
-  MAOfflineMapDownloadStatusStart,
-  MAOfflineMapDownloadStatusProgress,
-  MAOfflineMapDownloadStatusCompleted,
-  MAOfflineMapDownloadStatusCancelled,
-  MAOfflineMapDownloadStatusUnzip,
-  MAOfflineMapDownloadStatusFinished,
-  MAOfflineMapDownloadStatusError
+  MAOfflineMapDownloadStatusWaiting /* 0 */,
+  MAOfflineMapDownloadStatusStart /* null */,
+  MAOfflineMapDownloadStatusProgress /* null */,
+  MAOfflineMapDownloadStatusCompleted /* null */,
+  MAOfflineMapDownloadStatusCancelled /* null */,
+  MAOfflineMapDownloadStatusUnzip /* null */,
+  MAOfflineMapDownloadStatusFinished /* null */,
+  MAOfflineMapDownloadStatusError /* null */
+}
+
+extension MAOfflineMapDownloadStatusToX on MAOfflineMapDownloadStatus {
+  int toValue() {
+    switch (this) {
+      case MAOfflineMapDownloadStatus.MAOfflineMapDownloadStatusWaiting: return 0;
+      case MAOfflineMapDownloadStatus.MAOfflineMapDownloadStatusStart: return MAOfflineMapDownloadStatus.MAOfflineMapDownloadStatusStart.index + 0;
+      case MAOfflineMapDownloadStatus.MAOfflineMapDownloadStatusProgress: return MAOfflineMapDownloadStatus.MAOfflineMapDownloadStatusProgress.index + 0;
+      case MAOfflineMapDownloadStatus.MAOfflineMapDownloadStatusCompleted: return MAOfflineMapDownloadStatus.MAOfflineMapDownloadStatusCompleted.index + 0;
+      case MAOfflineMapDownloadStatus.MAOfflineMapDownloadStatusCancelled: return MAOfflineMapDownloadStatus.MAOfflineMapDownloadStatusCancelled.index + 0;
+      case MAOfflineMapDownloadStatus.MAOfflineMapDownloadStatusUnzip: return MAOfflineMapDownloadStatus.MAOfflineMapDownloadStatusUnzip.index + 0;
+      case MAOfflineMapDownloadStatus.MAOfflineMapDownloadStatusFinished: return MAOfflineMapDownloadStatus.MAOfflineMapDownloadStatusFinished.index + 0;
+      case MAOfflineMapDownloadStatus.MAOfflineMapDownloadStatusError: return MAOfflineMapDownloadStatus.MAOfflineMapDownloadStatusError.index + 0;
+    }
+  }
+}
+
+extension MAOfflineMapDownloadStatusFromX on int {
+  MAOfflineMapDownloadStatus toMAOfflineMapDownloadStatus() {
+    switch (this) {
+      case 0: return MAOfflineMapDownloadStatus.MAOfflineMapDownloadStatusWaiting;
+      default: return MAOfflineMapDownloadStatus.values[this + 0];
+    }
+  }
 }

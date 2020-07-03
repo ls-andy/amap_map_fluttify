@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:amap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:amap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -59,7 +58,7 @@ class com_amap_api_maps_utils_overlay_MovingPointOverlay extends java_lang_Objec
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('com.amap.api.maps.utils.overlay.MovingPointOverlay::setPoints', {"var1": var1.map((__it__) => __it__.refId).toList(), "refId": refId});
+    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('com.amap.api.maps.utils.overlay.MovingPointOverlay::setPoints', {"var1": var1.map((__it__) => __it__?.refId).toList(), "refId": refId});
   
   
     // handle native call
@@ -189,8 +188,8 @@ class com_amap_api_maps_utils_overlay_MovingPointOverlay extends java_lang_Objec
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = com_amap_api_maps_model_GL3DModel()..refId = __result__..tag__ = 'amap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      final __return__ = com_amap_api_maps_model_BasePointOverlay()..refId = __result__..tag__ = 'amap_map_fluttify';
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -214,7 +213,7 @@ class com_amap_api_maps_utils_overlay_MovingPointOverlay extends java_lang_Objec
       return null;
     } else {
       final __return__ = com_amap_api_maps_model_LatLng()..refId = __result__..tag__ = 'amap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -299,7 +298,7 @@ class com_amap_api_maps_utils_overlay_MovingPointOverlay extends java_lang_Objec
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('com.amap.api.maps.utils.overlay.MovingPointOverlay::setPosition', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('com.amap.api.maps.utils.overlay.MovingPointOverlay::setPosition', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -378,9 +377,6 @@ class com_amap_api_maps_utils_overlay_MovingPointOverlay extends java_lang_Objec
     MethodChannel('com.amap.api.maps.utils.overlay.MovingPointOverlay::setMoveListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
-          // final refId = args['callerRefId'] as int;
-          // if (refId != this.refId) return;
-  
           switch (methodCall.method) {
             case 'Callback::com.amap.api.maps.utils.overlay.MovingPointOverlay.MoveListener::move':
               // print log
@@ -533,7 +529,7 @@ extension com_amap_api_maps_utils_overlay_MovingPointOverlay_Batch on List<com_a
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_amap_api_maps_model_GL3DModel()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_amap_api_maps_model_BasePointOverlay()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
       kNativeObjectPool.addAll(typedResult);
       return typedResult;
     }

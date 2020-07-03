@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:amap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:amap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -13,8 +12,12 @@ import 'package:flutter/services.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 
+class _com_amap_api_maps_AMap_InfoWindowAdapter_SUB extends java_lang_Object with com_amap_api_maps_AMap_InfoWindowAdapter {}
+
 mixin com_amap_api_maps_AMap_InfoWindowAdapter on java_lang_Object {
   
+
+  static com_amap_api_maps_AMap_InfoWindowAdapter subInstance() => _com_amap_api_maps_AMap_InfoWindowAdapter_SUB();
 
   
 
@@ -28,7 +31,7 @@ mixin com_amap_api_maps_AMap_InfoWindowAdapter on java_lang_Object {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('com.amap.api.maps.AMap.InfoWindowAdapter::getInfoWindow', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('com.amap.api.maps.AMap.InfoWindowAdapter::getInfoWindow', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -38,8 +41,8 @@ mixin com_amap_api_maps_AMap_InfoWindowAdapter on java_lang_Object {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = com_amap_api_maps_offlinemap_DownloadProgressView()..refId = __result__..tag__ = 'amap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      final __return__ = android_view_View()..refId = __result__..tag__ = 'amap_map_fluttify';
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -52,7 +55,7 @@ mixin com_amap_api_maps_AMap_InfoWindowAdapter on java_lang_Object {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('com.amap.api.maps.AMap.InfoWindowAdapter::getInfoContents', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('com.amap.api.maps.AMap.InfoWindowAdapter::getInfoContents', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -62,10 +65,55 @@ mixin com_amap_api_maps_AMap_InfoWindowAdapter on java_lang_Object {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = com_amap_api_maps_offlinemap_DownloadProgressView()..refId = __result__..tag__ = 'amap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      final __return__ = android_view_View()..refId = __result__..tag__ = 'amap_map_fluttify';
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
   
+}
+
+extension com_amap_api_maps_AMap_InfoWindowAdapter_Batch on List<com_amap_api_maps_AMap_InfoWindowAdapter> {
+  //region methods
+  
+  Future<List<android_view_View>> getInfoWindow_batch(List<com_amap_api_maps_model_Marker> var1) async {
+    if (false) {
+      return Future.error('all args must have same length!');
+    }
+  
+    // invoke native method
+    final resultBatch = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('com.amap.api.maps.AMap.InfoWindowAdapter::getInfoWindow_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+  
+  
+    // convert native result to dart side object
+    if (resultBatch == null) {
+      return null;
+    } else {
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => android_view_View()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
+      kNativeObjectPool.addAll(typedResult);
+      return typedResult;
+    }
+  }
+  
+  
+  Future<List<android_view_View>> getInfoContents_batch(List<com_amap_api_maps_model_Marker> var1) async {
+    if (false) {
+      return Future.error('all args must have same length!');
+    }
+  
+    // invoke native method
+    final resultBatch = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('com.amap.api.maps.AMap.InfoWindowAdapter::getInfoContents_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+  
+  
+    // convert native result to dart side object
+    if (resultBatch == null) {
+      return null;
+    } else {
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => android_view_View()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
+      kNativeObjectPool.addAll(typedResult);
+      return typedResult;
+    }
+  }
+  
+  //endregion
 }

@@ -6,12 +6,13 @@
 import 'dart:typed_data';
 
 import 'package:amap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:amap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
+
+
 
 mixin MATraceDelegate on NSObject {
   
@@ -20,12 +21,14 @@ mixin MATraceDelegate on NSObject {
 
   
 
+  
+
   @mustCallSuper
   Future<void> traceManager_didTrace_correct_distance_withError(MATraceManager manager, List<CLLocation> locations, List<MATracePoint> tracePoints, double distance, NSError error) {
-    kNativeObjectPool.add(manager);
+    if (manager is Ref) kNativeObjectPool.add(manager);
     kNativeObjectPool.addAll(locations);
     kNativeObjectPool.addAll(tracePoints);
-    kNativeObjectPool.add(error);
+    if (error is Ref) kNativeObjectPool.add(error);
   
     if (fluttifyLogEnabled) {
       debugPrint('traceManager_didTrace_correct_distance_withError::kNativeObjectPool: $kNativeObjectPool');
@@ -34,7 +37,7 @@ mixin MATraceDelegate on NSObject {
   
   @mustCallSuper
   Future<void> mapViewRequireLocationAuth(CLLocationManager locationManager) {
-    kNativeObjectPool.add(locationManager);
+    if (locationManager is Ref) kNativeObjectPool.add(locationManager);
   
     if (fluttifyLogEnabled) {
       debugPrint('mapViewRequireLocationAuth::kNativeObjectPool: $kNativeObjectPool');
@@ -42,3 +45,4 @@ mixin MATraceDelegate on NSObject {
   }
   
 }
+
