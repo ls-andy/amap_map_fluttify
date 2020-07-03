@@ -6,7 +6,6 @@
 import 'dart:typed_data';
 
 import 'package:amap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:amap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -59,7 +58,7 @@ class MAParticleOverlayOptionsFactory extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('MAParticleOverlayOptionsFactory::particleOverlayOptionsWithType', {"particleType": particleType.index});
+    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('MAParticleOverlayOptionsFactory::particleOverlayOptionsWithType', {"particleType": particleType.toValue()});
   
   
     // handle native call
@@ -95,7 +94,7 @@ extension MAParticleOverlayOptionsFactory_Batch on List<MAParticleOverlayOptions
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('MAParticleOverlayOptionsFactory::particleOverlayOptionsWithType_batch', [for (int __i__ = 0; __i__ < particleType.length; __i__++) {"particleType": particleType[__i__].index}]);
+    final resultBatch = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('MAParticleOverlayOptionsFactory::particleOverlayOptionsWithType_batch', [for (int __i__ = 0; __i__ < particleType.length; __i__++) {"particleType": particleType[__i__].toValue()}]);
   
   
     // convert native result to dart side object

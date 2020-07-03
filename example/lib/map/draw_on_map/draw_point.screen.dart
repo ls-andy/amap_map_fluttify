@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 
 final _networkIcon = Uri.parse(
     'https://w3.hoopchina.com.cn/30/a7/6a/30a76aea75aef69e4ea0e7d3dee552c7001.jpg');
-final _assetsIcon1 = Uri.parse('images/test_icon.png');
-final _assetsIcon2 = Uri.parse('images/arrow.png');
+final _assetsIcon1 = AssetImage('images/test_icon.png');
+final _assetsIcon2 = AssetImage('images/arrow.png');
 
 class DrawPointScreen extends StatefulWidget {
   DrawPointScreen();
@@ -22,6 +22,7 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
   List<Marker> _markers = [];
   Marker _hiddenMarker;
   SmoothMoveMarker _moveMarker;
+  MultiPointOverlay _multiPointOverlay;
 
   @override
   Widget build(BuildContext context) {
@@ -64,24 +65,24 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                 ListTile(
                   title: Center(child: Text('添加Widget Marker')),
                   onTap: () async {
-                    final marker = await _controller?.addMarker(
-                      MarkerOption(
-                        latLng: getNextLatLng(),
-                        widget: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            Text('使用Widget作为Marker'),
-                            FlutterLogo(size: 80),
-                          ],
-                        ),
-                        imageConfig: createLocalImageConfiguration(context),
-                        title: '北京',
-                        snippet: '描述',
-                        width: 100,
-                        height: 100,
-                      ),
+                    final marker = await _controller?.addMarkers(
+                      [
+                        for (int i = 0; i < 100; i++)
+                          MarkerOption(
+                            latLng: getNextLatLng(),
+                            widget: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Text('使用Widget作为Marker: $i'),
+                                FlutterLogo(size: 80),
+                              ],
+                            ),
+                            title: '北京',
+                            snippet: '描述',
+                          )
+                      ],
                     );
-                    _markers.add(marker);
+                    _markers.addAll(marker);
                   },
                 ),
                 ListTile(
@@ -90,15 +91,27 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                     final marker = await _controller?.addMarker(
                       MarkerOption(
                         latLng: getNextLatLng(),
-                        title: '北京',
-                        snippet: '描述',
-                        iconUri: _assetsIcon1,
-                        imageConfig: createLocalImageConfiguration(context),
-                        width: 48,
-                        height: 48,
-                        object: '自定义数据',
+                        title: '北京${random.nextDouble()}',
+                        snippet: '描述${random.nextDouble()}',
+                        iconProvider: _assetsIcon1,
+                        object: '自定义数据${random.nextDouble()}',
                       ),
                     );
+                    await _controller?.setMarkerClickedListener((marker) async {
+                      await _controller.showCustomInfoWindow(
+                        marker,
+                        Container(
+                          width: 128,
+                          height: 222,
+                          decoration: BoxDecoration(
+                            color: Colors.yellow,
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Text(await marker.title),
+                        ),
+                      );
+                      return true;
+                    });
                     _markers.add(marker);
                   },
                 ),
@@ -117,8 +130,7 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                         latLng: getNextLatLng(),
                         title: '北京',
                         snippet: '描述',
-                        iconUri: _assetsIcon1,
-                        imageConfig: createLocalImageConfiguration(context),
+                        iconProvider: _assetsIcon1,
                         visible: false,
                       ),
                     );
@@ -158,9 +170,8 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                         latLng: LatLng(39.90960, 116.397228),
                         title: '北京',
                         snippet: '描述',
-                        iconUri: _assetsIcon1,
+                        iconProvider: _assetsIcon1,
                         draggable: true,
-                        imageConfig: createLocalImageConfiguration(context),
                         rotateAngle: 360 * value,
                         anchorU: 0,
                         anchorV: 0,
@@ -179,12 +190,10 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                             latLng: getNextLatLng(),
 //                            title: '北京$i',
 //                            snippet: '描述$i',
-                            iconUri: i % 2 == 0 ? _assetsIcon1 : _assetsIcon2,
-                            imageConfig: createLocalImageConfiguration(context),
-                            width: 40,
+                            iconProvider:
+                                i % 2 == 0 ? _assetsIcon1 : _assetsIcon2,
                             infoWindowEnabled: false,
 //                            rotateAngle: 90,
-                            height: 40,
                             object: 'Marker_$i',
                           ),
                       ],
@@ -211,7 +220,9 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                   onTap: () {
                     _controller?.setMarkerClickedListener((marker) async {
                       marker.setIcon(
-                          _assetsIcon2, createLocalImageConfiguration(context));
+                        _assetsIcon2,
+                        createLocalImageConfiguration(context),
+                      );
                       return true;
                     });
                   },
@@ -269,8 +280,7 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                     _moveMarker = await _controller?.addSmoothMoveMarker(
                       SmoothMoveMarkerOption(
                         path: [for (int i = 0; i < 10; i++) getNextLatLng()],
-                        iconUri: _assetsIcon1,
-                        imageConfig: createLocalImageConfiguration(context),
+                        iconProvider: _assetsIcon1,
                         duration: Duration(seconds: 10),
                       ),
                     );
@@ -292,7 +302,8 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                 ListTile(
                   title: Center(child: Text('添加海量点')),
                   onTap: () async {
-                    await _controller?.addMultiPointOverlay(
+                    _multiPointOverlay =
+                        await _controller?.addMultiPointOverlay(
                       MultiPointOption(
                         pointList: [
                           for (int i = 0; i < 10000; i++)
@@ -304,9 +315,7 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                               object: 'Object$i',
                             )
                         ],
-                        iconUri: _assetsIcon1,
-                        imageConfiguration:
-                            createLocalImageConfiguration(context),
+                        iconProvider: _assetsIcon1,
                         size: Size(48, 48),
                       ),
                     );
@@ -317,6 +326,12 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                         );
                       },
                     );
+                  },
+                ),
+                ListTile(
+                  title: Center(child: Text('删除海量点')),
+                  onTap: () async {
+                    await _multiPointOverlay?.remove();
                   },
                 ),
               ],

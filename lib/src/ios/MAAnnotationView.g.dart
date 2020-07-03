@@ -6,7 +6,6 @@
 import 'dart:typed_data';
 
 import 'package:amap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:amap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -57,8 +56,8 @@ class MAAnnotationView extends UIView  {
   
   Future<MAAnnotation> get_annotation({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod("MAAnnotationView::get_annotation", {'refId': refId});
-    kNativeObjectPool.add(MAMultiPoint()..refId = __result__..tag__ = 'amap_map_fluttify');
-    return MAMultiPoint()..refId = __result__..tag__ = 'amap_map_fluttify';
+    kNativeObjectPool.add(MAAnnotation.subInstance()..refId = __result__..tag__ = 'amap_map_fluttify');
+    return MAAnnotation.subInstance()..refId = __result__..tag__ = 'amap_map_fluttify';
   }
   
   Future<UIImage> get_image({bool viewChannel = true}) async {
@@ -111,14 +110,14 @@ class MAAnnotationView extends UIView  {
   
   Future<UIView> get_leftCalloutAccessoryView({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod("MAAnnotationView::get_leftCalloutAccessoryView", {'refId': refId});
-    kNativeObjectPool.add(MAPinAnnotationView()..refId = __result__..tag__ = 'amap_map_fluttify');
-    return MAPinAnnotationView()..refId = __result__..tag__ = 'amap_map_fluttify';
+    kNativeObjectPool.add(UIView()..refId = __result__..tag__ = 'amap_map_fluttify');
+    return UIView()..refId = __result__..tag__ = 'amap_map_fluttify';
   }
   
   Future<UIView> get_rightCalloutAccessoryView({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod("MAAnnotationView::get_rightCalloutAccessoryView", {'refId': refId});
-    kNativeObjectPool.add(MAPinAnnotationView()..refId = __result__..tag__ = 'amap_map_fluttify');
-    return MAPinAnnotationView()..refId = __result__..tag__ = 'amap_map_fluttify';
+    kNativeObjectPool.add(UIView()..refId = __result__..tag__ = 'amap_map_fluttify');
+    return UIView()..refId = __result__..tag__ = 'amap_map_fluttify';
   }
   
   Future<bool> get_draggable({bool viewChannel = true}) async {
@@ -130,7 +129,7 @@ class MAAnnotationView extends UIView  {
   Future<MAAnnotationViewDragState> get_dragState({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod("MAAnnotationView::get_dragState", {'refId': refId});
   
-    return MAAnnotationViewDragState.values[__result__];
+    return (__result__ as int).toMAAnnotationViewDragState();
   }
   
   //endregion
@@ -255,7 +254,7 @@ class MAAnnotationView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod('MAAnnotationView::initWithAnnotation_reuseIdentifier', {"annotation": annotation.refId, "reuseIdentifier": reuseIdentifier, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod('MAAnnotationView::initWithAnnotation_reuseIdentifier', {"annotation": annotation?.refId, "reuseIdentifier": reuseIdentifier, "refId": refId});
   
   
     // handle native call
@@ -266,7 +265,7 @@ class MAAnnotationView extends UIView  {
       return null;
     } else {
       final __return__ = Ref()..refId = __result__..tag__ = 'amap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -303,7 +302,7 @@ class MAAnnotationView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod('MAAnnotationView::setDragState_animated', {"newDragState": newDragState.index, "animated": animated, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod('MAAnnotationView::setDragState_animated', {"newDragState": newDragState.toValue(), "animated": animated, "refId": refId});
   
   
     // handle native call
@@ -340,7 +339,7 @@ extension MAAnnotationView_Batch on List<MAAnnotationView> {
   
   Future<List<MAAnnotation>> get_annotation_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod("MAAnnotationView::get_annotation_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => MAMultiPoint()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => MAAnnotation.subInstance()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
     kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
@@ -403,14 +402,14 @@ extension MAAnnotationView_Batch on List<MAAnnotationView> {
   
   Future<List<UIView>> get_leftCalloutAccessoryView_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod("MAAnnotationView::get_leftCalloutAccessoryView_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => MAPinAnnotationView()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => UIView()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
     kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
   Future<List<UIView>> get_rightCalloutAccessoryView_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod("MAAnnotationView::get_rightCalloutAccessoryView_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => MAPinAnnotationView()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => UIView()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
     kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
@@ -424,7 +423,7 @@ extension MAAnnotationView_Batch on List<MAAnnotationView> {
   
   Future<List<MAAnnotationViewDragState>> get_dragState_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod("MAAnnotationView::get_dragState_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => MAAnnotationViewDragState.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).toMAAnnotationViewDragState()).toList();
   
     return typedResult;
   }
@@ -586,7 +585,7 @@ extension MAAnnotationView_Batch on List<MAAnnotationView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod('MAAnnotationView::setDragState_animated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"newDragState": newDragState[__i__].index, "animated": animated[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/amap_map_fluttify/MAAnnotationView' : 'me.yohom/amap_map_fluttify').invokeMethod('MAAnnotationView::setDragState_animated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"newDragState": newDragState[__i__].toValue(), "animated": animated[__i__], "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object

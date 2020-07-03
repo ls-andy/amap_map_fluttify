@@ -4,11 +4,34 @@
 //////////////////////////////////////////////////////////
 
 enum MACoordinateType {
-  MACoordinateTypeBaidu,
-  MACoordinateTypeMapBar,
-  MACoordinateTypeMapABC,
-  MACoordinateTypeSoSoMap,
-  MACoordinateTypeAliYun,
-  MACoordinateTypeGoogle,
-  MACoordinateTypeGPS
+  MACoordinateTypeBaidu /* 0 */,
+  MACoordinateTypeMapBar /* null */,
+  MACoordinateTypeMapABC /* null */,
+  MACoordinateTypeSoSoMap /* null */,
+  MACoordinateTypeAliYun /* null */,
+  MACoordinateTypeGoogle /* null */,
+  MACoordinateTypeGPS /* null */
+}
+
+extension MACoordinateTypeToX on MACoordinateType {
+  int toValue() {
+    switch (this) {
+      case MACoordinateType.MACoordinateTypeBaidu: return 0;
+      case MACoordinateType.MACoordinateTypeMapBar: return MACoordinateType.MACoordinateTypeMapBar.index + 0;
+      case MACoordinateType.MACoordinateTypeMapABC: return MACoordinateType.MACoordinateTypeMapABC.index + 0;
+      case MACoordinateType.MACoordinateTypeSoSoMap: return MACoordinateType.MACoordinateTypeSoSoMap.index + 0;
+      case MACoordinateType.MACoordinateTypeAliYun: return MACoordinateType.MACoordinateTypeAliYun.index + 0;
+      case MACoordinateType.MACoordinateTypeGoogle: return MACoordinateType.MACoordinateTypeGoogle.index + 0;
+      case MACoordinateType.MACoordinateTypeGPS: return MACoordinateType.MACoordinateTypeGPS.index + 0;
+    }
+  }
+}
+
+extension MACoordinateTypeFromX on int {
+  MACoordinateType toMACoordinateType() {
+    switch (this) {
+      case 0: return MACoordinateType.MACoordinateTypeBaidu;
+      default: return MACoordinateType.values[this + 0];
+    }
+  }
 }

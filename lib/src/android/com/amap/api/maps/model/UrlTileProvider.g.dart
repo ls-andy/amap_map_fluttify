@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:amap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:amap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -13,7 +12,7 @@ import 'package:flutter/services.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 
-class com_amap_api_maps_model_UrlTileProvider extends java_lang_Object with com_amap_api_maps_model_TileProvider {
+/* abstract */ class com_amap_api_maps_model_UrlTileProvider extends java_lang_Object with com_amap_api_maps_model_TileProvider {
   //region constants
   static const String name__ = 'com.amap.api.maps.model.UrlTileProvider';
 

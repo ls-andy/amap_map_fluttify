@@ -6,15 +6,18 @@
 import 'dart:typed_data';
 
 import 'package:amap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:amap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 
+class _MAAnnotation_SUB extends NSObject with MAAnnotation {}
+
 mixin MAAnnotation on NSObject {
   
+
+  static MAAnnotation subInstance() => _MAAnnotation_SUB();
 
   Future<CLLocationCoordinate2D> get_coordinate() async {
     final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod("MAAnnotation::get_coordinate", {'refId': refId});
@@ -56,7 +59,7 @@ mixin MAAnnotation on NSObject {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('MAAnnotation::setCoordinate', {"newCoordinate": newCoordinate.refId, "refId": refId});
+    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('MAAnnotation::setCoordinate', {"newCoordinate": newCoordinate?.refId, "refId": refId});
   
   
     // handle native call
@@ -72,4 +75,29 @@ mixin MAAnnotation on NSObject {
     }
   }
   
+}
+
+extension MAAnnotation_Batch on List<MAAnnotation> {
+  //region methods
+  
+  Future<List<void>> setCoordinate_batch(List<CLLocationCoordinate2D> newCoordinate) async {
+    if (false) {
+      return Future.error('all args must have same length!');
+    }
+  
+    // invoke native method
+    final resultBatch = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('MAAnnotation::setCoordinate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"newCoordinate": newCoordinate[__i__].refId, "refId": this[__i__].refId}]);
+  
+  
+    // convert native result to dart side object
+    if (resultBatch == null) {
+      return null;
+    } else {
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    
+      return typedResult;
+    }
+  }
+  
+  //endregion
 }

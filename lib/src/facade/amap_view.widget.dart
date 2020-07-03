@@ -15,7 +15,6 @@ import 'package:flutter/services.dart';
 
 import 'enums.dart';
 import 'models.dart';
-import 'utils.dart';
 
 part 'amap_controller.dart';
 
@@ -112,12 +111,12 @@ class AmapView extends StatefulWidget {
 
 class _AmapViewState extends State<AmapView> {
   AmapController _controller;
+
   // _widgetLayer的存在是为了实现widget作为marker(或其他)而存在的. 添加widget作为marker后,
   // 会调用AmapViewState::setState, 然后等待一帧结束确认widget已经被渲染后再通过RepaintBoundary::toImage
   // 获取图片数据, 后面的流程和普通添加marker一样了.
   Widget _mask = Container();
-  Widget _widgetLayer = Container();
-  final _markerKey = GlobalKey();
+  Widget _widgetLayer;
 
   @override
   void initState() {
@@ -143,7 +142,7 @@ class _AmapViewState extends State<AmapView> {
     if (Platform.isAndroid) {
       return Stack(
         children: <Widget>[
-          RepaintBoundary(key: _markerKey, child: _widgetLayer),
+          if (_widgetLayer != null) _widgetLayer,
           FutureBuilder<com_amap_api_maps_AMapOptions>(
             future: _androidOptions(),
             builder: (context, snapshot) {
@@ -159,7 +158,9 @@ class _AmapViewState extends State<AmapView> {
 
                     await _initAndroid();
                     if (widget.onMapCreated != null) {
-                      await widget.onMapCreated(_controller);
+                      // 主动延迟300毫秒, 等待地图加载完成, 防止在onMapCreated里调用方法时空指针
+                      Future.delayed(Duration(milliseconds: 300), () => 0)
+                          .then((value) => widget.onMapCreated(_controller));
                     }
                     await bundle.release__();
                   },
@@ -175,7 +176,7 @@ class _AmapViewState extends State<AmapView> {
     } else if (Platform.isIOS) {
       return Stack(
         children: <Widget>[
-          RepaintBoundary(key: _markerKey, child: _widgetLayer),
+          if (_widgetLayer != null) _widgetLayer,
           MAMapView_iOS(
             onDispose: _onPlatformViewDispose,
             onViewCreated: (controller) async {
@@ -195,22 +196,58 @@ class _AmapViewState extends State<AmapView> {
     }
   }
 
-  Future<Uint8List> widgetToImageData(Widget marker) {
-    final completer = Completer<Uint8List>();
+  @override
+  void dispose() {
+//    print('释放tag为amap_${_controller.hashCode}的对象');
+//    final isCurrentMap = (Ref it) => it.tag__ == 'amap_${_controller.hashCode}';
+//    kNativeObjectPool
+//        .where(isCurrentMap)
+//        .release_batch()
+//        .then((_) => kNativeObjectPool.removeWhere(isCurrentMap));
+//    super.dispose();
+    final isCurrentPlugin = (Ref it) => it?.tag__ == 'amap_map_fluttify';
+    kNativeObjectPool
+        .where(isCurrentPlugin)
+        .release_batch()
+        .then((_) => kNativeObjectPool.removeWhere(isCurrentPlugin));
+    super.dispose();
+  }
+
+  Future<List<Uint8List>> widgetToImageData(List<Widget> markerList) {
+    final completer = Completer<List<Uint8List>>();
+    final ratio = MediaQuery.of(context).devicePixelRatio;
+
+    final globalKeyList = <GlobalKey>[];
+    for (int i = 0; i < markerList.length; i++) globalKeyList.add(GlobalKey());
+
     setState(() {
-      _widgetLayer = marker;
+      _widgetLayer = Stack(
+        children: [
+          for (int i = 0; i < markerList.length; i++)
+            RepaintBoundary(key: globalKeyList[i], child: markerList[i])
+        ],
+      );
     });
 
     // 等待一帧结束再获取图片数据
-    WidgetsBinding.instance.addPostFrameCallback((duration) {
-      RenderRepaintBoundary boundary =
-          _markerKey.currentContext.findRenderObject();
+    WidgetsBinding.instance.addPostFrameCallback((duration) async {
+      final result = <Uint8List>[];
 
-      boundary
-          .toImage(pixelRatio: MediaQuery.of(context).devicePixelRatio)
-          .then((image) => image.toByteData(format: ImageByteFormat.png))
-          .then((byteData) => byteData.buffer.asUint8List())
-          .then((data) => completer.complete(data));
+      await Future.wait([
+        for (final key in globalKeyList)
+          (key.currentContext.findRenderObject() as RenderRepaintBoundary)
+              .toImage(pixelRatio: ratio)
+              .then((image) => image.toByteData(format: ImageByteFormat.png))
+              .then((byteData) => byteData.buffer.asUint8List())
+              .then((data) => result.add(data))
+      ]);
+
+      completer.complete(result);
+
+      // 清空
+      setState(() {
+        _widgetLayer = null;
+      });
     });
 
     return completer.future;

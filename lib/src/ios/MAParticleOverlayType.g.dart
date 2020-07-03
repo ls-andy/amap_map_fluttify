@@ -4,8 +4,28 @@
 //////////////////////////////////////////////////////////
 
 enum MAParticleOverlayType {
-  MAParticleOverlayTypeSunny,
-  MAParticleOverlayTypeRain,
-  MAParticleOverlayTypeSnowy,
-  MAParticleOverlayTypeHaze
+  MAParticleOverlayTypeSunny /* 1 */,
+  MAParticleOverlayTypeRain /* null */,
+  MAParticleOverlayTypeSnowy /* null */,
+  MAParticleOverlayTypeHaze /* null */
+}
+
+extension MAParticleOverlayTypeToX on MAParticleOverlayType {
+  int toValue() {
+    switch (this) {
+      case MAParticleOverlayType.MAParticleOverlayTypeSunny: return 1;
+      case MAParticleOverlayType.MAParticleOverlayTypeRain: return MAParticleOverlayType.MAParticleOverlayTypeRain.index + 1;
+      case MAParticleOverlayType.MAParticleOverlayTypeSnowy: return MAParticleOverlayType.MAParticleOverlayTypeSnowy.index + 1;
+      case MAParticleOverlayType.MAParticleOverlayTypeHaze: return MAParticleOverlayType.MAParticleOverlayTypeHaze.index + 1;
+    }
+  }
+}
+
+extension MAParticleOverlayTypeFromX on int {
+  MAParticleOverlayType toMAParticleOverlayType() {
+    switch (this) {
+      case 1: return MAParticleOverlayType.MAParticleOverlayTypeSunny;
+      default: return MAParticleOverlayType.values[this + 1];
+    }
+  }
 }

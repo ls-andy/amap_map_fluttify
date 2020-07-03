@@ -13,7 +13,222 @@ extern BOOL enableLog;
 
 @implementation AmapMapFluttifyPlugin (SubHandler5)
 - (NSDictionary<NSString*, Handler>*) getSubHandler5 {
+    __weak __typeof(self)weakSelf = self;
     return @{
+        @"MAParticleOverlayOptions::set_icon": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAParticleOverlayOptions::set_icon");
+            }
+        
+            // args
+            // ref arg
+            UIImage* icon = (UIImage*) HEAP[args[@"icon"]];
+        
+            // ref
+            MAParticleOverlayOptions* ref = (MAParticleOverlayOptions*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            ref.icon = icon;
+            methodResult(@"success");
+        },
+        
+        @"MAParticleOverlayOptions::set_startParticleSize": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAParticleOverlayOptions::set_startParticleSize");
+            }
+        
+            // args
+            // struct arg
+            NSValue* startParticleSizeValue = (NSValue*) HEAP[args[@"startParticleSize"]];
+            CGSize startParticleSize;
+            [startParticleSizeValue getValue:&startParticleSize];
+        
+            // ref
+            MAParticleOverlayOptions* ref = (MAParticleOverlayOptions*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            ref.startParticleSize = startParticleSize;
+            methodResult(@"success");
+        },
+        
+        @"MAParticleOverlayOptions::set_particleLifeTime": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAParticleOverlayOptions::set_particleLifeTime");
+            }
+        
+            // args
+            // jsonable arg
+            NSTimeInterval particleLifeTime = [args[@"particleLifeTime"] doubleValue];
+        
+            // ref
+            MAParticleOverlayOptions* ref = (MAParticleOverlayOptions*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            ref.particleLifeTime = particleLifeTime;
+            methodResult(@"success");
+        },
+        
+        @"MAParticleOverlayOptions::set_particleStartColor": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAParticleOverlayOptions::set_particleStartColor");
+            }
+        
+            // args
+            // ref arg
+            id<MAParticleColorGenerate> particleStartColor = (id<MAParticleColorGenerate>) HEAP[args[@"particleStartColor"]];
+        
+            // ref
+            MAParticleOverlayOptions* ref = (MAParticleOverlayOptions*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            ref.particleStartColor = particleStartColor;
+            methodResult(@"success");
+        },
+        
+        @"MAParticleOverlayOptions::set_particleStartSpeed": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAParticleOverlayOptions::set_particleStartSpeed");
+            }
+        
+            // args
+            // ref arg
+            id<MAParticleVelocityGenerate> particleStartSpeed = (id<MAParticleVelocityGenerate>) HEAP[args[@"particleStartSpeed"]];
+        
+            // ref
+            MAParticleOverlayOptions* ref = (MAParticleOverlayOptions*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            ref.particleStartSpeed = particleStartSpeed;
+            methodResult(@"success");
+        },
+        
+        @"MAParticleOverlayOptions::set_particleEmissionModule": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAParticleOverlayOptions::set_particleEmissionModule");
+            }
+        
+            // args
+            // ref arg
+            MAParticleEmissionModule* particleEmissionModule = (MAParticleEmissionModule*) HEAP[args[@"particleEmissionModule"]];
+        
+            // ref
+            MAParticleOverlayOptions* ref = (MAParticleOverlayOptions*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            ref.particleEmissionModule = particleEmissionModule;
+            methodResult(@"success");
+        },
+        
+        @"MAParticleOverlayOptions::set_particleShapeModule": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAParticleOverlayOptions::set_particleShapeModule");
+            }
+        
+            // args
+            // ref arg
+            id<MAParticleShapeModule> particleShapeModule = (id<MAParticleShapeModule>) HEAP[args[@"particleShapeModule"]];
+        
+            // ref
+            MAParticleOverlayOptions* ref = (MAParticleOverlayOptions*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            ref.particleShapeModule = particleShapeModule;
+            methodResult(@"success");
+        },
+        
+        @"MAParticleOverlayOptions::set_particleOverLifeModule": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAParticleOverlayOptions::set_particleOverLifeModule");
+            }
+        
+            // args
+            // ref arg
+            MAParticleOverLifeModule* particleOverLifeModule = (MAParticleOverLifeModule*) HEAP[args[@"particleOverLifeModule"]];
+        
+            // ref
+            MAParticleOverlayOptions* ref = (MAParticleOverlayOptions*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            ref.particleOverLifeModule = particleOverLifeModule;
+            methodResult(@"success");
+        },
+        
+        @"MAOverlayRenderer::set_glPoints": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAOverlayRenderer::set_glPoints");
+            }
+        
+            // args
+            // list arg struct
+            NSArray* glPointsRefIdArray = (NSArray*) args[@"glPoints"];
+            CGPoint glPoints[glPointsRefIdArray.count];
+        
+            for (int __i__ = 0; __i__ < glPointsRefIdArray.count; __i__++) {
+                NSValue* glPointsValue = (NSValue*) HEAP[[glPointsRefIdArray objectAtIndex:__i__]];
+                CGPoint glPointsItem;
+                [glPointsValue getValue:&glPointsItem];
+                glPoints[__i__] = glPointsItem;
+            }
+        
+            // ref
+            MAOverlayRenderer* ref = (MAOverlayRenderer*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            ref.glPoints = glPoints;
+            methodResult(@"success");
+        },
+        
+        @"MAOverlayRenderer::set_glPointCount": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAOverlayRenderer::set_glPointCount");
+            }
+        
+            // args
+            // jsonable arg
+            NSUInteger glPointCount = [args[@"glPointCount"] unsignedIntegerValue];
+        
+            // ref
+            MAOverlayRenderer* ref = (MAOverlayRenderer*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            ref.glPointCount = glPointCount;
+            methodResult(@"success");
+        },
+        
+        @"MAOverlayRenderer::set_strokeImage": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAOverlayRenderer::set_strokeImage");
+            }
+        
+            // args
+            // ref arg
+            UIImage* strokeImage = (UIImage*) HEAP[args[@"strokeImage"]];
+        
+            // ref
+            MAOverlayRenderer* ref = (MAOverlayRenderer*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            ref.strokeImage = strokeImage;
+            methodResult(@"success");
+        },
+        
+        @"MAOverlayRenderer::set_alpha": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"MAOverlayRenderer::set_alpha");
+            }
+        
+            // args
+            // jsonable arg
+            CGFloat alpha = [args[@"alpha"] floatValue];
+        
+            // ref
+            MAOverlayRenderer* ref = (MAOverlayRenderer*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            ref.alpha = alpha;
+            methodResult(@"success");
+        },
+        
         @"MAMultiPointItem::set_coordinate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // print log
             if (enableLog) {
@@ -22,7 +237,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+            NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
             CLLocationCoordinate2D coordinate;
             [coordinateValue getValue:&coordinate];
         
@@ -126,7 +341,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIColor* topColor = (UIColor*) HEAP[@([args[@"topColor"] integerValue])];
+            UIColor* topColor = (UIColor*) HEAP[args[@"topColor"]];
         
             // ref
             MACustomBuildingOverlayOption* ref = (MACustomBuildingOverlayOption*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -143,7 +358,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIColor* sideColor = (UIColor*) HEAP[@([args[@"sideColor"] integerValue])];
+            UIColor* sideColor = (UIColor*) HEAP[args[@"sideColor"]];
         
             // ref
             MACustomBuildingOverlayOption* ref = (MACustomBuildingOverlayOption*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -211,7 +426,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* locValue = (NSValue*) HEAP[@([args[@"loc"] integerValue])];
+            NSValue* locValue = (NSValue*) HEAP[args[@"loc"]];
             CLLocationCoordinate2D loc;
             [locValue getValue:&loc];
         
@@ -281,7 +496,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* startCoordinateValue = (NSValue*) HEAP[@([args[@"startCoordinate"] integerValue])];
+            NSValue* startCoordinateValue = (NSValue*) HEAP[args[@"startCoordinate"]];
             CLLocationCoordinate2D startCoordinate;
             [startCoordinateValue getValue:&startCoordinate];
         
@@ -300,7 +515,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* passedCoordinateValue = (NSValue*) HEAP[@([args[@"passedCoordinate"] integerValue])];
+            NSValue* passedCoordinateValue = (NSValue*) HEAP[args[@"passedCoordinate"]];
             CLLocationCoordinate2D passedCoordinate;
             [passedCoordinateValue getValue:&passedCoordinate];
         
@@ -319,7 +534,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* endCoordinateValue = (NSValue*) HEAP[@([args[@"endCoordinate"] integerValue])];
+            NSValue* endCoordinateValue = (NSValue*) HEAP[args[@"endCoordinate"]];
             CLLocationCoordinate2D endCoordinate;
             [endCoordinateValue getValue:&endCoordinate];
         
@@ -372,7 +587,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIColor* fillColor = (UIColor*) HEAP[@([args[@"fillColor"] integerValue])];
+            UIColor* fillColor = (UIColor*) HEAP[args[@"fillColor"]];
         
             // ref
             MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -389,7 +604,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIColor* strokeColor = (UIColor*) HEAP[@([args[@"strokeColor"] integerValue])];
+            UIColor* strokeColor = (UIColor*) HEAP[args[@"strokeColor"]];
         
             // ref
             MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -423,7 +638,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIColor* locationDotBgColor = (UIColor*) HEAP[@([args[@"locationDotBgColor"] integerValue])];
+            UIColor* locationDotBgColor = (UIColor*) HEAP[args[@"locationDotBgColor"]];
         
             // ref
             MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -440,7 +655,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIColor* locationDotFillColor = (UIColor*) HEAP[@([args[@"locationDotFillColor"] integerValue])];
+            UIColor* locationDotFillColor = (UIColor*) HEAP[args[@"locationDotFillColor"]];
         
             // ref
             MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -474,7 +689,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIImage* image = (UIImage*) HEAP[@([args[@"image"] integerValue])];
+            UIImage* image = (UIImage*) HEAP[args[@"image"]];
         
             // ref
             MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -495,7 +710,7 @@ extern BOOL enableLog;
             // ref
             MAMapView* ref = (MAMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
         
-            ref.delegate = self;
+            ref.delegate = weakSelf;
             methodResult(@"success");
         },
         
@@ -524,7 +739,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* centerCoordinateValue = (NSValue*) HEAP[@([args[@"centerCoordinate"] integerValue])];
+            NSValue* centerCoordinateValue = (NSValue*) HEAP[args[@"centerCoordinate"]];
             CLLocationCoordinate2D centerCoordinate;
             [centerCoordinateValue getValue:&centerCoordinate];
         
@@ -543,7 +758,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
+            NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
             MACoordinateRegion region;
             [regionValue getValue:&region];
         
@@ -562,7 +777,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* visibleMapRectValue = (NSValue*) HEAP[@([args[@"visibleMapRect"] integerValue])];
+            NSValue* visibleMapRectValue = (NSValue*) HEAP[args[@"visibleMapRect"]];
             MAMapRect visibleMapRect;
             [visibleMapRectValue getValue:&visibleMapRect];
         
@@ -581,7 +796,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* limitRegionValue = (NSValue*) HEAP[@([args[@"limitRegion"] integerValue])];
+            NSValue* limitRegionValue = (NSValue*) HEAP[args[@"limitRegion"]];
             MACoordinateRegion limitRegion;
             [limitRegionValue getValue:&limitRegion];
         
@@ -600,7 +815,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* limitMapRectValue = (NSValue*) HEAP[@([args[@"limitMapRect"] integerValue])];
+            NSValue* limitMapRectValue = (NSValue*) HEAP[args[@"limitMapRect"]];
             MAMapRect limitMapRect;
             [limitMapRectValue getValue:&limitMapRect];
         
@@ -908,7 +1123,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* compassOriginValue = (NSValue*) HEAP[@([args[@"compassOrigin"] integerValue])];
+            NSValue* compassOriginValue = (NSValue*) HEAP[args[@"compassOrigin"]];
             CGPoint compassOrigin;
             [compassOriginValue getValue:&compassOrigin];
         
@@ -944,7 +1159,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* scaleOriginValue = (NSValue*) HEAP[@([args[@"scaleOrigin"] integerValue])];
+            NSValue* scaleOriginValue = (NSValue*) HEAP[args[@"scaleOrigin"]];
             CGPoint scaleOrigin;
             [scaleOriginValue getValue:&scaleOrigin];
         
@@ -963,7 +1178,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* logoCenterValue = (NSValue*) HEAP[@([args[@"logoCenter"] integerValue])];
+            NSValue* logoCenterValue = (NSValue*) HEAP[args[@"logoCenter"]];
             CGPoint logoCenter;
             [logoCenterValue getValue:&logoCenter];
         
@@ -1033,7 +1248,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* screenAnchorValue = (NSValue*) HEAP[@([args[@"screenAnchor"] integerValue])];
+            NSValue* screenAnchorValue = (NSValue*) HEAP[args[@"screenAnchor"]];
             CGPoint screenAnchor;
             [screenAnchorValue getValue:&screenAnchor];
         
@@ -1312,7 +1527,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIColor* fillColor = (UIColor*) HEAP[@([args[@"fillColor"] integerValue])];
+            UIColor* fillColor = (UIColor*) HEAP[args[@"fillColor"]];
         
             // ref
             MAOverlayPathRenderer* ref = (MAOverlayPathRenderer*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1329,7 +1544,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIColor* strokeColor = (UIColor*) HEAP[@([args[@"strokeColor"] integerValue])];
+            UIColor* strokeColor = (UIColor*) HEAP[args[@"strokeColor"]];
         
             // ref
             MAOverlayPathRenderer* ref = (MAOverlayPathRenderer*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1500,7 +1715,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+                NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
                 CLLocationCoordinate2D coordinate;
                 [coordinateValue getValue:&coordinate];
         
@@ -1597,7 +1812,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                MAHeatMapGradient* gradient = (MAHeatMapGradient*) HEAP[@([args[@"gradient"] integerValue])];
+                MAHeatMapGradient* gradient = (MAHeatMapGradient*) HEAP[args[@"gradient"]];
         
                 // ref
                 MAHeatMapTileOverlay* ref = (MAHeatMapTileOverlay*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1633,7 +1848,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* centerCoordinateValue = (NSValue*) HEAP[@([args[@"centerCoordinate"] integerValue])];
+                NSValue* centerCoordinateValue = (NSValue*) HEAP[args[@"centerCoordinate"]];
                 CLLocationCoordinate2D centerCoordinate;
                 [centerCoordinateValue getValue:&centerCoordinate];
         
@@ -1707,7 +1922,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* screenAnchorValue = (NSValue*) HEAP[@([args[@"screenAnchor"] integerValue])];
+                NSValue* screenAnchorValue = (NSValue*) HEAP[args[@"screenAnchor"]];
                 CGPoint screenAnchor;
                 [screenAnchorValue getValue:&screenAnchor];
         
@@ -1727,7 +1942,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+                NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
                 CLLocationCoordinate2D coordinate;
                 [coordinateValue getValue:&coordinate];
         
@@ -1765,7 +1980,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* lockedScreenPointValue = (NSValue*) HEAP[@([args[@"lockedScreenPoint"] integerValue])];
+                NSValue* lockedScreenPointValue = (NSValue*) HEAP[args[@"lockedScreenPoint"]];
                 CGPoint lockedScreenPoint;
                 [lockedScreenPointValue getValue:&lockedScreenPoint];
         
@@ -1785,7 +2000,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+                NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
                 CLLocationCoordinate2D coordinate;
                 [coordinateValue getValue:&coordinate];
         
@@ -1859,7 +2074,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                NSData* styleData = (NSData*) HEAP[@([args[@"styleData"] integerValue])];
+                NSData* styleData = (NSData*) HEAP[args[@"styleData"]];
         
                 // ref
                 MAMapCustomStyleOptions* ref = (MAMapCustomStyleOptions*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1895,7 +2110,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                NSData* styleTextureData = (NSData*) HEAP[@([args[@"styleTextureData"] integerValue])];
+                NSData* styleTextureData = (NSData*) HEAP[args[@"styleTextureData"]];
         
                 // ref
                 MAMapCustomStyleOptions* ref = (MAMapCustomStyleOptions*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1913,7 +2128,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                NSData* styleExtraData = (NSData*) HEAP[@([args[@"styleExtraData"] integerValue])];
+                NSData* styleExtraData = (NSData*) HEAP[args[@"styleExtraData"]];
         
                 // ref
                 MAMapCustomStyleOptions* ref = (MAMapCustomStyleOptions*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2031,7 +2246,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIImage* icon = (UIImage*) HEAP[@([args[@"icon"] integerValue])];
+                UIImage* icon = (UIImage*) HEAP[args[@"icon"]];
         
                 // ref
                 MAMultiPointOverlayRenderer* ref = (MAMultiPointOverlayRenderer*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2049,7 +2264,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* pointSizeValue = (NSValue*) HEAP[@([args[@"pointSize"] integerValue])];
+                NSValue* pointSizeValue = (NSValue*) HEAP[args[@"pointSize"]];
                 CGSize pointSize;
                 [pointSizeValue getValue:&pointSize];
         
@@ -2069,7 +2284,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* anchorValue = (NSValue*) HEAP[@([args[@"anchor"] integerValue])];
+                NSValue* anchorValue = (NSValue*) HEAP[args[@"anchor"]];
                 CGPoint anchor;
                 [anchorValue getValue:&anchor];
         
@@ -2107,7 +2322,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIColor* sideColor = (UIColor*) HEAP[@([args[@"sideColor"] integerValue])];
+                UIColor* sideColor = (UIColor*) HEAP[args[@"sideColor"]];
         
                 // ref
                 MAPolylineRenderer* ref = (MAPolylineRenderer*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2179,7 +2394,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                id<MAAnnotation> annotation = (id<MAAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+                id<MAAnnotation> annotation = (id<MAAnnotation>) HEAP[args[@"annotation"]];
         
                 // ref
                 MAAnnotationView* ref = (MAAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2197,7 +2412,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIImage* image = (UIImage*) HEAP[@([args[@"image"] integerValue])];
+                UIImage* image = (UIImage*) HEAP[args[@"image"]];
         
                 // ref
                 MAAnnotationView* ref = (MAAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2215,7 +2430,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                MACustomCalloutView* customCalloutView = (MACustomCalloutView*) HEAP[@([args[@"customCalloutView"] integerValue])];
+                MACustomCalloutView* customCalloutView = (MACustomCalloutView*) HEAP[args[@"customCalloutView"]];
         
                 // ref
                 MAAnnotationView* ref = (MAAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2233,7 +2448,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* centerOffsetValue = (NSValue*) HEAP[@([args[@"centerOffset"] integerValue])];
+                NSValue* centerOffsetValue = (NSValue*) HEAP[args[@"centerOffset"]];
                 CGPoint centerOffset;
                 [centerOffsetValue getValue:&centerOffset];
         
@@ -2253,7 +2468,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* calloutOffsetValue = (NSValue*) HEAP[@([args[@"calloutOffset"] integerValue])];
+                NSValue* calloutOffsetValue = (NSValue*) HEAP[args[@"calloutOffset"]];
                 CGPoint calloutOffset;
                 [calloutOffsetValue getValue:&calloutOffset];
         
@@ -2345,7 +2560,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIView* leftCalloutAccessoryView = (UIView*) HEAP[@([args[@"leftCalloutAccessoryView"] integerValue])];
+                UIView* leftCalloutAccessoryView = (UIView*) HEAP[args[@"leftCalloutAccessoryView"]];
         
                 // ref
                 MAAnnotationView* ref = (MAAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2363,7 +2578,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIView* rightCalloutAccessoryView = (UIView*) HEAP[@([args[@"rightCalloutAccessoryView"] integerValue])];
+                UIView* rightCalloutAccessoryView = (UIView*) HEAP[args[@"rightCalloutAccessoryView"]];
         
                 // ref
                 MAAnnotationView* ref = (MAAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2417,7 +2632,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* tileSizeValue = (NSValue*) HEAP[@([args[@"tileSize"] integerValue])];
+                NSValue* tileSizeValue = (NSValue*) HEAP[args[@"tileSize"]];
                 CGSize tileSize;
                 [tileSizeValue getValue:&tileSize];
         
@@ -2491,7 +2706,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* boundingMapRectValue = (NSValue*) HEAP[@([args[@"boundingMapRect"] integerValue])];
+                NSValue* boundingMapRectValue = (NSValue*) HEAP[args[@"boundingMapRect"]];
                 MAMapRect boundingMapRect;
                 [boundingMapRectValue getValue:&boundingMapRect];
         
@@ -2638,7 +2853,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                MAOfflineItem* province = (MAOfflineItem*) HEAP[@([args[@"province"] integerValue])];
+                MAOfflineItem* province = (MAOfflineItem*) HEAP[args[@"province"]];
         
                 // ref
                 MAOfflineItemCommonCity* ref = (MAOfflineItemCommonCity*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2656,7 +2871,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* northEastValue = (NSValue*) HEAP[@([args[@"northEast"] integerValue])];
+                NSValue* northEastValue = (NSValue*) HEAP[args[@"northEast"]];
                 CLLocationCoordinate2D northEast;
                 [northEastValue getValue:&northEast];
         
@@ -2678,7 +2893,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* southWestValue = (NSValue*) HEAP[@([args[@"southWest"] integerValue])];
+                NSValue* southWestValue = (NSValue*) HEAP[args[@"southWest"]];
                 CLLocationCoordinate2D southWest;
                 [southWestValue getValue:&southWest];
         
@@ -2740,7 +2955,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* centerValue = (NSValue*) HEAP[@([args[@"center"] integerValue])];
+                NSValue* centerValue = (NSValue*) HEAP[args[@"center"]];
                 CLLocationCoordinate2D center;
                 [centerValue getValue:&center];
         
@@ -2762,7 +2977,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* spanValue = (NSValue*) HEAP[@([args[@"span"] integerValue])];
+                NSValue* spanValue = (NSValue*) HEAP[args[@"span"]];
                 MACoordinateSpan span;
                 [spanValue getValue:&span];
         
@@ -2864,7 +3079,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* originValue = (NSValue*) HEAP[@([args[@"origin"] integerValue])];
+                NSValue* originValue = (NSValue*) HEAP[args[@"origin"]];
                 MAMapPoint origin;
                 [originValue getValue:&origin];
         
@@ -2886,7 +3101,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* sizeValue = (NSValue*) HEAP[@([args[@"size"] integerValue])];
+                NSValue* sizeValue = (NSValue*) HEAP[args[@"size"]];
                 MAMapSize size;
                 [sizeValue getValue:&size];
         
@@ -2980,7 +3195,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIImage* icon = (UIImage*) HEAP[@([args[@"icon"] integerValue])];
+                UIImage* icon = (UIImage*) HEAP[args[@"icon"]];
         
                 // ref
                 MAParticleOverlayOptions* ref = (MAParticleOverlayOptions*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2998,7 +3213,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* startParticleSizeValue = (NSValue*) HEAP[@([args[@"startParticleSize"] integerValue])];
+                NSValue* startParticleSizeValue = (NSValue*) HEAP[args[@"startParticleSize"]];
                 CGSize startParticleSize;
                 [startParticleSizeValue getValue:&startParticleSize];
         
@@ -3036,7 +3251,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                id<MAParticleColorGenerate> particleStartColor = (id<MAParticleColorGenerate>) HEAP[@([args[@"particleStartColor"] integerValue])];
+                id<MAParticleColorGenerate> particleStartColor = (id<MAParticleColorGenerate>) HEAP[args[@"particleStartColor"]];
         
                 // ref
                 MAParticleOverlayOptions* ref = (MAParticleOverlayOptions*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3054,7 +3269,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                id<MAParticleVelocityGenerate> particleStartSpeed = (id<MAParticleVelocityGenerate>) HEAP[@([args[@"particleStartSpeed"] integerValue])];
+                id<MAParticleVelocityGenerate> particleStartSpeed = (id<MAParticleVelocityGenerate>) HEAP[args[@"particleStartSpeed"]];
         
                 // ref
                 MAParticleOverlayOptions* ref = (MAParticleOverlayOptions*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3072,7 +3287,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                MAParticleEmissionModule* particleEmissionModule = (MAParticleEmissionModule*) HEAP[@([args[@"particleEmissionModule"] integerValue])];
+                MAParticleEmissionModule* particleEmissionModule = (MAParticleEmissionModule*) HEAP[args[@"particleEmissionModule"]];
         
                 // ref
                 MAParticleOverlayOptions* ref = (MAParticleOverlayOptions*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3090,7 +3305,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                id<MAParticleShapeModule> particleShapeModule = (id<MAParticleShapeModule>) HEAP[@([args[@"particleShapeModule"] integerValue])];
+                id<MAParticleShapeModule> particleShapeModule = (id<MAParticleShapeModule>) HEAP[args[@"particleShapeModule"]];
         
                 // ref
                 MAParticleOverlayOptions* ref = (MAParticleOverlayOptions*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3108,7 +3323,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                MAParticleOverLifeModule* particleOverLifeModule = (MAParticleOverLifeModule*) HEAP[@([args[@"particleOverLifeModule"] integerValue])];
+                MAParticleOverLifeModule* particleOverLifeModule = (MAParticleOverLifeModule*) HEAP[args[@"particleOverLifeModule"]];
         
                 // ref
                 MAParticleOverlayOptions* ref = (MAParticleOverlayOptions*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3170,7 +3385,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIImage* strokeImage = (UIImage*) HEAP[@([args[@"strokeImage"] integerValue])];
+                UIImage* strokeImage = (UIImage*) HEAP[args[@"strokeImage"]];
         
                 // ref
                 MAOverlayRenderer* ref = (MAOverlayRenderer*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3206,7 +3421,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+                NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
                 CLLocationCoordinate2D coordinate;
                 [coordinateValue getValue:&coordinate];
         
@@ -3316,7 +3531,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIColor* topColor = (UIColor*) HEAP[@([args[@"topColor"] integerValue])];
+                UIColor* topColor = (UIColor*) HEAP[args[@"topColor"]];
         
                 // ref
                 MACustomBuildingOverlayOption* ref = (MACustomBuildingOverlayOption*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3334,7 +3549,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIColor* sideColor = (UIColor*) HEAP[@([args[@"sideColor"] integerValue])];
+                UIColor* sideColor = (UIColor*) HEAP[args[@"sideColor"]];
         
                 // ref
                 MACustomBuildingOverlayOption* ref = (MACustomBuildingOverlayOption*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3406,7 +3621,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* locValue = (NSValue*) HEAP[@([args[@"loc"] integerValue])];
+                NSValue* locValue = (NSValue*) HEAP[args[@"loc"]];
                 CLLocationCoordinate2D loc;
                 [locValue getValue:&loc];
         
@@ -3450,228 +3665,6 @@ extern BOOL enableLog;
                 MATraceLocation* ref = (MATraceLocation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
         
                 ref.speed = speed;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MATraceLocation::set_time_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                double time = [args[@"time"] doubleValue];
-        
-                // ref
-                MATraceLocation* ref = (MATraceLocation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                ref.time = time;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAArc::set_startCoordinate_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* startCoordinateValue = (NSValue*) HEAP[@([args[@"startCoordinate"] integerValue])];
-                CLLocationCoordinate2D startCoordinate;
-                [startCoordinateValue getValue:&startCoordinate];
-        
-                // ref
-                MAArc* ref = (MAArc*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                ref.startCoordinate = startCoordinate;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAArc::set_passedCoordinate_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* passedCoordinateValue = (NSValue*) HEAP[@([args[@"passedCoordinate"] integerValue])];
-                CLLocationCoordinate2D passedCoordinate;
-                [passedCoordinateValue getValue:&passedCoordinate];
-        
-                // ref
-                MAArc* ref = (MAArc*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                ref.passedCoordinate = passedCoordinate;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAArc::set_endCoordinate_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* endCoordinateValue = (NSValue*) HEAP[@([args[@"endCoordinate"] integerValue])];
-                CLLocationCoordinate2D endCoordinate;
-                [endCoordinateValue getValue:&endCoordinate];
-        
-                // ref
-                MAArc* ref = (MAArc*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                ref.endCoordinate = endCoordinate;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAUserLocationRepresentation::set_showsAccuracyRing_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                BOOL showsAccuracyRing = [args[@"showsAccuracyRing"] boolValue];
-        
-                // ref
-                MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                ref.showsAccuracyRing = showsAccuracyRing;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAUserLocationRepresentation::set_showsHeadingIndicator_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                BOOL showsHeadingIndicator = [args[@"showsHeadingIndicator"] boolValue];
-        
-                // ref
-                MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                ref.showsHeadingIndicator = showsHeadingIndicator;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAUserLocationRepresentation::set_fillColor_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // ref arg
-                UIColor* fillColor = (UIColor*) HEAP[@([args[@"fillColor"] integerValue])];
-        
-                // ref
-                MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                ref.fillColor = fillColor;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAUserLocationRepresentation::set_strokeColor_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // ref arg
-                UIColor* strokeColor = (UIColor*) HEAP[@([args[@"strokeColor"] integerValue])];
-        
-                // ref
-                MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                ref.strokeColor = strokeColor;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAUserLocationRepresentation::set_lineWidth_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                CGFloat lineWidth = [args[@"lineWidth"] floatValue];
-        
-                // ref
-                MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                ref.lineWidth = lineWidth;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAUserLocationRepresentation::set_locationDotBgColor_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // ref arg
-                UIColor* locationDotBgColor = (UIColor*) HEAP[@([args[@"locationDotBgColor"] integerValue])];
-        
-                // ref
-                MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                ref.locationDotBgColor = locationDotBgColor;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAUserLocationRepresentation::set_locationDotFillColor_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // ref arg
-                UIColor* locationDotFillColor = (UIColor*) HEAP[@([args[@"locationDotFillColor"] integerValue])];
-        
-                // ref
-                MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                ref.locationDotFillColor = locationDotFillColor;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"MAUserLocationRepresentation::set_enablePulseAnnimation_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                BOOL enablePulseAnnimation = [args[@"enablePulseAnnimation"] boolValue];
-        
-                // ref
-                MAUserLocationRepresentation* ref = (MAUserLocationRepresentation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                ref.enablePulseAnnimation = enablePulseAnnimation;
                 methodResult(@"success");
             }
         

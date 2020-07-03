@@ -5,13 +5,14 @@
 
 import 'dart:typed_data';
 
-import 'package:amap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:amap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
+
+
 
 mixin com_amap_api_maps_AMap_OnMapScreenShotListener on java_lang_Object {
   
@@ -20,9 +21,11 @@ mixin com_amap_api_maps_AMap_OnMapScreenShotListener on java_lang_Object {
 
   
 
+  
+
   @mustCallSuper
   Future<void> onMapScreenShot__android_graphics_Bitmap(android_graphics_Bitmap var1) {
-    kNativeObjectPool.add(var1);
+    if (var1 is Ref) kNativeObjectPool.add(var1);
   
     if (fluttifyLogEnabled) {
       debugPrint('onMapScreenShot__android_graphics_Bitmap::kNativeObjectPool: $kNativeObjectPool');
@@ -31,7 +34,7 @@ mixin com_amap_api_maps_AMap_OnMapScreenShotListener on java_lang_Object {
   
   @mustCallSuper
   Future<void> onMapScreenShot__android_graphics_Bitmap__int(android_graphics_Bitmap var1, int var2) {
-    kNativeObjectPool.add(var1);
+    if (var1 is Ref) kNativeObjectPool.add(var1);
   
     if (fluttifyLogEnabled) {
       debugPrint('onMapScreenShot__android_graphics_Bitmap__int::kNativeObjectPool: $kNativeObjectPool');
@@ -39,3 +42,4 @@ mixin com_amap_api_maps_AMap_OnMapScreenShotListener on java_lang_Object {
   }
   
 }
+

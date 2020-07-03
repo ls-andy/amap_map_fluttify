@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:amap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:amap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -172,7 +171,7 @@ class com_amap_api_maps_offlinemap_OfflineMapManager extends java_lang_Object  {
       return null;
     } else {
       final __return__ = com_amap_api_maps_offlinemap_OfflineMapCity()..refId = __result__..tag__ = 'amap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -196,7 +195,7 @@ class com_amap_api_maps_offlinemap_OfflineMapManager extends java_lang_Object  {
       return null;
     } else {
       final __return__ = com_amap_api_maps_offlinemap_OfflineMapCity()..refId = __result__..tag__ = 'amap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -220,7 +219,7 @@ class com_amap_api_maps_offlinemap_OfflineMapManager extends java_lang_Object  {
       return null;
     } else {
       final __return__ = com_amap_api_maps_offlinemap_OfflineMapProvince()..refId = __result__..tag__ = 'amap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -521,30 +520,11 @@ class com_amap_api_maps_offlinemap_OfflineMapManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('com.amap.api.maps.offlinemap.OfflineMapManager::setOnOfflineLoadedListener', {"refId": refId});
+    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('com.amap.api.maps.offlinemap.OfflineMapManager::setOnOfflineLoadedListener', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
-    MethodChannel('com.amap.api.maps.offlinemap.OfflineMapManager::setOnOfflineLoadedListener::Callback')
-        .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          // final refId = args['callerRefId'] as int;
-          // if (refId != this.refId) return;
   
-          switch (methodCall.method) {
-            case 'Callback::com.amap.api.maps.offlinemap.OfflineMapManager.OfflineLoadedListener::onVerifyComplete':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onVerifyComplete([])');
-              }
-        
-              // handle the native call
-              var1?.onVerifyComplete();
-              break;
-            default:
-              break;
-          }
-        });
   
     // convert native result to dart side object
     if (__result__ == null) {
@@ -957,6 +937,26 @@ extension com_amap_api_maps_offlinemap_OfflineMapManager_Batch on List<com_amap_
   
     // invoke native method
     final resultBatch = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('com.amap.api.maps.offlinemap.OfflineMapManager::destroy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+  
+  
+    // convert native result to dart side object
+    if (resultBatch == null) {
+      return null;
+    } else {
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    
+      return typedResult;
+    }
+  }
+  
+  
+  Future<List<void>> setOnOfflineLoadedListener_batch(List<com_amap_api_maps_offlinemap_OfflineMapManager_OfflineLoadedListener> var1) async {
+    if (false) {
+      return Future.error('all args must have same length!');
+    }
+  
+    // invoke native method
+    final resultBatch = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('com.amap.api.maps.offlinemap.OfflineMapManager::setOnOfflineLoadedListener_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object

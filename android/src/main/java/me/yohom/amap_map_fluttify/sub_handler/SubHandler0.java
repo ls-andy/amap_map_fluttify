@@ -31,2404 +31,5662 @@ public class SubHandler0 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // getter
-            put("com.autonavi.ae.gmap.maploader.ProcessingTile::get_mKeyName", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.maploader.ProcessingTile ref = (com.autonavi.ae.gmap.maploader.ProcessingTile) getHEAP().get(refId);
+            put("com.amap.api.maps.model.VisibleRegion::get_nearLeft", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                String result = ref.mKeyName;
+               // ref object
+               com.amap.api.maps.model.VisibleRegion ref = (com.amap.api.maps.model.VisibleRegion) getHEAP().get((int) __args__.get("refId"));
             
+               com.amap.api.maps.model.LatLng __result__ = ref.nearLeft;
             
+               Integer jsonableResult = null;
+               if (__result__ != null) {
+                   jsonableResult = System.identityHashCode(__result__);
+                   getHEAP().put(jsonableResult, __result__);
+               }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.maploader.ProcessingTile::get_mCreateTime", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.maploader.ProcessingTile ref = (com.autonavi.ae.gmap.maploader.ProcessingTile) getHEAP().get(refId);
+            put("com.amap.api.maps.model.VisibleRegion::get_nearRight", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                long result = ref.mCreateTime;
+               // ref object
+               com.amap.api.maps.model.VisibleRegion ref = (com.amap.api.maps.model.VisibleRegion) getHEAP().get((int) __args__.get("refId"));
             
+               com.amap.api.maps.model.LatLng __result__ = ref.nearRight;
             
+               Integer jsonableResult = null;
+               if (__result__ != null) {
+                   jsonableResult = System.identityHashCode(__result__);
+                   getHEAP().put(jsonableResult, __result__);
+               }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_name", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.VisibleRegion::get_farLeft", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                String result = ref.name;
+               // ref object
+               com.amap.api.maps.model.VisibleRegion ref = (com.amap.api.maps.model.VisibleRegion) getHEAP().get((int) __args__.get("refId"));
             
+               com.amap.api.maps.model.LatLng __result__ = ref.farLeft;
             
+               Integer jsonableResult = null;
+               if (__result__ != null) {
+                   jsonableResult = System.identityHashCode(__result__);
+                   getHEAP().put(jsonableResult, __result__);
+               }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_poiid", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.VisibleRegion::get_farRight", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                String result = ref.poiid;
+               // ref object
+               com.amap.api.maps.model.VisibleRegion ref = (com.amap.api.maps.model.VisibleRegion) getHEAP().get((int) __args__.get("refId"));
             
+               com.amap.api.maps.model.LatLng __result__ = ref.farRight;
             
+               Integer jsonableResult = null;
+               if (__result__ != null) {
+                   jsonableResult = System.identityHashCode(__result__);
+                   getHEAP().put(jsonableResult, __result__);
+               }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_x", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.VisibleRegion::get_latLngBounds", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.x;
+               // ref object
+               com.amap.api.maps.model.VisibleRegion ref = (com.amap.api.maps.model.VisibleRegion) getHEAP().get((int) __args__.get("refId"));
             
+               com.amap.api.maps.model.LatLngBounds __result__ = ref.latLngBounds;
             
+               Integer jsonableResult = null;
+               if (__result__ != null) {
+                   jsonableResult = System.identityHashCode(__result__);
+                   getHEAP().put(jsonableResult, __result__);
+               }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_y", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.Tile::get_width", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.y;
+               // ref object
+               com.amap.api.maps.model.Tile ref = (com.amap.api.maps.model.Tile) getHEAP().get((int) __args__.get("refId"));
             
+               int __result__ = ref.width;
             
+               int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_angle", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.Tile::get_height", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.angle;
+               // ref object
+               com.amap.api.maps.model.Tile ref = (com.amap.api.maps.model.Tile) getHEAP().get((int) __args__.get("refId"));
             
+               int __result__ = ref.height;
             
+               int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_strWidth", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.Tile::get_data", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.strWidth;
+               // ref object
+               com.amap.api.maps.model.Tile ref = (com.amap.api.maps.model.Tile) getHEAP().get((int) __args__.get("refId"));
             
+               byte[] __result__ = ref.data;
             
+               byte[] jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_strHeight", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.CameraPosition::get_target", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.strHeight;
+               // ref object
+               com.amap.api.maps.model.CameraPosition ref = (com.amap.api.maps.model.CameraPosition) getHEAP().get((int) __args__.get("refId"));
             
+               com.amap.api.maps.model.LatLng __result__ = ref.target;
             
+               Integer jsonableResult = null;
+               if (__result__ != null) {
+                   jsonableResult = System.identityHashCode(__result__);
+                   getHEAP().put(jsonableResult, __result__);
+               }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_iconID", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.CameraPosition::get_zoom", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.iconID;
+               // ref object
+               com.amap.api.maps.model.CameraPosition ref = (com.amap.api.maps.model.CameraPosition) getHEAP().get((int) __args__.get("refId"));
             
+               float __result__ = ref.zoom;
             
+               float jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_labelx", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.CameraPosition::get_tilt", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.labelx;
+               // ref object
+               com.amap.api.maps.model.CameraPosition ref = (com.amap.api.maps.model.CameraPosition) getHEAP().get((int) __args__.get("refId"));
             
+               float __result__ = ref.tilt;
             
+               float jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_labely", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.CameraPosition::get_bearing", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.labely;
+               // ref object
+               com.amap.api.maps.model.CameraPosition ref = (com.amap.api.maps.model.CameraPosition) getHEAP().get((int) __args__.get("refId"));
             
+               float __result__ = ref.bearing;
             
+               float jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_pixel20X", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.CameraPosition::get_isAbroad", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.pixel20X;
+               // ref object
+               com.amap.api.maps.model.CameraPosition ref = (com.amap.api.maps.model.CameraPosition) getHEAP().get((int) __args__.get("refId"));
             
+               boolean __result__ = ref.isAbroad;
             
+               boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_pixel20Y", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.LatLngBounds::get_southwest", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.pixel20Y;
+               // ref object
+               com.amap.api.maps.model.LatLngBounds ref = (com.amap.api.maps.model.LatLngBounds) getHEAP().get((int) __args__.get("refId"));
             
+               com.amap.api.maps.model.LatLng __result__ = ref.southwest;
             
+               Integer jsonableResult = null;
+               if (__result__ != null) {
+                   jsonableResult = System.identityHashCode(__result__);
+                   getHEAP().put(jsonableResult, __result__);
+               }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_pixel20Z", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.LatLngBounds::get_northeast", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.pixel20Z;
+               // ref object
+               com.amap.api.maps.model.LatLngBounds ref = (com.amap.api.maps.model.LatLngBounds) getHEAP().get((int) __args__.get("refId"));
             
+               com.amap.api.maps.model.LatLng __result__ = ref.northeast;
             
+               Integer jsonableResult = null;
+               if (__result__ != null) {
+                   jsonableResult = System.identityHashCode(__result__);
+                   getHEAP().put(jsonableResult, __result__);
+               }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_fontColor", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.LatLng::get_latitude", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.fontColor;
+               // ref object
+               com.amap.api.maps.model.LatLng ref = (com.amap.api.maps.model.LatLng) getHEAP().get((int) __args__.get("refId"));
             
+               double __result__ = ref.latitude;
             
+               double jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_borderColor", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.LatLng::get_longitude", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.borderColor;
+               // ref object
+               com.amap.api.maps.model.LatLng ref = (com.amap.api.maps.model.LatLng) getHEAP().get((int) __args__.get("refId"));
             
+               double __result__ = ref.longitude;
             
+               double jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_type", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.TileProjection::get_offsetX", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.type;
+               // ref object
+               com.amap.api.maps.model.TileProjection ref = (com.amap.api.maps.model.TileProjection) getHEAP().get((int) __args__.get("refId"));
             
+               int __result__ = ref.offsetX;
             
+               int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_anchor", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.TileProjection::get_offsetY", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.anchor;
+               // ref object
+               com.amap.api.maps.model.TileProjection ref = (com.amap.api.maps.model.TileProjection) getHEAP().get((int) __args__.get("refId"));
             
+               int __result__ = ref.offsetY;
             
+               int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_fontSize", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.TileProjection::get_minX", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.fontSize;
+               // ref object
+               com.amap.api.maps.model.TileProjection ref = (com.amap.api.maps.model.TileProjection) getHEAP().get((int) __args__.get("refId"));
             
+               int __result__ = ref.minX;
             
+               int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_mSublayerId", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.TileProjection::get_maxX", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.mSublayerId;
+               // ref object
+               com.amap.api.maps.model.TileProjection ref = (com.amap.api.maps.model.TileProjection) getHEAP().get((int) __args__.get("refId"));
             
+               int __result__ = ref.maxX;
             
+               int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_mIsFouces", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.TileProjection::get_minY", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                boolean result = ref.mIsFouces;
+               // ref object
+               com.amap.api.maps.model.TileProjection ref = (com.amap.api.maps.model.TileProjection) getHEAP().get((int) __args__.get("refId"));
             
+               int __result__ = ref.minY;
             
+               int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glinterface.MapLabelItem::get_timeStamp", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glinterface.MapLabelItem ref = (com.autonavi.ae.gmap.glinterface.MapLabelItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.TileProjection::get_maxY", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.timeStamp;
+               // ref object
+               com.amap.api.maps.model.TileProjection ref = (com.amap.api.maps.model.TileProjection) getHEAP().get((int) __args__.get("refId"));
             
+               int __result__ = ref.maxY;
             
+               int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glanimation.AdglMapAnimGroup::get_needMove", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glanimation.AdglMapAnimGroup ref = (com.autonavi.ae.gmap.glanimation.AdglMapAnimGroup) getHEAP().get(refId);
+            put("com.amap.api.maps.model.WeightedLatLng::get_intensity", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                boolean result = ref.needMove;
+               // ref object
+               com.amap.api.maps.model.WeightedLatLng ref = (com.amap.api.maps.model.WeightedLatLng) getHEAP().get((int) __args__.get("refId"));
             
+               double __result__ = ref.intensity;
             
+               double jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam2V::get_fromXValue", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam2V ref = (com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam2V) getHEAP().get(refId);
+            put("com.amap.api.maps.model.WeightedLatLng::get_latLng", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                double result = ref.fromXValue;
+               // ref object
+               com.amap.api.maps.model.WeightedLatLng ref = (com.amap.api.maps.model.WeightedLatLng) getHEAP().get((int) __args__.get("refId"));
             
+               com.amap.api.maps.model.LatLng __result__ = ref.latLng;
             
+               Integer jsonableResult = null;
+               if (__result__ != null) {
+                   jsonableResult = System.identityHashCode(__result__);
+                   getHEAP().put(jsonableResult, __result__);
+               }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam2V::get_toXValue", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam2V ref = (com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam2V) getHEAP().get(refId);
+            put("com.amap.api.maps.model.IndoorBuildingInfo::get_activeFloorName", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                double result = ref.toXValue;
+               // ref object
+               com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get((int) __args__.get("refId"));
             
+               String __result__ = ref.activeFloorName;
             
+               String jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam2V::get_fromYValue", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam2V ref = (com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam2V) getHEAP().get(refId);
+            put("com.amap.api.maps.model.IndoorBuildingInfo::get_activeFloorIndex", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                double result = ref.fromYValue;
+               // ref object
+               com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get((int) __args__.get("refId"));
             
+               int __result__ = ref.activeFloorIndex;
             
+               int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam2V::get_toYValue", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam2V ref = (com.autonavi.ae.gmap.glanimation.AbstractAdglAnimationParam2V) getHEAP().get(refId);
+            put("com.amap.api.maps.model.IndoorBuildingInfo::get_poiid", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                double result = ref.toYValue;
+               // ref object
+               com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get((int) __args__.get("refId"));
             
+               String __result__ = ref.poiid;
             
+               String jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.style.StyleItem::get_mainKey", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.style.StyleItem ref = (com.autonavi.ae.gmap.style.StyleItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.IndoorBuildingInfo::get_floor_indexs", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int result = ref.mainKey;
+               // ref object
+               com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get((int) __args__.get("refId"));
             
+               int[] __result__ = ref.floor_indexs;
             
+               int[] jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.style.StyleItem::get_subKey", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.style.StyleItem ref = (com.autonavi.ae.gmap.style.StyleItem) getHEAP().get(refId);
+            put("com.amap.api.maps.model.IndoorBuildingInfo::get_floor_names", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
-                int[] result = ref.subKey;
+               // ref object
+               com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get((int) __args__.get("refId"));
             
+               String[] __result__ = ref.floor_names;
             
+               List<String> jsonableResult = new ArrayList<String>(java.util.Arrays.asList(__result__));
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
             // getter
-            put("com.autonavi.ae.gmap.style.StyleElement::get_styleElementType", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.style.StyleElement ref = (com.autonavi.ae.gmap.style.StyleElement) getHEAP().get(refId);
+            put("com.amap.api.maps.model.VisibleRegion::get_nearLeft_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                int result = ref.styleElementType;
+                    // ref object
+                    com.amap.api.maps.model.VisibleRegion ref = (com.amap.api.maps.model.VisibleRegion) getHEAP().get((int) __args__.get("refId"));
             
+                    com.amap.api.maps.model.LatLng __result__ = ref.nearLeft;
             
+                    Integer jsonableResult = null;
+            if (__result__ != null) {
+                jsonableResult = System.identityHashCode(__result__);
+                getHEAP().put(jsonableResult, __result__);
+            }
             
-                __methodResult__.success(result);
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.style.StyleElement::get_value", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.style.StyleElement ref = (com.autonavi.ae.gmap.style.StyleElement) getHEAP().get(refId);
+            put("com.amap.api.maps.model.VisibleRegion::get_nearRight_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // ref object
+                    com.amap.api.maps.model.VisibleRegion ref = (com.amap.api.maps.model.VisibleRegion) getHEAP().get((int) __args__.get("refId"));
             
-                int result = ref.value;
+                    com.amap.api.maps.model.LatLng __result__ = ref.nearRight;
             
+                    Integer jsonableResult = null;
+            if (__result__ != null) {
+                jsonableResult = System.identityHashCode(__result__);
+                getHEAP().put(jsonableResult, __result__);
+            }
             
+                    __resultList__.add(jsonableResult);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.style.StyleElement::get_textureId", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.style.StyleElement ref = (com.autonavi.ae.gmap.style.StyleElement) getHEAP().get(refId);
+            put("com.amap.api.maps.model.VisibleRegion::get_farLeft_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                int result = ref.textureId;
+                    // ref object
+                    com.amap.api.maps.model.VisibleRegion ref = (com.amap.api.maps.model.VisibleRegion) getHEAP().get((int) __args__.get("refId"));
             
+                    com.amap.api.maps.model.LatLng __result__ = ref.farLeft;
             
+                    Integer jsonableResult = null;
+            if (__result__ != null) {
+                jsonableResult = System.identityHashCode(__result__);
+                getHEAP().put(jsonableResult, __result__);
+            }
             
-                __methodResult__.success(result);
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.style.StyleElement::get_opacity", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.style.StyleElement ref = (com.autonavi.ae.gmap.style.StyleElement) getHEAP().get(refId);
+            put("com.amap.api.maps.model.VisibleRegion::get_farRight_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                float result = ref.opacity;
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
+                    // ref object
+                    com.amap.api.maps.model.VisibleRegion ref = (com.amap.api.maps.model.VisibleRegion) getHEAP().get((int) __args__.get("refId"));
             
+                    com.amap.api.maps.model.LatLng __result__ = ref.farRight;
             
-                __methodResult__.success(result);
+                    Integer jsonableResult = null;
+            if (__result__ != null) {
+                jsonableResult = System.identityHashCode(__result__);
+                getHEAP().put(jsonableResult, __result__);
+            }
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.style.StyleElement::get_lineWidth", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.style.StyleElement ref = (com.autonavi.ae.gmap.style.StyleElement) getHEAP().get(refId);
+            put("com.amap.api.maps.model.VisibleRegion::get_latLngBounds_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                int result = ref.lineWidth;
+                    // ref object
+                    com.amap.api.maps.model.VisibleRegion ref = (com.amap.api.maps.model.VisibleRegion) getHEAP().get((int) __args__.get("refId"));
             
+                    com.amap.api.maps.model.LatLngBounds __result__ = ref.latLngBounds;
             
+                    Integer jsonableResult = null;
+            if (__result__ != null) {
+                jsonableResult = System.identityHashCode(__result__);
+                getHEAP().put(jsonableResult, __result__);
+            }
             
-                __methodResult__.success(result);
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.style.StyleElement::get_visible", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.style.StyleElement ref = (com.autonavi.ae.gmap.style.StyleElement) getHEAP().get(refId);
+            put("com.amap.api.maps.model.Tile::get_width_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // ref object
+                    com.amap.api.maps.model.Tile ref = (com.amap.api.maps.model.Tile) getHEAP().get((int) __args__.get("refId"));
             
-                int result = ref.visible;
+                    int __result__ = ref.width;
             
+                    int jsonableResult = __result__;
             
+                    __resultList__.add(jsonableResult);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam::get_engineId", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam ref = (com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam) getHEAP().get(refId);
+            put("com.amap.api.maps.model.Tile::get_height_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                int result = ref.engineId;
+                    // ref object
+                    com.amap.api.maps.model.Tile ref = (com.amap.api.maps.model.Tile) getHEAP().get((int) __args__.get("refId"));
             
+                    int __result__ = ref.height;
             
+                    int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam::get_x", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam ref = (com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam) getHEAP().get(refId);
+            put("com.amap.api.maps.model.Tile::get_data_batch", (__argsBatch__, __methodResult__) -> {
+                List<byte[]> __resultList__ = new ArrayList<>();
             
-                int result = ref.x;
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
+                    // ref object
+                    com.amap.api.maps.model.Tile ref = (com.amap.api.maps.model.Tile) getHEAP().get((int) __args__.get("refId"));
             
+                    byte[] __result__ = ref.data;
             
-                __methodResult__.success(result);
+                    byte[] jsonableResult = __result__;
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam::get_y", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam ref = (com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam) getHEAP().get(refId);
+            put("com.amap.api.maps.model.CameraPosition::get_target_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                int result = ref.y;
+                    // ref object
+                    com.amap.api.maps.model.CameraPosition ref = (com.amap.api.maps.model.CameraPosition) getHEAP().get((int) __args__.get("refId"));
             
+                    com.amap.api.maps.model.LatLng __result__ = ref.target;
             
+                    Integer jsonableResult = null;
+            if (__result__ != null) {
+                jsonableResult = System.identityHashCode(__result__);
+                getHEAP().put(jsonableResult, __result__);
+            }
             
-                __methodResult__.success(result);
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam::get_width", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam ref = (com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam) getHEAP().get(refId);
+            put("com.amap.api.maps.model.CameraPosition::get_zoom_batch", (__argsBatch__, __methodResult__) -> {
+                List<Float> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // ref object
+                    com.amap.api.maps.model.CameraPosition ref = (com.amap.api.maps.model.CameraPosition) getHEAP().get((int) __args__.get("refId"));
             
-                int result = ref.width;
+                    float __result__ = ref.zoom;
             
+                    float jsonableResult = __result__;
             
+                    __resultList__.add(jsonableResult);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam::get_height", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam ref = (com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam) getHEAP().get(refId);
+            put("com.amap.api.maps.model.CameraPosition::get_tilt_batch", (__argsBatch__, __methodResult__) -> {
+                List<Float> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                int result = ref.height;
+                    // ref object
+                    com.amap.api.maps.model.CameraPosition ref = (com.amap.api.maps.model.CameraPosition) getHEAP().get((int) __args__.get("refId"));
             
+                    float __result__ = ref.tilt;
             
+                    float jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam::get_screenWidth", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam ref = (com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam) getHEAP().get(refId);
+            put("com.amap.api.maps.model.CameraPosition::get_bearing_batch", (__argsBatch__, __methodResult__) -> {
+                List<Float> __resultList__ = new ArrayList<>();
             
-                int result = ref.screenWidth;
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
+                    // ref object
+                    com.amap.api.maps.model.CameraPosition ref = (com.amap.api.maps.model.CameraPosition) getHEAP().get((int) __args__.get("refId"));
             
+                    float __result__ = ref.bearing;
             
-                __methodResult__.success(result);
+                    float jsonableResult = __result__;
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam::get_screenHeight", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam ref = (com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam) getHEAP().get(refId);
+            put("com.amap.api.maps.model.CameraPosition::get_isAbroad_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                int result = ref.screenHeight;
+                    // ref object
+                    com.amap.api.maps.model.CameraPosition ref = (com.amap.api.maps.model.CameraPosition) getHEAP().get((int) __args__.get("refId"));
             
+                    boolean __result__ = ref.isAbroad;
             
+                    boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam::get_screenScale", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam ref = (com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam) getHEAP().get(refId);
+            put("com.amap.api.maps.model.LatLngBounds::get_southwest_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // ref object
+                    com.amap.api.maps.model.LatLngBounds ref = (com.amap.api.maps.model.LatLngBounds) getHEAP().get((int) __args__.get("refId"));
             
-                float result = ref.screenScale;
+                    com.amap.api.maps.model.LatLng __result__ = ref.southwest;
             
+                    Integer jsonableResult = null;
+            if (__result__ != null) {
+                jsonableResult = System.identityHashCode(__result__);
+                getHEAP().put(jsonableResult, __result__);
+            }
             
+                    __resultList__.add(jsonableResult);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam::get_textScale", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam ref = (com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam) getHEAP().get(refId);
+            put("com.amap.api.maps.model.LatLngBounds::get_northeast_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                float result = ref.textScale;
+                    // ref object
+                    com.amap.api.maps.model.LatLngBounds ref = (com.amap.api.maps.model.LatLngBounds) getHEAP().get((int) __args__.get("refId"));
             
+                    com.amap.api.maps.model.LatLng __result__ = ref.northeast;
             
+                    Integer jsonableResult = null;
+            if (__result__ != null) {
+                jsonableResult = System.identityHashCode(__result__);
+                getHEAP().put(jsonableResult, __result__);
+            }
             
-                __methodResult__.success(result);
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam::get_mapZoomScale", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam ref = (com.autonavi.ae.gmap.GLMapEngine.MapViewInitParam) getHEAP().get(refId);
+            put("com.amap.api.maps.model.LatLng::get_latitude_batch", (__argsBatch__, __methodResult__) -> {
+                List<Double> __resultList__ = new ArrayList<>();
             
-                float result = ref.mapZoomScale;
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
+                    // ref object
+                    com.amap.api.maps.model.LatLng ref = (com.amap.api.maps.model.LatLng) getHEAP().get((int) __args__.get("refId"));
             
+                    double __result__ = ref.latitude;
             
-                __methodResult__.success(result);
+                    double jsonableResult = __result__;
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo::get_mGestureState", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo ref = (com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo) getHEAP().get(refId);
+            put("com.amap.api.maps.model.LatLng::get_longitude_batch", (__argsBatch__, __methodResult__) -> {
+                List<Double> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                int result = ref.mGestureState;
+                    // ref object
+                    com.amap.api.maps.model.LatLng ref = (com.amap.api.maps.model.LatLng) getHEAP().get((int) __args__.get("refId"));
             
+                    double __result__ = ref.longitude;
             
+                    double jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo::get_mGestureType", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo ref = (com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo) getHEAP().get(refId);
+            put("com.amap.api.maps.model.TileProjection::get_offsetX_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // ref object
+                    com.amap.api.maps.model.TileProjection ref = (com.amap.api.maps.model.TileProjection) getHEAP().get((int) __args__.get("refId"));
             
-                int result = ref.mGestureType;
+                    int __result__ = ref.offsetX;
             
+                    int jsonableResult = __result__;
             
+                    __resultList__.add(jsonableResult);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo::get_mLocation", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo ref = (com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo) getHEAP().get(refId);
+            put("com.amap.api.maps.model.TileProjection::get_offsetY_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                float[] result = ref.mLocation;
+                    // ref object
+                    com.amap.api.maps.model.TileProjection ref = (com.amap.api.maps.model.TileProjection) getHEAP().get((int) __args__.get("refId"));
             
+                    int __result__ = ref.offsetY;
             
+                    int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo::get_mScale", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo ref = (com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo) getHEAP().get(refId);
+            put("com.amap.api.maps.model.TileProjection::get_minX_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                float result = ref.mScale;
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
+                    // ref object
+                    com.amap.api.maps.model.TileProjection ref = (com.amap.api.maps.model.TileProjection) getHEAP().get((int) __args__.get("refId"));
             
+                    int __result__ = ref.minX;
             
-                __methodResult__.success(result);
+                    int jsonableResult = __result__;
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo::get_mRotation", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo ref = (com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo) getHEAP().get(refId);
+            put("com.amap.api.maps.model.TileProjection::get_maxX_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                float result = ref.mRotation;
+                    // ref object
+                    com.amap.api.maps.model.TileProjection ref = (com.amap.api.maps.model.TileProjection) getHEAP().get((int) __args__.get("refId"));
             
+                    int __result__ = ref.maxX;
             
+                    int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo::get_mVeLocityFloat", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo ref = (com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo) getHEAP().get(refId);
+            put("com.amap.api.maps.model.TileProjection::get_minY_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // ref object
+                    com.amap.api.maps.model.TileProjection ref = (com.amap.api.maps.model.TileProjection) getHEAP().get((int) __args__.get("refId"));
             
-                float result = ref.mVeLocityFloat;
+                    int __result__ = ref.minY;
             
+                    int jsonableResult = __result__;
             
+                    __resultList__.add(jsonableResult);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo::get_mVelocityPoint", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo ref = (com.autonavi.ae.gmap.gesture.EAMapPlatformGestureInfo) getHEAP().get(refId);
+            put("com.amap.api.maps.model.TileProjection::get_maxY_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                float[] result = ref.mVelocityPoint;
+                    // ref object
+                    com.amap.api.maps.model.TileProjection ref = (com.amap.api.maps.model.TileProjection) getHEAP().get((int) __args__.get("refId"));
             
+                    int __result__ = ref.maxY;
             
+                    int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLTextureProperty::get_mId", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLTextureProperty ref = (com.autonavi.ae.gmap.gloverlay.GLTextureProperty) getHEAP().get(refId);
+            put("com.amap.api.maps.model.WeightedLatLng::get_intensity_batch", (__argsBatch__, __methodResult__) -> {
+                List<Double> __resultList__ = new ArrayList<>();
             
-                int result = ref.mId;
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
+                    // ref object
+                    com.amap.api.maps.model.WeightedLatLng ref = (com.amap.api.maps.model.WeightedLatLng) getHEAP().get((int) __args__.get("refId"));
             
-            
-                __methodResult__.success(result);
-            });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLTextureProperty::get_mBitmap", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLTextureProperty ref = (com.autonavi.ae.gmap.gloverlay.GLTextureProperty) getHEAP().get(refId);
+                    double __result__ = ref.intensity;
             
-                android.graphics.Bitmap result = ref.mBitmap;
+                    double jsonableResult = __result__;
             
-                getHEAP().put(result.hashCode(), result);
+                    __resultList__.add(jsonableResult);
+                }
             
-                __methodResult__.success(result.hashCode());
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLTextureProperty::get_mPngBuffer", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLTextureProperty ref = (com.autonavi.ae.gmap.gloverlay.GLTextureProperty) getHEAP().get(refId);
+            put("com.amap.api.maps.model.WeightedLatLng::get_latLng_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                byte[] result = ref.mPngBuffer;
+                    // ref object
+                    com.amap.api.maps.model.WeightedLatLng ref = (com.amap.api.maps.model.WeightedLatLng) getHEAP().get((int) __args__.get("refId"));
             
+                    com.amap.api.maps.model.LatLng __result__ = ref.latLng;
             
+                    Integer jsonableResult = null;
+            if (__result__ != null) {
+                jsonableResult = System.identityHashCode(__result__);
+                getHEAP().put(jsonableResult, __result__);
+            }
             
-                __methodResult__.success(result);
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLTextureProperty::get_mAnchor", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLTextureProperty ref = (com.autonavi.ae.gmap.gloverlay.GLTextureProperty) getHEAP().get(refId);
+            put("com.amap.api.maps.model.IndoorBuildingInfo::get_activeFloorName_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                int result = ref.mAnchor;
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
+                    // ref object
+                    com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get((int) __args__.get("refId"));
             
+                    String __result__ = ref.activeFloorName;
             
-                __methodResult__.success(result);
+                    String jsonableResult = __result__;
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLTextureProperty::get_mXRatio", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLTextureProperty ref = (com.autonavi.ae.gmap.gloverlay.GLTextureProperty) getHEAP().get(refId);
+            put("com.amap.api.maps.model.IndoorBuildingInfo::get_activeFloorIndex_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                float result = ref.mXRatio;
+                    // ref object
+                    com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get((int) __args__.get("refId"));
             
+                    int __result__ = ref.activeFloorIndex;
             
+                    int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLTextureProperty::get_mYRatio", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLTextureProperty ref = (com.autonavi.ae.gmap.gloverlay.GLTextureProperty) getHEAP().get(refId);
+            put("com.amap.api.maps.model.IndoorBuildingInfo::get_poiid_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // ref object
+                    com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get((int) __args__.get("refId"));
             
-                float result = ref.mYRatio;
+                    String __result__ = ref.poiid;
             
+                    String jsonableResult = __result__;
             
+                    __resultList__.add(jsonableResult);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLTextureProperty::get_isGenMimps", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLTextureProperty ref = (com.autonavi.ae.gmap.gloverlay.GLTextureProperty) getHEAP().get(refId);
+            put("com.amap.api.maps.model.IndoorBuildingInfo::get_floor_indexs_batch", (__argsBatch__, __methodResult__) -> {
+                List<int[]> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                boolean result = ref.isGenMimps;
+                    // ref object
+                    com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get((int) __args__.get("refId"));
             
+                    int[] __result__ = ref.floor_indexs;
             
+                    int[] jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
             });
             // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLTextureProperty::get_isRepeat", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLTextureProperty ref = (com.autonavi.ae.gmap.gloverlay.GLTextureProperty) getHEAP().get(refId);
+            put("com.amap.api.maps.model.IndoorBuildingInfo::get_floor_names_batch", (__argsBatch__, __methodResult__) -> {
+                List<List<String>> __resultList__ = new ArrayList<>();
             
-                boolean result = ref.isRepeat;
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
+                    // ref object
+                    com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get((int) __args__.get("refId"));
             
+                    String[] __result__ = ref.floor_names;
             
-                __methodResult__.success(result);
-            });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLOverlayBundle.GLAmapFocusHits::get_mOverlayHashCode", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLOverlayBundle.GLAmapFocusHits ref = (com.autonavi.ae.gmap.gloverlay.GLOverlayBundle.GLAmapFocusHits) getHEAP().get(refId);
+                    List<String> jsonableResult = new ArrayList<String>(java.util.Arrays.asList(__result__));
             
-                long result = ref.mOverlayHashCode;
+                    __resultList__.add(jsonableResult);
+                }
             
+                __methodResult__.success(__resultList__);
+            });
+            // setter
+            put("com.amap.api.maps.model.IndoorBuildingInfo::set_activeFloorName", (__args__, __methodResult__) -> {
+                // jsonable arg
+                String activeFloorName = (String) ((Map<String, Object>) __args__).get("activeFloorName");
             
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get(refId);
             
-                __methodResult__.success(result);
+                ref.activeFloorName = activeFloorName;
+                __methodResult__.success("success");
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLOverlayBundle.GLAmapFocusHits::get_mHitedIndex", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLOverlayBundle.GLAmapFocusHits ref = (com.autonavi.ae.gmap.gloverlay.GLOverlayBundle.GLAmapFocusHits) getHEAP().get(refId);
+            // setter
+            put("com.amap.api.maps.model.IndoorBuildingInfo::set_activeFloorIndex", (__args__, __methodResult__) -> {
+                // jsonable arg
+                int activeFloorIndex = (int) ((Map<String, Object>) __args__).get("activeFloorIndex");
             
-                long result = ref.mHitedIndex;
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get(refId);
             
+                ref.activeFloorIndex = activeFloorIndex;
+                __methodResult__.success("success");
+            });
+            // setter
+            put("com.amap.api.maps.model.IndoorBuildingInfo::set_poiid", (__args__, __methodResult__) -> {
+                // jsonable arg
+                String poiid = (String) ((Map<String, Object>) __args__).get("poiid");
             
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get(refId);
             
-                __methodResult__.success(result);
+                ref.poiid = poiid;
+                __methodResult__.success("success");
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLOverlayBundle.GLAmapFocusHits::get_mHitedTimes", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLOverlayBundle.GLAmapFocusHits ref = (com.autonavi.ae.gmap.gloverlay.GLOverlayBundle.GLAmapFocusHits) getHEAP().get(refId);
+            // setter
+            put("com.amap.api.maps.model.IndoorBuildingInfo::set_floor_indexs", (__args__, __methodResult__) -> {
+                // jsonable arg
+                int[] floor_indexs = (int[]) ((Map<String, Object>) __args__).get("floor_indexs");
             
-                long result = ref.mHitedTimes;
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get(refId);
             
+                ref.floor_indexs = floor_indexs;
+                __methodResult__.success("success");
+            });
+            // setter
+            put("com.amap.api.maps.model.IndoorBuildingInfo::set_floor_names", (__args__, __methodResult__) -> {
+                // jsonable arg
+                ArrayList<String> floor_names = (ArrayList<String>) ((Map<String, Object>) __args__).get("floor_names");
             
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get(refId);
             
-                __methodResult__.success(result);
+                ref.floor_names = floor_names.toArray(new String[floor_names.size()]);
+                __methodResult__.success("success");
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr::get_stAreaColor", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr ref = (com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr) getHEAP().get(refId);
+            // setter batch
+            put("com.amap.api.maps.model.IndoorBuildingInfo::set_activeFloorName_batch", (__argsBatch__, __methodResult__) -> {
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                int result = ref.stAreaColor;
+                    // jsonable arg
+                    String activeFloorName = (String) ((Map<String, Object>) __args__).get("activeFloorName");
             
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                    com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get(refId);
             
+                    ref.activeFloorName = activeFloorName;
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success("success");
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr::get_stArrowBorderColor", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr ref = (com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr) getHEAP().get(refId);
+            // setter batch
+            put("com.amap.api.maps.model.IndoorBuildingInfo::set_activeFloorIndex_batch", (__argsBatch__, __methodResult__) -> {
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                int result = ref.stArrowBorderColor;
+                    // jsonable arg
+                    int activeFloorIndex = (int) ((Map<String, Object>) __args__).get("activeFloorIndex");
             
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                    com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get(refId);
             
+                    ref.activeFloorIndex = activeFloorIndex;
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success("success");
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr::get_fArrowBorderWidth", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr ref = (com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr) getHEAP().get(refId);
+            // setter batch
+            put("com.amap.api.maps.model.IndoorBuildingInfo::set_poiid_batch", (__argsBatch__, __methodResult__) -> {
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                int result = ref.fArrowBorderWidth;
+                    // jsonable arg
+                    String poiid = (String) ((Map<String, Object>) __args__).get("poiid");
             
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                    com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get(refId);
             
+                    ref.poiid = poiid;
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success("success");
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr::get_fArrowLineWidth", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr ref = (com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr) getHEAP().get(refId);
+            // setter batch
+            put("com.amap.api.maps.model.IndoorBuildingInfo::set_floor_indexs_batch", (__argsBatch__, __methodResult__) -> {
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                int result = ref.fArrowLineWidth;
+                    // jsonable arg
+                    int[] floor_indexs = (int[]) ((Map<String, Object>) __args__).get("floor_indexs");
             
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                    com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get(refId);
             
+                    ref.floor_indexs = floor_indexs;
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success("success");
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr::get_stArrowLineColor", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr ref = (com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr) getHEAP().get(refId);
+            // setter batch
+            put("com.amap.api.maps.model.IndoorBuildingInfo::set_floor_names_batch", (__argsBatch__, __methodResult__) -> {
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
-                int result = ref.stArrowLineColor;
+                    // jsonable arg
+                    ArrayList<String> floor_names = (ArrayList<String>) ((Map<String, Object>) __args__).get("floor_names");
             
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                    com.amap.api.maps.model.IndoorBuildingInfo ref = (com.amap.api.maps.model.IndoorBuildingInfo) getHEAP().get(refId);
             
+                    ref.floor_names = floor_names.toArray(new String[floor_names.size()]);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success("success");
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr::get_dayMode", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.offlineservice.AMapPermissionActivity::onRequestPermissionsResult", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // jsonable arg
+                ArrayList<String> var2 = (ArrayList<String>) ((Map<String, Object>) __args__).get("var2");
+                // jsonable arg
+                int[] var3 = (int[]) ((Map<String, Object>) __args__).get("var3");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr ref = (com.autonavi.ae.gmap.gloverlay.GLCrossVector.AVectorCrossAttr) getHEAP().get(refId);
+                com.amap.api.offlineservice.AMapPermissionActivity ref = (com.amap.api.offlineservice.AMapPermissionActivity) getHEAP().get(refId);
             
-                boolean result = ref.dayMode;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.offlineservice.AMapPermissionActivity@" + refId + "::onRequestPermissionsResult(" + var1 + var2 + var3 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.onRequestPermissionsResult(var1, var2.toArray(new String[var2.size()]), var3);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_euRouteTexture", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.LocationSource::activate", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.amap.api.maps.LocationSource.OnLocationChangedListener var1 = __var1__ != null ? (com.amap.api.maps.LocationSource.OnLocationChangedListener) getHEAP().get(__var1__) : null;
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.LocationSource ref = (com.amap.api.maps.LocationSource) getHEAP().get(refId);
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.LocationSource@" + refId + "::activate(" + var1 + ")");
+                }
             
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty.EAMapRouteTexture result = ref.euRouteTexture;
+                // invoke native method
+                try {
+                    ref.activate(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                getHEAP().put(result.hashCode(), result);
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result.hashCode());
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mFilledResId", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.LocationSource::deactivate", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.LocationSource ref = (com.amap.api.maps.LocationSource) getHEAP().get(refId);
             
-                int result = ref.mFilledResId;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.LocationSource@" + refId + "::deactivate(" + "" + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.deactivate();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mSimple3DFillResId", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::setScaleControlsEnabled", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                int result = ref.mSimple3DFillResId;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::setScaleControlsEnabled(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setScaleControlsEnabled(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mFilledColor", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::setZoomControlsEnabled", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                int result = ref.mFilledColor;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::setZoomControlsEnabled(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setZoomControlsEnabled(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mBgResId", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::setCompassEnabled", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                int result = ref.mBgResId;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::setCompassEnabled(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setCompassEnabled(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mBgColor", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::setMyLocationButtonEnabled", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                int result = ref.mBgColor;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::setMyLocationButtonEnabled(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setMyLocationButtonEnabled(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mLineWidth", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::setScrollGesturesEnabled", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                int result = ref.mLineWidth;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::setScrollGesturesEnabled(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setScrollGesturesEnabled(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mBorderLineWidth", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::setZoomGesturesEnabled", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                int result = ref.mBorderLineWidth;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::setZoomGesturesEnabled(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setZoomGesturesEnabled(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mX1", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::setTiltGesturesEnabled", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                float result = ref.mX1;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::setTiltGesturesEnabled(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setTiltGesturesEnabled(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mY1", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::setRotateGesturesEnabled", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                float result = ref.mY1;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::setRotateGesturesEnabled(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setRotateGesturesEnabled(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mX2", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::setAllGesturesEnabled", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                float result = ref.mX2;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::setAllGesturesEnabled(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setAllGesturesEnabled(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mY2", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::setLogoPosition", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                float result = ref.mY2;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::setLogoPosition(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setLogoPosition(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mGLStart", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::setZoomPosition", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                float result = ref.mGLStart;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::setZoomPosition(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setZoomPosition(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mTextureLen", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::getZoomPosition", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                float result = ref.mTextureLen;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::getZoomPosition(" + "" + ")");
+                }
             
+                // invoke native method
+                int __result__;
+                try {
+                    __result__ = ref.getZoomPosition();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mSimple3DX1", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::isScaleControlsEnabled", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                float result = ref.mSimple3DX1;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::isScaleControlsEnabled(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.isScaleControlsEnabled();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mSimple3DY1", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::isZoomControlsEnabled", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                float result = ref.mSimple3DY1;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::isZoomControlsEnabled(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.isZoomControlsEnabled();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mSimple3DX2", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::isCompassEnabled", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                float result = ref.mSimple3DX2;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::isCompassEnabled(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.isCompassEnabled();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mSimple3DY2", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::isMyLocationButtonEnabled", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                float result = ref.mSimple3DY2;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::isMyLocationButtonEnabled(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.isMyLocationButtonEnabled();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mSimple3DGLStart", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::isScrollGesturesEnabled", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                float result = ref.mSimple3DGLStart;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::isScrollGesturesEnabled(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.isScrollGesturesEnabled();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mSimple3DTextureLen", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::isZoomGesturesEnabled", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                float result = ref.mSimple3DTextureLen;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::isZoomGesturesEnabled(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.isZoomGesturesEnabled();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mCapX1", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::isTiltGesturesEnabled", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                float result = ref.mCapX1;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::isTiltGesturesEnabled(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.isTiltGesturesEnabled();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mCapY1", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::isRotateGesturesEnabled", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                float result = ref.mCapY1;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::isRotateGesturesEnabled(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.isRotateGesturesEnabled();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mCapX2", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::getLogoPosition", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                float result = ref.mCapX2;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::getLogoPosition(" + "" + ")");
+                }
             
+                // invoke native method
+                int __result__;
+                try {
+                    __result__ = ref.getLogoPosition();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mCapY2", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::isIndoorSwitchEnabled", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                float result = ref.mCapY2;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::isIndoorSwitchEnabled(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.isIndoorSwitchEnabled();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_isLineExtract", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::setIndoorSwitchEnabled", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                boolean result = ref.isLineExtract;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::setIndoorSwitchEnabled(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setIndoorSwitchEnabled(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_isCanCovered", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::setLogoMarginRate", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // jsonable arg
+                Double var2 = (Double) ((Map<String, Object>) __args__).get("var2");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                boolean result = ref.isCanCovered;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::setLogoMarginRate(" + var1 + var2 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setLogoMarginRate(var1, new Double(var2).floatValue());
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_isUseColor", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::getLogoMarginRate", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                boolean result = ref.isUseColor;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::getLogoMarginRate(" + var1 + ")");
+                }
             
+                // invoke native method
+                float __result__;
+                try {
+                    __result__ = ref.getLogoMarginRate(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                float jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_isUseCap", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::setLogoLeftMargin", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                boolean result = ref.isUseCap;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::setLogoLeftMargin(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setLogoLeftMargin(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mShowArrow", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::setLogoBottomMargin", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                boolean result = ref.mShowArrow;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::setLogoBottomMargin(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setLogoBottomMargin(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLRouteProperty::get_mbTexPreMulAlpha", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::setZoomInByScreenCenter", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLRouteProperty ref = (com.autonavi.ae.gmap.gloverlay.GLRouteProperty) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                boolean result = ref.mbTexPreMulAlpha;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::setZoomInByScreenCenter(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setZoomInByScreenCenter(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLOverlayTexture::get_mResId", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::setGestureScaleByMapCenter", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLOverlayTexture ref = (com.autonavi.ae.gmap.gloverlay.GLOverlayTexture) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                int result = ref.mResId;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::setGestureScaleByMapCenter(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setGestureScaleByMapCenter(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLOverlayTexture::get_mWidth", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.UiSettings::isGestureScaleByMapCenter", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLOverlayTexture ref = (com.autonavi.ae.gmap.gloverlay.GLOverlayTexture) getHEAP().get(refId);
+                com.amap.api.maps.UiSettings ref = (com.amap.api.maps.UiSettings) getHEAP().get(refId);
             
-                int result = ref.mWidth;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.UiSettings@" + refId + "::isGestureScaleByMapCenter(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.isGestureScaleByMapCenter();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLOverlayTexture::get_mHeight", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.SwipeDismissTouchListener::onTouch", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                android.view.View var1 = __var1__ != null ? (android.view.View) getHEAP().get(__var1__) : null;
+                // ref arg
+                Integer __var2__ = (Integer) ((Map<String, Object>) __args__).get("var2");
+                android.view.MotionEvent var2 = __var2__ != null ? (android.view.MotionEvent) getHEAP().get(__var2__) : null;
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLOverlayTexture ref = (com.autonavi.ae.gmap.gloverlay.GLOverlayTexture) getHEAP().get(refId);
+                com.amap.api.maps.SwipeDismissTouchListener ref = (com.amap.api.maps.SwipeDismissTouchListener) getHEAP().get(refId);
             
-                int result = ref.mHeight;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.SwipeDismissTouchListener@" + refId + "::onTouch(" + var1 + var2 + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.onTouch(var1, var2);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLOverlayTexture::get_mResWidth", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.InfoWindowParams::setInfoWindowUpdateTime", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLOverlayTexture ref = (com.autonavi.ae.gmap.gloverlay.GLOverlayTexture) getHEAP().get(refId);
+                com.amap.api.maps.InfoWindowParams ref = (com.amap.api.maps.InfoWindowParams) getHEAP().get(refId);
             
-                int result = ref.mResWidth;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.InfoWindowParams@" + refId + "::setInfoWindowUpdateTime(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setInfoWindowUpdateTime(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLOverlayTexture::get_mResHeight", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.InfoWindowParams::getInfoWindowUpdateTime", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLOverlayTexture ref = (com.autonavi.ae.gmap.gloverlay.GLOverlayTexture) getHEAP().get(refId);
+                com.amap.api.maps.InfoWindowParams ref = (com.amap.api.maps.InfoWindowParams) getHEAP().get(refId);
             
-                int result = ref.mResHeight;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.InfoWindowParams@" + refId + "::getInfoWindowUpdateTime(" + "" + ")");
+                }
             
+                // invoke native method
+                long __result__;
+                try {
+                    __result__ = ref.getInfoWindowUpdateTime();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                long jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLOverlayTexture::get_mAnchorXRatio", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.InfoWindowParams::setInfoWindowType", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLOverlayTexture ref = (com.autonavi.ae.gmap.gloverlay.GLOverlayTexture) getHEAP().get(refId);
+                com.amap.api.maps.InfoWindowParams ref = (com.amap.api.maps.InfoWindowParams) getHEAP().get(refId);
             
-                float result = ref.mAnchorXRatio;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.InfoWindowParams@" + refId + "::setInfoWindowType(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setInfoWindowType(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLOverlayTexture::get_mAnchorYRatio", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.InfoWindowParams::getInfoWindowType", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLOverlayTexture ref = (com.autonavi.ae.gmap.gloverlay.GLOverlayTexture) getHEAP().get(refId);
+                com.amap.api.maps.InfoWindowParams ref = (com.amap.api.maps.InfoWindowParams) getHEAP().get(refId);
             
-                float result = ref.mAnchorYRatio;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.InfoWindowParams@" + refId + "::getInfoWindowType(" + "" + ")");
+                }
             
+                // invoke native method
+                int __result__;
+                try {
+                    __result__ = ref.getInfoWindowType();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.gloverlay.GLOverlayTexture::get_mAnchor", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.InfoWindowParams::getInfoWindow", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.gloverlay.GLOverlayTexture ref = (com.autonavi.ae.gmap.gloverlay.GLOverlayTexture) getHEAP().get(refId);
+                com.amap.api.maps.InfoWindowParams ref = (com.amap.api.maps.InfoWindowParams) getHEAP().get(refId);
             
-                int result = ref.mAnchor;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.InfoWindowParams@" + refId + "::getInfoWindow(" + "" + ")");
+                }
             
+                // invoke native method
+                android.view.View __result__;
+                try {
+                    __result__ = ref.getInfoWindow();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.GLMapEngine.InitParam::get_mRootPath", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.InfoWindowParams::setInfoContent", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                android.view.View var1 = __var1__ != null ? (android.view.View) getHEAP().get(__var1__) : null;
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.GLMapEngine.InitParam ref = (com.autonavi.ae.gmap.GLMapEngine.InitParam) getHEAP().get(refId);
+                com.amap.api.maps.InfoWindowParams ref = (com.amap.api.maps.InfoWindowParams) getHEAP().get(refId);
             
-                String result = ref.mRootPath;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.InfoWindowParams@" + refId + "::setInfoContent(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setInfoContent(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.GLMapEngine.InitParam::get_mConfigPath", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.InfoWindowParams::setInfoWindow", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                android.view.View var1 = __var1__ != null ? (android.view.View) getHEAP().get(__var1__) : null;
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.GLMapEngine.InitParam ref = (com.autonavi.ae.gmap.GLMapEngine.InitParam) getHEAP().get(refId);
+                com.amap.api.maps.InfoWindowParams ref = (com.amap.api.maps.InfoWindowParams) getHEAP().get(refId);
             
-                String result = ref.mConfigPath;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.InfoWindowParams@" + refId + "::setInfoWindow(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setInfoWindow(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.GLMapEngine.InitParam::get_mConfigContent", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.InfoWindowParams::getInfoContents", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.GLMapEngine.InitParam ref = (com.autonavi.ae.gmap.GLMapEngine.InitParam) getHEAP().get(refId);
+                com.amap.api.maps.InfoWindowParams ref = (com.amap.api.maps.InfoWindowParams) getHEAP().get(refId);
             
-                String result = ref.mConfigContent;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.InfoWindowParams@" + refId + "::getInfoContents(" + "" + ")");
+                }
             
+                // invoke native method
+                android.view.View __result__;
+                try {
+                    __result__ = ref.getInfoContents();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.ae.gmap.GLMapEngine.InitParam::get_mOfflineDataPath", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.GLMapEngine.InitParam ref = (com.autonavi.ae.gmap.GLMapEngine.InitParam) getHEAP().get(refId);
-            
-                String result = ref.mOfflineDataPath;
+            // method
+            put("com.amap.api.maps.CameraUpdateFactory::zoomIn", (__args__, __methodResult__) -> {
+                // args
             
             
+                // ref
             
-                __methodResult__.success(result);
-            });
-            // getter
-            put("com.autonavi.ae.gmap.GLMapEngine.InitParam::get_mP3dCrossPath", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.ae.gmap.GLMapEngine.InitParam ref = (com.autonavi.ae.gmap.GLMapEngine.InitParam) getHEAP().get(refId);
             
-                String result = ref.mP3dCrossPath;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CameraUpdateFactory::zoomIn(" + "" + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.CameraUpdate __result__;
+                try {
+                    __result__ = com.amap.api.maps.CameraUpdateFactory.zoomIn();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam::get_requestUrl", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam ref = (com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.CameraUpdateFactory::zoomOut", (__args__, __methodResult__) -> {
+                // args
             
-                String result = ref.requestUrl;
             
+                // ref
             
             
-                __methodResult__.success(result);
-            });
-            // getter
-            put("com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam::get_handler", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam ref = (com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam) getHEAP().get(refId);
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CameraUpdateFactory::zoomOut(" + "" + ")");
+                }
+            
+                // invoke native method
+                com.amap.api.maps.CameraUpdate __result__;
+                try {
+                    __result__ = com.amap.api.maps.CameraUpdateFactory.zoomOut();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
+            
+                __methodResult__.success(jsonableResult);
+            });
+            // method
+            put("com.amap.api.maps.CameraUpdateFactory::scrollBy", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                Double var0 = (Double) ((Map<String, Object>) __args__).get("var0");
+                // jsonable arg
+                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
             
-                long result = ref.handler;
             
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CameraUpdateFactory::scrollBy(" + var0 + var1 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.CameraUpdate __result__;
+                try {
+                    __result__ = com.amap.api.maps.CameraUpdateFactory.scrollBy(new Double(var0).floatValue(), new Double(var1).floatValue());
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                __methodResult__.success(result);
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam::get_nRequestType", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam ref = (com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.CameraUpdateFactory::zoomTo", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                Double var0 = (Double) ((Map<String, Object>) __args__).get("var0");
             
-                int result = ref.nRequestType;
+                // ref
             
             
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CameraUpdateFactory::zoomTo(" + var0 + ")");
+                }
             
-                __methodResult__.success(result);
+                // invoke native method
+                com.amap.api.maps.CameraUpdate __result__;
+                try {
+                    __result__ = com.amap.api.maps.CameraUpdateFactory.zoomTo(new Double(var0).floatValue());
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam::get_enCodeString", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam ref = (com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.CameraUpdateFactory::zoomBy__double", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                Double var0 = (Double) ((Map<String, Object>) __args__).get("var0");
+            
+                // ref
             
-                byte[] result = ref.enCodeString;
             
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CameraUpdateFactory::zoomBy(" + var0 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.CameraUpdate __result__;
+                try {
+                    __result__ = com.amap.api.maps.CameraUpdateFactory.zoomBy(new Double(var0).floatValue());
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                __methodResult__.success(result);
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam::get_nCompress", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam ref = (com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.CameraUpdateFactory::zoomBy__double__android_graphics_Point", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                Double var0 = (Double) ((Map<String, Object>) __args__).get("var0");
+                // ref arg
+                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                android.graphics.Point var1 = __var1__ != null ? (android.graphics.Point) getHEAP().get(__var1__) : null;
+            
+                // ref
+            
             
-                int result = ref.nCompress;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CameraUpdateFactory::zoomBy(" + var0 + var1 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.CameraUpdate __result__;
+                try {
+                    __result__ = com.amap.api.maps.CameraUpdateFactory.zoomBy(new Double(var0).floatValue(), var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam::get_requestBaseUrl", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam ref = (com.autonavi.amap.mapcore.maploader.AMapLoader.ADataRequestParam) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.CameraUpdateFactory::newCameraPosition", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                com.amap.api.maps.model.CameraPosition var0 = __var0__ != null ? (com.amap.api.maps.model.CameraPosition) getHEAP().get(__var0__) : null;
+            
+                // ref
+            
             
-                String result = ref.requestBaseUrl;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CameraUpdateFactory::newCameraPosition(" + var0 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.CameraUpdate __result__;
+                try {
+                    __result__ = com.amap.api.maps.CameraUpdateFactory.newCameraPosition(var0);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.maploader.AMapLoader::get_isFinish", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.maploader.AMapLoader ref = (com.autonavi.amap.mapcore.maploader.AMapLoader) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.CameraUpdateFactory::newLatLng", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                com.amap.api.maps.model.LatLng var0 = __var0__ != null ? (com.amap.api.maps.model.LatLng) getHEAP().get(__var0__) : null;
             
-                boolean result = ref.isFinish;
+                // ref
             
             
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CameraUpdateFactory::newLatLng(" + var0 + ")");
+                }
             
-                __methodResult__.success(result);
+                // invoke native method
+                com.amap.api.maps.CameraUpdate __result__;
+                try {
+                    __result__ = com.amap.api.maps.CameraUpdateFactory.newLatLng(var0);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AeUtil.UnZipFileBrake::get_mIsAborted", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AeUtil.UnZipFileBrake ref = (com.autonavi.amap.mapcore.AeUtil.UnZipFileBrake) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.CameraUpdateFactory::newLatLngZoom", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                com.amap.api.maps.model.LatLng var0 = __var0__ != null ? (com.amap.api.maps.model.LatLng) getHEAP().get(__var0__) : null;
+                // jsonable arg
+                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
             
-                boolean result = ref.mIsAborted;
             
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CameraUpdateFactory::newLatLngZoom(" + var0 + var1 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.CameraUpdate __result__;
+                try {
+                    __result__ = com.amap.api.maps.CameraUpdateFactory.newLatLngZoom(var0, new Double(var1).floatValue());
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                __methodResult__.success(result);
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.DPoint::get_x", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.DPoint ref = (com.autonavi.amap.mapcore.DPoint) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.CameraUpdateFactory::newLatLngBounds__com_amap_api_maps_model_LatLngBounds__int", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                com.amap.api.maps.model.LatLngBounds var0 = __var0__ != null ? (com.amap.api.maps.model.LatLngBounds) getHEAP().get(__var0__) : null;
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
             
-                double result = ref.x;
+                // ref
             
             
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CameraUpdateFactory::newLatLngBounds(" + var0 + var1 + ")");
+                }
             
-                __methodResult__.success(result);
+                // invoke native method
+                com.amap.api.maps.CameraUpdate __result__;
+                try {
+                    __result__ = com.amap.api.maps.CameraUpdateFactory.newLatLngBounds(var0, var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.DPoint::get_y", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.DPoint ref = (com.autonavi.amap.mapcore.DPoint) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.CameraUpdateFactory::changeLatLng", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                com.amap.api.maps.model.LatLng var0 = __var0__ != null ? (com.amap.api.maps.model.LatLng) getHEAP().get(__var0__) : null;
+            
+                // ref
             
-                double result = ref.y;
             
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CameraUpdateFactory::changeLatLng(" + var0 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.CameraUpdate __result__;
+                try {
+                    __result__ = com.amap.api.maps.CameraUpdateFactory.changeLatLng(var0);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                __methodResult__.success(result);
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.animation.GLTranslateAnimation::get_mFromXDelta", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.animation.GLTranslateAnimation ref = (com.autonavi.amap.mapcore.animation.GLTranslateAnimation) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.CameraUpdateFactory::changeBearing", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                Double var0 = (Double) ((Map<String, Object>) __args__).get("var0");
+            
+                // ref
             
-                double result = ref.mFromXDelta;
             
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CameraUpdateFactory::changeBearing(" + var0 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.CameraUpdate __result__;
+                try {
+                    __result__ = com.amap.api.maps.CameraUpdateFactory.changeBearing(new Double(var0).floatValue());
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                __methodResult__.success(result);
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.animation.GLTranslateAnimation::get_mFromYDelta", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.animation.GLTranslateAnimation ref = (com.autonavi.amap.mapcore.animation.GLTranslateAnimation) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.CameraUpdateFactory::changeTilt", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                Double var0 = (Double) ((Map<String, Object>) __args__).get("var0");
+            
+                // ref
+            
             
-                double result = ref.mFromYDelta;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CameraUpdateFactory::changeTilt(" + var0 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.CameraUpdate __result__;
+                try {
+                    __result__ = com.amap.api.maps.CameraUpdateFactory.changeTilt(new Double(var0).floatValue());
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.animation.GLTranslateAnimation::get_mToXDelta", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.animation.GLTranslateAnimation ref = (com.autonavi.amap.mapcore.animation.GLTranslateAnimation) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.CameraUpdateFactory::newLatLngBounds__com_amap_api_maps_model_LatLngBounds__int__int__int", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                com.amap.api.maps.model.LatLngBounds var0 = __var0__ != null ? (com.amap.api.maps.model.LatLngBounds) getHEAP().get(__var0__) : null;
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // jsonable arg
+                int var2 = (int) ((Map<String, Object>) __args__).get("var2");
+                // jsonable arg
+                int var3 = (int) ((Map<String, Object>) __args__).get("var3");
             
-                double result = ref.mToXDelta;
+                // ref
             
             
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CameraUpdateFactory::newLatLngBounds(" + var0 + var1 + var2 + var3 + ")");
+                }
             
-                __methodResult__.success(result);
+                // invoke native method
+                com.amap.api.maps.CameraUpdate __result__;
+                try {
+                    __result__ = com.amap.api.maps.CameraUpdateFactory.newLatLngBounds(var0, var1, var2, var3);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.animation.GLTranslateAnimation::get_mToYDelta", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.animation.GLTranslateAnimation ref = (com.autonavi.amap.mapcore.animation.GLTranslateAnimation) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.CameraUpdateFactory::newLatLngBoundsRect", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                com.amap.api.maps.model.LatLngBounds var0 = __var0__ != null ? (com.amap.api.maps.model.LatLngBounds) getHEAP().get(__var0__) : null;
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // jsonable arg
+                int var2 = (int) ((Map<String, Object>) __args__).get("var2");
+                // jsonable arg
+                int var3 = (int) ((Map<String, Object>) __args__).get("var3");
+                // jsonable arg
+                int var4 = (int) ((Map<String, Object>) __args__).get("var4");
+            
+                // ref
             
-                double result = ref.mToYDelta;
             
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CameraUpdateFactory::newLatLngBoundsRect(" + var0 + var1 + var2 + var3 + var4 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.CameraUpdate __result__;
+                try {
+                    __result__ = com.amap.api.maps.CameraUpdateFactory.newLatLngBoundsRect(var0, var1, var2, var3, var4);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                __methodResult__.success(result);
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.animation.GLTranslateAnimation::get_mCurXDelta", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapException::getErrorMessage", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.animation.GLTranslateAnimation ref = (com.autonavi.amap.mapcore.animation.GLTranslateAnimation) getHEAP().get(refId);
+                com.amap.api.maps.AMapException ref = (com.amap.api.maps.AMapException) getHEAP().get(refId);
             
-                double result = ref.mCurXDelta;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapException@" + refId + "::getErrorMessage(" + "" + ")");
+                }
             
+                // invoke native method
+                String __result__;
+                try {
+                    __result__ = ref.getErrorMessage();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.animation.GLTranslateAnimation::get_mCurYDelta", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::logoPosition", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.animation.GLTranslateAnimation ref = (com.autonavi.amap.mapcore.animation.GLTranslateAnimation) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                double result = ref.mCurYDelta;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::logoPosition(" + var1 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.AMapOptions __result__;
+                try {
+                    __result__ = ref.logoPosition(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.animation.GLAlphaAnimation::get_mFromAlpha", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::zOrderOnTop", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.animation.GLAlphaAnimation ref = (com.autonavi.amap.mapcore.animation.GLAlphaAnimation) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                float result = ref.mFromAlpha;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::zOrderOnTop(" + var1 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.AMapOptions __result__;
+                try {
+                    __result__ = ref.zOrderOnTop(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.animation.GLAlphaAnimation::get_mToAlpha", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::mapType", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.animation.GLAlphaAnimation ref = (com.autonavi.amap.mapcore.animation.GLAlphaAnimation) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                float result = ref.mToAlpha;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::mapType(" + var1 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.AMapOptions __result__;
+                try {
+                    __result__ = ref.mapType(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.animation.GLAlphaAnimation::get_mCurAlpha", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::camera", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.amap.api.maps.model.CameraPosition var1 = __var1__ != null ? (com.amap.api.maps.model.CameraPosition) getHEAP().get(__var1__) : null;
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.animation.GLAlphaAnimation ref = (com.autonavi.amap.mapcore.animation.GLAlphaAnimation) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                float result = ref.mCurAlpha;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::camera(" + var1 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.AMapOptions __result__;
+                try {
+                    __result__ = ref.camera(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.animation.GLTransformation::get_x", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::scaleControlsEnabled", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.animation.GLTransformation ref = (com.autonavi.amap.mapcore.animation.GLTransformation) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                double result = ref.x;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::scaleControlsEnabled(" + var1 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.AMapOptions __result__;
+                try {
+                    __result__ = ref.scaleControlsEnabled(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.animation.GLTransformation::get_y", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::zoomControlsEnabled", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.animation.GLTransformation ref = (com.autonavi.amap.mapcore.animation.GLTransformation) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                double result = ref.y;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::zoomControlsEnabled(" + var1 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.AMapOptions __result__;
+                try {
+                    __result__ = ref.zoomControlsEnabled(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.animation.GLTransformation::get_alpha", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::compassEnabled", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.animation.GLTransformation ref = (com.autonavi.amap.mapcore.animation.GLTransformation) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                double result = ref.alpha;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::compassEnabled(" + var1 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.AMapOptions __result__;
+                try {
+                    __result__ = ref.compassEnabled(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.animation.GLTransformation::get_rotate", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::scrollGesturesEnabled", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.animation.GLTransformation ref = (com.autonavi.amap.mapcore.animation.GLTransformation) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                double result = ref.rotate;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::scrollGesturesEnabled(" + var1 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.AMapOptions __result__;
+                try {
+                    __result__ = ref.scrollGesturesEnabled(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.animation.GLTransformation::get_scaleX", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::zoomGesturesEnabled", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.animation.GLTransformation ref = (com.autonavi.amap.mapcore.animation.GLTransformation) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                double result = ref.scaleX;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::zoomGesturesEnabled(" + var1 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.AMapOptions __result__;
+                try {
+                    __result__ = ref.zoomGesturesEnabled(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.animation.GLTransformation::get_scaleY", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::tiltGesturesEnabled", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.animation.GLTransformation ref = (com.autonavi.amap.mapcore.animation.GLTransformation) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                double result = ref.scaleY;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::tiltGesturesEnabled(" + var1 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.AMapOptions __result__;
+                try {
+                    __result__ = ref.tiltGesturesEnabled(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.animation.GLEmergeAnimation::get_mStartPoint", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::rotateGesturesEnabled", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.animation.GLEmergeAnimation ref = (com.autonavi.amap.mapcore.animation.GLEmergeAnimation) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                com.amap.api.maps.model.LatLng result = ref.mStartPoint;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::rotateGesturesEnabled(" + var1 + ")");
+                }
             
-                getHEAP().put(result.hashCode(), result);
+                // invoke native method
+                com.amap.api.maps.AMapOptions __result__;
+                try {
+                    __result__ = ref.rotateGesturesEnabled(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                __methodResult__.success(result.hashCode());
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.MapConfig::get_maxZoomLevel", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::getLogoPosition", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.MapConfig ref = (com.autonavi.amap.mapcore.MapConfig) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                float result = ref.maxZoomLevel;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::getLogoPosition(" + "" + ")");
+                }
             
+                // invoke native method
+                int __result__;
+                try {
+                    __result__ = ref.getLogoPosition();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.MapConfig::get_minZoomLevel", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::getZOrderOnTop", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.MapConfig ref = (com.autonavi.amap.mapcore.MapConfig) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                float result = ref.minZoomLevel;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::getZOrderOnTop(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.getZOrderOnTop();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.message.HoverGestureMapMessage::get_angleDelta", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::getMapType", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.message.HoverGestureMapMessage ref = (com.autonavi.amap.mapcore.message.HoverGestureMapMessage) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                float result = ref.angleDelta;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::getMapType(" + "" + ")");
+                }
             
+                // invoke native method
+                int __result__;
+                try {
+                    __result__ = ref.getMapType();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.message.MoveGestureMapMessage::get_touchDeltaX", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::getCamera", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.message.MoveGestureMapMessage ref = (com.autonavi.amap.mapcore.message.MoveGestureMapMessage) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                float result = ref.touchDeltaX;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::getCamera(" + "" + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.model.CameraPosition __result__;
+                try {
+                    __result__ = ref.getCamera();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.message.MoveGestureMapMessage::get_touchDeltaY", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::getScaleControlsEnabled", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.message.MoveGestureMapMessage ref = (com.autonavi.amap.mapcore.message.MoveGestureMapMessage) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                float result = ref.touchDeltaY;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::getScaleControlsEnabled(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.getScaleControlsEnabled();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.message.ScaleGestureMapMessage::get_scaleDelta", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::getZoomControlsEnabled", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.message.ScaleGestureMapMessage ref = (com.autonavi.amap.mapcore.message.ScaleGestureMapMessage) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                float result = ref.scaleDelta;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::getZoomControlsEnabled(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.getZoomControlsEnabled();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.message.ScaleGestureMapMessage::get_pivotX", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::getCompassEnabled", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.message.ScaleGestureMapMessage ref = (com.autonavi.amap.mapcore.message.ScaleGestureMapMessage) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                int result = ref.pivotX;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::getCompassEnabled(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.getCompassEnabled();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.message.ScaleGestureMapMessage::get_pivotY", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::getScrollGesturesEnabled", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.message.ScaleGestureMapMessage ref = (com.autonavi.amap.mapcore.message.ScaleGestureMapMessage) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                int result = ref.pivotY;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::getScrollGesturesEnabled(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.getScrollGesturesEnabled();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.message.AbstractGestureMapMessage::get_width", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::getZoomGesturesEnabled", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.message.AbstractGestureMapMessage ref = (com.autonavi.amap.mapcore.message.AbstractGestureMapMessage) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                int result = ref.width;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::getZoomGesturesEnabled(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.getZoomGesturesEnabled();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.message.AbstractGestureMapMessage::get_height", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::getTiltGesturesEnabled", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.message.AbstractGestureMapMessage ref = (com.autonavi.amap.mapcore.message.AbstractGestureMapMessage) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                int result = ref.height;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::getTiltGesturesEnabled(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.getTiltGesturesEnabled();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.message.AbstractGestureMapMessage::get_isGestureScaleByMapCenter", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMapOptions::getRotateGesturesEnabled", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.message.AbstractGestureMapMessage ref = (com.autonavi.amap.mapcore.message.AbstractGestureMapMessage) getHEAP().get(refId);
+                com.amap.api.maps.AMapOptions ref = (com.amap.api.maps.AMapOptions) getHEAP().get(refId);
             
-                boolean result = ref.isGestureScaleByMapCenter;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMapOptions@" + refId + "::getRotateGesturesEnabled(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = ref.getRotateGesturesEnabled();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.message.AbstractGestureMapMessage::get_isUseAnchor", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.CoordinateConverter::from", (__args__, __methodResult__) -> {
+                // args
+                // enum arg
+                com.amap.api.maps.CoordinateConverter.CoordType var1 = com.amap.api.maps.CoordinateConverter.CoordType.values()[(int) ((Map<String, Object>) __args__).get("var1")];
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.message.AbstractGestureMapMessage ref = (com.autonavi.amap.mapcore.message.AbstractGestureMapMessage) getHEAP().get(refId);
+                com.amap.api.maps.CoordinateConverter ref = (com.amap.api.maps.CoordinateConverter) getHEAP().get(refId);
             
-                boolean result = ref.isUseAnchor;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CoordinateConverter@" + refId + "::from(" + var1 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.CoordinateConverter __result__;
+                try {
+                    __result__ = ref.from(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.message.AbstractGestureMapMessage::get_anchorX", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.CoordinateConverter::coord", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.amap.api.maps.model.LatLng var1 = __var1__ != null ? (com.amap.api.maps.model.LatLng) getHEAP().get(__var1__) : null;
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.message.AbstractGestureMapMessage ref = (com.autonavi.amap.mapcore.message.AbstractGestureMapMessage) getHEAP().get(refId);
+                com.amap.api.maps.CoordinateConverter ref = (com.amap.api.maps.CoordinateConverter) getHEAP().get(refId);
             
-                int result = ref.anchorX;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CoordinateConverter@" + refId + "::coord(" + var1 + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.CoordinateConverter __result__;
+                try {
+                    __result__ = ref.coord(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.message.AbstractGestureMapMessage::get_anchorY", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.CoordinateConverter::convert", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.message.AbstractGestureMapMessage ref = (com.autonavi.amap.mapcore.message.AbstractGestureMapMessage) getHEAP().get(refId);
+                com.amap.api.maps.CoordinateConverter ref = (com.amap.api.maps.CoordinateConverter) getHEAP().get(refId);
             
-                int result = ref.anchorY;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CoordinateConverter@" + refId + "::convert(" + "" + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.model.LatLng __result__;
+                try {
+                    __result__ = ref.convert();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.message.RotateGestureMapMessage::get_pivotX", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.message.RotateGestureMapMessage ref = (com.autonavi.amap.mapcore.message.RotateGestureMapMessage) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.CoordinateConverter::isAMapDataAvailable", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                double var0 = (double) ((Map<String, Object>) __args__).get("var0");
+                // jsonable arg
+                double var2 = (double) ((Map<String, Object>) __args__).get("var2");
             
-                int result = ref.pivotX;
+                // ref
             
             
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.CoordinateConverter::isAMapDataAvailable(" + var0 + var2 + ")");
+                }
             
-                __methodResult__.success(result);
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = com.amap.api.maps.CoordinateConverter.isAMapDataAvailable(var0, var2);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.message.RotateGestureMapMessage::get_pivotY", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMap.InfoWindowAdapter::getInfoWindow", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.amap.api.maps.model.Marker var1 = __var1__ != null ? (com.amap.api.maps.model.Marker) getHEAP().get(__var1__) : null;
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.message.RotateGestureMapMessage ref = (com.autonavi.amap.mapcore.message.RotateGestureMapMessage) getHEAP().get(refId);
+                com.amap.api.maps.AMap.InfoWindowAdapter ref = (com.amap.api.maps.AMap.InfoWindowAdapter) getHEAP().get(refId);
             
-                int result = ref.pivotY;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMap.InfoWindowAdapter@" + refId + "::getInfoWindow(" + var1 + ")");
+                }
             
+                // invoke native method
+                android.view.View __result__;
+                try {
+                    __result__ = ref.getInfoWindow(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.message.RotateGestureMapMessage::get_angleDelta", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMap.InfoWindowAdapter::getInfoContents", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.amap.api.maps.model.Marker var1 = __var1__ != null ? (com.amap.api.maps.model.Marker) getHEAP().get(__var1__) : null;
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.message.RotateGestureMapMessage ref = (com.autonavi.amap.mapcore.message.RotateGestureMapMessage) getHEAP().get(refId);
+                com.amap.api.maps.AMap.InfoWindowAdapter ref = (com.amap.api.maps.AMap.InfoWindowAdapter) getHEAP().get(refId);
             
-                float result = ref.angleDelta;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMap.InfoWindowAdapter@" + refId + "::getInfoContents(" + var1 + ")");
+                }
             
+                // invoke native method
+                android.view.View __result__;
+                try {
+                    __result__ = ref.getInfoContents(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.FPointBounds::get_southwest", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.AMap.ImageInfoWindowAdapter::getInfoWindowUpdateTime", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.FPointBounds ref = (com.autonavi.amap.mapcore.FPointBounds) getHEAP().get(refId);
+                com.amap.api.maps.AMap.ImageInfoWindowAdapter ref = (com.amap.api.maps.AMap.ImageInfoWindowAdapter) getHEAP().get(refId);
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.AMap.ImageInfoWindowAdapter@" + refId + "::getInfoWindowUpdateTime(" + "" + ")");
+                }
             
-                com.autonavi.amap.mapcore.FPoint result = ref.southwest;
+                // invoke native method
+                long __result__;
+                try {
+                    __result__ = ref.getInfoWindowUpdateTime();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                getHEAP().put(result.hashCode(), result);
+                // convert result to jsonable result
+                long jsonableResult = __result__;
             
-                __methodResult__.success(result.hashCode());
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.FPointBounds::get_northeast", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.MovingPointOverlay::setPoints", (__args__, __methodResult__) -> {
+                // args
+                // list arg
+                List<Integer> var1RefIdList = (List<Integer>) ((Map<String, Object>) __args__).get("var1");
+                java.util.List<com.amap.api.maps.model.LatLng> var1 = new ArrayList<>();
+                for (int refId : var1RefIdList) {
+                    ((ArrayList<com.amap.api.maps.model.LatLng>) var1).add((com.amap.api.maps.model.LatLng) getHEAP().get(refId));
+                }
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.FPointBounds ref = (com.autonavi.amap.mapcore.FPointBounds) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.MovingPointOverlay ref = (com.amap.api.maps.utils.overlay.MovingPointOverlay) getHEAP().get(refId);
             
-                com.autonavi.amap.mapcore.FPoint result = ref.northeast;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.MovingPointOverlay@" + refId + "::setPoints(" + var1 + ")");
+                }
             
-                getHEAP().put(result.hashCode(), result);
+                // invoke native method
+                try {
+                    ref.setPoints((ArrayList) var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                __methodResult__.success(result.hashCode());
+                // convert result to jsonable result
+                String jsonableResult = "success";
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.Rectangle::get_left", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.MovingPointOverlay::resetIndex", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.Rectangle ref = (com.autonavi.amap.mapcore.Rectangle) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.MovingPointOverlay ref = (com.amap.api.maps.utils.overlay.MovingPointOverlay) getHEAP().get(refId);
             
-                float result = ref.left;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.MovingPointOverlay@" + refId + "::resetIndex(" + "" + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.resetIndex();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.Rectangle::get_right", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.MovingPointOverlay::setTotalDuration", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.Rectangle ref = (com.autonavi.amap.mapcore.Rectangle) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.MovingPointOverlay ref = (com.amap.api.maps.utils.overlay.MovingPointOverlay) getHEAP().get(refId);
             
-                float result = ref.right;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.MovingPointOverlay@" + refId + "::setTotalDuration(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setTotalDuration(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.Rectangle::get_bottom", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.MovingPointOverlay::startSmoothMove", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.Rectangle ref = (com.autonavi.amap.mapcore.Rectangle) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.MovingPointOverlay ref = (com.amap.api.maps.utils.overlay.MovingPointOverlay) getHEAP().get(refId);
             
-                float result = ref.bottom;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.MovingPointOverlay@" + refId + "::startSmoothMove(" + "" + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.startSmoothMove();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.Rectangle::get_top", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.MovingPointOverlay::stopMove", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.Rectangle ref = (com.autonavi.amap.mapcore.Rectangle) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.MovingPointOverlay ref = (com.amap.api.maps.utils.overlay.MovingPointOverlay) getHEAP().get(refId);
             
-                float result = ref.top;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.MovingPointOverlay@" + refId + "::stopMove(" + "" + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.stopMove();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.FPoint3::get_colorIndex", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.MovingPointOverlay::getObject", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.FPoint3 ref = (com.autonavi.amap.mapcore.FPoint3) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.MovingPointOverlay ref = (com.amap.api.maps.utils.overlay.MovingPointOverlay) getHEAP().get(refId);
             
-                int result = ref.colorIndex;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.MovingPointOverlay@" + refId + "::getObject(" + "" + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.model.BasePointOverlay __result__;
+                try {
+                    __result__ = ref.getObject();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_nowType", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.MovingPointOverlay::getPosition", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.MovingPointOverlay ref = (com.amap.api.maps.utils.overlay.MovingPointOverlay) getHEAP().get(refId);
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.MovingPointOverlay@" + refId + "::getPosition(" + "" + ")");
+                }
             
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage.Type result = ref.nowType;
+                // invoke native method
+                com.amap.api.maps.model.LatLng __result__;
+                try {
+                    __result__ = ref.getPosition();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                getHEAP().put(result.hashCode(), result);
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result.hashCode());
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_xPixel", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.MovingPointOverlay::getIndex", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.MovingPointOverlay ref = (com.amap.api.maps.utils.overlay.MovingPointOverlay) getHEAP().get(refId);
             
-                float result = ref.xPixel;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.MovingPointOverlay@" + refId + "::getIndex(" + "" + ")");
+                }
             
+                // invoke native method
+                int __result__;
+                try {
+                    __result__ = ref.getIndex();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_yPixel", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.MovingPointOverlay::destroy", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.MovingPointOverlay ref = (com.amap.api.maps.utils.overlay.MovingPointOverlay) getHEAP().get(refId);
             
-                float result = ref.yPixel;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.MovingPointOverlay@" + refId + "::destroy(" + "" + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.destroy();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_amount", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.MovingPointOverlay::removeMarker", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.MovingPointOverlay ref = (com.amap.api.maps.utils.overlay.MovingPointOverlay) getHEAP().get(refId);
             
-                float result = ref.amount;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.MovingPointOverlay@" + refId + "::removeMarker(" + "" + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.removeMarker();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_cameraPosition", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.MovingPointOverlay::setPosition", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.amap.api.maps.model.LatLng var1 = __var1__ != null ? (com.amap.api.maps.model.LatLng) getHEAP().get(__var1__) : null;
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.MovingPointOverlay ref = (com.amap.api.maps.utils.overlay.MovingPointOverlay) getHEAP().get(refId);
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.MovingPointOverlay@" + refId + "::setPosition(" + var1 + ")");
+                }
             
-                com.amap.api.maps.model.CameraPosition result = ref.cameraPosition;
+                // invoke native method
+                try {
+                    ref.setPosition(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                getHEAP().put(result.hashCode(), result);
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result.hashCode());
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_bounds", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.MovingPointOverlay::setRotate", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.MovingPointOverlay ref = (com.amap.api.maps.utils.overlay.MovingPointOverlay) getHEAP().get(refId);
             
-                com.amap.api.maps.model.LatLngBounds result = ref.bounds;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.MovingPointOverlay@" + refId + "::setRotate(" + var1 + ")");
+                }
             
-                getHEAP().put(result.hashCode(), result);
+                // invoke native method
+                try {
+                    ref.setRotate(new Double(var1).floatValue());
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                __methodResult__.success(result.hashCode());
+                // convert result to jsonable result
+                String jsonableResult = "success";
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_focus", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.MovingPointOverlay::setVisible", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.MovingPointOverlay ref = (com.amap.api.maps.utils.overlay.MovingPointOverlay) getHEAP().get(refId);
             
-                android.graphics.Point result = ref.focus;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.MovingPointOverlay@" + refId + "::setVisible(" + var1 + ")");
+                }
             
-                getHEAP().put(result.hashCode(), result);
+                // invoke native method
+                try {
+                    ref.setVisible(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                __methodResult__.success(result.hashCode());
+                // convert result to jsonable result
+                String jsonableResult = "success";
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_zoom", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.MovingPointOverlay::setMoveListener", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.MovingPointOverlay ref = (com.amap.api.maps.utils.overlay.MovingPointOverlay) getHEAP().get(refId);
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.MovingPointOverlay@" + refId + "::setMoveListener(" + "" + ")");
+                }
+            
+                // invoke native method
+                try {
+                    ref.setMoveListener(new com.amap.api.maps.utils.overlay.MovingPointOverlay.MoveListener() {
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.amap.api.maps.utils.overlay.MovingPointOverlay::setMoveListener::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
+            
+                        // call dart method
+                        @Override
+                        public void move(double var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: move(" + var1 + ")");
+                            }
+            
+                            // convert to jsonable data
+                            // jsonable arg
+                            double argvar1 = var1;
+            
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.amap.api.maps.utils.overlay.MovingPointOverlay.MoveListener::move",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
             
-                float result = ref.zoom;
+                            // method result
             
+                        }
             
+                });
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                __methodResult__.success(result);
+                // convert result to jsonable result
+                String jsonableResult = "success";
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_tilt", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.SmoothMoveMarker::setPoints", (__args__, __methodResult__) -> {
+                // args
+                // list arg
+                List<Integer> var1RefIdList = (List<Integer>) ((Map<String, Object>) __args__).get("var1");
+                java.util.List<com.amap.api.maps.model.LatLng> var1 = new ArrayList<>();
+                for (int refId : var1RefIdList) {
+                    ((ArrayList<com.amap.api.maps.model.LatLng>) var1).add((com.amap.api.maps.model.LatLng) getHEAP().get(refId));
+                }
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.SmoothMoveMarker ref = (com.amap.api.maps.utils.overlay.SmoothMoveMarker) getHEAP().get(refId);
             
-                float result = ref.tilt;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.SmoothMoveMarker@" + refId + "::setPoints(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setPoints((ArrayList) var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_bearing", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.SmoothMoveMarker::setTotalDuration", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.SmoothMoveMarker ref = (com.amap.api.maps.utils.overlay.SmoothMoveMarker) getHEAP().get(refId);
             
-                float result = ref.bearing;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.SmoothMoveMarker@" + refId + "::setTotalDuration(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setTotalDuration(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_geoPoint", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.SmoothMoveMarker::startSmoothMove", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.SmoothMoveMarker ref = (com.amap.api.maps.utils.overlay.SmoothMoveMarker) getHEAP().get(refId);
             
-                android.graphics.Point result = ref.geoPoint;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.SmoothMoveMarker@" + refId + "::startSmoothMove(" + "" + ")");
+                }
             
-                getHEAP().put(result.hashCode(), result);
+                // invoke native method
+                try {
+                    ref.startSmoothMove();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                __methodResult__.success(result.hashCode());
+                // convert result to jsonable result
+                String jsonableResult = "success";
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_isUseAnchor", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.SmoothMoveMarker::stopMove", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.SmoothMoveMarker ref = (com.amap.api.maps.utils.overlay.SmoothMoveMarker) getHEAP().get(refId);
             
-                boolean result = ref.isUseAnchor;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.SmoothMoveMarker@" + refId + "::stopMove(" + "" + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.stopMove();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_anchorX", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.SmoothMoveMarker::getMarker", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.SmoothMoveMarker ref = (com.amap.api.maps.utils.overlay.SmoothMoveMarker) getHEAP().get(refId);
             
-                int result = ref.anchorX;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.SmoothMoveMarker@" + refId + "::getMarker(" + "" + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.model.Marker __result__;
+                try {
+                    __result__ = ref.getMarker();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_anchorY", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.SmoothMoveMarker::getPosition", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.SmoothMoveMarker ref = (com.amap.api.maps.utils.overlay.SmoothMoveMarker) getHEAP().get(refId);
             
-                int result = ref.anchorY;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.SmoothMoveMarker@" + refId + "::getPosition(" + "" + ")");
+                }
             
+                // invoke native method
+                com.amap.api.maps.model.LatLng __result__;
+                try {
+                    __result__ = ref.getPosition();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_isChangeFinished", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.SmoothMoveMarker::getIndex", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.SmoothMoveMarker ref = (com.amap.api.maps.utils.overlay.SmoothMoveMarker) getHEAP().get(refId);
             
-                boolean result = ref.isChangeFinished;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.SmoothMoveMarker@" + refId + "::getIndex(" + "" + ")");
+                }
             
+                // invoke native method
+                int __result__;
+                try {
+                    __result__ = ref.getIndex();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                int jsonableResult = __result__;
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_mapConfig", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.SmoothMoveMarker::resetIndex", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.SmoothMoveMarker ref = (com.amap.api.maps.utils.overlay.SmoothMoveMarker) getHEAP().get(refId);
             
-                com.autonavi.amap.mapcore.MapConfig result = ref.mapConfig;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.SmoothMoveMarker@" + refId + "::resetIndex(" + "" + ")");
+                }
             
-                getHEAP().put(result.hashCode(), result);
+                // invoke native method
+                try {
+                    ref.resetIndex();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                __methodResult__.success(result.hashCode());
+                // convert result to jsonable result
+                String jsonableResult = "success";
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_paddingLeft", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.SmoothMoveMarker::destroy", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.SmoothMoveMarker ref = (com.amap.api.maps.utils.overlay.SmoothMoveMarker) getHEAP().get(refId);
             
-                int result = ref.paddingLeft;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.SmoothMoveMarker@" + refId + "::destroy(" + "" + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.destroy();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_paddingRight", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.SmoothMoveMarker::removeMarker", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.SmoothMoveMarker ref = (com.amap.api.maps.utils.overlay.SmoothMoveMarker) getHEAP().get(refId);
             
-                int result = ref.paddingRight;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.SmoothMoveMarker@" + refId + "::removeMarker(" + "" + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.removeMarker();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_paddingTop", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.SmoothMoveMarker::setPosition", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.amap.api.maps.model.LatLng var1 = __var1__ != null ? (com.amap.api.maps.model.LatLng) getHEAP().get(__var1__) : null;
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.SmoothMoveMarker ref = (com.amap.api.maps.utils.overlay.SmoothMoveMarker) getHEAP().get(refId);
             
-                int result = ref.paddingTop;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.SmoothMoveMarker@" + refId + "::setPosition(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setPosition(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_paddingBottom", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.SmoothMoveMarker::setDescriptor", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.amap.api.maps.model.BitmapDescriptor var1 = __var1__ != null ? (com.amap.api.maps.model.BitmapDescriptor) getHEAP().get(__var1__) : null;
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.SmoothMoveMarker ref = (com.amap.api.maps.utils.overlay.SmoothMoveMarker) getHEAP().get(refId);
             
-                int result = ref.paddingBottom;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.SmoothMoveMarker@" + refId + "::setDescriptor(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setDescriptor(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_mDuration", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.SmoothMoveMarker::setRotate", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.SmoothMoveMarker ref = (com.amap.api.maps.utils.overlay.SmoothMoveMarker) getHEAP().get(refId);
             
-                long result = ref.mDuration;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.SmoothMoveMarker@" + refId + "::setRotate(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setRotate(new Double(var1).floatValue());
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_width", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.SmoothMoveMarker::setVisible", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.SmoothMoveMarker ref = (com.amap.api.maps.utils.overlay.SmoothMoveMarker) getHEAP().get(refId);
             
-                int result = ref.width;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.SmoothMoveMarker@" + refId + "::setVisible(" + var1 + ")");
+                }
             
+                // invoke native method
+                try {
+                    ref.setVisible(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.autonavi.amap.mapcore.AbstractCameraUpdateMessage::get_height", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.utils.overlay.SmoothMoveMarker::setMoveListener", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.autonavi.amap.mapcore.AbstractCameraUpdateMessage ref = (com.autonavi.amap.mapcore.AbstractCameraUpdateMessage) getHEAP().get(refId);
+                com.amap.api.maps.utils.overlay.SmoothMoveMarker ref = (com.amap.api.maps.utils.overlay.SmoothMoveMarker) getHEAP().get(refId);
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.utils.overlay.SmoothMoveMarker@" + refId + "::setMoveListener(" + "" + ")");
+                }
+            
+                // invoke native method
+                try {
+                    ref.setMoveListener(new com.amap.api.maps.utils.overlay.SmoothMoveMarker.MoveListener() {
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.amap.api.maps.utils.overlay.SmoothMoveMarker::setMoveListener::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
+            
+                        // call dart method
+                        @Override
+                        public void move(double var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: move(" + var1 + ")");
+                            }
+            
+                            // convert to jsonable data
+                            // jsonable arg
+                            double argvar1 = var1;
+            
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.amap.api.maps.utils.overlay.SmoothMoveMarker.MoveListener::move",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
             
-                int result = ref.height;
+                        }
             
+                });
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.amap.api.maps.model.VisibleRegion::get_nearLeft", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.LocationSource.OnLocationChangedListener::onLocationChanged", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                android.location.Location var1 = __var1__ != null ? (android.location.Location) getHEAP().get(__var1__) : null;
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.amap.api.maps.model.VisibleRegion ref = (com.amap.api.maps.model.VisibleRegion) getHEAP().get(refId);
+                com.amap.api.maps.LocationSource.OnLocationChangedListener ref = (com.amap.api.maps.LocationSource.OnLocationChangedListener) getHEAP().get(refId);
             
-                com.amap.api.maps.model.LatLng result = ref.nearLeft;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.LocationSource.OnLocationChangedListener@" + refId + "::onLocationChanged(" + var1 + ")");
+                }
             
-                getHEAP().put(result.hashCode(), result);
+                // invoke native method
+                try {
+                    ref.onLocationChanged(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                __methodResult__.success(result.hashCode());
+                // convert result to jsonable result
+                String jsonableResult = "success";
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.amap.api.maps.model.VisibleRegion::get_nearRight", (__args__, __methodResult__) -> {
-                // ref object
+            // method
+            put("com.amap.api.maps.SwipeDismissView::setCallback", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.amap.api.maps.model.VisibleRegion ref = (com.amap.api.maps.model.VisibleRegion) getHEAP().get(refId);
+                com.amap.api.maps.SwipeDismissView ref = (com.amap.api.maps.SwipeDismissView) getHEAP().get(refId);
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.SwipeDismissView@" + refId + "::setCallback(" + "" + ")");
+                }
+            
+                // invoke native method
+                try {
+                    ref.setCallback(new com.amap.api.maps.WearMapView.OnDismissCallback() {
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.amap.api.maps.SwipeDismissView::setCallback::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
+            
+                        // call dart method
+                        @Override
+                        public void onDismiss() {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onDismiss(" + "" + ")");
+                            }
+            
+                            // convert to jsonable data
+            
+            
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.amap.api.maps.WearMapView.OnDismissCallback::onDismiss",
+                                        new HashMap<String, Object>() {{
+                    
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+            
+                        }
+            
+                        @Override
+                        public void onNotifySwipe() {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onNotifySwipe(" + "" + ")");
+                            }
+            
+                            // convert to jsonable data
+            
+            
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.amap.api.maps.WearMapView.OnDismissCallback::onNotifySwipe",
+                                        new HashMap<String, Object>() {{
+                    
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
             
-                com.amap.api.maps.model.LatLng result = ref.nearRight;
+                        }
             
-                getHEAP().put(result.hashCode(), result);
+                });
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                __methodResult__.success(result.hashCode());
+                // convert result to jsonable result
+                String jsonableResult = "success";
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.amap.api.maps.model.VisibleRegion::get_farLeft", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.amap.api.maps.model.VisibleRegion ref = (com.amap.api.maps.model.VisibleRegion) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.MapsInitializer::initialize", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                android.content.Context var0 = __var0__ != null ? (android.content.Context) getHEAP().get(__var0__) : null;
+            
+                // ref
             
-                com.amap.api.maps.model.LatLng result = ref.farLeft;
             
-                getHEAP().put(result.hashCode(), result);
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.MapsInitializer::initialize(" + var0 + ")");
+                }
             
-                __methodResult__.success(result.hashCode());
+                // invoke native method
+                try {
+                    com.amap.api.maps.MapsInitializer.initialize(var0);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                String jsonableResult = "success";
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.amap.api.maps.model.VisibleRegion::get_farRight", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.amap.api.maps.model.VisibleRegion ref = (com.amap.api.maps.model.VisibleRegion) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.MapsInitializer::setNetWorkEnable", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var0 = (boolean) ((Map<String, Object>) __args__).get("var0");
+            
+                // ref
             
-                com.amap.api.maps.model.LatLng result = ref.farRight;
             
-                getHEAP().put(result.hashCode(), result);
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.MapsInitializer::setNetWorkEnable(" + var0 + ")");
+                }
             
-                __methodResult__.success(result.hashCode());
+                // invoke native method
+                try {
+                    com.amap.api.maps.MapsInitializer.setNetWorkEnable(var0);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                String jsonableResult = "success";
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.amap.api.maps.model.VisibleRegion::get_latLngBounds", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.amap.api.maps.model.VisibleRegion ref = (com.amap.api.maps.model.VisibleRegion) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.MapsInitializer::getNetWorkEnable", (__args__, __methodResult__) -> {
+                // args
+            
             
-                com.amap.api.maps.model.LatLngBounds result = ref.latLngBounds;
+                // ref
             
-                getHEAP().put(result.hashCode(), result);
             
-                __methodResult__.success(result.hashCode());
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.MapsInitializer::getNetWorkEnable(" + "" + ")");
+                }
+            
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = com.amap.api.maps.MapsInitializer.getNetWorkEnable();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.amap.api.maps.model.Tile::get_width", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.amap.api.maps.model.Tile ref = (com.amap.api.maps.model.Tile) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.MapsInitializer::setApiKey", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                String var0 = (String) ((Map<String, Object>) __args__).get("var0");
             
-                int result = ref.width;
+                // ref
             
             
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.MapsInitializer::setApiKey(" + var0 + ")");
+                }
             
-                __methodResult__.success(result);
+                // invoke native method
+                try {
+                    com.amap.api.maps.MapsInitializer.setApiKey(var0);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                String jsonableResult = "success";
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.amap.api.maps.model.Tile::get_height", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.amap.api.maps.model.Tile ref = (com.amap.api.maps.model.Tile) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.MapsInitializer::getVersion", (__args__, __methodResult__) -> {
+                // args
             
-                int result = ref.height;
             
+                // ref
             
             
-                __methodResult__.success(result);
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.MapsInitializer::getVersion(" + "" + ")");
+                }
+            
+                // invoke native method
+                String __result__;
+                try {
+                    __result__ = com.amap.api.maps.MapsInitializer.getVersion();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                String jsonableResult = __result__;
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.amap.api.maps.model.Tile::get_data", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.amap.api.maps.model.Tile ref = (com.amap.api.maps.model.Tile) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.MapsInitializer::loadWorldGridMap", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var0 = (boolean) ((Map<String, Object>) __args__).get("var0");
             
-                byte[] result = ref.data;
+                // ref
             
             
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.MapsInitializer::loadWorldGridMap(" + var0 + ")");
+                }
             
-                __methodResult__.success(result);
+                // invoke native method
+                try {
+                    com.amap.api.maps.MapsInitializer.loadWorldGridMap(var0);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                String jsonableResult = "success";
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.amap.api.maps.model.CameraPosition::get_target", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.amap.api.maps.model.CameraPosition ref = (com.amap.api.maps.model.CameraPosition) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.MapsInitializer::isLoadWorldGridMap", (__args__, __methodResult__) -> {
+                // args
+            
             
-                com.amap.api.maps.model.LatLng result = ref.target;
+                // ref
             
-                getHEAP().put(result.hashCode(), result);
             
-                __methodResult__.success(result.hashCode());
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.MapsInitializer::isLoadWorldGridMap(" + "" + ")");
+                }
+            
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = com.amap.api.maps.MapsInitializer.isLoadWorldGridMap();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.amap.api.maps.model.CameraPosition::get_zoom", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.amap.api.maps.model.CameraPosition ref = (com.amap.api.maps.model.CameraPosition) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.MapsInitializer::setBuildingHeight", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                int var0 = (int) ((Map<String, Object>) __args__).get("var0");
             
-                float result = ref.zoom;
+                // ref
             
             
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.MapsInitializer::setBuildingHeight(" + var0 + ")");
+                }
             
-                __methodResult__.success(result);
+                // invoke native method
+                try {
+                    com.amap.api.maps.MapsInitializer.setBuildingHeight(var0);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                String jsonableResult = "success";
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.amap.api.maps.model.CameraPosition::get_tilt", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.amap.api.maps.model.CameraPosition ref = (com.amap.api.maps.model.CameraPosition) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.MapsInitializer::setDownloadCoordinateConvertLibrary", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                boolean var0 = (boolean) ((Map<String, Object>) __args__).get("var0");
+            
+                // ref
             
-                float result = ref.tilt;
             
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.MapsInitializer::setDownloadCoordinateConvertLibrary(" + var0 + ")");
+                }
             
+                // invoke native method
+                try {
+                    com.amap.api.maps.MapsInitializer.setDownloadCoordinateConvertLibrary(var0);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                __methodResult__.success(result);
+                // convert result to jsonable result
+                String jsonableResult = "success";
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.amap.api.maps.model.CameraPosition::get_bearing", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.amap.api.maps.model.CameraPosition ref = (com.amap.api.maps.model.CameraPosition) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.MapsInitializer::isDownloadCoordinateConvertLibrary", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
             
-                float result = ref.bearing;
             
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.MapsInitializer::isDownloadCoordinateConvertLibrary(" + "" + ")");
+                }
             
+                // invoke native method
+                boolean __result__;
+                try {
+                    __result__ = com.amap.api.maps.MapsInitializer.isDownloadCoordinateConvertLibrary();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                __methodResult__.success(result);
+                // convert result to jsonable result
+                boolean jsonableResult = __result__;
+            
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.amap.api.maps.model.CameraPosition::get_isAbroad", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.amap.api.maps.model.CameraPosition ref = (com.amap.api.maps.model.CameraPosition) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.MapsInitializer::setHost", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                String var0 = (String) ((Map<String, Object>) __args__).get("var0");
+            
+                // ref
+            
             
-                boolean result = ref.isAbroad;
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.MapsInitializer::setHost(" + var0 + ")");
+                }
             
+                // invoke native method
+                try {
+                    com.amap.api.maps.MapsInitializer.setHost(var0);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result);
+                __methodResult__.success(jsonableResult);
             });
-            // getter
-            put("com.amap.api.maps.model.animation.Animation::get_glAnimation", (__args__, __methodResult__) -> {
-                // ref object
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.amap.api.maps.model.animation.Animation ref = (com.amap.api.maps.model.animation.Animation) getHEAP().get(refId);
+            // method
+            put("com.amap.api.maps.MapsInitializer::setProtocol", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                int var0 = (int) ((Map<String, Object>) __args__).get("var0");
+            
+                // ref
+            
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.amap.api.maps.MapsInitializer::setProtocol(" + var0 + ")");
+                }
             
-                com.autonavi.amap.mapcore.animation.GLAnimation result = ref.glAnimation;
+                // invoke native method
+                try {
+                    com.amap.api.maps.MapsInitializer.setProtocol(var0);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
             
-                getHEAP().put(result.hashCode(), result);
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
-                __methodResult__.success(result.hashCode());
+                __methodResult__.success(jsonableResult);
             });
         }};
     }

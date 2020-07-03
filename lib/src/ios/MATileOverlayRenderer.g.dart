@@ -6,7 +6,6 @@
 import 'dart:typed_data';
 
 import 'package:amap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:amap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -45,8 +44,8 @@ class MATileOverlayRenderer extends MAOverlayRenderer  {
   //region getters
   Future<MATileOverlay> get_tileOverlay() async {
     final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod("MATileOverlayRenderer::get_tileOverlay", {'refId': refId});
-    kNativeObjectPool.add(MAHeatMapTileOverlay()..refId = __result__..tag__ = 'amap_map_fluttify');
-    return MAHeatMapTileOverlay()..refId = __result__..tag__ = 'amap_map_fluttify';
+    kNativeObjectPool.add(MATileOverlay()..refId = __result__..tag__ = 'amap_map_fluttify');
+    return MATileOverlay()..refId = __result__..tag__ = 'amap_map_fluttify';
   }
   
   //endregion
@@ -64,7 +63,7 @@ class MATileOverlayRenderer extends MAOverlayRenderer  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('MATileOverlayRenderer::initWithTileOverlay', {"tileOverlay": tileOverlay.refId, "refId": refId});
+    final __result__ = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod('MATileOverlayRenderer::initWithTileOverlay', {"tileOverlay": tileOverlay?.refId, "refId": refId});
   
   
     // handle native call
@@ -75,7 +74,7 @@ class MATileOverlayRenderer extends MAOverlayRenderer  {
       return null;
     } else {
       final __return__ = MATileOverlayRenderer()..refId = __result__..tag__ = 'amap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -111,7 +110,7 @@ extension MATileOverlayRenderer_Batch on List<MATileOverlayRenderer> {
   //region getters
   Future<List<MATileOverlay>> get_tileOverlay_batch() async {
     final resultBatch = await MethodChannel('me.yohom/amap_map_fluttify').invokeMethod("MATileOverlayRenderer::get_tileOverlay_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => MAHeatMapTileOverlay()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => MATileOverlay()..refId = __result__..tag__ = 'amap_map_fluttify').toList();
     kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }

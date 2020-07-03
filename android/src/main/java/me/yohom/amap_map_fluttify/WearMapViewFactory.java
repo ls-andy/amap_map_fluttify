@@ -94,7 +94,8 @@ class WearMapViewFactory extends PlatformViewFactory {
         put("com.amap.api.maps.WearMapView::onCreate", (__args__, __methodResult__) -> {
             // args
             // ref arg
-            android.os.Bundle var1 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
+            Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+            android.os.Bundle var1 = __var1__ != null ? (android.os.Bundle) getHEAP().get(__var1__) : null;
         
             // ref
             int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -250,7 +251,8 @@ class WearMapViewFactory extends PlatformViewFactory {
         put("com.amap.api.maps.WearMapView::onSaveInstanceState", (__args__, __methodResult__) -> {
             // args
             // ref arg
-            android.os.Bundle var1 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
+            Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+            android.os.Bundle var1 = __var1__ != null ? (android.os.Bundle) getHEAP().get(__var1__) : null;
         
             // ref
             int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -327,53 +329,64 @@ class WearMapViewFactory extends PlatformViewFactory {
             // invoke native method
             try {
                 ref.setOnDismissCallbackListener(new com.amap.api.maps.WearMapView.OnDismissCallback() {
-                // method channel
-                MethodChannel callbackChannel = new MethodChannel(messenger, "com.amap.api.maps.WearMapView::setOnDismissCallbackListener::Callback");
-        
-                // call dart method
-                @Override
-                public void onDismiss() {
-                    // print log
-                    if (getEnableLog()) {
-                        Log.d("java-callback", "fluttify-java-callback: onDismiss(" + "" + ")");
-                    }
-        
-                    // convert to jsonable data
-        
+                    // method channel
+                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.amap.api.maps.WearMapView::setOnDismissCallbackListener::Callback");
+                    android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
         
                     // call dart method
-                    callbackChannel.invokeMethod(
-                            "Callback::com.amap.api.maps.WearMapView.OnDismissCallback::onDismiss",
-                            new HashMap<String, Object>() {{
-                
-                            }}
-                    );
+                    @Override
+                    public void onDismiss() {
+                        // print log
+                        if (getEnableLog()) {
+                            Log.d("java-callback", "fluttify-java-callback: onDismiss(" + "" + ")");
+                        }
         
-                    // method result
+                        // convert to jsonable data
         
-                }
         
-                @Override
-                public void onNotifySwipe() {
-                    // print log
-                    if (getEnableLog()) {
-                        Log.d("java-callback", "fluttify-java-callback: onNotifySwipe(" + "" + ")");
+                        // call dart method
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                callbackChannel.invokeMethod(
+                                    "Callback::com.amap.api.maps.WearMapView.OnDismissCallback::onDismiss",
+                                    new HashMap<String, Object>() {{
+                    
+                                    }}
+                                );
+                            }
+                        });
+        
+                        // method result
+        
                     }
         
-                    // convert to jsonable data
+                    @Override
+                    public void onNotifySwipe() {
+                        // print log
+                        if (getEnableLog()) {
+                            Log.d("java-callback", "fluttify-java-callback: onNotifySwipe(" + "" + ")");
+                        }
+        
+                        // convert to jsonable data
         
         
-                    // call dart method
-                    callbackChannel.invokeMethod(
-                            "Callback::com.amap.api.maps.WearMapView.OnDismissCallback::onNotifySwipe",
-                            new HashMap<String, Object>() {{
-                
-                            }}
-                    );
+                        // call dart method
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                callbackChannel.invokeMethod(
+                                    "Callback::com.amap.api.maps.WearMapView.OnDismissCallback::onNotifySwipe",
+                                    new HashMap<String, Object>() {{
+                    
+                                    }}
+                                );
+                            }
+                        });
         
-                    // method result
+                        // method result
         
-                }
+                    }
         
             });
             } catch (Throwable throwable) {
@@ -425,7 +438,8 @@ class WearMapViewFactory extends PlatformViewFactory {
         put("com.amap.api.maps.WearMapView::onEnterAmbient", (__args__, __methodResult__) -> {
             // args
             // ref arg
-            android.os.Bundle var1 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
+            Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+            android.os.Bundle var1 = __var1__ != null ? (android.os.Bundle) getHEAP().get(__var1__) : null;
         
             // ref
             int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -490,7 +504,8 @@ class WearMapViewFactory extends PlatformViewFactory {
     public PlatformView create(Context __, int id, Object params) {
         Map<String, Object> __args__ = (Map<String, Object>) params;
         // ref arg
-        com.amap.api.maps.AMapOptions var2 = (com.amap.api.maps.AMapOptions) getHEAP().get((int) ((Map<String, Object>) __args__).get("var2"));
+        Integer __var2__ = (Integer) ((Map<String, Object>) __args__).get("var2");
+        com.amap.api.maps.AMapOptions var2 = __var2__ != null ? (com.amap.api.maps.AMapOptions) getHEAP().get(__var2__) : null;
 
         com.amap.api.maps.WearMapView view = new com.amap.api.maps.WearMapView(activity, var2);
         getHEAP().put(Integer.MAX_VALUE - id, view);
