@@ -15,13 +15,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.18.0"
-  amap_search_fluttify:
-    dependency: "direct main"
-    description:
-      name: amap_search_fluttify
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.14.0"
+   amap_search_fluttify:
+     dependency: "direct main"
+     description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "3050b3bd41daed47ac9b108248f82417eb52bff7"
+      url: "git://github.com/ls-andy/amap_search_fluttify.git"
+    source: git
+    version: "0.14.0+1"
   async:
     dependency: transitive
     description:
